@@ -1,3 +1,3 @@
 # egghead-asciicasts
 
-![](./ComplexExample.png)
+
