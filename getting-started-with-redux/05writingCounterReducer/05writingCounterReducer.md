@@ -1,5 +1,10 @@
 The first function we're going to write is the reducer for the counter example. Reducer accepts state and action as arguments and returns the next state. Before jumping into the implementation, we're going to make certain assertions using Michael Jackson's Expect library. We're going to assert that when the state of the counter is zero and you pass an increment action it should return one. Similarly it should return two when this state is one and you increment.
+
 ``` javascript
+function counter(state, action){
+  return state;
+}
+
 expect(
   counter(0, { type: 'INCREMENT' })
 ).toEqual(1);
@@ -19,8 +24,10 @@ expect(
 expect(
   counter(1,{ type: 'SOMETHING_ELSE' })
 ).toEqual(1);
+
 console.log('Tests passed!')
 ```
+
 We're going to add a couple of tests that test how decrement works, which is that it decrements from two to one and from one to zero and we're going to add a log to tell if our tests are successful.
 
 ![Tests Failed](./Images/TestsFailed.png)

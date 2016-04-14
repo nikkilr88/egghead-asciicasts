@@ -1,8 +1,8 @@
 You might have heard that the UI or the view layer is most predictable when it is described as a pure function of the application state. This approach was pioneered by React but is now being picked up by other frameworks, such as Ember and Angular.
 
-![The Reducer](./Images/TheReducer.png)
-
 Redux complements this approach with another idea, that the state mutations in your app need to be described as a pure function that takes the previous state and the action being dispatched and returns the next state of your application.
+
+![The Reducer](./Images/TheReducer.png)
 
 Inside any Redux application, there is one particular function that takes the state of the whole application and the action being dispatched and returns the next state of the whole application. It is important that it does not modify the state given to it. It has to be pure, so it has to return a new object.
 
