@@ -4,6 +4,7 @@ We have a ready ToDo app reducer that handles all the actions of our simple ToDo
 
 I'm adding react and react-dom packages from the Facebook CDN. I'm also adding a div with the ID root, which is where I'm going to render my react application.
 
+# javascript
 ``` javascript
 const render = () => {
 
@@ -11,6 +12,13 @@ const render = () => {
 
 store.subscribe(render);
 render();
+```
+
+# html
+```html
+<body>
+  <div id='root'></div>
+</body>
 ```
 
 Similar to the react counter-example from the eighth lesson, I declare a render function that is going to update dom in response to the current application state. I'm going to subscribe to these core changes and call render whenever the store changes and wants to render the initial state.
@@ -26,7 +34,7 @@ const render = () => {
 };
 
 ```
-React provides a base class for all components. I'm grabbing from the react object called "reactComponent". I'm declaring my own ToDo app component that extends the react-based component. This component is only going to have a render function and is going to return a div. Inside the div, I'm going to place a bottom saying @ToDo them.
+React provides a base class for all components. I'm grabbing from the react object called "reactComponent". I'm declaring my own ToDo app component that extends the react-based component. This component is only going to have a render function and is going to return a div. Inside the div, I'm going to place a button saying add todo them.
 
 ``` javascript
 const { Component } = React;

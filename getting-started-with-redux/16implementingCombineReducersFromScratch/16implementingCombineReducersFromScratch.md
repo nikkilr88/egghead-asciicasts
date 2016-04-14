@@ -1,6 +1,6 @@
 In the previous lesson, we learned to use the combine reducer function, which comes with Redux and generates one reducer from several other reducers, delegating to them paths of the state tree.
 
-To gain a deeper understanding of how exactly combined reducers works, we will implement it from scratch in this lesson.
+To gain a deeper understanding of how exactly combine reducers works, we will implement it from scratch in this lesson.
 
 Combine reducers is a function, so I'm writing a function declaration. Its only argument is the mapping between the state keys and the reducers, so I'm just going to call it Reducers.
 

@@ -30,7 +30,7 @@ Just like in the previous lesson, I'm going to start by writing a mutated versio
 
 ``` javascript
 const toggleTodo = (todo) => {
-  todo.completed = !=todo.completed;
+  todo.completed = !todo.completed;
   return todo;
 };
 ```

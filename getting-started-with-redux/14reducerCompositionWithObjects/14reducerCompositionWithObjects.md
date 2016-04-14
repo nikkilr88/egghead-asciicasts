@@ -49,8 +49,6 @@ const store = createStore(todoApp);
 
 This is another example of the reducer composition pattern, but this time we use it to combine several reducers into a single reducer that we will now use to create our store. The initial state of the combined reducer now contains the initial states of independent reducers. Any time an action comes in, those reducers handle the action independently.
 
-![Store](./Images/TheStore.png)
-
 This pattern helps scale Redux's development because different people on the team can work on different reducers handling the same actions without running into each other and causing merge conflicts.
 
 ![Dispatching visibility Filter](./Images/DispatchingVisibilityFilters.png)

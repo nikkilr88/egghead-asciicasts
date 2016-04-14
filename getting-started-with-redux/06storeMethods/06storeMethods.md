@@ -5,6 +5,8 @@ I added Redux to our application as a script act from CDNJS. This is the UMG bui
 I'm going to need just a single function from Redux called create store. I'm using ES6 destruction syntax here. It's equivalent to writing, "var creates store equals Redux.creates store" or, if you use NPM and something like Babel to transpile your ES6, you can write, "import creates store," notice the parenthesis, "from Redux."
 ``` javascript
 const { createStore } = Redux;
+// var createStore = Redux.createStore;
+// import { createStore } from 'redux';
 ```
 This store binds together the three principles of Redux. It holds the current application's state object. It lets you dispatch actions. When you create it, you need to specify the reducer that tells how state is updated with actions.
 ``` javascript
