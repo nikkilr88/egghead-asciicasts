@@ -28,8 +28,7 @@ In the user interface, I want the completed todos to appear crossed out, so I'm 
 style={{
   textDecoration:
     todo.completed ?
-      'line-through' :
-      'none'
+      'line-through' : 'none'
 }}>
 ```
 

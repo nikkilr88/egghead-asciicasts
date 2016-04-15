@@ -97,6 +97,7 @@ const AddTodo = () => {
   );
 };
 ```
+
 I'm scrolling down to my ToDo app component. I'm removing the onAuth click prop. I just noticed that none of the containers actually need any props from this state. I can remove the props of the ToDo app component. I can remove the render function that renders the ToDo app component with the current state of this store because I can just call it once, remove all the props that are related to this state and just render it as is because the container components that I render are going to subscribe to this store themselves and are going to update themselves when this store state changes.
 
 ``` javascript
