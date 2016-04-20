@@ -1,5 +1,7 @@
 In the previous two lessons, we were working on creating the user interface for the to-do list application that displays the to-dos, lets us add new to-dos, and toggle them on click. We implemented that by dispatching add to-do and toggle to-do actions that we already know how to handle in our reducers.
 
+<a class="jsbin-embed" href="https://jsbin.com/licape/3/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+
 In this lesson, we're going to dispatch set visibility filter reaction and use the visibility filter field to only show the to-dos the user wants to see -- either the completed to-dos, active to-dos, or all to-dos in the current state.
 
 ``` javascript
@@ -136,19 +138,70 @@ if (filter === currentFilter) {
 
 This completes the user interface of our to-do list example. It lets us add items. It lets us view items, toggle them as completed. When we switch the visibility filter, it displays only relevant to-dos, and it also updates the link appearance, so we see which link is active.
 
-![Updated Link Appearance](./Images/UpdatedLinkAppearance.png)
+<a class="jsbin-embed" href="https://jsbin.com/vozozo/3/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
 Let's recap how a change in the visibility filter works. It starts with a dispatch code with an action of the type set visibility filter. It passes filter, which is a prop, to the link component, so every one of those three links is going to have a different filter prop it passes in the action.
 
 The store dispatch function will call our root reducer with the state and the action which in turn will call the visibility filter reducer with the part of the state and the action.
 
-Note that when the action type is set visibility filter, it doesn't care for the previous state, it just returns the action filter as the next value, the next state, of the visibility filter reducer. The root reducer will use this new field as part of its new state object.
+Note that when the action type is set visibility filter, it doesn't care for the previous state, it just returns the action filter as the next value, the next state, of the visibility filter reducer.
 
-Because the render function is subscribed to the stored changes, it's going to get this new state object and pass all its keys as props to the to-do app component. The to-do app component will receive the to-dos and the updated visibility filter as its props.
+```javascript 
+const visibilityFilter = (
+  state = 'SHOW_ALL',
+  action
+) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter;
+    default:
+      return state;
+  }
+};
+```
 
-Both these props are passed through the get visible to-dos function, which calculates the currently visible to-dos according to a list of all to-dos and the visibility filter. The filter is just a string saying show all, completed, or active.
+The root reducer will use this new field as part of its new state object.
+
+Because the render function is subscribed to the stored changes, it's going to get this new state object and pass all its keys as props to the to-do app component.
+
+```javascript
+const render = () => {
+  ReactDOM.render(
+    <TodoApp
+      {...store.getState()}
+    />,
+    document.getElementById('root')
+  );
+}; 
+```
+
+The to-do app component will receive the to-dos and the updated visibility filter as its props.
+
+Both these props are passed through the get visible to-dos function, which calculates the currently visible to-dos according to a list of all to-dos and the visibility filter.
+
+```javascript
+const visibleTodos = getVisibleTodos(
+  todos,
+  visibilityFilter
+);
+```
+
+The filter is just a string saying show all, completed, or active.
 
 The return value is a new array of to-dos that in some cases, filters them and, in some cases, returns as is. The show completed and show active are only different in their predicates.
+
+```javascript 
+case 'SHOW_ALL':
+  return todos;
+case 'SHOW_COMPLETED':
+  return todos.filter(
+    t => t.completed
+  );
+case 'SHOW_ACTIVE':
+  return todos.filter(
+    t => !t.completed
+  );
+```
 
 The return value is the array of visible to-dos. It is used in the render function to actually enumerate every to-do and render it.
 
