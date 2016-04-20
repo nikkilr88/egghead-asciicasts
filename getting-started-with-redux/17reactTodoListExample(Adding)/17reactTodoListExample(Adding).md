@@ -1,8 +1,8 @@
 In the previous lessons, we learned how to split the root registers into many smaller registers that manage parts of the stream tree.
 
-We have a ready ToDo app reducer that handles all the actions of our simple ToDo application. Now it's trying to implement the View layer. I'm going to use React in this example.
+We have a ready ToDo app reducer that handles all the actions of our simple ToDo application. Now it's trying to implement the View layer. I'm going to use **React** in this example.
 
-I'm adding react and react-dom packages from the Facebook CDN. I'm also adding a div with the ID root, which is where I'm going to render my react application.
+I'm adding **react** and **react-dom** packages from the Facebook CDN. I'm also adding a div with the ID root, which is where I'm going to render my react application.
 
 # javascript
 ``` javascript
@@ -34,7 +34,7 @@ const render = () => {
 };
 
 ```
-React provides a base class for all components. I'm grabbing from the react object called "reactComponent". I'm declaring my own ToDo app component that extends the react-based component. This component is only going to have a render function and is going to return a div. Inside the div, I'm going to place a button saying add todo them.
+**React** provides a base class for all components. I'm grabbing from the react object called **reactComponent**. I'm declaring my own ToDo app component that extends the react-based component. This component is only going to have a render function and is going to return a div. Inside the div, I'm going to place a button saying add todo them.
 
 ``` javascript
 const { Component } = React;
@@ -104,15 +104,49 @@ I'm able to read the value of the input inside my event handler. I'm reading thi
 
 ![Adding Todos with this.input](./Images/AddTodoThisInput.png)
 
+<a class="jsbin-embed" href="https://jsbin.com/poguse/4/embed?js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+
 Let's take a moment to recap how this application works. It starts with a ToDo app react component. This component is not aware of how exactly ToDos are being added. However, it can express its desire to mutate the state by dispatching an action with the type ToDo.
+
+```javascript
+<button onClick={() => {
+  store.dispatch({
+    type: 'ADD_TODO',
+    text: this.input.value,
+    id: nextTodoId++
+  });
+  this.input.value = '';
+}}>
+```
 
 For the text field, it uses the current input value and it passes an incrementing ID as the ID of ToDo. Every ToDo needs its own ID, and in this approach, we're just going to increment the counter, so it always gives us the next integer as ID.
 
-It is common for react components to dispatch actions in Redux apps. However, it is equally important to be able to render the current state. My ToDo app component assumes that it's going to receive ToDos as a prop, and it maps over the ToDo list to display a list of them using the ID as a key.
+It is common for **react components** to dispatch actions in **Redux apps**. However, it is equally important to be able to render the current state. My ToDo app component assumes that it's going to receive ToDos as a prop, and it maps over the ToDo list to display a list of them using the ID as a key.
+
+```html
+<ul>
+  {this.props.todos.map(todo =>
+    <li key={todo.id}>
+      {todo.text}
+    </li>
+  )}
+</ul>
+```
 
 This component is being rendered in the render function that runs any [indecipherable 4:53] changes and initially. The render function reads the current state of this chore and passes the ToDos array that it gets from the current state of this chore to do to the app component as a prop.
 
-The render function is called on every store change so the ToDos prop is always up to date. This was the rendering part of the redux flow. Let's recap how mutations work in Redux.
+```javascript
+const render = () => {
+  ReactDOM.render(
+    <TodoApp
+      todos={store.getState().todos}
+    />,
+    document.getElementById('root')
+  );
+};
+```
+
+The render function is called on every store change so the ToDos prop is always up to date. This was the rendering part of the **redux** flow. Let's recap how mutations work in Redux.
 
 Any state change is caused by a store dispatch call somewhere in the component. When an action is dispatched, this store calls the reducer it was created with, with the current state and the action being dispatched.
 
@@ -120,12 +154,36 @@ In our case, this is the ToDo app reducer, which we obtained by combining divisi
 
 It matches the action type and the switch statement. If the action type is add ToDo and indeed, it is equal to add ToDo string. In this case, it will call the child ToDo reducer, passing it undefined, because this is no state for a new ToDo that it can pass in the action.
 
+```javascript 
+case 'ADD_TODO':
+  return [
+    ...state,
+    todo(undefined, action)
+  ];
+```
+
 We have a similar state statement inside the ToDo reducer and the action type is add to-do. It returns the initial state of the to-do where the ID and text from the action and the completed field set to false.
+
+```javascript 
+case 'ADD_TODO':
+  return {
+    id: action.id,
+    text: action.text,
+    completed: false
+  };
+```
 
 The ToDos reducer that called it was returned a new array with all existent items and the new item added at the very end. It adds a need to do to the current state.
 
 Finally, the combined producer called ToDo app will use this new array as the new value for the to-dos field in the global state object. It's going to return a new state object where the ToDos field corresponds to the array with the newly-added ToDo item.
 
-The ToDo app reducer is the root reducer in this application. It is the one the straw was created with. Its next state is a next state of the Redux chore, and all the listeners are notified.
+```javascript
+const todoApp = combineReducers({
+  todos,
+  visibilityFilter
+});
+```
+
+The ToDo app reducer is the root reducer in this application. It is the one the straw was created with. Its next state is a next state of the **Redux** chore, and all the listeners are notified.
 
 The render function is subscribed to the straw changes so it is called again, and it gets the fresh state by call and gets state and it passes the fresh ToDos to the component, re-rendering it with the new [indecipherable 7:24] .
