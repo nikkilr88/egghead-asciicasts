@@ -1,10 +1,10 @@
-The second principle of Redux is that the state tree is *read only*. You cannot modify or write to it. Instead, anytime you want to *change* the state, you need to *dispatch* an *action*.
+The second principle of Redux is that the state tree is **read only**. You cannot modify or write to it. Instead, anytime you want to **change** the state, you need to **dispatch** an **action**.
 
-An *action* is a *plain JavaScript object* describing the change. Just like the state is the minimal representation of the data in your app, the action is the minimal representation of the change to that data.
+An **action** is a **plain JavaScript object** describing the change. Just like the state is the minimal representation of the data in your app, the action is the minimal representation of the change to that data.
 
 <a class="jsbin-embed" href="https://jsbin.com/sagaci/embed?js,console,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
-The structure of the action object is up to you. The only requirement is that it has a *type property*, which is not undefined. We suggest using *strings*, because they are *serializable*.
+The structure of the action object is up to you. The only requirement is that it has a **type property**, which is not undefined. We suggest using **strings**, because they are **serializable**.
 
 In different apps, you're going to have different types of actions. For example, in a counter app we only have increment and decrement actions. We don't pass any additional information, because this is all that is needed to describe these changes.
 
@@ -18,8 +18,8 @@ If I toggle a todo, again, the components don't know how it happens. All they ne
 
 <a class="jsbin-embed" href="https://jsbin.com/sibuwi/7/embed?html,js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
-The same is true for the visibility filter. Anytime I click on this control to change the currently visible todos, what really happens is this component *dispatches an action* with a type, set visibility filter, and pass in the desired filter string, filter filled.
+The same is true for the visibility filter. Anytime I click on this control to change the currently visible todos, what really happens is this component **dispatches an action** with a type, set visibility filter, and pass in the desired filter string, filter filled.
 
 But these are all plain objects, describing what happens in a app.
 
-Now you know the second principle of Redux -- the state is read only. The only way to change the state tree is by dispatching an action. An action is a plain JavaScript object, describing in the minimal way what changed in the application. Whether it is initiated by a network request or by user interaction, any *data* that gets into the Redux application *gets there by actions*.
+Now you know the second principle of Redux -- the state is read only. The only way to change the state tree is by dispatching an action. An action is a plain JavaScript object, describing in the minimal way what changed in the application. Whether it is initiated by a network request or by user interaction, any **data** that gets into the Redux application **gets there by actions**.
