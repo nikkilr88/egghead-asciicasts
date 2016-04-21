@@ -1,8 +1,8 @@
-In the previous lesson, we learned to use the **combine reducer function**, which comes with **Redux** and generates one reducer from several other reducers, delegating to them paths of the state tree.
+In the previous lesson, we learned to use the `combineReducers` function, which comes with **Redux** and generates one reducer from several other reducers, delegating to them paths of the state tree.
 
-To gain a deeper understanding of how exactly combine reducers works, we will implement it from scratch in this lesson.
+To gain a deeper understanding of how exactly `combineReducers` works, we will implement it from scratch in this lesson.
 
-Combine reducers is a function, so I'm writing a function declaration. Its only argument is the mapping between the state keys and the reducers, so I'm just going to call it Reducers.
+`combineReducers` is a function, so I'm writing a function declaration. Its only argument is the mapping between the state keys and the reducers, so I'm just going to call it `Reducers`.
 
 ``` javascript
 const combineReducers = (reducers) => {
@@ -21,9 +21,9 @@ const combineReducers = (reducers) => {
 };
 ```
 
-Now, I'm calling the object key's method, which gives me all the keys of the reducer's object. In our example, this is todos and the visibility filter.
+Now, I'm calling the object key's method, which gives me all the keys of the reducer's object. In our example, this is todos and the `visibilityFilter`.
 
-Next, I'm calling the reduce method on the keys, because I want to produce a single value, such as the next state, by accumulating over every reducer key and calling the corresponding reducer.
+Next, I'm calling the `reduce` method on the keys, because I want to produce a single value, such as the next state, by accumulating over every reducer key and calling the corresponding reducer.
 
 ``` javascript
 return (state = {}, action) => {
@@ -36,7 +36,7 @@ return (state = {}, action) => {
 };
 ```
 
-Each reducer passed through the combine reducers function is only responsible for updating a part of the state. This is why I'm saying that the next state by the given key can be calculated by calling the corresponding reducer by the given key with the current state by the given key and the action.
+Each reducer passed through the `combineReducers` function is only responsible for updating a part of the state. This is why I'm saying that the next state by the given key can be calculated by calling the corresponding reducer by the given key with the current state by the given key and the action.
 
 ``` javascript
 return Object.keys(reducers).reduce(
@@ -53,11 +53,11 @@ return Object.keys(reducers).reduce(
 
 The array reduce wants me to return the next accumulated value from the call back, so I'm returning the next state. I'm also specifying an empty object as the initial next state, before all the keys are processed.
 
-There we have it. This is a working reimplementation of combined reducers utility from **Redux**.
+There we have it. This is a working reimplementation of `combinedReducers` utility from **Redux**.
 
 <a class="jsbin-embed" href="https://jsbin.com/ciruyu/7/embed?js,console">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
-Let's briefly recap how it works. I'm calling combined reducers with an object whose values are the reducer functions and keys are the state field they manage.
+Let's briefly recap how it works. I'm calling `combinedReducers` with an object whose values are the reducer functions and keys are the state field they manage.
 
 ```javascript
 const todoApp = combineReducers({
@@ -66,7 +66,7 @@ const todoApp = combineReducers({
 });
 ```
 
-Inside the generated reducer, I'm retrieving all the keys of the reducers I passed to combine reducers, which is an array of strings, todos and visibility filter.
+Inside the generated reducer, I'm retrieving all the keys of the reducers I passed to combine reducers, which is an array of strings, `todos` and `visibilityFilter`.
 
 I'm starting with an empty object for my next state and I'm using the reduce operation of these keys to fill it gradually.
 
@@ -82,9 +82,9 @@ Notice that I'm mutating the next state object on every iteration. This is not a
   },
 ```
 
-To calculate the next state for a given key, it calls the corresponding reducer function, such as todos or visibility filter.
+To calculate the next state for a given key, it calls the corresponding reducer function, such as `todos` or `visibilityFilter`.
 
-The generated reducer will pass through the child reducer only if part of its state by the key. If its state is a single object, it's only going to pass the relevant part, such as todos or visibility filter, depending on the current key, and save the result in the next state by the same key.
+The generated reducer will pass through the child reducer only if part of its state by the key. If its state is a single object, it's only going to pass the relevant part, such as `todos` or `visibilityFilter`, depending on the current key, and save the result in the next state by the same key.
 
 Finally, we use the array reduce operation with the empty object as the initial next state, that is being filled on every iteration until it is the return value of the whole reduce operation.
 

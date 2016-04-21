@@ -2,7 +2,7 @@ In the previous lessons, we learned how to split the root registers into many sm
 
 We have a ready ToDo app reducer that handles all the actions of our simple ToDo application. Now it's trying to implement the View layer. I'm going to use **React** in this example.
 
-I'm adding **react** and **react-dom** packages from the Facebook CDN. I'm also adding a div with the ID root, which is where I'm going to render my react application.
+I'm adding **react** and **react-dom** packages from the Facebook CDN. I'm also adding a div with the ID root, which is where I'm going to **render** my react application.
 
 # javascript
 ``` javascript
@@ -21,9 +21,9 @@ render();
 </body>
 ```
 
-Similar to the react counter-example from the eighth lesson, I declare a render function that is going to update dom in response to the current application state. I'm going to subscribe to these core changes and call render whenever the store changes and wants to render the initial state.
+Similar to the react counter-example from the eighth lesson, I declare a **render function** that is going to update dom in response to the current application state. I'm going to subscribe to these core changes and call render whenever the store changes and wants to render the initial state.
 
-The implementation of the render method is going to use react, so it's called react-dom render for some to-do app component I haven't written yet. It renders it into the div I created inside the HTML. It's div with the ID called "root".
+The implementation of the render method is going to use react, so it's called `ReactDOM.render` for some to-do app component I haven't written yet. It renders it into the div I created inside the HTML. It's div with the ID called "root".
 
 ``` javascript
 const render = () => {
@@ -34,7 +34,7 @@ const render = () => {
 };
 
 ```
-**React** provides a base class for all components. I'm grabbing from the react object called **reactComponent**. I'm declaring my own ToDo app component that extends the react-based component. This component is only going to have a render function and is going to return a div. Inside the div, I'm going to place a button saying add todo them.
+**React** provides a base class for all components. I'm grabbing from the react object called **reactComponent**. I'm declaring my own `ToDoApp` component that extends the react-based component. This component is only going to have a render function and is going to return a `div`. Inside the div, I'm going to place a button saying add todo them.
 
 ``` javascript
 const { Component } = React;
@@ -61,7 +61,7 @@ class TodoApp extends Component {
 
 I don't want to add an input field yet to keep the example simple at first. I'm dispatching the out ToDo action, and I'm going to put a test as my checks for the action. It's going to keep adding to this with the products test.
 
-The ID, I need to specify a sequential ID. This is why I'm declaring an global variable called "NextToID", and I'm going to keep in command in it. Every time, it's going to emit a new id.
+The ID, I need to specify a sequential ID. This is why I'm declaring an global variable called `NextToID`, and I'm going to keep in command in it. Every time, it's going to emit a new id.
 
 I also want to display a list of the ToDo list. Assuming that I have the ToDos inject as ToDos prop, I'll call map and for every ToDo item, I'm going to show a list item show in the text of that particular ToDo.
 
@@ -75,7 +75,7 @@ I also want to display a list of the ToDo list. Assuming that I have the ToDos i
 </ul>
 ```
 
-Finally, because I need to the ToDo as a prop, I'm going to pass it to the ToDo app by reading the currents chores straight and written its ToDo field.
+Finally, because I need to the ToDo as a prop, I'm going to pass it to the `TodoApp` by reading the currents chores straight and written its ToDo field.
 
 ``` javascript
   <TodoApp todos={store.getState().todos} />
@@ -104,9 +104,9 @@ I'm able to read the value of the input inside my event handler. I'm reading thi
 
 ![Adding Todos with this.input](./Images/AddTodoThisInput.png)
 
-<a class="jsbin-embed" href="https://jsbin.com/poguse/4/embed?js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+<a class="jsbin-embed" href="https://jsbin.com/poguse/3/embed?js,console">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
-Let's take a moment to recap how this application works. It starts with a ToDo app react component. This component is not aware of how exactly ToDos are being added. However, it can express its desire to mutate the state by dispatching an action with the type ToDo.
+Let's take a moment to recap how this application works. It starts with a `ToDoApp` **react component**. This component is not aware of how exactly ToDos are being added. However, it can express its desire to mutate the state by dispatching an action with the type ToDo.
 
 ```javascript
 <button onClick={() => {
@@ -121,7 +121,7 @@ Let's take a moment to recap how this application works. It starts with a ToDo a
 
 For the text field, it uses the current input value and it passes an incrementing ID as the ID of ToDo. Every ToDo needs its own ID, and in this approach, we're just going to increment the counter, so it always gives us the next integer as ID.
 
-It is common for **react components** to dispatch actions in **Redux apps**. However, it is equally important to be able to render the current state. My ToDo app component assumes that it's going to receive ToDos as a prop, and it maps over the ToDo list to display a list of them using the ID as a key.
+It is common for **react components** to dispatch actions in **Redux apps**. However, it is equally important to be able to render the current state. My `ToDoApp` component assumes that it's going to receive ToDos as a prop, and it maps over the ToDo list to display a list of them using the ID as a key.
 
 ```html
 <ul>
@@ -184,6 +184,6 @@ const todoApp = combineReducers({
 });
 ```
 
-The ToDo app reducer is the root reducer in this application. It is the one the straw was created with. Its next state is a next state of the **Redux** chore, and all the listeners are notified.
+The `todoApp` reducer is the root reducer in this application. It is the one the straw was created with. Its next state is a next state of the **Redux chore**, and all the listeners are notified.
 
 The render function is subscribed to the straw changes so it is called again, and it gets the fresh state by call and gets state and it passes the fresh ToDos to the component, re-rendering it with the new [indecipherable 7:24] .

@@ -24,7 +24,7 @@ The event handler knows which todo it corresponds to, so it is able to pass its 
 </ul>
 ```
 
-In the user interface, I want the completed todos to appear crossed out, so I'm adding this trial attribute to the list item. I'm going to use the text decoration property, which is going to be a line through when todo completed is true, and non when todo completed is false, so I get a normal looking todo.
+In the user interface, I want the completed todos to appear crossed out, so I'm adding this trial attribute to the list item. I'm going to use the text decoration property, which is going to be a line through when todo completed is `true`, and non when todo completed is `false`, so I get a normal looking todo.
 
 ``` javascript
 style={{
@@ -40,7 +40,7 @@ Now, if I add a couple of todos, I can click on them and they're going to appear
 
 Let's recap how toggling the todo actually works.
 
-It starts with me dispatching the toggle todo action inside my click handler, with a type toggle todo and the ID, which is the ID of the todo being rendered.
+It starts with me dispatching the toggle todo action inside my click handler, with a type `TOGGLE_TODO` and the ID, which is the ID of the todo being rendered.
 
 ```javascript
 onClick={() => {
@@ -53,7 +53,7 @@ onClick={() => {
 
 I get the todo object as an argument to the array map call back inside my render method where I render all the todos.
 
-When an action is dispatched, the store will call the root reducer, which will call the todos reducer with the array of todos and the action. In this case, the action type is toggle todo, so the todos reducer delegates handling of every todo to the todo reducer with a map function to call it for every todo item. The todo reducer receives the todo as state, and the action.
+When an action is dispatched, the store will call the **root reducer**, which will call the todos reducer with the array of todos and the action. In this case, the action type is toggle todo, so the todos reducer delegates handling of every todo to the todo reducer with a map function to call it for every todo item. The todo reducer receives the todo as state, and the action.
 
 ```javascript 
 const todos = (state = [], action) => {
