@@ -1,8 +1,8 @@
-In the previous lesson, we learned to use the `combineReducers` function, which comes with **Redux** and generates one reducer from several other reducers, delegating to them paths of the state tree.
+In the previous lesson, we learned to use the `combineReducers` function, which comes with **Redux** and generates one reducer from several other **reducers**, delegating to them paths of the state tree.
 
 To gain a deeper understanding of how exactly `combineReducers` works, we will implement it from scratch in this lesson.
 
-`combineReducers` is a function, so I'm writing a function declaration. Its only argument is the mapping between the state keys and the reducers, so I'm just going to call it `Reducers`.
+`combineReducers` is a function, so I'm writing a function declaration. Its **only argument** is the mapping between the **state keys** and the **reducers**, so I'm just going to call it `Reducers`.
 
 ``` javascript
 const combineReducers = (reducers) => {
@@ -66,7 +66,7 @@ const todoApp = combineReducers({
 });
 ```
 
-Inside the generated reducer, I'm retrieving all the keys of the reducers I passed to combine reducers, which is an array of strings, `todos` and `visibilityFilter`.
+Inside the generated reducer, I'm retrieving all the keys of the **reducers** I passed to combine **reducers**, which is an array of strings, `todos` and `visibilityFilter`.
 
 I'm starting with an empty object for my next state and I'm using the reduce operation of these keys to fill it gradually.
 
@@ -88,6 +88,6 @@ The generated reducer will pass through the child reducer only if part of its st
 
 Finally, we use the array reduce operation with the empty object as the initial next state, that is being filled on every iteration until it is the return value of the whole reduce operation.
 
-In this lesson, you learned how to implement the combined reducers utility that comes with **Redux** from scratch.
+In this lesson, you learned how to implement the combined **reducers** utility that comes with **Redux** from scratch.
 
 It is not essential to use in **Redux**, so it is fine if you don't fully understand how it works yet. However, it is a good idea to practice functional programming and understand functions can take other functions as arguments and return other functions, because knowing this will help you get more productive in **Redux** in the long term.
