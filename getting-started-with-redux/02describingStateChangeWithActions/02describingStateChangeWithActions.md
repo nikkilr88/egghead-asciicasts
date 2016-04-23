@@ -1,6 +1,6 @@
-The second principle of Redux is that the state tree is **read only**. You cannot modify or write to it. Instead, anytime you want to **change** the state, you need to **dispatch** an **action**.
+The second principle of **Redux** is that the **state tree** is **read only**. You cannot modify or write to it. Instead, anytime you want to change the state, you need to **dispatch** an **action**.
 
-An **action** is a **plain JavaScript object** describing the change. Just like the state is the minimal representation of the data in your app, the action is the minimal representation of the change to that data.
+An **action** is a **plain JavaScript object** describing the change. Just like the **state** is the minimal representation of the data in your app, the **action** is the minimal representation of the change to that data.
 
 <a class="jsbin-embed" href="https://jsbin.com/sagaci/embed?js,console,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
@@ -12,14 +12,14 @@ But say, for a counter release example, we have more actions. We have add counte
 
 <a class="jsbin-embed" href="https://jsbin.com/posazi/embed?js,console,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
-This approach scales well to medium and complex applications. Anytime I add a todo, the components don't really know how exactly it's been added. All they know is that they need to dispatch an action with a type, add todo, and the text of the todo and a sequential ID.
+This approach scales well to medium and complex applications. Anytime I add a todo, the components don't really know how exactly it's been added. All they know is that they need to dispatch an action with a type, `add_todo`, and the text of the todo and a `sequential ID`.
 
-If I toggle a todo, again, the components don't know how it happens. All they need to do is to dispatch an action with a type, toggle todo and pass in the ID of the todo I want to toggle.
+If I toggle a todo, again, the components don't know how it happens. All they need to do is to dispatch an action with a type, `toggle_todo` and pass in the `ID` of the todo I want to toggle.
 
 <a class="jsbin-embed" href="https://jsbin.com/sibuwi/7/embed?html,js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
-The same is true for the visibility filter. Anytime I click on this control to change the currently visible todos, what really happens is this component **dispatches an action** with a type, set visibility filter, and pass in the desired filter string, filter filled.
+The same is true for the `visibilityFilter`. Anytime I click on this control to change the currently visible todos, what really happens is this component **dispatches an action** with a type, `SET_VISIBILITY_FILTER`, and pass in the desired filter string, filter field.
 
 But these are all plain objects, describing what happens in a app.
 
-Now you know the second principle of Redux -- the state is read only. The only way to change the state tree is by dispatching an action. An action is a plain JavaScript object, describing in the minimal way what changed in the application. Whether it is initiated by a network request or by user interaction, any **data** that gets into the Redux application **gets there by actions**.
+Now you know the second principle of **Redux** -- the state is read only. The only way to change the **state tree** is by dispatching an **action**. An action is a plain JavaScript object, describing in the minimal way what changed in the application. Whether it is initiated by a network request or by user interaction, any **data** that gets into the **Redux** application gets there by **actions**.
