@@ -1,5 +1,4 @@
-In the previous lesson, we separated the 
-**presentational components** from the main **container component**. The `TodoApp` specifies the behaviors, which is what happens when add button, how the to-dos are selected, what happens when a single to-do is being clicked, and what happens when a footer link is clicked.
+In the previous lesson, we separated the **presentational components** from the main **container component**. The `TodoApp` specifies the behaviors, which is what happens when add button, how the to-dos are selected, what happens when a single to-do is being clicked, and what happens when a footer link is clicked.
 
 The components, such as `AddTodo`, the `TodoList`, the `Todo` itself, the `Footer`, and the `FilterLink`, they don't dispatch actions. They call their callbacks in the props. They are only responsible for the looks but not for the behavior.
 
@@ -37,8 +36,7 @@ The first component I'm going to refactor is the `Footer` component.
 />
 ```
 
-Currently, it accepts two props -- the 
-`visibilityFilter`, and the on `onFilterClick`. But it doesn't actually use either of them. It just passes them down to the filter link. This seems like a good opportunity for simplification.
+Currently, it accepts two props -- the `visibilityFilter`, and the on `onFilterClick`. But it doesn't actually use either of them. It just passes them down to the filter link. This seems like a good opportunity for simplification.
 
 We can only do this because we know that the footer component doesn't care about the values of these props. They only exist to be passed down to the filter link that cares about them.
 

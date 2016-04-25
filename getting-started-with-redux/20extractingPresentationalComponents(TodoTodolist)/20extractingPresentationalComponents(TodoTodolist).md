@@ -37,7 +37,7 @@ The first thing I'm doing is removing the special key property because it's only
 
 One of my goals with this refactoring is to make every component as flexible as it is reasonable. Right now, I have hardcoded that clicking a to-do always causes the toggle to-do action. **This is perfectly fine to do in your app.**
 
-*Howeve*r, I prefer to have a bunch of components that don't specify any behaviors, and that are only concerned with how things look or how they render. I call such components the **presentational components**.
+*However*, I prefer to have a bunch of components that don't specify any behaviors, and that are only concerned with how things look or how they render. I call such components the **presentational components**.
 
 I would like to give to-do a presentational component, so I removed the on click handler. I promote it to be a prop so that anyone who uses to-do component can specify what happens on the click. You don't have to-do this in your Redux apps, but I find it to be a very convenient pattern.
 
