@@ -57,4 +57,4 @@ dispatch({});
 
 This implementation of the Redux store apart from a few minor details and edge cases, is the `createStore`  shipped with Redux.
 
-<a class="jsbin-embed" href="https://jsbin.com/casaki/1/embed?js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+![Finished Store](./Images/FinishedStore.png)e

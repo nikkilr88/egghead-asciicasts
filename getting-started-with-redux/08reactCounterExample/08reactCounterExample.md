@@ -51,7 +51,7 @@ const Counter = ({
 
 Let's recap how this application works. The `counter component` is what I call a **dumb component**. It does not contain any **business logic**. It only specifies how the current application state transforms into renderable output and how the callbacks, passed via props, are bound to the event handlers.
 
-<a class="jsbin-embed" href="https://jsbin.com/fotipa/2/embed?js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+![Counter Example](./Images/CounterExample.png)
 
 When we render a counter, we specify that its value should be taken from the **Redux Store** current state. When the user presses `INCREMENT` or `DECREMENT`, we dispatch corresponding action to the **Redux Store**. Our reducer specifies how the next state is calculated based on the current state and the action being dispatched.
 

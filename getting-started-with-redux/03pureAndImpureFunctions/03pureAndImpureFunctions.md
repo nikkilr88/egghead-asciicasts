@@ -1,5 +1,7 @@
 Before we proceed any further, it's important that you understand the difference between the **pure** and **impure** functions. The pure functions are the functions whose returned value depends **solely** on the values of their **arguments**.
 
+![Pure and Impure functions](./Images/PureAndImpureFunctions.png)
+
 ``` javascript
 // Pure function
 function square(x){
