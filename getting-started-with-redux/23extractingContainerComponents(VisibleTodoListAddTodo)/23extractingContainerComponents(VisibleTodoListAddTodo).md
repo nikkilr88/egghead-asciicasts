@@ -134,7 +134,6 @@ ReactDOM.render(
 
 The first component I'm looking at is called `AddTodo`. Frankly, I can classify it either as a **presentational components** or as a **container components** because it doesn't fit either category. The input and the button are the presentational part, but dispatching an action onClick is the behavior which is usually specified by the container.
 
-<a class="jsbin-embed" href="https://jsbin.com/fukaxu/2/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
 
 ```javascript
 const AddTodo = () => {

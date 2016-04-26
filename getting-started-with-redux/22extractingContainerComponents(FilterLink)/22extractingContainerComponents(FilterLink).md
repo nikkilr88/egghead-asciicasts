@@ -190,8 +190,6 @@ componentWillUnmount() {
 render() { ... }
 ```
 
-<a class="jsbin-embed" href="https://jsbin.com/yeromis/2/embed?js,console">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
-
 Let's recap this part. The `FilterLink` component subscribes to this store, calling force update any time this store changes so it can render the current state of this store. It saves the reference through the unsubscribe function returned by store subscribe. It invokes it when the component is about to unmount to clean up the subscription.
 
 Let's recap the relationship between the `FilterLink` **container component** and the link **presentational component**. The link component only specifies the appearance of the the link, when it is active or inactive, but it doesn't know about the behavior. The filter link component is a container, so it provides the data and the behavior for the **presentational component**.

@@ -54,9 +54,6 @@ return Object.keys(reducers).reduce(
 The array reduce wants me to return the next accumulated value from the call back, so I'm returning the next state. I'm also specifying an empty object as the initial next state, before all the keys are processed.
 
 There we have it. This is a working reimplementation of `combinedReducers` utility from **Redux**.
-
-<a class="jsbin-embed" href="https://jsbin.com/ciruyu/7/embed?js,console">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
-
 Let's briefly recap how it works. I'm calling `combinedReducers` with an object whose values are the reducer functions and keys are the state field they manage.
 
 ```javascript
