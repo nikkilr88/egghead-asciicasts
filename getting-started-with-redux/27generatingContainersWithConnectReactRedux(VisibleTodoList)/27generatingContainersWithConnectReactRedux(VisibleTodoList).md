@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 
 I'm creating another function that I call `mapDispatchToProps`. It accepts the `dispatch` method from this `store` as the only argument and returns the props that should be parsed through the list component and that depend on the `dispatch` method.
 
-The only prop that uses store `dispatch` is called `onTodoClick`. Some copy-paste onto the click, into MapDispatchToProps`. Now that I don't have the reference to this `store` here anymore. Instead, I'm changing it to use the `dispatch`, which is provided as an argument to `mapDispatchToProps`.
+The only prop that uses store `dispatch` is called `onTodoClick`. Some copy-paste onto the click, into `MapDispatchToProps`. Now that I don't have the reference to this `store` here anymore. Instead, I'm changing it to use the `dispatch`, which is provided as an argument to `mapDispatchToProps`.
 
 ``` javascript
 const mapDispatchToProps = (dispatch) => {

@@ -20,7 +20,7 @@ It is fairly common to use the container props when calculating the child props,
 
 The second function I'm writing here is `mapDispatchToProps` or, to avoid name clashes in this JS bin, `mapDispatchToLinkProps` The only argument so far is the `dispatch` function. I'm going to need to look at the **container component** I wrote by hand to see what props depend on the `dispatch` function.
 
-In this case, this is just the click handler where I dispatch the `SET_VISIBLITY_FILTER` direction. The only prop I'm passing down is called, `onClick` I declare it as an **arrow function** with no arguments, and I paste the `dispatch` code. But it references the props again, so I need to add `onProps` as an argument, the second argument, to map dispatch to props function to you.
+In this case, this is just the click handler where I dispatch the `SET_VISIBLITY_FILTER` direction. The only prop I'm passing down is called, `onClick` I declare it as an **arrow function** with no arguments, and I paste the `dispatch` code. But it references the props again, so I need to add `ownProps` as an argument, the second argument, to map dispatch to props function to you.
 
 ``` javascript
 const mapDispatchToLinkProps = (
@@ -45,7 +45,7 @@ const FilterLink = connect(
 )(Link);
 ```
 
-Let's recap the data flow in this example. The `Footer` component renders three `filter` links, and each of them has a different filter prop that specifies which filter it corresponds to. This prop will be available on the `onProps` object that both `mapDispatchToProps` and `mapStateToProps` will receive as the second argument.
+Let's recap the data flow in this example. The `Footer` component renders three `filter` links, and each of them has a different filter prop that specifies which filter it corresponds to. This prop will be available on the `ownProps` object that both `mapDispatchToProps` and `mapStateToProps` will receive as the second argument.
 
 We pass these two functions through the `connect` call, which will return a **container component** called, `FilterLink`. The `FilterLink` will take the props that will return from the `mapDispatchToProps` and `mapStateToProps` and pass them as props to the link component that it wraps.
 

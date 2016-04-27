@@ -146,11 +146,11 @@ const render = () => {
 
 The render function is called on every store change so the ToDos prop is always up to date. This was the rendering part of the **redux** flow. Let's recap how mutations work in Redux.
 
-Any state change is caused by a store dispatch call somewhere in the component. When an action is dispatched, this store calls the reducer it was created with, with the current state and the action being dispatched.
+Any state change is caused by a store dispatch call somewhere in the component. When an action is dispatched, this store calls the **reducer** it was created with, with the current state and the action being dispatched.
 
-In our case, this is the ToDo app reducer, which we obtained by combining divisibility filter and the ToDos reducer.
+In our case, this is the `TodoApp` reducer, which we obtained by combining `visibilityFilter` and the `todos` reducer.
 
-It matches the action type and the switch statement. If the action type is add ToDo and indeed, it is equal to add ToDo string. In this case, it will call the child ToDo reducer, passing it undefined, because this is no state for a new ToDo that it can pass in the action.
+It matches the action type and the `switch` statement. If the action type is `ADD_TODO` and indeed, it is equal to add ToDo string. In this case, it will call the child `todo` reducer, passing it `undefined`, because this is no state for a new ToDo that it can pass in the action.
 
 ```javascript 
 case 'ADD_TODO':
