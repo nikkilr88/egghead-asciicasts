@@ -1,7 +1,5 @@
 In the last few lessons, we created user interface for a simple **React** and **Redux** to-do list where I can add items, toggle them as completed, and change the currently visible to-dos.
 
-<a class="jsbin-embed" href="https://jsbin.com/vozozo/3/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
-
 We do that by having a single `TodoApp` component that has the input, the button for adding to-dos, the list of currently visible to-dos with click handler. It has these three links that let us change the currently visible to-dos.
 
 The single component approach worked so far. However, we really want to have many components that can be used, tested, and changed by different people separately. So we're going to **refactor our application** in this lesson.

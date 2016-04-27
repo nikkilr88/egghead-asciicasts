@@ -1,7 +1,5 @@
 In the last lesson, we implemented a simple UI for the todo list application that is able to add new todos and view the existing todos in the list.
 
-<a class="jsbin-embed" href="https://jsbin.com/poguse/3/embed?js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
-
 To add the todos, we dispatched the `ADD_TODO` action. In this lesson, we're going to dispatch the `TOGGLE_TODO` action to toggle the completed state of the todos by clicking on them.
 
 I'm scrolling down to my **React component**. I've got a list item here corresponding to the todo, so I'm adding the on click handler. When the user clicks on the list item, I want to dispatch an action to my store with a type `TOGGLE_TODO` and the `ID` of the todo being toggled, which I get from the todo object.
@@ -36,7 +34,7 @@ style={{
 
 Now, if I add a couple of todos, I can click on them and they're going to appear toggled, and I can toggle them back. Isn't that satisfying?
 
-<a class="jsbin-embed" href="https://jsbin.com/licape/3/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+![Toggling Todos](./Images/ToggledTodos.png)
 
 Let's recap how toggling the todo actually works.
 

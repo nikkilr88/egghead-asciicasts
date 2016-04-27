@@ -1,7 +1,5 @@
 In the previous two lessons, we were working on creating the user interface for the to-do list application that displays the to-dos, lets us add new to-dos, and toggle them on click. We implemented that by dispatching add to-do and toggle to-do actions that we already know how to handle in our reducers.
 
-<a class="jsbin-embed" href="https://jsbin.com/licape/3/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
-
 In this lesson, we're going to dispatch set `visibilityFilter` reaction and use the `visibilityFilter` field to only show the to-dos the user wants to see -- either the completed to-dos, active to-dos, or all to-dos in the current state.
 
 ``` javascript
@@ -138,7 +136,7 @@ if (filter === currentFilter) {
 
 This completes the user interface of our to-do list example. It lets us add items. It lets us view items, toggle them as completed. When we switch the `visibilityFilter`, it displays only relevant to-dos, and it also updates the link appearance, so we see which link is active.
 
-<a class="jsbin-embed" href="https://jsbin.com/vozozo/3/embed">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.12"></script>
+![Updated Link Appearance](./Images/UpdatedLinkAppearance.png)
 
 Let's recap how a change in the `visibilityFilter` works. It starts with a dispatch code with an action of the type set `visibilityFilter`. It passes filter, which is a prop, to the link component, so every one of those three links is going to have a different filter prop it passes in the action.
 
