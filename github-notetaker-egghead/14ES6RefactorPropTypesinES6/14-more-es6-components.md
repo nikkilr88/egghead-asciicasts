@@ -1,6 +1,6 @@
-This video is going to be very similar to the last video. Let's go ahead and refactor our repos JS file, and our userProfile JS file, in order to use more ES6-type syntax. First thing as always, we are going to import React from React, and delete this line.
+This video is going to be very similar to the last video. Let's go ahead and **refactor** our `Repos.js` file, and our `UserProfile.js` file, in order to use more **ES6-type** syntax. First thing as always, we are going to `import React from react`, and delete this line.
 
-Let's go ahead and create our UserProfiles class, which extends React component. Once we do that, let's go ahead and export default UserProfiles. Once we've done that, let's go ahead and add our render method in here, which is going to return this UI.
+Let's go ahead and create our `UserProfiles` **class**, which `extends React.Component`. Once we do that, let's go ahead and `export default UserProfiles`. Once we've done that, let's go ahead and add our `render` method in here, which is going to return this **UI**.
 
 ### UserProfile.js
 ```javascript
@@ -28,7 +28,7 @@ class UserProfile extends React.Component {
 export default UserProfile;
 ```
 
-Lastly, we'll need to go and add propTypes onto our class. UserProfiles.propTypes equals that Object. This looks good. Let's go ahead and modify Repos now. We are going to import React from React, create our Repos class, which extends React component.
+Lastly, we'll need to go and add `propTypes` onto our **class**. `UserProfiles.propTypes` equals that **Object**. This looks good. Let's go ahead and modify `Repos` now. We are going to `import React from react`, create our `Repos` class, which `extends React component`.
 
 ### UserProfile.js
 ```javascript
@@ -38,7 +38,7 @@ UserProfile.propTypes = {
 }
 ```
 
-Let's go ahead and throw our render method in here as well. Beautiful, and next, let's go ahead and add our profile, or add our propTypes to our Repos class. Now, let's go ahead, and let's move our mapping function inside of our components.
+Let's go ahead and throw our `render` method in here as well. Beautiful, and next, let's go ahead and add our profile, or add our `propTypes` to our `Repos` class. Now, let's go ahead, and let's move our **mapping** function inside of our components.
 
 ### Repos.js
 ```javascript
@@ -72,9 +72,9 @@ Repos.propTypes = {
 export default Repos
 ```
 
-Going to drop this right here, and indent this, change that to be an arrow function. Works great, so, now let's go ahead, and find where all of these are being imported, or these two files are being imported.
+Going to drop this right here, and indent this, change that to be an **arrow** function. Works great, so, now let's go ahead, and find where all of these are being **imported**, or these two files are being imported.
 
-I believe, it's just in Our Profile JS. Here, we are going to import Repos, from github/repos, and then, we'll also import UserProfile from github/UserProfile. Let's see if this's working. There we go.
+I believe, it's just in our `Profile.js`. Here, we are going to `import Repos`, from `./Github/repos`, and then, we'll also `import UserProfile from ./Github/UserProfile`. Let's see if this's working. There we go.
 
 ### Profile.js
 ```javascript
