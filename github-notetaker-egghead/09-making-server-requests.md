@@ -109,6 +109,6 @@ All right, so if this worked correctly what's going to happen is when the compon
 
 Make sure everything's working, and then same thing in our `userProfile` component let's go ahead and remove `bio` and instead just `console.log('BIO: ',this.props.bio)`. All right, webpack is running, let's see if this works. So we should see here is **two responses**, we also have `propType`, that's fine for now. So `bio.data`, we have all our data and then `repos.data` here are all our repositories.
 
-![Finished](./images/Finished.png)
+![Finished](./images/09-finished.png)
 
 So now one more thing, let's go ahead and make it so we don't get the whole response object, but we just get the data. So inside of our `helpers` instead of returning just the **first item**, let's go ahead and return the **first item with data** then `.data` here as well. So that should give us just this data properties Check it out, and there we go, there's our `bio` and there are our `repos`.

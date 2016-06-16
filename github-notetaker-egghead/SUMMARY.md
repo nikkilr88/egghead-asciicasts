@@ -1,0 +1,17 @@
+# Summary
+
+* [First Component](02-first-component-webpack.md)
+* [Basic Routing with React Router](03-basic-routing-with-react-router.md)
+* [State, Props, and Thinking in React](04-state-props-and-thinking-react.md)
+* [Using react-fire to Add Data Persistence](05-using-reactfire-to-add-data-persistence.md)
+* [Component Validation with Proptypes](06-component-validation-with-proptypes.md)
+* [Managing State in Child Components](07-managing-state-in-child-components.md)
+* [Transitions with React Router](08-tansitions-react-router.md)
+* [Making Server Requests](09-making-server-requests.md)
+* [Dynamic UI](10-dynamic-ui-asciicast.md)
+* [Route Changes](11-route-changes.md)
+* [Non-component ES6 Refactor](12-non-component-es6-refactor.md)
+* [Refactor Notes into ES6 Components](13-es6-components.md)
+* [Refactor More Components](14-more-es6-components.md)
+* [Routing with Context](15-routing-with-context.md)
+* [Utilizing Stateless Functional Components](17-utilizing-stateless-function-components.md)

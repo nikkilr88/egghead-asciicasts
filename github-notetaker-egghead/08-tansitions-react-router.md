@@ -137,4 +137,4 @@ Let's say Search GitHub equals, and we're in the same directory, so let's just g
 
 We head over here, we can search for a username and it should redirect us to `/profile/` this username. Then our `notes` component renders, let's give this another test, and there we go.
 
-![Finished](./images/Finished.png)
+![Finished](./images/08-finished.png)
