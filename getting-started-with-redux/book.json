@@ -1,0 +1,5 @@
+{
+    "title": "Getting Started with Redux Asciicasts",
+    "description": "This book converts the [getting started redux courses](https://egghead.io/courses/getting-started-with-redux) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
