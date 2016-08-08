@@ -104,7 +104,7 @@ I could do this explicitly, but actually it's easier for me just to spread over 
 />
 ```
 
-![Filters Applied](./Images/FiltersApplied.png)
+![Filters Applied](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/FiltersApplied.png)
 
 The links look all the same right now, but we want to highlight the chosen one. To implement this, we're going to need the `visibilityFilter` prop which says which is the current one.
 
@@ -136,7 +136,7 @@ if (filter === currentFilter) {
 
 This completes the user interface of our to-do list example. It lets us add items. It lets us view items, toggle them as completed. When we switch the `visibilityFilter`, it displays only relevant to-dos, and it also updates the link appearance, so we see which link is active.
 
-![Updated Link Appearance](./Images/UpdatedLinkAppearance.png)
+![Updated Link Appearance](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/UpdatedLinkAppearance.png)
 
 Let's recap how a change in the `visibilityFilter` works. It starts with a dispatch code with an action of the type set `visibilityFilter`. It passes filter, which is a prop, to the link component, so every one of those three links is going to have a different filter prop it passes in the action.
 

@@ -57,4 +57,4 @@ dispatch({});
 
 This implementation of the Redux store apart from a few minor details and edge cases, is the `createStore`  shipped with Redux.
 
-![Finished Store](./Images/FinishedStore.png)e
+![Finished Store](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/FinishedStore.png)e

@@ -2,7 +2,7 @@ The second principle of **Redux** is that the **state tree** is **read only**. Y
 
 An **action** is a **plain JavaScript object** describing the change. Just like the **state** is the minimal representation of the data in your app, the **action** is the minimal representation of the change to that data.
 
-![Describing Actions](./Images/DescribingActions.png)
+![Describing Actions](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/DescribingActions.png)
 
 The structure of the action object is up to you. The only requirement is that it has a **type property**, which is not undefined. We suggest using **strings**, because they are **serializable**.
 
@@ -10,13 +10,13 @@ In different apps, you're going to have different types of actions. For example,
 
 But say, for a counter release example, we have more actions. We have add counter action, we have a remove counter action, and anytime I change the individual counter, you can see that the increment and the decrement actions now have index. Because we need to describe which particular counter was changed.
 
-![Multiple Actions](./Images/MultipleActions.png)
+![Multiple Actions](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/MultipleActions.png)
 
 This approach scales well to medium and complex applications. Anytime I add a todo, the components don't really know how exactly it's been added. All they know is that they need to dispatch an action with a type, `add_todo`, and the text of the todo and a `sequential ID`.
 
 If I toggle a todo, again, the components don't know how it happens. All they need to do is to dispatch an action with a type, `toggle_todo` and pass in the `ID` of the todo I want to toggle.
 
-![Complex Example](./Images/ComplexExample.png)
+![Complex Example](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/ComplexExample.png)
 
 The same is true for the `visibilityFilter`. Anytime I click on this control to change the currently visible todos, what really happens is this component **dispatches an action** with a type, `SET_VISIBILITY_FILTER`, and pass in the desired filter string, filter field.
 

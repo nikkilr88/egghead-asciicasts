@@ -34,7 +34,7 @@ style={{
 
 Now, if I add a couple of todos, I can click on them and they're going to appear toggled, and I can toggle them back. Isn't that satisfying?
 
-![Toggling Todos](./Images/ToggledTodos.png)
+![Toggling Todos](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/ToggledTodos.png)
 
 Let's recap how toggling the todo actually works.
 

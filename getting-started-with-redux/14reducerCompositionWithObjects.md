@@ -51,6 +51,6 @@ This is another example of the **reducer composition** pattern, but this time we
 
 This pattern helps scale Redux's development because different people on the team can work on different reducers handling the same actions without running into each other and causing merge conflicts.
 
-![Dispatching visibility Filter](./Images/DispatchingVisibilityFilters.png)
+![Dispatching visibility Filter](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/DispatchingVisibilityFilters.png)
 
 Finally, I'm dispatching the `SET_VISIBILITY_FILTER` action. You can see that it doesn't affect the to-dos, but the `visibilityFilter` field has been updated.

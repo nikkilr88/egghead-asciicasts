@@ -81,7 +81,7 @@ Finally, because I need to the ToDo as a prop, I'm going to pass it to the `Todo
   <TodoApp todos={store.getState().todos} />
 ```
 
-![Adding Todos](./Images/AddTodos.png)
+![Adding Todos](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/AddTodos.png)
 
 You can see that there is a button at ToDo and anytime I press it, I see a new ToDo with a test text. I'm going to add an input inside my render function, and I'm using the react callback ref API where ref is a function, it gets the note corresponding to the ref, and I'm saving that note with some name. In this case, this.input.
 
@@ -102,7 +102,7 @@ You can see that there is a button at ToDo and anytime I press it, I see a new T
 
 I'm able to read the value of the input inside my event handler. I'm reading this job input that value. I'm also able to reserve the value after dispatching the action so that the field is cleared. If I try write something to build and press AddtoDo, the AddtoDo action is dispatched and the field is cleared.
 
-![Adding Todos with this.input](./Images/AddTodoThisInput.png)
+![Adding Todos with this.input](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/AddTodoThisInput.png)
 
 Let's take a moment to recap how this application works. It starts with a `ToDoApp` **react component**. This component is not aware of how exactly ToDos are being added. However, it can express its desire to mutate the state by dispatching an action with the type ToDo.
 

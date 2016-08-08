@@ -51,7 +51,7 @@ const Counter = ({
 
 Let's recap how this application works. The `counter component` is what I call a **dumb component**. It does not contain any **business logic**. It only specifies how the current application state transforms into renderable output and how the callbacks, passed via props, are bound to the event handlers.
 
-![Counter Example](./Images/CounterExample.png)
+![Counter Example](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/CounterExample.png)
 
 When we render a counter, we specify that its value should be taken from the **Redux Store** current state. When the user presses `INCREMENT` or `DECREMENT`, we dispatch corresponding action to the **Redux Store**. Our reducer specifies how the next state is calculated based on the current state and the action being dispatched.
 

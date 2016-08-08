@@ -30,7 +30,7 @@ console.log('Tests passed!')
 
 We're going to add a couple of tests that test how `DECREMENT` works, which is that it decrements from two to one and from one to zero and we're going to add a log to tell if our tests are successful.
 
-![Tests Failed](./Images/TestsFailed.png)
+![Tests Failed](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/TestsFailed.png)
 
 If you ran this test, they're actually going to fail because we haven't even begun to implement our reducer. We're going to start by checking the `action.type` and if the `action.type` is `INCREMENT` we're going to return state plus one, but if it is `DECREMENT` we're going to return state minus one.
 ``` javascript
@@ -44,7 +44,7 @@ function counter(state, action) {
 ```
 If you run the tests we will find that this is enough to get them to pass. However, there are still some flaws in our current implementation of the **counter reducer**. For example, I think that if we **dispatch** an action that it does not understand, it should return the **current state** of the application.
 
-![Tests Passed](./Images/TestsPassed.png)
+![Tests Passed](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/TestsPassed.png)
 
 However, if we check for that we will see that this test fails, because we currently don't handle **unknown actions**. I'm going to add an else clause that returns the **current state**. The tests pass now.
 ``` javascript
