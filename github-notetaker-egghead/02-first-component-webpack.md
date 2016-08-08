@@ -163,4 +163,4 @@ webpack -w
 
  Now let's go ahead and open up this `index.html` file on the browser and what we should see is `Hello World`.
 
- ![Hello World](./images/02-finish.png)
+ ![Hello World](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/02-finish.png)

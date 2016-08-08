@@ -1,6 +1,6 @@
 We've talked a lot in this series how the **state** of these three components is being **managed** in this **outer profiles** component. 
 
-![Main Component](./images/components.png)
+![Main Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/components.png)
 
 What we're going to talk about in this video is how we can **manipulate the state** of an **outer component** from **inside** of **another** component. Specifically, this `addNote` component is what we're going to build.
 

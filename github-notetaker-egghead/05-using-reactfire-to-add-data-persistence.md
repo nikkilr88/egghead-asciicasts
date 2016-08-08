@@ -1,6 +1,6 @@
 Now what we're going to do in this video is we're going to hook up our **firebase** so we can start persisting these notes, and we're going to build out the rest of this `notes` component so that we get a nice **little unordered** list of all of our `notes` that are in firebase.
 
-![Notes Component](./images/notes.png)
+![Notes Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/notes.png)
 
 So let's go ahead and jump to our code, and what we're going to do first is we are going to use this thing called **ReactFire** that Firebase made that makes it so that our **component state** can be bound to a Firebase **endpoint**.
 
@@ -32,7 +32,7 @@ Now what we want to do is we're going to introduce a brand new **lifecycle event
 
 What we're going to do here is the very thing we want to do is we're going to create a new `reference` to our Firebase. If you've never used Firebase before, what we're doing here is we're going to create a new **instance** of Firebase and we're going to **pass** it the **URL** of where our **project** is located. So if I head over to my Firebase dashboard, you'll notice all I did was create a new project and you'll notice there's this URL.
 
-![Firebase URL](./images/firebase.png)
+![Firebase URL](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/firebase.png)
 
 This URL is kind of the **base** of our project, so if I head back over to my code all I'm doing here is I'm saying, "Hey, create me a new instance of Firebase which is going to return me an **object** full of all these Firebase-y **type properties**. I'm going to save that on my instance under the ref property. Then once I do that, I'm going to then call `bindAsArray`, and the reason that's this keyword now has a `bindAsArray` property, is because that's exactly what our ReactFire **mixin** did.
 
@@ -45,7 +45,7 @@ componentDidMount: function(){
 ```
 It took our context, it took our `this` keyword and added a few properties to it and one of those is `bindAsArray`. BindAsArray takes two arguments the **first** argument is a **reference** to your Firebase, and the **second** argument is the **property on your state** that you want to bind the Firebase data to. So looking back at Firebase you'll notice that we have our endpoint and basically at our **root location** we have all these user names. If I come and click on one of these user names, notice the **URL changed**.
 
-![Firebase User](./images/user.png)
+![Firebase User](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/user.png)
 
 This gives us a little bit of insight into how we want to `bind` to the specific property in our state, because if we're here and we're at Tyler's profile, we want to bind to `\tyler`, or if we come here and the user name is `\jclingwall`, then we want to get all of jclingwall's information. So what we're going to do is let's go ahead and make a `childRef` which is `this.ref.child` and then we're going to pass it the `username` property.
 

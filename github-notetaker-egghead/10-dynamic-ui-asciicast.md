@@ -85,7 +85,7 @@ If this worked, then let's go ahead and start webpack.
 npm start
 ```
 
-![finished Repos](./images/10-repoComponent.png)
+![finished Repos](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/10-repoComponent.png)
 
 So now our user repos is formatted a little bit better, we can click on these links and it'll take us to the github project. Now let's go ahead and fix the bio real quick. If we head over to our `userProfile.js` file, we're going to do roughly the same thing. This one's a little bit longer so I'm just going to paste it in. Not every repository is mandated to have all of these properties on it.
 
@@ -113,4 +113,4 @@ Basically we're going to say if this specific...or not every `bio`, excuse me. W
 
 These are all just checking to make sure those properties are truthy, if they are, it will go ahead and render those to the screen. Let's save that, webpack is good, let's check this and there we go.
 
-![Finish User Profile](./images/10-finish.png)
+![Finish User Profile](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/10-finish.png)

@@ -1,6 +1,6 @@
 As we talked about a few videos ago, the biggest component in our application is going to be this `profile` component we'll make, because that's what's going to **manage the state** for this `userProfile` component, the `repos` component right here, and also the `notes` component. Let's go ahead in this video, let's make this `profile` component, and then let's just make these three child components.
 
-![App Component](./images/AppComponent.png)
+![App Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/AppComponent.png)
 
 Let's go ahead and head over to our `components` folder. Let's make a new file called `profile.js`. Very first thing we're going to do, as always, is `require React`. We're going to need `react-router` later on, so let's just require it right now. That should be good for now.
 
@@ -83,7 +83,7 @@ module.exports = (
 
 Let's go ahead and verify that this is all hooked up now. When we go to our app/profile/any name, what we should see is our profile component, which should give us just this static text. `Webpack` is still running. If we hit refresh and then go to `/profile/tylermcginnis`, here we go. We got our static text.
 
-![Profile Component](./images/ProfileComponent.png)
+![Profile Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/ProfileComponent.png)
 
 You might have seen this little gross hash up here. You can get rid of that. I'm not going to worry about it in this video, but if you want to get rid of it, go ahead and look into React router's create hash history.
 
@@ -133,7 +133,7 @@ render: function(){
 
 If I'm here, here's our `props` objects. This is everything that's being passed to the `profile` component. You'll notice that one of these is called `params`. This has a **username property** which is Jake.
 
-![this.propsjake](./images/this.propsjake.png)
+![this.propsjake](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/this.propsjake.png)
 
 If I change this, then `params` has a username property which is Tyler McGuinness.
 
@@ -162,7 +162,7 @@ Again, the reason it's called the **username** is because that's what we specifi
 
 When I load this, we should see user profile component and then the name of the route param. I changed this. It updates it.
 
-![Viewing this.props.params.username](./images/Viewingthis.props.params.username.png)
+![Viewing this.props.params.username](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/Viewingthis.props.params.username.png)
 
 One thing I didn't mention was the way you **display variables** inside of **JSX** is just with this **single curly brace**.
 
@@ -220,7 +220,7 @@ render: function(){
 
 Let's see if this works. There we go. This is good.
 
-![Displaying Components](./images/DisplayingComponents.png)
+![Displaying Components](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/DisplayingComponents.png)
 
 But you'll notice here we have user profile, repos, and notes. We also have repos, bio, and notes. What we want to do is we don't just want to render these components. We actually want to **pass data down** to them so that data can be rendered inside of these **child components**.
 
@@ -286,4 +286,4 @@ getInitialState: function(){
 
 We're up.
 
-![Finished](./images/Finished.png)
+![Finished](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/Finished.png)

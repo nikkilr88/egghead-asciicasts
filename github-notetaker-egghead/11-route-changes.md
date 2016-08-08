@@ -26,7 +26,7 @@ componentWillReceiveProps: function(nextProps){
 
 What we should see here is, if I refresh this and go to a new `username`, we get these new **props** and, under **params**, we have the **username**.
 
-![nextProps](./images/nextProps.png)
+![nextProps](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/nextProps.png)
 
 Let's go ahead and change up our component a little bit. What I'm going to do is let's go ahead and make an `init` function. What's going to happen is we're going to **call** this data or this chunk of code when the **component mounts**, but also we want to **set up** a **listener** to the new user whenever we **receive new props**.
 

@@ -1,6 +1,6 @@
 Let's talk a little bit more about the importance of **components**. We talked about how to build a component in the last video, but we didn't really get too much into the **parent-child relationships** with components. You'll notice here that what I've done is I've highlighted every component in red. The deeper the red, that means the more **nested** the component is.
 
-![Red Components](./images/redComponents.png)
+![Red Components](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/redComponents.png)
 
 The good thing about **React**, the nice thing about React is that you're able to have components which **manages the state**. Then you're able to **pass that state** down to your **child component**. What we have here is this container right here is one component. Then I'm taking **data** from that **component**, and I'm **passing** it down to these **children** components.
 
@@ -8,7 +8,7 @@ So that makes it really easy to reason about your data because now I know that m
 
 What we're going to do first, just so we can see this idea, is we're going to build another component. Go ahead and go over to your `components` folder and make a new filed called `home.js`. The component we're going to build is this main component that you see here when you first load up the app, so this one right here.
 
-![Main Component](./images/mainComponent.png)
+![Main Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/mainComponent.png)
 
 Let's go ahead and in `home` we're going to `require` React. Then we're going to make a variable called `home` and set it equal to `React.createClass` as we normally do. Here we're going to have a `render` method, which is going to return us what our **UI** looks like. What it's going to have is a class name of `text-center`. All it's going to say is, "Search by GitHub username above."
 
@@ -31,11 +31,11 @@ You'll notice we use `className` here instead of `class`. Because `class` is a r
 
 Now that we've done that, if we head over to our page here you'll notice that we need some sort of way to have these components of order. You'll notice here I have this `menu` component here
 
-![Menu Component](./images/menuComponent.png)
+![Menu Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/menuComponent.png)
 
 and I have another component here,
 
-![Another Component](./images/anotherComponent.png)
+![Another Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/anotherComponent.png)
 
 but when I go to this new `route` I want this component to stay here and I want to load in all these other components.
 
@@ -62,7 +62,7 @@ var ReactDOM = require('react-dom');
 
 Now what we're going to do is make another component that is basically in charge of handing our routing. Go ahead and, in your `app` file, create a new file called `app.js`.
 
-![App.js](./images/appFile.png)
+![App.js](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/appFile.png)
 
 The very first thing, as always, is we are going to `require` React. Then, because `app.js` is going to be in charge of our rendering, we are going to `require react-dom` as we did earlier.
 
@@ -78,7 +78,7 @@ var routes = require('./config/routes');
 
 Now let's go ahead and head over to our terminal. Let's `npm install`, save it, react-router at version number 1.0.1. react-router has a dependency of the history package. Let's go ahead and install version 1.13.1 of that.
 
-![npm install](./images/npmInstall.png)
+![npm install](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/npmInstall.png)
 
 Now let's head over and finish up our `app.js` file. Just like we did before, we're going to call `ReactDOM.render`, but instead of passing in a **component** here what we're going to do is actually pass in our **router**, which makes sense because our router is going to be what's handling the **different routes** in our application.
 
@@ -134,11 +134,11 @@ You'll notice earlier when we take a look at our application, we don't want just
 
 Also, too, you'll notice that this menu bar we want to stay up here the whole time.
 
-![Menu Component](./images/menuComponent.png)
+![Menu Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/menuComponent.png)
 
 We basically want this menu to always be an active route. Then it just renders some child components.
 
-![Child Components](./images/bodyComponent.png)
+![Child Components](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/bodyComponent.png)
 
 Now I'm back in my `route.js` file. We know what we want to do is we want to **specify** some **children** routes.
 
