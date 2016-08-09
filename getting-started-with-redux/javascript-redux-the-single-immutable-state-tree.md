@@ -1,3 +1,4 @@
+
 The first principle of **Redux** is whether your app is a really simple one like this `counter example`, or a complex application with a lot of UI, and change of state, you are going to represent the whole state of your application as a single JavaScript object.
 
 All mutations, and changes the state in **Redux** are explicit. It is possible to keep track of all of them. In this case, I am logging every state change in the application in the console. You can see that, in the `counter example`, there isn't really much state to keep track of so it can be represented by a JavaScript number.

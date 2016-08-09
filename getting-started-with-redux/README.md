@@ -11,3 +11,8 @@ npm install
 gitbook install
 gitbook serve
 ```
+
+# Library Versions
+[React](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html): 0.14.0
+
+[Redux](https://github.com/reactjs/redux/tree/v3.0.3): 3.0.3 
