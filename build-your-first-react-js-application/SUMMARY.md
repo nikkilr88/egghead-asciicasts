@@ -1,0 +1,17 @@
+# Summary
+
+* [First Component](react-building-a-react-js-app-up-and-running-with-react-and-webpack.md)
+* [Basic Routing with React Router](react-building-a-react-js-app-basic-routing-with-react-router.md)
+* [State, Props, and Thinking in React](react-building-a-react-js-app-state-props-and-thinking-in-react.md)
+* [Using react-fire to Add Data Persistence](react-building-a-react-js-app-using-reactfire-to-add-data-persistence.md)
+* [Component Validation with Proptypes](react-building-a-react-js-app-component-validation-with-proptypes.md)
+* [Managing State in Child Components](react-building-a-react-js-app-managing-state-in-child-components.md)
+* [Transitions with React Router](react-building-a-react-js-app-transitions-with-react-router.md)
+* [Making Server Requests](react-building-a-react-js-app-making-server-requests-in-react-with-axios.md)
+* [Dynamic UI](react-building-a-react-js-app-rendering-a-ui-of-dynamic-data.md)
+* [Route Changes](react-building-a-react-js-app-componentwillreceiveprops-and-react-router.md)
+* [Non-component ES6 Refactor](react-building-a-react-js-app-es6-refactor-non-components.md)
+* [Refactor Notes into ES6 Components](react-building-a-react-js-app-es6-refactor-createclass-to-javascript-classes-and-proptypes.md)
+* [Refactor More Components](react-building-a-react-js-app-es6-refactor-proptypes-in-es6.md)
+* [Routing with Context](react-building-a-react-js-app-es6-refactor-routing-without-mixins.md)
+* [Utilizing Stateless Functional Components](react-building-a-react-js-app-utilizing-stateless-function-components.md)

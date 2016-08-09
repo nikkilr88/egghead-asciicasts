@@ -11,3 +11,5 @@ npm install
 gitbook install
 gitbook serve
 ```
+# Library Version
+[React](https://facebook.github.io/react/blog/2015/11/18/react-v0.14.3.html): 0.14.3
