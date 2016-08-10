@@ -1,0 +1,5 @@
+{
+    "title": "Build Your First React.js App",
+    "description": "Asciicasts for [ES6 Series](https://egghead.io/courses/learn-es6-ecmascript-2015) course on [egghead.io](https://egghead.io/courses/learn-es6-ecmascript-2015)",
+    "plugins": ["prism", "-highlight", "hints"]
+}
