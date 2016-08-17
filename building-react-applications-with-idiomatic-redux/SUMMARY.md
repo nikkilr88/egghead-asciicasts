@@ -1,0 +1,16 @@
+# Summary
+
+* [javascript-redux-fetching-data-on-route-change](./lessons/javascript-redux-fetching-data-on-route-change.md)
+* [Redux wrapping recognizes promises](./lessons/javascript-redux-wrapping-dispatch-to-recognize-promises.md)
+* [Redux MiddleWare Chain](./lessons/javascript-redux-the-middleware-chain.md)
+* [javascript-redux-dispatching-actions-with-the-fetched-data](./lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md)
+* [javascript-redux-applying-redux-middleware](./lessons/javascript-redux-applying-redux-middleware.md)
+* [javascript-redux-updating-the-state-with-the-fetched-data](./lessons/javascript-redux-updating-the-state-with-the-fetched-data.md)
+* [javascript-redux-refactoring-the-reducers](./lessons/javascript-redux-refactoring-the-reducers.md)
+* [javascript-redux-displaying-loading-indicators](./lessons/javascript-redux-displaying-loading-indicators.md)
+* [javascript-redux-dispatching-actions-asynchronously-with-thunks](./lessons/javascript-redux-dispatching-actions-asynchronously-with-thunks.md)
+* [javascript-redux-avoiding-race-conditions-with-thunks](./lessons/javascript-redux-avoiding-race-conditions-with-thunks.md)
+* [javascript-redux-displaying-error-messages](./lessons/javascript-redux-displaying-error-messages.md)
+* [javascript-redux-creating-data-on-the-server](./lessons/javascript-redux-creating-data-on-the-server.md)
+* [javascript-redux-normalizing-api-responses-with-normalizr](./lessons/javascript-redux-normalizing-api-responses-with-normalizr.md)
+* [javascript-redux-updating-data-on-the-server](./lessons/javascript-redux-updating-data-on-the-server.md)
