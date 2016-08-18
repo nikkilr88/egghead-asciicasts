@@ -8,11 +8,11 @@ var car = {color, speed};
 console.log(car.color);
 console.log(car.speed);
 ```
-That's because if you **declare a property** with the exact **same name** as something, it'll treat it just as if you did `color:color` and `speed:speed`. This is the **ES5** way, and this is the **ES6** way.
+That's because if you **declare a property** with the exact **same name** as something, it'll treat it just as if you did `color:color` and `speed:speed`. This is the **ES5** way, and this is the ES6 way.
 ``` javascript
 var car = {color:color, speed:speed};
 ```
-This even works for **functions**. If I create a function called `go` and say `vroom`, I can simply **add another property** here, call it `go`, and then say, `car.go()`. Then I'll run this. You can see it says, `vroom`.
+This even works for functions. If I create a function called `go` and say `vroom`, I can simply add another property here, call it `go`, and then say, `car.go()`. Then I'll run this. You can see it says, `vroom`.
 ``` javascript
 var color = "red";
 var speed = 10;
@@ -24,7 +24,7 @@ var car = {color, speed, go};
 
 car.go();
 ```
-Another cool thing...I'm going to format this just a little bit, put these on new lines...is that instead of using the **function** keyword, I can actually cut and paste this here. Then I'll just delete that. This is valid syntax for declaring a **function** on an **object**. If I save and run again, you'll see I get the same result. 
+Another cool thing...I'm going to format this just a little bit, put these on new lines...is that instead of using the function keyword, I can actually cut and paste this here. Then I'll just delete that. This is valid syntax for declaring a function on an object. If I save and run again, you'll see I get the same result. 
 ``` javascript
 var car = {
   color,
@@ -34,7 +34,7 @@ var car = {
   }
 };
 ```
-This is the **ES6** way, and that's the **ES5** way. It's basically a **shorthand** that saves you some typing.
+This is the ES6 way, and that's the ES5 way. It's basically a **shorthand** that saves you some typing.
 ``` javascript
 var car = {
   color,
@@ -44,7 +44,7 @@ var car = {
   }
 };
 ```
-The last fun trick to show you is that if you type something like this, you can actually have a **computed property** where it'll evaluate this. This is pretty much just like if you were to do `car["go"]` like that, but now you're doing it inline inside of an **object declaration**.
+The last fun trick to show you is that if you type something like this, you can actually have a **computed property** where it'll evaluate this. This is pretty much just like if you were to do `car["go"]` like that, but now you're doing it inline inside of an object declaration.
 ``` javascript
 var car = {
   color,

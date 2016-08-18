@@ -21,7 +21,7 @@ var arrowGreeting = message => "hello";
 
 var squared = x => x * x;
 ```
-An extremely common scenario that you've probably run into before whether though `click handlers` or anything else is that, you write a function to handle some sort of action and you write the body of the function, and you run into the scenario where you'll assign that to this because you actually want to get the name off of the parent scope.
+An extremely common scenario that you've probably run into before whether though **click handlers** or anything else is that, you write a function to handle some sort of action and you write the body of the function, and you run into the scenario where you'll assign `that = this` because you actually want to get the name off of the parent scope.
 ``` javascript
 var deliveryBoy = {
   name: "John",
@@ -44,22 +44,22 @@ deliverBoy.receive();
 ```
 The name doesn't exist inside of this scope so we have to do the `that` is `this`, and then, to get `this` in here, you refer to `that`. It can get pretty confusing.
 
-Now, the **arrow function** actually helps handle this scenario. I'm going to delete the `function` keyword. I'll use the **arrow function** syntax. Then, that here can just become this. I can delete this line, delete `that`, and `this` now refers to the outer scope outside of this function because it's passing in this **lexical scope** that's coming in from **above** the function.
+Now, the **arrow function** actually helps handle this scenario. I'm going to delete the `function` keyword. I'll use the arrow function syntax. Then, that here can just become this. I can delete this line, delete `that`, and `this` now refers to the outer scope outside of this function because it's passing in this **lexical scope** that's coming in from **above** the function.
 ``` javascript
 receive: function () {
 
   this.handleMessage("Hello, ", (message) => {
-        console.log(message + that.name);
+        console.log(message + this.name);
       })
 }
 ```
-`this` is no longer referring to the **scope** inside of the function. It's referring to the **scope** that's outside of the function.
+`this` is no longer referring to the **scope** inside of the function. It's referring to the scope that's outside of the function.
 
 Again, if you'd prefer to do this in one line of code, we can delete this brace and bring everything up a line. We can delete the semicolon and delete the closing brace. We can remove the paren from here and handle this nicely in a simple one-liner.
 ``` javascript
 receive: function () {
 
-  this.handleMessage("Hello, ", message => console.log(message + that.name))
+  this.handleMessage("Hello, ", message => console.log(message + this.name))
 }
 ```
-When I run this, you can see it prints out `Hello, John` because this is actually this handler right here and it's getting this message through here, which is coming from here. When the message goes here to here to here, down into our **arrow function**, I add it to this name, and `this.name` is this name now...
+When I run this, you can see it prints out `Hello, John` because this is actually this handler right here and it's getting this message through here, which is coming from here. When the message goes here to here to here, down into our arrow function, I add it to this name, and `this.name` is this name now...

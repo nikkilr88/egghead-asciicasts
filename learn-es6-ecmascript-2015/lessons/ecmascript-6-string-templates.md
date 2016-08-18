@@ -1,4 +1,4 @@
-If you have ever worked with **strings** in **JavaScript**, you've most likely **concatenated** two strings by just saying the **variable** then **plus** and then adding a **string** to it, and then when you run it, you just get `Hello, World`, all put together.
+If you have ever worked with **strings** in **JavaScript**, you've most likely **concatenated** two strings by just saying the variable then plus and then adding a string to it, and then when you run it, you just get `Hello, World`, all put together.
 ```javascript
 var salutation = "Hello";
 var greeting = salutation + ", World";
@@ -56,7 +56,7 @@ ${salutation},
     
 `;
 ```
-It's also worth noting that you can do **expressions** inside of these **braces**. If you want to do `X + Y`, then just show `Y` and just show `X`, and then run this. You can see we get `1 + 2 = 3`, and then this is one.
+It's also worth noting that you can do **expressions** inside of these braces. If you want to do `X + Y`, then just show `Y` and just show `X`, and then run this. You can see we get `1 + 2 = 3`, and then this is one.
 ```javascript
 var x = 1;
 var y = 2;

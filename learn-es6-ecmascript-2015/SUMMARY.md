@@ -14,4 +14,6 @@
 * [ES6 Converting an Array-like Object into an Array with Array.from()](./lessons/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from.md)
 * [Promises with ES6](./lessons/ecmascript-6-promises-with-es6.md)
 * [ES6 Generators](./lessons/ecmascript-6-generators.md)
+* [ES6 Maps and weakMaps](./lessons/ecmascript-6-maps-and-weakmaps-with-es6.md)
+* [ES6 Rest Parameters](./lessons/javascript-es6-rest-parameters.md)
 
