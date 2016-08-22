@@ -58,7 +58,7 @@ We can `import sumTwo as addTwoNumbers`. If we run this, we'll see that `sumTwo`
 import {
   sumTwo as addTwoNumbers,
   sumThree
-} from 'math/addition`;
+} from 'math/addition';
 ```
 Now, let's import the module as a whole. We'll just copy this path here and we'll say, `Import * as addition from` our path. We'll drop this import statement and we just need to make a few updates here, this is going to be called `sumTwo`.
 
