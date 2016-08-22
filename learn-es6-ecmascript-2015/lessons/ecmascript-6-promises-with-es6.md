@@ -40,7 +40,7 @@ If we go up to our promise and we change this `true` to `false`, we'll cause our
 
 Promises are useful for a lot of things. Most importantly, they allow you to perform **asynchronous operations** in a **synchronous-like** manner.
 
-To get an idea of what this asynchronous*behavior would look like, let's go ahead and create a **timeout**. Inside of the `timeout`, we'll create a function, and in this function, let's just put our if-else statement that we were using previously. Let's set a timeout here of two seconds.
+To get an idea of what this asynchronous behavior would look like, let's go ahead and create a `timeout`. Inside of the `timeout`, we'll create a function, and in this function, let's just put our if-else statement that we were using previously. Let's set a timeout here of two seconds.
 ```javascript
 var d = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -52,7 +52,7 @@ var d = new Promise((resolve, reject) => {
   }, 2000);
 });
 ```
-We still have our `false` being evaluated by the i- statement, so after a two-second delay, we should see that our, `Error : No bueno`, is passed into our console. Let's come back down here and run it again. We have a two-second delay where, `Error : No bueno`, is returned to us.
+We still have our `false` being evaluated by the if statement, so after a two-second delay, we should see that our, `Error : No bueno`, is passed into our console. Let's come back down here and run it again. We have a two-second delay where, `Error : No bueno`, is returned to us.
 
 We can go ahead and change this to `true`, run it again, and this time we'll see that we get, `Success : Hello world`, after our two-second delay.
 

@@ -12,13 +12,14 @@ What we can do is we can convert this NodeList into an array, and then we'll be 
 
 In the past there's been a lot of hackey ways to do this, but now with **ECMAScript 2015** we have a **native way** to do it with the `array.from` method. So I'm going to go up here and wrap my NodeList here with `array.from`. 
 
-![Array](../images/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from-Array.png)
-
 If we log this out, we'll be able to see if we open this up again, that it's now of type array. Now we can use the array methods to solve our original problem of highlighting numbers that are less than 10 in the list.
 ```JavaScript
 const products = 
 Array.from(document.querySelectorAll('.product'));
 ```
+
+![Array](../images/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from-Array.png)
+
 What I'm going to do now is say `products`, and we'll `filter` those products, and we'll filter if the product, the number inside of that product, supply `parseFloat` and we'll grab the `product.innerHTML`, and we'll check if it is less than $10. Then when we get that list of the products that are less than $10, we're going to `forEach` over them, and for each of those products, we're going to say `product.style.color` and we'll set that equal to red.
 ```javascript
 products

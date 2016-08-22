@@ -5,11 +5,15 @@ var speed = 10;
 
 var car = {color, speed};
 
-console.log(car.color);
-console.log(car.speed);
+console.log(car.color); // "red"
+console.log(car.speed); // 10
 ```
 That's because if you **declare a property** with the exact **same name** as something, it'll treat it just as if you did `color:color` and `speed:speed`. This is the **ES5** way, and this is the ES6 way.
 ``` javascript
+// ES6
+var car = {color, speed}
+
+//ES5
 var car = {color:color, speed:speed};
 ```
 This even works for functions. If I create a function called `go` and say `vroom`, I can simply add another property here, call it `go`, and then say, `car.go()`. Then I'll run this. You can see it says, `vroom`.
@@ -22,10 +26,11 @@ function go() {
 
 var car = {color, speed, go};
 
-car.go();
+car.go(); // "vroom"
 ```
 Another cool thing...I'm going to format this just a little bit, put these on new lines...is that instead of using the function keyword, I can actually cut and paste this here. Then I'll just delete that. This is valid syntax for declaring a function on an object. If I save and run again, you'll see I get the same result. 
 ``` javascript
+// ES6
 var car = {
   color,
   speed,
@@ -36,6 +41,7 @@ var car = {
 ```
 This is the ES6 way, and that's the ES5 way. It's basically a **shorthand** that saves you some typing.
 ``` javascript
+// ES5
 var car = {
   color,
   speed,

@@ -1,4 +1,4 @@
-**default arguments** in **ES6** allow you to assign some defaults to these guys. If I run this right now you'll see I'll get `undefined, undefined` because nothing was passed in for `greeting` or `names`, so when they get logged out they're both `undefined`.
+**Default arguments** in **ES6** allow you to assign some defaults to these guys. If I run this right now you'll see I'll get `undefined, undefined` because nothing was passed in for `greeting` or `names`, so when they get logged out they're both `undefined`.
 ``` javascript
 function greet(greeting, name){
   console.log(greeting + ", " + name);

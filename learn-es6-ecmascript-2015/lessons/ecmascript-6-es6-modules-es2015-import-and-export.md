@@ -1,4 +1,4 @@
-**ES6** or ES2015 introduces a standardized **module format**. I have an `index.html` file here and I've loaded it here just for the browser sync server so that we can get some live reloading. I go ahead and type this, we'll say, `With Webpack and Babel`. See that reloads. We may have an **entry point** already set up.
+ES6 or ES2015 introduces a standardized **module format**. I have an `index.html` file here and I've loaded it here just for the browser sync server so that we can get some live reloading. I go ahead and type this, we'll say, `With Webpack and Babel`. See that reloads. We may have an **entry point** already set up.
 
 If I just log to the console, let's create a function here, that's going to sum two numbers and take A and B, `sumTwo(a, b)` and will just return that, `A + B`. If we want to log that out, we'll just say this, `2 + 3`. I want to take the result of this, two and three.
 ```javascript
@@ -29,8 +29,8 @@ import { sumTwo } from `math/addition`;
 Now, let's add another function to the `addition` Module. We will add three numbers together, two plus three plus four. We'll just create this. We'll call this `sumThree()`.
 ### main.js
 ```javascript
-cnosole.log(
-  "2 + 3 + 4+,
+console.log(
+  "2 + 3 + 4",
   sumThree(2, 3, 4)
 );
 ```

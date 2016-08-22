@@ -39,7 +39,7 @@ console.log(next);          // You called 'next()'
 let done = greeter.next();
 console.log(done);          // { value: undefined, done: true }
 ```
-If you have **multiple yield statements** like `How`, `are`, and `you` and you run this with only calling `next()` once you can see that it **stops** after calling `how`. This is not called. That's not called, and that's not called.
+If you have **multiple yield statements** like `How`, `are`, and `you` and you run this with only calling `next()` once you can see that it **stops** after calling `how`. This, `console.log('I'm not called until the second next')`, is not called. That, `console.log('Call me before "you?"');` not called, and that, `console.log('Called when "done"');`  not called.
 ```javascript
 function* greet(){
   console.log(`Generators are "lazy"`);
@@ -113,7 +113,7 @@ console.log(greeter.next(" silly ol`").value);  //  silly ol'you?
 One thing to note is that because this **assignment** happens on the **run after** the **first** one it's actually impossible to **pass a value** in here. 
 ```javascript
 var greeter = greet();
-console.log(greeter.next("first").value); // TpeError: Sent value to newborn generator
+console.log(greeter.next("first").value); // TypeError: Sent value to newborn generator
 ```
 If I try and say `"first"` and run this I'll get an error saying, `Sent value to a newborn generator`, because you haven't given this a chance to run and iterate and go to the `next()` step where you could actually pass in a value.
 
@@ -133,7 +133,9 @@ var graphGenerator = graph();
 console.log(graphGenerator.next().value);
 ```
 It will safely pause instead of infinitely going through this while loop. When I run this, you can see I get zero, two, four, six, eight and so on. Zero, one, two, three, four, and so on. 
+
 ![Graph Output](../images/ecmascript-6-generators-graph-output.png)
+
 I could generate these forever. They're also only created when I request them through the yield. They're not created ahead of time.
 
 Don't worry. We will dive more into practical use cases of **generators** in future videos.

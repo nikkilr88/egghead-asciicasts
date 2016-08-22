@@ -26,7 +26,9 @@ ${salutation},
     
 `;
 ```
+
 ![String Templates Respect Whitespace](../images/ecmascript-6-string-templates-maintains-whitespace.png)
+
 I could pull off things like `hello you crazy world, how are you`, and rerun this and you can see, we can **manipulate strings** however we'd like.
 ```javascript
 var greeting = `
@@ -62,7 +64,7 @@ var x = 1;
 var y = 2;
 var equation = `${ x } + ${ y } = ${x + y}`
 
-console.log(equation);
+console.log(equation); // "1 + 2 = 3"
 ```
 There's this string plus, there's two, there's the string equals, and then `X + Y` is the expression.
 
@@ -70,7 +72,7 @@ Lastly, is a basic introduction to **tagging** these **string templates** that I
 ```javascript
 var message = `Its ${new Date().getHours()} Im sleepy`;
 
-console.log(message);
+console.log(message); // "It's 15 I'm sleepy"
 ```
 I don't get sleepy until after 20, so all I have here is this and how am I going to make this into a variable? Well, I can actually **parse** out this `message` and get this value and **change this string** based on this **value**.
 
@@ -81,8 +83,8 @@ var message = tag`Its ${new Date().getHours()} Im sleepy`;
 I'll say, `function tag`, you can name it whatever you want, `tag` or `parse`, or whatever, and then it takes these `strings` and the `...values`, these `strings` being an **array**.
 ```javascript
 function tag(strings, ...values){
-  console.log(strings);
-  console.log(values);
+  console.log(strings); // [ 'It\'s', 'I\'m sleepy' ]
+  console.log(values);  // [ 15 ]
 }
 ```
 We'll log this out. The **array** of `It's` and `I'm sleepy` are the two **strings**. This piece and this piece, and then the values are the values found in here.
