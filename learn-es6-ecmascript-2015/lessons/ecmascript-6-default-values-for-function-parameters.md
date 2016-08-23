@@ -60,6 +60,6 @@ function receive(complete = () => console.log("complete")){
 ```
 If you want to go completely crazy with arrow functions, which I don't recommend, you could go `let receive` and I'll assign it to an arrow function, delete these braces, pull everything up to the same line, and then just invoke it this way. It still runs and this just doesn't look like JavaScript.
 ``` javascript
-let receive = (complete = ()=> console.log("complete")) => complete();
+let receive = (complete = () => console.log("complete")) => complete();
 ```
 It's not a JavaScript you'd write, but it's very unfamiliar with the new syntax, with the arrow functions and the default assignments all working on the same line.
