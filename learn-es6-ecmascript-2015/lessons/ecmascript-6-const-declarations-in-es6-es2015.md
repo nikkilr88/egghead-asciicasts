@@ -12,8 +12,10 @@ const VALUE = 'hello world';
 VALUE = 'foo bar';
 console.log('value: ', VALUE);
 ```
-In the example if I try to reassign the value to `foo bar`, we'll see the value is **read only error** thrown, because we have declared this variable as a constant. It's important to understand that what a `const` is, is not actually a constant variable, but a **constant reference**. 
+In the example if I try to reassign the value to `foo bar`, we'll see the value is **read only error** thrown, because we have declared this variable as a constant. It's important to understand that what a `const` is, is not actually a constant variable, but a **constant reference**.
+
 ![Read Only Error](../images/ecmascript-6-const-declarations-in-es6-es2015-read-only-error.png)
+
 In the example, I have declared **value** to be an **object**. Down below, I can **assign** and reassign **properties** of that object without breaking my const rules. If I `console.log()` out `value`, we'll see an object with a **key-value pair** of `foo: bar` returned to us. However, if I try to reassign the value of `foo` to just the **string literal** `bar`, our value is read only error is once again thrown, because I have **changed the reference** of this const declaration. There are many common use cases for why you might want to use a `const` in your application.
 
 Perhaps you're using a third-party API, where you want to specify an **API key**, an **API secret** that will remain constant throughout the use of your application. Some other common use cases include assigning a **port number** in a node application, perhaps creating a margin that is used for profit and loss calculations within an application, or maybe you just want a constant reference to pi, which you know will not change.

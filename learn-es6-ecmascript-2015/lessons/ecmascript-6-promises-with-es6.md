@@ -44,7 +44,7 @@ To get an idea of what this asynchronous behavior would look like, let's go ahea
 ```javascript
 var d = new Promise((resolve, reject) => {
   setTimeout(() => {
-    if (true) {
+    if (false) {
       resolve('hello world');
     } else {
       reject('no bueno');

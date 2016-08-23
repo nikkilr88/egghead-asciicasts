@@ -13,7 +13,7 @@ That's because if you **declare a property** with the exact **same name** as som
 // ES6
 var car = {color, speed}
 
-//ES5
+// ES5
 var car = {color:color, speed:speed};
 ```
 This even works for functions. If I create a function called `go` and say `vroom`, I can simply add another property here, call it `go`, and then say, `car.go()`. Then I'll run this. You can see it says, `vroom`.

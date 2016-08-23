@@ -133,9 +133,16 @@ var graphGenerator = graph();
 console.log(graphGenerator.next().value);
 ```
 It will safely pause instead of infinitely going through this while loop. When I run this, you can see I get zero, two, four, six, eight and so on. Zero, one, two, three, four, and so on. 
-
-![Graph Output](../images/ecmascript-6-generators-graph-output.png)
-
+```javascript
+// {x: 0, y: 0}
+// {x: 2, y: 1}
+// {x: 4, y: 2}
+// {x: 6, y: 3}
+// {x: 8, y: 4}
+// {x: 10, y: 5}
+// {x: 12, y: 6}
+// {x: 14, y: 7}
+```
 I could generate these forever. They're also only created when I request them through the yield. They're not created ahead of time.
 
 Don't worry. We will dive more into practical use cases of **generators** in future videos.

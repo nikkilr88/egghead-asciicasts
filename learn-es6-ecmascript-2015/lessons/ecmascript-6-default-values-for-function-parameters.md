@@ -54,7 +54,7 @@ receive();
 ```
 We can make this a little bit shorter using the [arrow syntax](https://egghead.io/arrow-function) that I've covered before. If I do that and then get rid of the braces and then bring everything up to the same line, you can see that I can assign a default function, all within that same line, run it again, and I still get `complete`.
 ``` javascript
-function receive(complete = ()=> console.log("complete")){
+function receive(complete = () => console.log("complete")){
   complete();
 }
 ```
