@@ -6,7 +6,7 @@ console.log(products)
 ```
 Then let's log these out, see what they contain. So we can see that we have our `products` and if we open this up, we can see that they are of the type **NodeList**, and the problem with the NodeList is that it's like an array but it's **not** an **array**, so it doesn't have all of the typical array **methods** that we want to use like `filter`, and `forEach`, and `reduce`. 
 
-![NodeList](../images/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from-NodeList.png)
+![NodeList](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/learn-es6-ecmascript-2015/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from-NodeList.png)
 
 What we can do is we can convert this NodeList into an array, and then we'll be able to use the array methods on the lists.
 
@@ -18,7 +18,7 @@ const products =
 Array.from(document.querySelectorAll('.product'));
 ```
 
-![Array](../images/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from-Array.png)
+![Array](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/learn-es6-ecmascript-2015/ecmascript-6-converting-an-array-like-object-into-an-array-with-array-from-Array.png)
 
 What I'm going to do now is say `products`, and we'll `filter` those products, and we'll filter if the product, the number inside of that product, supply `parseFloat` and we'll grab the `product.innerHTML`, and we'll check if it is less than $10. Then when we get that list of the products that are less than $10, we're going to `forEach` over them, and for each of those products, we're going to say `product.style.color` and we'll set that equal to red.
 ```javascript

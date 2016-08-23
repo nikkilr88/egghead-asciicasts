@@ -93,10 +93,10 @@ myMap.set('string', 2);
 ```
 If we go up here, and we change var myMap to a weakMap, and we run this again, we'll see that we get some errors.
 
-![Invalid Value](../images/ecmascript-6-maps-and-weakmaps-with-es6-invalid-value.png) 
+![Invalid Value](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/learn-es6-ecmascript-2015/ecmascript-6-maps-and-weakmaps-with-es6-invalid-value.png) 
 
 The first thing we get is that we cannot use a string as a key in our weakMap. If we go ahead and get rid of that string and run the output again, we'll see that we get a new error.
 
-![Entries not a Function](../images/ecmascript-6-maps-and-weakmaps-with-es6-entries-not-function.png)
+![Entries not a Function](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/learn-es6-ecmascript-2015/ecmascript-6-maps-and-weakmaps-with-es6-entries-not-function.png)
 
 This time, we see that entries is not a function. Because of the enumerable nature of our weakMaps, that means that all of these iterator API methods available to us on the map is no longer available on the weakMap.
