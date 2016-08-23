@@ -1,0 +1,29 @@
+{
+  "name": "learn-es6-ecmascript-2015",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [ES6 Series](https://egghead.io/courses/learn-es6-ecmascript-2015)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggheadio/egghead-asciicasts.git"
+  },
+  "keywords": [
+    "asciicast",
+    "javascript"
+  ],
+  "author": "egghead.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eggheadio/egghead-asciicasts/issues"
+  },
+  "homepage": "https://github.com/eggheadio/egghead-asciicasts#readme",
+  "dependencies": {
+        "express": "^4.13.4",
+        "gitbook-plugin-advanced-emoji": "^0.1.6",
+        "gitbook-plugin-hints": "^1.0.1",
+        "gitbook-plugin-prism": "^1.0.0"
+    }
+}
