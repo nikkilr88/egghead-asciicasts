@@ -1,0 +1,509 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Wrapping dispatch() to Log Actions · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-adding-a-fake-backend-to-the-project.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-normalizing-the-state-shape.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                <a href="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                    
+                    Simplifying the Arrow Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-supplying-the-initial-state.html">
+            
+                <a href="javascript-redux-supplying-the-initial-state.html">
+            
+                    
+                    Supplying the Initial State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                <a href="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                    
+                    Persisting the State to the Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-refactoring-the-entry-point.html">
+            
+                <a href="javascript-redux-refactoring-the-entry-point.html">
+            
+                    
+                    Refactoring the Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-adding-react-router-to-the-project.html">
+            
+                <a href="javascript-redux-adding-react-router-to-the-project.html">
+            
+                    
+                    Adding React Router to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-navigating-with-react-router-link.html">
+            
+                <a href="javascript-redux-navigating-with-react-router-link.html">
+            
+                    
+                    Navigating with React Router 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                <a href="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                    
+                    Filtering Redux State with React Router Params
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                <a href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                    
+                    Using withRouter() to Inject the Params into Connected Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                <a href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                    
+                    Using mapDispatchToProps() Shorthand Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                <a href="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                    
+                    Colocating Selectors with Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-normalizing-the-state-shape.html">
+            
+                <a href="javascript-redux-normalizing-the-state-shape.html">
+            
+                    
+                    Normalizing the State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                    
+                    Wrapping dispatch() to Log Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                <a href="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                    
+                    Adding a Fake Backend to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Wrapping dispatch() to Log Actions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>Now that my state shape is more complex, I want to override the <code>store.dispatch</code> function to add some console logs there so that I can see how the state is affected by the actions.</p><p><strong>configureStore</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> configureStore = () =&gt; {
+  <span class="hljs-keyword">const</span> persistedState = loadState();
+  <span class="hljs-keyword">const</span> store = createStore(todoApp, persistedState);
+
+  store.dispatch = addLoggingToDispatch(store);
+
+  store.subscribe(throttle(() =&gt; { ... }</code></pre>
+<p>I&apos;m creating the new function called <code>addLoggingToDispatch</code>, that accepts <code>store</code> as an argument. It&apos;s going to wrap the dispatch provided by Redux, so it reads the raw dispatch from <code>store.dispatch</code>.</p><p><strong>configureStore</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+
+}</code></pre>
+<p>It will return another function with the same signature as <code>dispatch</code>, which is a single <code>action</code> argument. Some browsers like Chrome support using <strong>console group API</strong> to group several log statements under a single title, and I&apos;m passing the <code>action.type</code> in order to group several logs under the <code>action.type</code>.</p><p><strong>configureStore</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">return</span> (action) =&gt; {
+    <span class="hljs-built_in">console</span>.group(action.type);
+    <span class="hljs-built_in">console</span>.groupEnd(action.type);
+  };
+};</code></pre>
+<p>I will log the previous state before dispatching the action by calling <code>store.getState()</code>. Next, I will log the action itself so that I can see which action causes the change.</p><p><strong>configureStore</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">return</span> (action) =&gt; {
+    <span class="hljs-built_in">console</span>.group(action.type);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;prev state&apos;</span>, store.getState());
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;action&apos;</span>, action); 
+    <span class="hljs-built_in">console</span>.groupEnd(action.type);
+  };
+};</code></pre>
+<p>To preserve the contract of the dispatch function exactly, I am declaring the <code>returnValue</code>, and I&apos;m calling the <code>rawDispatch()</code> function with the <code>action</code>. Now the calling code will not be able to distinguish between my function and the function provided by Redux, except that I also log some information.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">return</span> (action) =&gt; {
+    <span class="hljs-built_in">console</span>.group(action.type);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;prev state&apos;</span>, store.getState());
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;action&apos;</span>, action); 
+    <span class="hljs-keyword">const</span> returnValue = rawDispatch(action);
+    <span class="hljs-built_in">console</span>.groupEnd(action.type);
+    <span class="hljs-keyword">return</span> returnValue;
+  };
+};</code></pre>
+<p>I want to log the next state as well, because after the dispatch is called, the state is guaranteed to be updated, so I can use <code>store.getState()</code> in order to receive the next state after the dispatch.</p><p><strong>configureStore</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">return</span> (action) =&gt; {
+    ...
+    const returnValue = rawDispatch(action);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;next state&apos;</span>, store.getState());
+    ... 
+  }
+}</code></pre>
+<p>Some browsers, such as Google Chrome, also offer an API to style console logs, and I&apos;m going to add some colors to my logs. I&apos;m painting the previous state gray. The action is blue, and the next state is green.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">return</span> (action) =&gt; {
+    <span class="hljs-built_in">console</span>.group(action.type);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%c prev state&apos;</span>, <span class="hljs-string">&apos;color: gray&apos;</span>, store.getState());
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%c action&apos;</span>, <span class="hljs-string">&apos;color: blue&apos;</span>, action); 
+    <span class="hljs-keyword">const</span> returnValue = rawDispatch(action);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%c next state&apos;</span>, <span class="hljs-string">&apos;color: green&apos;</span>, store.getState());
+    <span class="hljs-built_in">console</span>.groupEnd(action.type);
+    <span class="hljs-keyword">return</span> returnValue;
+  };
+};</code></pre>
+<p>A few final touches. Since the console group API is not available in all browsers, if it&apos;s not supported, I&apos;ll just return the raw dispatch as is.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">console</span>.group) {
+    <span class="hljs-keyword">return</span> rawDispatch;
+  }
+
+  <span class="hljs-keyword">return</span> (action) =&gt; {...}
+</code></pre>
+<p>Finally, it&apos;s not a good idea to log everything in production, so I&apos;ll add a gate saying that <code>if (process.env.NODE_ENV ...)</code> is not production, then I&apos;m going to run this code. Otherwise, I&apos;m just going to leave the store as is.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> configureStore = () =&gt; {
+  <span class="hljs-keyword">const</span> persistedState = loadState();
+  <span class="hljs-keyword">const</span> store = createStore(todoApp, persistedState);
+
+  <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+    store.dispatch = addLoggingToDispatch(store);
+  }
+
+  store.subscribe(throttle(() =&gt; {...}
+</code></pre>
+<p>Let&apos;s have a look at how our app runs with the wrapped dispatch function. Now, every time I dispatch an action such as <code>ADD_TODO</code>, I can see it in the log. In the previous state, I can see that there are no IDs, and the <code>byId</code> look-up table is empty.</p><p><img alt="console output" src="../images/javascript-redux-wrapping-dispatch-to-log-actions-output-1.png"></p><p>Then I see the action with the type <code>ADD_TODO</code>, and the ID and text of the todo. Finally, in the state after dispatching the action, I can see both the ID in all IDs and the corresponding todo in the <code>byId</code> mapping.</p><p><img alt="console output" src="../images/javascript-redux-wrapping-dispatch-to-log-actions-output-2.png"></p><p>The only way to change the Redux store state is by dispatching an action, and now we log every action along with the state before and after it, so it&apos;s really easy to find, if there is a mistake in the state, which action caused it.</p><p>Let&apos;s recap how this works. I added a new function that takes the <code>store</code>, grabs dispatch from it, and if your browser doesn&apos;t support the console group API, it&apos;ll just return the original dispatch function.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">console</span>.group) {
+    <span class="hljs-keyword">return</span> rawDispatch;
+  }
+
+  <span class="hljs-keyword">return</span> (action) =&gt; {...}
+</code></pre>
+<p>Otherwise, I will return a new function that looks like dispatch. It accepts the <code>action</code> argument, and it even calls the original dispatch function inside. However, it also places a few logs into a group with the action type.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addLoggingToDispatch = (store) =&gt; {
+  <span class="hljs-keyword">const</span> rawDispatch = store.dispatch;
+  <span class="hljs-keyword">return</span> (action) =&gt; {
+    <span class="hljs-built_in">console</span>.group(action.type);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%c prev state&apos;</span>, <span class="hljs-string">&apos;color: gray&apos;</span>, store.getState());
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%c action&apos;</span>, <span class="hljs-string">&apos;color: blue&apos;</span>, action); 
+    <span class="hljs-keyword">const</span> returnValue = rawDispatch(action);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%c next state&apos;</span>, <span class="hljs-string">&apos;color: green&apos;</span>, store.getState());
+    <span class="hljs-built_in">console</span>.groupEnd(action.type);
+    <span class="hljs-keyword">return</span> returnValue;
+  };
+};</code></pre>
+<p>I log the previous state by calling store get state before dispatching. I also log the action that caused the change, and finally, because I know that the store dispatch function is synchronous, I can call <code>store.getState()</code> again right after it to log the next state of the store.</p><p>Finally, to keep complete compatibility with the underlying dispatch function, I return whatever it returned. Usually, this is the action object.</p><p>My function returns a wrapped dispatch function, so I will use it to return value to override the <code>store.dispatch</code> method. I don&apos;t want to run this code in production, so wrap it in an environment check.</p><p><strong>configureStore.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> configureStore = () =&gt; {
+  <span class="hljs-keyword">const</span> persistedState = loadState();
+  <span class="hljs-keyword">const</span> store = createStore(todoApp, persistedState);
+
+  <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+    store.dispatch = addLoggingToDispatch(store);
+  }
+
+  store.subscribe(throttle(() =&gt; {...}
+</code></pre>
+<p>This check by itself is not enough, and it will only work correctly if in the production build you use <strong>Define plugin</strong> for Webpack or [inaudible 4:29] transform for <strong>Browserify</strong>.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-normalizing-the-state-shape.html" class="navigation navigation-prev " aria-label="Previous page: Normalizing the State Shape">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-adding-a-fake-backend-to-the-project.html" class="navigation navigation-next " aria-label="Next page: Adding a Fake Backend to the Project">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Wrapping dispatch() to Log Actions","level":"1.13","depth":1,"next":{"title":"Adding a Fake Backend to the Project","level":"1.14","depth":1,"path":"lessons/javascript-redux-adding-a-fake-backend-to-the-project.md","ref":"./lessons/javascript-redux-adding-a-fake-backend-to-the-project.md","articles":[]},"previous":{"title":"Normalizing the State Shape","level":"1.12","depth":1,"path":"lessons/javascript-redux-normalizing-the-state-shape.md","ref":"./lessons/javascript-redux-normalizing-the-state-shape.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lessons/javascript-redux-wrapping-dispatch-to-log-actions.md","mtime":"2016-08-23T21:28:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-24T21:28:02.324Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

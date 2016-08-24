@@ -1,0 +1,494 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Filtering Redux State with React Router Params · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-navigating-with-react-router-link.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                <a href="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                    
+                    Simplifying the Arrow Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-supplying-the-initial-state.html">
+            
+                <a href="javascript-redux-supplying-the-initial-state.html">
+            
+                    
+                    Supplying the Initial State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                <a href="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                    
+                    Persisting the State to the Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-refactoring-the-entry-point.html">
+            
+                <a href="javascript-redux-refactoring-the-entry-point.html">
+            
+                    
+                    Refactoring the Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-adding-react-router-to-the-project.html">
+            
+                <a href="javascript-redux-adding-react-router-to-the-project.html">
+            
+                    
+                    Adding React Router to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-navigating-with-react-router-link.html">
+            
+                <a href="javascript-redux-navigating-with-react-router-link.html">
+            
+                    
+                    Navigating with React Router 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                <a href="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                    
+                    Filtering Redux State with React Router Params
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                <a href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                    
+                    Using withRouter() to Inject the Params into Connected Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                <a href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                    
+                    Using mapDispatchToProps() Shorthand Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                <a href="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                    
+                    Colocating Selectors with Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-normalizing-the-state-shape.html">
+            
+                <a href="javascript-redux-normalizing-the-state-shape.html">
+            
+                    
+                    Normalizing the State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                    
+                    Wrapping dispatch() to Log Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                <a href="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                    
+                    Adding a Fake Backend to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Filtering Redux State with React Router Params</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>I&apos;m using the links provided by <strong>React Router</strong> now, so when I click on a link, the URL gets updated. However, the content does not get updated because the <code>VisibleTodoList</code> component in its <code>mapStateToProps</code> function still depends on the <code>visibilityFilter</code> in the Redux store instead of reading it from the URL.</p><p><strong>VisibleTodoList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; ({
+  todos: getVisibleTodos(
+    state.todos,
+    state.visibilityFilter
+  ),
+});</code></pre>
+<p>I am adding an argument called <code>ownProps</code> to the <code>mapStateToProps</code> function, and I&apos;m going to read the current <code>visibilityFilter</code> from <code>ownProps</code>. I will also change the <code>getVisibleTodos</code> function to use the current convention we use for the <code>filter</code> prop that is all <code>completed</code> or <code>active</code>.</p><p><strong>VisibleTodoList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> getVisibleTodos = (todos, filter) =&gt; {
+  <span class="hljs-keyword">switch</span> (filter) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;all&apos;</span>:
+      <span class="hljs-keyword">return</span> todos;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;completed&apos;</span>:
+      reutrn todos.filter(t =&gt; t.completed);
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;active&apos;</span>:
+      <span class="hljs-keyword">return</span> todos.filter(t =&gt; !t.completed);
+    <span class="hljs-keyword">default</span>: 
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Unknown filter: ${filter}&apos;</span>)
+  } 
+}</code></pre>
+<p>The <code>VisibleTodoList</code> component gets rendered from the app, so this is where we need to add the <code>filter</code> prop to make it available in the <code>mapStateToProps</code> function of the <code>VisibleTodoList</code>.</p><p><strong>App.js</strong></p><pre><code class="lang-html">const App = () =&gt; (
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AddTodo</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">VisibleTodoList</span>
+      <span class="hljs-attr">filter</span>=<span class="hljs-string">{filter}</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+);</code></pre>
+<p>We want the <code>filter</code> prop to correspond to the current <code>filter</code> parameter in our route configuration. React Router makes such parameters available to the route handler components in a special prop called <code>params</code>, so I&apos;m adding a <code>params</code> prop to the app, and now I can read the filter from <code>params.filter</code>.</p><p><strong>App.js</strong></p><pre><code class="lang-html">const App = ({ params }) =&gt; (
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AddTodo</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">VisibleTodoList</span>
+      <span class="hljs-attr">filter</span>=<span class="hljs-string">{params.filter}</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+);</code></pre>
+<p>Since its empty on the root path, I&apos;m passing <code>all</code> as a fallback to the <code>VisibleTodoList</code>. Now I&apos;ll refresh the app, and as I press the <code>visibilityFilter</code> links, not only does the URL update, but also the console updates, even if I use back and forward buttons in the browser.</p><p><img alt="output" src="../images/javascript-redux-filtering-redux-state-with-react-router-params-output.png"></p><p><strong>App.js</strong></p><pre><code class="lang-html">const App = ({ params }) =&gt; (
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AddTodo</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">VisibleTodoList</span>
+      <span class="hljs-attr">filter</span>=<span class="hljs-string">{params.filter</span> || &apos;<span class="hljs-attr">all</span>&apos;}
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+);</code></pre>
+<p>One common problem after enabling routing is, if we go to another path and press refresh, your dev server may not be configured correctly to serve anything but the root path.</p><p><img alt="invalid" src="../images/javascript-redux-filtering-redux-state-with-react-router-params-invalid.png"></p><p>I&apos;m using <code>Express</code> with <code>webpackDevMiddleware</code> in my development, so I just need to tell <strong>Express</strong> to serve index HTML no matter what the path is. This way, the dev server always serves the same HTML file, and React Router matches the route on the client.</p><p><strong>devServer.js</strong></p><pre><code class="lang-javascript">app.get(<span class="hljs-string">&apos;/*&apos;</span>, (req, res) =&gt; {
+  res.sendFile(path.join(__dirname, <span class="hljs-string">&apos;index.html&apos;</span>));
+});</code></pre>
+<p>Now that the <code>visibilityFilter</code> is managed by React Router, I no longer need the <code>visibilityFilter</code> reducer. I&apos;m just going to delete it and also remove it from the combined reducers declaration in reducers/index.js.</p><p><strong>reducers/index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { combineReducers } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-keyword">import</span> todos <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./todos&apos;</span>;
+
+<span class="hljs-keyword">const</span> todoApp = combineReducers({
+  todos,
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> todoApp;</code></pre>
+<p>Let&apos;s recap how React Router became the source of truth for the <code>visibilityFilter</code>. In the root component, I render the <code>Router</code>, and I only have a single route with an optional <code>:filter</code> parameter. The <code>:filter</code> parameter gets passed into the <code>{App}</code> component by React Router. React Router will make it available inside a special <code>{ params }</code> prop.</p><p><strong>Root.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Root = ({ store }) =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{broswerHistory}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/(:filter)&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{App}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+);</span></code></pre>
+<p><strong>App.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> App = ({ params }) =&gt; (
+  &lt;div&gt;
+    &lt;AddTodo /&gt;
+    &lt;VisibleTodoList
+      filter={parms.filter || &apos;all&apos;}
+    /&gt;
+    &lt;Footer /&gt;
+  &lt;/div&gt;
+);</code></pre>
+<p>I am passing the <code>filter</code> param from the URL, or <code>&apos;all&apos;</code> if we are on the root path, to the <code>VisibleTodoList</code> component as a <code>filter</code> prop. The <code>VisibleTodoList</code> component now reads the <code>filter</code> from its props and not from the state, so it uses the <code>filter</code> specified by the app</p><p><strong>VisibleTodoList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mapStateToProps = (state, ownProps) =&gt; ({
+  todos: getVisibleTodos(
+    state.todos, 
+    ownProps.filter
+  ),
+});</code></pre>
+<p>I change the <code>getVisibleTodos</code> function to use the current filter names, <code>all</code>, <code>completed</code>, and <code>active</code>. For consistency, the footer component now also uses these names as the value of the filter prop for the &apos;FilterLink<code>, and I re-implemented the</code>FilterLink<code>to use the</code>Link` provided by React Router instead of our own implementation.</p><p><strong>FilterLink.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> FilterLink = ({ filter, children }) =&gt; {
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span>
+    <span class="hljs-attr">to</span>=<span class="hljs-string">{filter</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">all</span>&apos; ? &apos;&apos; <span class="hljs-attr">:</span> <span class="hljs-attr">filter</span>}
+    <span class="hljs-attr">activeStyle</span>=<span class="hljs-string">{{</span>
+      <span class="hljs-attr">textDecoration:</span> &apos;<span class="hljs-attr">none</span>&apos;,
+      <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">black</span>&apos;,
+    }}
+  &gt;</span>
+   {children}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>
+};</code></pre>
+<p>Finally, I fix the dev server to correctly return index HTML no matter which path is requested, so that React Router can pick it up on the client.</p><p><strong>devServer.js</strong></p><pre><code class="lang-javascript">app.get(<span class="hljs-string">&apos;/*&apos;</span>, (req, res) =&gt; {
+  res.sendFile(path.join(__dirname, <span class="hljs-string">&apos;index.html&apos;</span>));
+});</code></pre>
+<p>You might think that making the router in control of the <code>visibilityFilter</code> contradicts the idea of a single-state tree. However, in practice, what matters is that there&apos;s just one single source of truth for any independent piece of data.</p><p>We&apos;re using Redux as the source of truth for the todos, and we&apos;re using React Router as the source of truth for anything that can be computed from the URL. In our case, this is the current <code>visibilityFilter</code>.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-navigating-with-react-router-link.html" class="navigation navigation-prev " aria-label="Previous page: Navigating with React Router ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html" class="navigation navigation-next " aria-label="Next page: Using withRouter() to Inject the Params into Connected Components">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Filtering Redux State with React Router Params","level":"1.8","depth":1,"next":{"title":"Using withRouter() to Inject the Params into Connected Components","level":"1.9","depth":1,"path":"lessons/javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.md","ref":"./lessons/javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.md","articles":[]},"previous":{"title":"Navigating with React Router ","level":"1.7","depth":1,"path":"lessons/javascript-redux-navigating-with-react-router-link.md","ref":"./lessons/javascript-redux-navigating-with-react-router-link.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lessons/javascript-redux-filtering-redux-state-with-react-router-params.md","mtime":"2016-08-24T19:38:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-24T21:28:02.324Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,469 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Colocating Selectors with Reducers · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-normalizing-the-state-shape.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                <a href="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                    
+                    Simplifying the Arrow Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-supplying-the-initial-state.html">
+            
+                <a href="javascript-redux-supplying-the-initial-state.html">
+            
+                    
+                    Supplying the Initial State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                <a href="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                    
+                    Persisting the State to the Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-refactoring-the-entry-point.html">
+            
+                <a href="javascript-redux-refactoring-the-entry-point.html">
+            
+                    
+                    Refactoring the Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-adding-react-router-to-the-project.html">
+            
+                <a href="javascript-redux-adding-react-router-to-the-project.html">
+            
+                    
+                    Adding React Router to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-navigating-with-react-router-link.html">
+            
+                <a href="javascript-redux-navigating-with-react-router-link.html">
+            
+                    
+                    Navigating with React Router 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                <a href="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                    
+                    Filtering Redux State with React Router Params
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                <a href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                    
+                    Using withRouter() to Inject the Params into Connected Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                <a href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                    
+                    Using mapDispatchToProps() Shorthand Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                <a href="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                    
+                    Colocating Selectors with Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-normalizing-the-state-shape.html">
+            
+                <a href="javascript-redux-normalizing-the-state-shape.html">
+            
+                    
+                    Normalizing the State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                    
+                    Wrapping dispatch() to Log Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                <a href="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                    
+                    Adding a Fake Backend to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Colocating Selectors with Reducers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>My <code>mapStateToProps</code> function uses the <code>getVisibleTodos</code> function, and it passes the slice of the state corresponding to the todos. However, if I ever change the state structure, I&apos;ll have to remember to update this whole side.</p><p><strong>VisibleTodoList</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mapStateToProps = (state, { params }) =&gt; ({
+  todos: getVisibleTodos(state.todos, params.filter || <span class="hljs-string">&apos;all&apos;</span>)
+});</code></pre>
+<p>Alternatively, I can move the <code>getVisibleTodos</code> function out of my view layer and place it in the file that knows best about the <code>state.todos</code> internal structure.</p><p>The file that determines the internal structure of todos is the file that contains the <code>todos</code> reducer. This is why I&apos;m placing my <code>getVisibleTodos</code> implementation right into the file with reducers, and I&apos;m making it a <strong>named export</strong>.</p><p><strong>todos.js</strong></p><pre><code class="lang-javascript">export const getVisibleTodos = (todos, filter) =&gt; {
+  switch (filter) {
+    case &apos;all&apos;;
+      return todos;
+    case &apos;completed&apos;;
+      return todos.filter(t =&gt; t.completed);
+    case &apos;active&apos;:
+      return todos.filter(t =&gt; !t.completed);
+    default:
+      throw new Error(&apos;Unknown filter: ${filter}.`);
+  }
+};</code></pre>
+<p>The convention I follow is simple. The default export is <strong>always the reducer function</strong>, but any named export starting with <code>get</code> is a function that prepares the data to be displayed by the UI. We usually call these functions <strong>selectors</strong> because they select something from the current state.</p><p>In the reducers, the <code>state</code> argument corresponds to the state of this particular reducer. I&apos;ll follow the same convention in selectors, where the state argument will correspond to the state of the exported reducer in this file.</p><p><strong>todos.js</strong></p><pre><code class="lang-javascript">export const getVisibleTodos = (state, filter) =&gt; {
+  switch (filter) {
+    case &apos;all&apos;;
+      return state;
+    case &apos;completed&apos;;
+      return state.filter(t =&gt; t.completed);
+    case &apos;active&apos;:
+      return state.filter(t =&gt; !t.completed);
+    default:
+      throw new Error(&apos;Unknown filter: ${filter}.`);
+  }
+};</code></pre>
+<p>Going back to my component, I still depend on the state structure because I read the todos from the state. The actual method of reading todos may change in the future.</p><p><strong>VisibleTodoList</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mapStateToProps = (state, { params }) =&gt; ({
+  todos: getVisibleTodos(state.todos, params.filter || <span class="hljs-string">&apos;all&apos;</span>)
+});</code></pre>
+<p>I am opening the file that contains the root reducer, and I add a named selector export there, as well. It is also called <code>getVisibleTodos</code>, and it also accepts the <code>state</code> and the <code>filter</code>, but the state corresponds to the state of the combined reducer.</p><p><strong>index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getVisibleTodos = (state, filter) =&gt;</code></pre>
+<p>Now I want to call the <code>getVisibleTodos</code> function defined in the todos file alongside the reducer, but I can&apos;t use a named import because I have function with exactly the same name in the scope.</p><p>This is why I&apos;m using the <strong>namespace import syntax</strong> that puts all the exports on an object, called <code>fromTodos</code> in this case, so I can use <code>fromTodos.getVisibleTodos</code> to call this function I defined in the other file, and pass the slice of the state corresponding to the todos.</p><p><strong>index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getVisibleTodos = (state, filter) =&gt;
+  fromTodos.getVisibleTodos(state.todos, filter);</code></pre>
+<p>Now I can go back to my component, and I can import <code>getVisibleTodos</code> from the root reducer file. It encapsulates all the knowledge about the application state shape, so I can just pass it the whole state of my application, and it will figure out how to select the visible todos according to the logic described in selectors.</p><p><strong>VisibleTodoList</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mapStateToProps = (state, { params }) =&gt; ({
+  todos: getVisibleTodos(state.todos, params.filter || <span class="hljs-string">&apos;all&apos;</span>)
+});</code></pre>
+<p>Let&apos;s recap how I co-locate the selectors with the reducers. Inside <code>mapStateToProps</code>, I call <code>getVisibleTodos</code>, and I pass it the whole application state.</p><p>The fresh value of the <code>state</code> will be passed anytime it changes to the <code>mapStateToProps</code> function. I import <code>getVisibleTodos</code> selector, and notice the curly brace. This is a named import from the file that defines the root reducer.</p><p><strong>VisibleTodoList</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { getVisibleTodos } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../reducers&apos;</span>;</code></pre>
+<p>In the reducer files, I started adding new methods with <code>get</code> prefix that are exported as named exports, as opposed to the reducer, which is exported as a <code>default</code> export. It&apos;s easy to tell a named export because it doesn&apos;t use the <code>default</code> keyword after the <code>export</code> keyword.</p><p><strong>index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getVisibleTodos = (state, filter) =&gt;
+  fromTodos.getVisibleTodos(state.todos, filter);</code></pre>
+<p>I want to limit the knowledge about the exact state shape to the files contained in the reducers that manage this state. <code>todos</code> is one of the reducers from which the root reducer is combined, so we know that its state is available as a <code>state.todos</code> under the todos key.</p><p>However, the state shape of the todos reducer should be encapsulated in the file where it&apos;s defined. This is why I&apos;m delegating the further selection to the <code>getVisibleTodos</code> I get from the from <code>todos</code> object that I import as a namespace import from the todos file, so I get all the named exports from it.</p><p><strong>index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> todos, * <span class="hljs-keyword">as</span> fromTodos <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./todos&apos;</span>;</code></pre>
+<p>In the todos file, I define my reducer as the <code>default</code> export. But I also define the <code>getVisibleTodos</code> implementation as a named export, and this time, the <code>state</code> refers to the state of just the corresponding reducer, which in this case is an array of todos.</p><p><strong>todos.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getVisibleTodos = (state, filter) =&gt; {
+  <span class="hljs-keyword">switch</span> (filter) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;all&apos;</span>:
+      <span class="hljs-keyword">return</span> state;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;completed&apos;</span>:
+      <span class="hljs-keyword">return</span> state.filter(t =&gt; t.completed);
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;active&apos;</span>:
+      <span class="hljs-keyword">return</span> state.filter(t =&gt; !t.completed);
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unknown filter: <span class="hljs-subst">${filter}</span>.`</span>);
+  }
+};</code></pre>
+<p><strong>todos.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> todos = (state = [], action) =&gt; {
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO&apos;</span>:
+      <span class="hljs-keyword">return</span> [
+        ...state,
+        todo(<span class="hljs-literal">undefined</span>, action),
+      ];
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span>:
+      <span class="hljs-keyword">return</span> state.map(t =&gt;
+        todo(t, action)
+      );
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state;
+  }
+};</code></pre>
+<p>If I later want to change it to be something other than an array, I can change the <code>getVisibleTodos</code> implementation. But I won&apos;t have to touch my components, because they don&apos;t rely on the state shape anymore.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html" class="navigation navigation-prev " aria-label="Previous page: Using mapDispatchToProps() Shorthand Notation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-normalizing-the-state-shape.html" class="navigation navigation-next " aria-label="Next page: Normalizing the State Shape">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Colocating Selectors with Reducers","level":"1.11","depth":1,"next":{"title":"Normalizing the State Shape","level":"1.12","depth":1,"path":"lessons/javascript-redux-normalizing-the-state-shape.md","ref":"./lessons/javascript-redux-normalizing-the-state-shape.md","articles":[]},"previous":{"title":"Using mapDispatchToProps() Shorthand Notation","level":"1.10","depth":1,"path":"lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation.md","ref":"./lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lessons/javascript-redux-colocating-selectors-with-reducers.md","mtime":"2016-08-22T23:14:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-24T21:28:02.324Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

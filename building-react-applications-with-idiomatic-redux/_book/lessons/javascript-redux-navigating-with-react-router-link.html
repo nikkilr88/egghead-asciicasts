@@ -1,0 +1,454 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Navigating with React Router  · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-filtering-redux-state-with-react-router-params.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-adding-react-router-to-the-project.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                <a href="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                    
+                    Simplifying the Arrow Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-supplying-the-initial-state.html">
+            
+                <a href="javascript-redux-supplying-the-initial-state.html">
+            
+                    
+                    Supplying the Initial State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                <a href="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                    
+                    Persisting the State to the Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-refactoring-the-entry-point.html">
+            
+                <a href="javascript-redux-refactoring-the-entry-point.html">
+            
+                    
+                    Refactoring the Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-adding-react-router-to-the-project.html">
+            
+                <a href="javascript-redux-adding-react-router-to-the-project.html">
+            
+                    
+                    Adding React Router to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="javascript-redux-navigating-with-react-router-link.html">
+            
+                <a href="javascript-redux-navigating-with-react-router-link.html">
+            
+                    
+                    Navigating with React Router 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                <a href="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                    
+                    Filtering Redux State with React Router Params
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                <a href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                    
+                    Using withRouter() to Inject the Params into Connected Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                <a href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                    
+                    Using mapDispatchToProps() Shorthand Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                <a href="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                    
+                    Colocating Selectors with Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-normalizing-the-state-shape.html">
+            
+                <a href="javascript-redux-normalizing-the-state-shape.html">
+            
+                    
+                    Normalizing the State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                    
+                    Wrapping dispatch() to Log Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                <a href="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                    
+                    Adding a Fake Backend to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Navigating with React Router </a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The links that control the <code>visibilityFilter</code> do not currently behave like real links. I&apos;d like to change it so that the background works and the current URL updates when I click on these links and change the current <code>visibilityFilter</code>.</p><p><img alt="output" src="../images/javascript-redux-navigating-with-react-router-link-output.png"></p><p>I will add a parameter to my <code>Route</code> called <code>filter</code>, and I need to wrap it in parenthesis to tell <code>react-router</code> that it&apos;s optional, because if it&apos;s not specified, I want to show all todos.</p><p><strong>index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Root = ({ store }) =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{browserHistory}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&apos;/(:filter)&apos;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{App}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+);</span></code></pre>
+<p>Now I&apos;m opening the <code>Footer</code> component that displays the links. Right now, I&apos;m using the custom convention for the filter prop, but I&apos;m going to change this to align more closely with the paths I want to be displayed, so I&apos;m using <code>active</code> and <code>completed</code> for the active and completed paths, and to avoid passing an empty string, I&apos;ll just use a null string to signify the default path.</p><p><strong>Footer.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Footer = () =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Show:
+    {&quot; &quot;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">FilterLink</span> <span class="hljs-attr">filter</span>=<span class="hljs-string">&quot;SHOW_ALL&quot;</span>&gt;</span>
+      All
+    <span class="hljs-tag">&lt;/<span class="hljs-name">FilterLink</span>&gt;</span>
+    {&quot;, &quot;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">FilterLink</span> <span class="hljs-attr">filter</span>=<span class="hljs-string">&quot;SHOW_ACTIVE&quot;</span>&gt;</span>
+      Active
+    <span class="hljs-tag">&lt;/<span class="hljs-name">FilterLink</span>&gt;</span>
+    {&quot;, &quot;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">FilterLink</span> <span class="hljs-attr">filter</span>=<span class="hljs-string">&quot;SHOW_COMPLETED&quot;</span>&gt;</span>
+      Completed
+    <span class="hljs-tag">&lt;/<span class="hljs-name">FilterLink</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+);</code></pre>
+<p>My current implementation of the <code>filterLink</code> component dispatches an action every time it&apos;s clicked, and reads its <code>active</code> state from the store, comparing its <code>filter</code> prop to the <code>visibilityFilter</code> in the store.</p><p>However, I&apos;m not going to need this implementation anymore because I want the <code>Router</code> to be in control of any state that is in the URL. This is why I import link from <code>react-router</code>, and my new implementation of the <code>FilterLink</code> component is going to use it.</p><p><strong>FilterLink.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router&apos;</span>;
+
+<span class="hljs-keyword">const</span> FilterLink = ()</code></pre>
+<p>It accepts filter as a prop, and it renders through the link provided by <code>react-router</code>. Its true prop corresponds to the path that we want the link to point to, so if the <code>filter</code> is <code>all</code> we&apos;re going to use the root path. Otherwise, we&apos;ll just use the <code>filter</code> itself as the path.</p><p><strong>FilterLink.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router&apos;</span>;
+
+<span class="hljs-keyword">const</span> FilterLink = ({ filter }) =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span>
+    <span class="hljs-attr">to</span>=<span class="hljs-string">{filter</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">all</span>&apos; ? &apos;&apos; <span class="hljs-attr">:</span> <span class="hljs-attr">filter</span>}
+
+);</span></span></code></pre>
+<p>I am also specifying the active style prop so that the link is styled differently when its true prop matches the current path. Finally, I&apos;m passing children to the link itself, and I&apos;m adding children as a prop to <code>FilterLink</code> so that the parent component can specify the children.</p><p><strong>FilterLink.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router&apos;</span>;
+
+<span class="hljs-keyword">const</span> FilterLink = ({ filter }) =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span>
+    <span class="hljs-attr">to</span>=<span class="hljs-string">{filter</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">all</span>&apos; ? &apos;&apos; <span class="hljs-attr">:</span> <span class="hljs-attr">filter</span>}
+    <span class="hljs-attr">activeStyle</span>=<span class="hljs-string">{{</span>
+      <span class="hljs-attr">textDecoration:</span> &apos;<span class="hljs-attr">none</span>&apos;,
+      <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">black</span>&apos;,
+    }}
+  &gt;</span>
+    {children}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>
+);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> FilterLink;</code></pre>
+<p>Now I&apos;m exporting filter link, and I have some cleanup to do. I can remove the <code>setVisibilityFilter</code> <strong>action-creator</strong>, as I don&apos;t use it anymore. I can also remove my custom link component, because now I&apos;m using the link from <code>react-router</code> instead of it.</p><p>If I run the app now, clicking on the link will update the URL bar. It also works in the other direction. Clicking on the back or forward buttons gets the corresponding link active.</p><p><img alt="output" src="../images/javascript-redux-navigating-with-react-router-link-output2.png"></p><p>In the next lesson, we will teach our component to read the current filter from the URL instead of <strong>Redux</strong> store.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-adding-react-router-to-the-project.html" class="navigation navigation-prev " aria-label="Previous page: Adding React Router to the Project">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-filtering-redux-state-with-react-router-params.html" class="navigation navigation-next " aria-label="Next page: Filtering Redux State with React Router Params">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Navigating with React Router ","level":"1.7","depth":1,"next":{"title":"Filtering Redux State with React Router Params","level":"1.8","depth":1,"path":"lessons/javascript-redux-filtering-redux-state-with-react-router-params.md","ref":"./lessons/javascript-redux-filtering-redux-state-with-react-router-params.md","articles":[]},"previous":{"title":"Adding React Router to the Project","level":"1.6","depth":1,"path":"lessons/javascript-redux-adding-react-router-to-the-project.md","ref":"./lessons/javascript-redux-adding-react-router-to-the-project.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lessons/javascript-redux-navigating-with-react-router-link.md","mtime":"2016-08-24T19:35:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-24T21:28:02.324Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
