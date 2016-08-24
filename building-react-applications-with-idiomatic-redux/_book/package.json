@@ -1,0 +1,30 @@
+{
+  "name": "build-your-first-reactjs-app",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Build Your First React.js App](https://egghead.io/courses/build-your-first-react-js-application)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggheadio/egghead-asciicasts.git"
+  },
+  "keywords": [
+    "asciicast",
+    "redux",
+    "javascript"
+  ],
+  "author": "egghead.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eggheadio/egghead-asciicasts/issues"
+  },
+  "homepage": "https://github.com/eggheadio/egghead-asciicasts#readme",
+  "dependencies": {
+        "express": "^4.13.4",
+        "gitbook-plugin-advanced-emoji": "^0.1.6",
+        "gitbook-plugin-hints": "^1.0.1",
+        "gitbook-plugin-prism": "^1.0.0"
+    }
+}

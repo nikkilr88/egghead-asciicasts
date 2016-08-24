@@ -1,0 +1,415 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Redux MiddleWare Chain · Build Your First React.js App</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-dispatching-actions-with-the-fetched-data.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-wrapping-dispatch-to-recognize-promises.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-fetching-data-on-route-change.html">
+            
+                <a href="javascript-redux-fetching-data-on-route-change.html">
+            
+                    
+                    javascript-redux-fetching-data-on-route-change
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-wrapping-dispatch-to-recognize-promises.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-recognize-promises.html">
+            
+                    
+                    Redux wrapping recognizes promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="javascript-redux-the-middleware-chain.html">
+            
+                <a href="javascript-redux-the-middleware-chain.html">
+            
+                    
+                    Redux MiddleWare Chain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-dispatching-actions-with-the-fetched-data.html">
+            
+                <a href="javascript-redux-dispatching-actions-with-the-fetched-data.html">
+            
+                    
+                    javascript-redux-dispatching-actions-with-the-fetched-data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-applying-redux-middleware.html">
+            
+                <a href="javascript-redux-applying-redux-middleware.html">
+            
+                    
+                    javascript-redux-applying-redux-middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-updating-the-state-with-the-fetched-data.html">
+            
+                <a href="javascript-redux-updating-the-state-with-the-fetched-data.html">
+            
+                    
+                    javascript-redux-updating-the-state-with-the-fetched-data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-refactoring-the-reducers.html">
+            
+                <a href="javascript-redux-refactoring-the-reducers.html">
+            
+                    
+                    javascript-redux-refactoring-the-reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-displaying-loading-indicators.html">
+            
+                <a href="javascript-redux-displaying-loading-indicators.html">
+            
+                    
+                    javascript-redux-displaying-loading-indicators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-dispatching-actions-asynchronously-with-thunks.html">
+            
+                <a href="javascript-redux-dispatching-actions-asynchronously-with-thunks.html">
+            
+                    
+                    javascript-redux-dispatching-actions-asynchronously-with-thunks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-avoiding-race-conditions-with-thunks.html">
+            
+                <a href="javascript-redux-avoiding-race-conditions-with-thunks.html">
+            
+                    
+                    javascript-redux-avoiding-race-conditions-with-thunks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-displaying-error-messages.html">
+            
+                <a href="javascript-redux-displaying-error-messages.html">
+            
+                    
+                    javascript-redux-displaying-error-messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-creating-data-on-the-server.html">
+            
+                <a href="javascript-redux-creating-data-on-the-server.html">
+            
+                    
+                    javascript-redux-creating-data-on-the-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-normalizing-api-responses-with-normalizr.html">
+            
+                <a href="javascript-redux-normalizing-api-responses-with-normalizr.html">
+            
+                    
+                    javascript-redux-normalizing-api-responses-with-normalizr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="javascript-redux-updating-data-on-the-server.html">
+            
+                <a href="javascript-redux-updating-data-on-the-server.html">
+            
+                    
+                    javascript-redux-updating-data-on-the-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Redux MiddleWare Chain</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>We have written two functions that wrap the dispatch function to add custom behavior. Let&apos;s take a closer look at how they work together.</p><p>The final version of the dispatch function before we turn in the store is the result of calling add promise support to this patch.</p><p>The function it returns acts like a normal dispatch function, but if it gets a promise, it waits for this promise to resolve and passes the result to raw dispatch, where raw dispatch is the previous value of store dispatch.</p><p>For non-promises, it calls raw dispatch right away. Raw dispatch corresponds to the store dispatch at the time add promise support to dispatch was called.</p><p>Store dispatch was reassigned earlier, so it&apos;s not completely fair to refer to it as raw dispatch. I&apos;m renaming raw dispatch to next because this is the next dispatch function in the chain.</p><p>It refers to store dispatch that was returned from add login to dispatch. Add login to dispatch also returns a function with the same API as the original dispatch function, but it logs the action type, the previous state, the action, and the next state along the way.</p><p>It calls the raw dispatch with corresponds to store dispatch at the time add login to dispatch was called. In this case, this is the store dispatch provided by create store.</p><p>However, it is entirely conceivable that we might want to override dispatch function before adding the login. For consistency, I&apos;m going to rename raw dispatch to next, as well. It&apos;s just that in this particular case, next points to the original store dispatch.</p><p>While this method of extending the store works, it&apos;s not really great at re-override the public API and replace it with custom functions. To get away from this pattern, I am declaring an array of what I&apos;m calling middleware functions, which is just a fancy name I use for these functions I wrote, and I&apos;m pushing add login to dispatch itself to an array, so this is an array of functions that will be applied later as a single step.</p><p>I&apos;m also adding add promise support to dispatch to the middleware array, and again, I don&apos;t need to apply it yet because I&apos;ll write a separate function that applies the middlewares.</p><p>I will call this function grab dispatch with middlewares, and I&apos;ll pass this store as the first argument and an array of middlewares as the second argument.</p><p>I&apos;m adding this new function called grab dispatch with middlewares, and inside it I&apos;m going to use the middlewares for each method. to run some code for every middleware.</p><p>Specifically, I want to override this store dispatch function to point to the result of calling the middleware with the store as an argument.</p><p>Inside the middleware functions themselves, there is a certain pattern that I have to repeat. I&apos;m grabbing the value of store dispatch, and I&apos;m storing it in a variable called next so that I can call it later.</p><p>To make it a part of the middleware contract, I can make next an outside argument, just like the store before it and the action after it.</p><p>This way, the middleware becomes a function that returns a function that returns a function, which is not very common in JavaScript, but is actually very common in functional programming languages, and this pattern is called Korean.</p><p>Again, rather than take the next middleware from the store, I will make it intractable as an argument so that my function that calls the middlewares can choose which middleware to pass.</p><p>Finally, store is not the only injected argument, so I also need to inject the next middleware, which is the previous value of store dispatch function.</p><p>Now that middlewares are a first-class concept, I will rename add login to dispatch to just logger, and I will rename add promise support to dispatch to the promise middleware.</p><p>The Korean style of function declaration can get very hard to read. However, we can use arrow functions and rely on the fact that arrow functions can have expressions as their bodies.</p><p>It is still a function that returns a function returning a function, but it&apos;s much easier to read, and the mental model you can use for this is that this is just a function with several arguments that are applied as they become available.</p><p>Finally, I&apos;d like to fix the order in which middlewares are specified. They are currently specified in the order in which the dispatch function is overridden. However, it would be more natural to specify the order in which the action propagates through the middlewares.</p><p>This is why I&apos;m changing my middleware declaration to specify them in the order in which the action travels through them. Instead, I will grab dispatch with middlewares from right to left, so I clone the past array and I reverse it.</p><p>Let&apos;s recap what we learned about middleware so far. Middleware can serve very different purposes. It might add some useful debugging information, such as the case with login middleware, or it might amend dispatch to understand something other than plain actions, which is the case with the promise middleware.</p><p>We created a new function that takes the store and an array of middlewares, and does the dirty work of reassigning the store dispatch function. This lets me keep configure store a little bit more declarative, because I specified the middlewares in an array, and I call grab dispatch with middlewares to apply them.</p><p>Let&apos;s recap how grab dispatch with middlewares works internally. The store object that the application uses contains a dispatch function. Grab dispatch with middlewares overrides it multiple times as it enumerates the middleware&apos;s array.</p><p>However, it reverses the array before enumerating it, so the final value of store dispatch will correspond to the result of calling the first middleware in the array, which is the promise middleware.</p><p>The promise middleware returns a dispatch function that understands promises, but to get it, we pass the store and the next dispatch function as carried arguments.</p><p>The next dispatch function is the one that we got from the middleware that appeared earlier in the reverse array, or later in the original array, and this is the logger middleware.</p><p>The logger middleware provided the dispatch function that logs the actions, but to get it, we passed the store and the next dispatch function to it, and it corresponded to the value store dispatch that was there before the middleware was even applied, and this is the original dispatch implementation from create store.</p><p>The purpose of the middlewares is to replace the single dispatch function with a chain of composable dispatch functions which each can do something with an action.</p><p>The promise middleware appears before the logger middleware in the chain, and this is why the next inside it corresponds to the dispatch function returned from the logger middleware.</p><p>Logger middleware itself is the last middleware in chain, so its next function corresponds to the original store dispatch function, which is defined inside create store.</p><p>Middleware is a powerful system that lets us put custom behavior before action reaches the reducers. People use middleware for different purposes, such as login, analytics, error-handling, asynchronous counterflow, and more.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-wrapping-dispatch-to-recognize-promises.html" class="navigation navigation-prev " aria-label="Previous page: Redux wrapping recognizes promises">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-dispatching-actions-with-the-fetched-data.html" class="navigation navigation-next " aria-label="Next page: javascript-redux-dispatching-actions-with-the-fetched-data">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redux MiddleWare Chain","level":"1.4","depth":1,"next":{"title":"javascript-redux-dispatching-actions-with-the-fetched-data","level":"1.5","depth":1,"path":"lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md","ref":"./lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md","articles":[]},"previous":{"title":"Redux wrapping recognizes promises","level":"1.3","depth":1,"path":"lessons/javascript-redux-wrapping-dispatch-to-recognize-promises.md","ref":"./lessons/javascript-redux-wrapping-dispatch-to-recognize-promises.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","hints","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"hints":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Build Your First React.js App","gitbook":"*","description":"This book covers the [Build Your First React.js App](https://egghead.io/courses/build-your-first-react-js-application) transcripts and enhances them to become Asciicasts"},"file":{"path":"lessons/javascript-redux-the-middleware-chain.md","mtime":"2016-08-17T17:52:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-22T21:17:05.492Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

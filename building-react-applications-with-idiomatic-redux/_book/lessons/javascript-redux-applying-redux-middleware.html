@@ -1,0 +1,415 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>javascript-redux-applying-redux-middleware · Build Your First React.js App</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-updating-the-state-with-the-fetched-data.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-dispatching-actions-with-the-fetched-data.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-fetching-data-on-route-change.html">
+            
+                <a href="javascript-redux-fetching-data-on-route-change.html">
+            
+                    
+                    javascript-redux-fetching-data-on-route-change
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-wrapping-dispatch-to-recognize-promises.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-recognize-promises.html">
+            
+                    
+                    Redux wrapping recognizes promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-the-middleware-chain.html">
+            
+                <a href="javascript-redux-the-middleware-chain.html">
+            
+                    
+                    Redux MiddleWare Chain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-dispatching-actions-with-the-fetched-data.html">
+            
+                <a href="javascript-redux-dispatching-actions-with-the-fetched-data.html">
+            
+                    
+                    javascript-redux-dispatching-actions-with-the-fetched-data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="javascript-redux-applying-redux-middleware.html">
+            
+                <a href="javascript-redux-applying-redux-middleware.html">
+            
+                    
+                    javascript-redux-applying-redux-middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-updating-the-state-with-the-fetched-data.html">
+            
+                <a href="javascript-redux-updating-the-state-with-the-fetched-data.html">
+            
+                    
+                    javascript-redux-updating-the-state-with-the-fetched-data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-refactoring-the-reducers.html">
+            
+                <a href="javascript-redux-refactoring-the-reducers.html">
+            
+                    
+                    javascript-redux-refactoring-the-reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-displaying-loading-indicators.html">
+            
+                <a href="javascript-redux-displaying-loading-indicators.html">
+            
+                    
+                    javascript-redux-displaying-loading-indicators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-dispatching-actions-asynchronously-with-thunks.html">
+            
+                <a href="javascript-redux-dispatching-actions-asynchronously-with-thunks.html">
+            
+                    
+                    javascript-redux-dispatching-actions-asynchronously-with-thunks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-avoiding-race-conditions-with-thunks.html">
+            
+                <a href="javascript-redux-avoiding-race-conditions-with-thunks.html">
+            
+                    
+                    javascript-redux-avoiding-race-conditions-with-thunks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-displaying-error-messages.html">
+            
+                <a href="javascript-redux-displaying-error-messages.html">
+            
+                    
+                    javascript-redux-displaying-error-messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-creating-data-on-the-server.html">
+            
+                <a href="javascript-redux-creating-data-on-the-server.html">
+            
+                    
+                    javascript-redux-creating-data-on-the-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-normalizing-api-responses-with-normalizr.html">
+            
+                <a href="javascript-redux-normalizing-api-responses-with-normalizr.html">
+            
+                    
+                    javascript-redux-normalizing-api-responses-with-normalizr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="javascript-redux-updating-data-on-the-server.html">
+            
+                <a href="javascript-redux-updating-data-on-the-server.html">
+            
+                    
+                    javascript-redux-updating-data-on-the-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >javascript-redux-applying-redux-middleware</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>In the previous lesson, we figured out the contract that we want to use for our middleware functions. However, middleware wouldn&apos;t be very useful if everybody had to implement REV dispatch with middleware on their own. This is why I&apos;m removing it, and instead I&apos;m going to import a utility called apply middleware from Redux. I&apos;m going back to my configure store function. I notice that I don&apos;t need the store right away. I can move the store creation after specifying the middleware.</p><p>I can also remove my custom function, and instead I will create store with the middleware right away. I am passing the second argument to create store, which is the result of calling apply middleware with my middleware functions as positional arguments. This last argument to create store is called an enhancer, and it&apos;s optional. If you want to specify the persistent state, you need to do this before the enhancer. You can also keep the persistent state if you don&apos;t have.</p><p>Many middlewares are available as NPM packages. Both the promise middleware and the logger middleware are no exceptions to this. I am opening up a terminal, and I&apos;m running NPM install safe Redux promise, which is a middleware that implements the promise support.</p><p>I can install a package called Redux Logger in the same way, which is similar to the logger middleware we wrote before, but it&apos;s more configurable. I am adding an input called lowercase promise that corresponds to the Redux promise middleware, and I&apos;m inputting create logger from Redux Logger. It lets you configure the middleware before creating it. I won&apos;t pass any options to gather default configuration. Finally, since I don&apos;t need to reference the store anymore, I&apos;ll just return it directly from configure store.</p><p>Let&apos;s recap how to apply Redux middleware. We use the function called apply middleware that we import from Redux. It accepts the middleware functions as positional arguments. For example, we could have written promise, create logger. However, we only want to apply the logger conditionally. If we&apos;re not running in the production environment, we will push the logger to the array of middlewares. We use the ES6 spread operator to pass every middleware as a positional argument to apply middleware.</p><p>The apply middleware returns something called an enhancer. This is the optional last argument to create store. If you want to also supply the persistent state, you need to do this before the enhancer.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-dispatching-actions-with-the-fetched-data.html" class="navigation navigation-prev " aria-label="Previous page: javascript-redux-dispatching-actions-with-the-fetched-data">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-updating-the-state-with-the-fetched-data.html" class="navigation navigation-next " aria-label="Next page: javascript-redux-updating-the-state-with-the-fetched-data">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"javascript-redux-applying-redux-middleware","level":"1.6","depth":1,"next":{"title":"javascript-redux-updating-the-state-with-the-fetched-data","level":"1.7","depth":1,"path":"lessons/javascript-redux-updating-the-state-with-the-fetched-data.md","ref":"./lessons/javascript-redux-updating-the-state-with-the-fetched-data.md","articles":[]},"previous":{"title":"javascript-redux-dispatching-actions-with-the-fetched-data","level":"1.5","depth":1,"path":"lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md","ref":"./lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","hints","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"hints":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Build Your First React.js App","gitbook":"*","description":"This book covers the [Build Your First React.js App](https://egghead.io/courses/build-your-first-react-js-application) transcripts and enhances them to become Asciicasts"},"file":{"path":"lessons/javascript-redux-applying-redux-middleware.md","mtime":"2016-08-17T17:52:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-22T21:17:05.492Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
