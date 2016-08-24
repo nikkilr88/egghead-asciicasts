@@ -1,0 +1,15 @@
+# Summary
+
+* [Simplifying the Arrow Functions](./lessons/javascript-redux-simplifying-the-arrow-functions.md)
+* [Supplying the Initial State](./lessons/javascript-redux-supplying-the-initial-state.md)
+* [Persisting the State to the Local Storage](./lessons/javascript-redux-persisting-the-state-to-the-local-storage.md)
+* [Refactoring the Entry Point](./lessons/javascript-redux-refactoring-the-entry-point.md)
+* [Adding React Router to the Project](./lessons/javascript-redux-adding-react-router-to-the-project.md)
+* [Navigating with React Router <Link>](./lessons/javascript-redux-navigating-with-react-router-link.md)
+* [Filtering Redux State with React Router Params](./lessons/javascript-redux-filtering-redux-state-with-react-router-params.md)
+* [Using withRouter() to Inject the Params into Connected Components](./lessons/javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.md)
+* [Using mapDispatchToProps() Shorthand Notation](./lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation.md)
+* [Colocating Selectors with Reducers](./lessons/javascript-redux-colocating-selectors-with-reducers.md)
+* [Normalizing the State Shape](./lessons/javascript-redux-normalizing-the-state-shape.md)
+* [Wrapping dispatch() to Log Actions](./lessons/javascript-redux-wrapping-dispatch-to-log-actions.md)
+* [Adding a Fake Backend to the Project](./lessons/javascript-redux-adding-a-fake-backend-to-the-project.md)

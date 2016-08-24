@@ -1,0 +1,415 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>javascript-redux-dispatching-actions-with-the-fetched-data · Build Your First React.js App</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript-redux-applying-redux-middleware.html" />
+    
+    
+    <link rel="prev" href="javascript-redux-the-middleware-chain.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-fetching-data-on-route-change.html">
+            
+                <a href="javascript-redux-fetching-data-on-route-change.html">
+            
+                    
+                    javascript-redux-fetching-data-on-route-change
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-wrapping-dispatch-to-recognize-promises.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-recognize-promises.html">
+            
+                    
+                    Redux wrapping recognizes promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-the-middleware-chain.html">
+            
+                <a href="javascript-redux-the-middleware-chain.html">
+            
+                    
+                    Redux MiddleWare Chain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="javascript-redux-dispatching-actions-with-the-fetched-data.html">
+            
+                <a href="javascript-redux-dispatching-actions-with-the-fetched-data.html">
+            
+                    
+                    javascript-redux-dispatching-actions-with-the-fetched-data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-applying-redux-middleware.html">
+            
+                <a href="javascript-redux-applying-redux-middleware.html">
+            
+                    
+                    javascript-redux-applying-redux-middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-updating-the-state-with-the-fetched-data.html">
+            
+                <a href="javascript-redux-updating-the-state-with-the-fetched-data.html">
+            
+                    
+                    javascript-redux-updating-the-state-with-the-fetched-data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-refactoring-the-reducers.html">
+            
+                <a href="javascript-redux-refactoring-the-reducers.html">
+            
+                    
+                    javascript-redux-refactoring-the-reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-displaying-loading-indicators.html">
+            
+                <a href="javascript-redux-displaying-loading-indicators.html">
+            
+                    
+                    javascript-redux-displaying-loading-indicators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-dispatching-actions-asynchronously-with-thunks.html">
+            
+                <a href="javascript-redux-dispatching-actions-asynchronously-with-thunks.html">
+            
+                    
+                    javascript-redux-dispatching-actions-asynchronously-with-thunks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-avoiding-race-conditions-with-thunks.html">
+            
+                <a href="javascript-redux-avoiding-race-conditions-with-thunks.html">
+            
+                    
+                    javascript-redux-avoiding-race-conditions-with-thunks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-displaying-error-messages.html">
+            
+                <a href="javascript-redux-displaying-error-messages.html">
+            
+                    
+                    javascript-redux-displaying-error-messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-creating-data-on-the-server.html">
+            
+                <a href="javascript-redux-creating-data-on-the-server.html">
+            
+                    
+                    javascript-redux-creating-data-on-the-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-normalizing-api-responses-with-normalizr.html">
+            
+                <a href="javascript-redux-normalizing-api-responses-with-normalizr.html">
+            
+                    
+                    javascript-redux-normalizing-api-responses-with-normalizr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="javascript-redux-updating-data-on-the-server.html">
+            
+                <a href="javascript-redux-updating-data-on-the-server.html">
+            
+                    
+                    javascript-redux-updating-data-on-the-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >javascript-redux-dispatching-actions-with-the-fetched-data</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>I can extract the common code between the lifecycle hooks into a separate method. I will call it &quot;fetchData.&quot; It will fetch the data for the current props.</p><p>In this case, the data we want to fetch only depends on the filter. I&apos;m calling this method from the componentDidMount hook, to fetch the initial data, and I also call it whenever the filter changes inside the component it update, lifecycle hook.</p><p>We want the fetched routers to become a part of the Redux Store state. The only way to get something into the state is to dispatch an action. I&apos;m going to call the callback prop called &quot;receive todos,&quot; whether to todos I just fetched.</p><p>To make it available inside the component, I need to pass a function called receive todos hat would be an action creator inside the second argument to connect. Since the name of the function will match the name of the callback prop, I can use the shorter ES6 prop edition.</p><p>I will import receive todos from the file where I define all other action creators. Now, I can open that file with the action creators and actually implement it.</p><p>I&apos;m creating a new export of function called receive todos that takes the server response as an argument and returns an object with the type of receive todos and the response as a field.</p><p>The reduce is handling this action. We&apos;ll need to know which filter the response corresponds to so I&apos;m adding a filter as an argument to the receive todos action creator and I&apos;m passing it as part of the action object.</p><p>I&apos;m going back to my component so I can pass the filter through the action creator. I&apos;m destruction the filter and receive todos from props using ES6 destruction syntax. It&apos;s important that I destruct the filter right away, because by the time the callback fires this props filter might have changed because they use it and might have navigated away.</p><p>If around the app now, I will see Redux actions being dispatched, ready to be handled by the reducers. They include all the necessary information, such as the filter and the server response.</p><p>As I navigate through the app, the component fetches data in lifecycle hooks and dispatches Redux actions when the data is ready. As a final touch, I like to write less plate code when importing action creators.</p><p>I&apos;m replacing name to imports with the namespace &quot;import&quot; so that any function exported from the actions file will be in the object called &quot;actions,&quot; which I will pass as a second argument to connect.</p><p>I&apos;m restructuring the props, because the toggle to the action creator needs to be passed under on todo click callback prompt name, but the rest of the props can be passed as the other.</p><p>The rest object now continues all the props other than to toggle todo, so I will pass them through. I will also pass toggle todo as on todo click prop, because that&apos;s what todo list component expect.</p><p>Finally, I&apos;m splitting it over multiple lines for a little better readability. Let&apos;s recap how we fetch asynchronously in response to route changes. In the file where I define action creators, I add a new action creator called receive todos that accepts the filter and the response as arguments.</p><p>It produces a regular Redux action object that can be dispatched after the request of the server has completed. I created a new react class component so that I can use lifecycles hooks, such as componentDidMount and componentDidUpdate to fetch the data.</p><p>I&apos;m fetching the data when the component mounts for the first time and if the filter prop, provided by react router changes, which means that user has navigated in the app. The visible todo list is the container component that enhances a presentational component called todo list when the data fetch an object.</p><p>However, the class who wrote does not subscribe to the store itself so we wrap it in a connect call so that the containers generated by react Redux connect subscribes to the store and passes the props through the visible todo list component we wrote.</p><p>Finally, the component generated by the router subscribes to the router changes so we have access to the router params in map state to props. The components we want to export are the result of colon disrupters so I reassign visible todo list and export it.</p><p>Inside the map state of props, I read the filter value from the parameters supply direct order or use the default value. I used to only use filter for calculating the visible todos, but now, I also want to pass it as a prop so that it&apos;s available inside the component.</p><p>Having access to the filter prop, let&apos;s determine whether I should fetch the data and pass it to the function that fetches todos. I import this function from the file where I define our fake API, which can be replaced by real API client.</p><p>We fetch data when the component mounts and when the filter prop changes. Fetch lose return the promise so when it results, I use the response, to dispatch an action receive todos with the filter and the server response.</p><p>The receive todos function available on the props dispatches the action returned by receive todos action creator automatically. This happens because I pass at this part of the actions object to connect.</p><p>The actions object contains all the exported action creators defined in the actions.js file, because I use the ES6 namespace import syntax. The receive todos action creator does not automatically dispatch an action, but the receive todos prop injected by connect does.</p><p>When I call it, it will call my action creator with the same arguments and dispatch the resultant action to the Redux Store. Inside the rented method, I rented to the presentational todo list component.</p><p>Now that all action creators are injected as props with the same names, I have to grab toward todo specifically and pass it as onto click called by prop that todo list expects, but the rest props can be passed with their existing names.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-the-middleware-chain.html" class="navigation navigation-prev " aria-label="Previous page: Redux MiddleWare Chain">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript-redux-applying-redux-middleware.html" class="navigation navigation-next " aria-label="Next page: javascript-redux-applying-redux-middleware">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"javascript-redux-dispatching-actions-with-the-fetched-data","level":"1.5","depth":1,"next":{"title":"javascript-redux-applying-redux-middleware","level":"1.6","depth":1,"path":"lessons/javascript-redux-applying-redux-middleware.md","ref":"./lessons/javascript-redux-applying-redux-middleware.md","articles":[]},"previous":{"title":"Redux MiddleWare Chain","level":"1.4","depth":1,"path":"lessons/javascript-redux-the-middleware-chain.md","ref":"./lessons/javascript-redux-the-middleware-chain.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","hints","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"hints":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Build Your First React.js App","gitbook":"*","description":"This book covers the [Build Your First React.js App](https://egghead.io/courses/build-your-first-react-js-application) transcripts and enhances them to become Asciicasts"},"file":{"path":"lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md","mtime":"2016-08-17T17:52:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-22T21:17:05.492Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
