@@ -1,0 +1,5 @@
+{
+    "title": "Build Your First React.js App",
+    "description": "This book covers the [Build Your First React.js App](https://egghead.io/courses/build-your-first-react-js-application) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
