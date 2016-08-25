@@ -27,7 +27,7 @@ ${salutation},
 `;
 ```
 
-![String Templates Respect Whitespace](../images/ecmascript-6-string-templates-maintains-whitespace.png)
+![String Templates Respect Whitespace](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/learn-es6-ecmascript-2015/ecmascript-6-string-templates-maintains-whitespace.png)
 
 I could pull off things like `hello you crazy world, how are you`, and rerun this and you can see, we can **manipulate strings** however we'd like.
 ```javascript

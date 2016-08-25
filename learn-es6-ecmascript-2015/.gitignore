@@ -2,3 +2,4 @@ _book/
 node_modules/
 .DS_Store
 images/.DS_Store
+building-react-applications-with-idiomatic-redux/images/.DS_Store
