@@ -9,3 +9,5 @@
 * [Displaying Loading Indicators](./lessons/javascript-redux-displaying-loading-indicators.md)
 * [Dispatching Actions Asynchronously with Thunks](./lessons/javascript-redux-dispatching-actions-asynchronously-with-thunks.md)
 * [Avoiding Race Conditions with Thunks](./lessons/javascript-redux-avoiding-race-conditions-with-thunks.md)
+* [Normalizing Api Responses with Normalizr](./lessons/javascript-redux-normalizing-api-responses-with-normalizr.md)
+* [Updating Data on the Server](./lessons/javascript-redux-updating-data-on-the-server.md)
