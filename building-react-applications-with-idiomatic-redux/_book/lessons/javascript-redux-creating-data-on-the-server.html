@@ -1,0 +1,533 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Creating Data on the Server · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="javascript-redux-displaying-error-messages.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                <a href="javascript-redux-simplifying-the-arrow-functions.html">
+            
+                    
+                    Simplifying the Arrow Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="javascript-redux-supplying-the-initial-state.html">
+            
+                <a href="javascript-redux-supplying-the-initial-state.html">
+            
+                    
+                    Supplying the Initial State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                <a href="javascript-redux-persisting-the-state-to-the-local-storage.html">
+            
+                    
+                    Persisting the State to the Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="javascript-redux-refactoring-the-entry-point.html">
+            
+                <a href="javascript-redux-refactoring-the-entry-point.html">
+            
+                    
+                    Refactoring the Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="javascript-redux-adding-react-router-to-the-project.html">
+            
+                <a href="javascript-redux-adding-react-router-to-the-project.html">
+            
+                    
+                    Adding React Router to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="javascript-redux-navigating-with-react-router-link.html">
+            
+                <a href="javascript-redux-navigating-with-react-router-link.html">
+            
+                    
+                    Navigating with React Router 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                <a href="javascript-redux-filtering-redux-state-with-react-router-params.html">
+            
+                    
+                    Filtering Redux State with React Router Params
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                <a href="javascript-redux-using-withrouter-to-inject-the-params-into-connected-components.html">
+            
+                    
+                    Using withRouter() to Inject the Params into Connected Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                <a href="javascript-redux-using-mapdispatchtoprops-shorthand-notation.html">
+            
+                    
+                    Using mapDispatchToProps() Shorthand Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                <a href="javascript-redux-colocating-selectors-with-reducers.html">
+            
+                    
+                    Colocating Selectors with Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="javascript-redux-normalizing-the-state-shape.html">
+            
+                <a href="javascript-redux-normalizing-the-state-shape.html">
+            
+                    
+                    Normalizing the State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                <a href="javascript-redux-wrapping-dispatch-to-log-actions.html">
+            
+                    
+                    Wrapping dispatch() to Log Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                <a href="javascript-redux-adding-a-fake-backend-to-the-project.html">
+            
+                    
+                    Adding a Fake Backend to the Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="javascript-redux-displaying-error-messages.html">
+            
+                <a href="javascript-redux-displaying-error-messages.html">
+            
+                    
+                    Displaying Error Messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.16" data-path="javascript-redux-creating-data-on-the-server.html">
+            
+                <a href="javascript-redux-creating-data-on-the-server.html">
+            
+                    
+                    Creating Data on the Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Creating Data on the Server</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>I added a couple of new functions to the fake API client, in addition to <code>fetchTodos</code>, to prepare for this and the next lessons.</p><p>The first new fake API endpoint is called <code>addTodo</code>. It simulates a network connection, and then it creates a new todo object. It puts the todo with the given text into the <code>fakeDatabase</code>, and it returns the <code>todo</code> object, just like rest endpoints normally do.</p><p><strong>api/index.js</strong></p><pre><code class="lang-javascript```">export const addTodo = (text) =&gt;
+  delay(500).then(() =&gt; {
+    id: v4(),
+    text,
+    completed: false,
+  };
+  fakeDatabase.todos.push(todo);
+  return todo;
+});</code></pre>
+<p>The second fake API endpoint I added is called <code>toggleTodo</code>. It also simulates a network connection, and it finds the corresponding todo in the <code>fakeDatabase</code> and flips its completed field, also returning the <code>todo</code> as the response.</p><p><strong>api/index.js</strong></p><pre><code class="lang-javascript```">export const toggleTodo = (id) =&gt;
+  delay(500).then(() =&gt; {
+    const todo = fakeDatabase.todos.find(t =&gt; t.id === id);
+    todo.completed = !todo.completed;
+    return todo;
+});</code></pre>
+<p>In this lesson, we will make the <code>addTodo</code> button call the <code>addTodo</code> fake API endpoint. I&apos;m opening the file with action creators, I will no longer need the <code>v4</code> function because the ID generation now occurs on the server, and instead, I will call the API to add the todo.</p><p><strong>actions/index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addTodo = (text) =&gt; ({
+  type: <span class="hljs-string">&apos;ADD_TODO&apos;</span>,
+  id: v4(),
+  text,
+});</code></pre>
+<p>I&apos;m changing the <code>addTodo</code> action creator to be a func action creator, so I&apos;m adding <code>dispatch</code> as a carried argument. The <strong>func</strong> will call the API <code>addTodo</code> endpoint with the given text, and wait for the response to come back.</p><p><strong>actions/index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addTodo = (text) =&gt; (dispatch) =&gt; 
+  api.addTodo(text).then(response =&gt; {
+
+  })</code></pre>
+<p>When the response is available, it will dispatch an action with the type <code>ADD_TODO_SUCCESS</code>, and the server <code>response</code>. The newly added todo will be part of the server <code>response</code>, so I need to change the <code>byId</code> reducer to merge it into the lookup table that it manages.</p><p><strong>actions/index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addTodo = (text) =&gt; (dispatch) =&gt; 
+  api.addTodo(text).then(response =&gt; {
+    type: <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>,
+    response,
+  });
+});</code></pre>
+<p>I am adding a new case for the <code>ADD_TODO_SUCCESS</code> action. I&apos;m using the <strong>object spread operator</strong> to create a new version of the lookup table, where under the <code>action.response.id</code> key, there is a new todo object that I read from action response.</p><p><strong>byId.js</strong></p><pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> byId = (state = {}, action) =&gt; {
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;FETCH_TODOS_SUCCESS&apos;</span>: <span class="hljs-comment">// eslint-disable-line no-case-declarations</span>
+      <span class="hljs-keyword">const</span> nextState = { ...state };
+      action.response.forEach(todo =&gt; {
+        nextState[todo.id] = todo;
+      });
+      <span class="hljs-keyword">return</span> nextState;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>:
+      <span class="hljs-keyword">return</span> {
+        ...state,
+        [action.response.id]: action.response,
+      };
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state;
+  }
+};</code></pre>
+<p>If I run the app now and add a todo, it will not appear in the list immediately. I can see the add <code>ADD_TODO_SUCCESS</code> in the log, and if I inspect the next state, I will see that the 
+byId lookup table now contains all four todos.</p><p><img alt="ADD_TODO_SUCCESS console output" src="../images/javascript-redux-creating-data-on-the-server-output.png"></p><p>However, we have not updated the <code>listByFilter</code>, so all still only has three IDs in the list. If I go to another tab, the new todo appears because its ID is now included in the list of fetched IDs, and similarly, if I go back to the previous tab, it appears now because the data has been re-fetched.</p><p><img alt="Output" src="../images/javascript-redux-creating-data-on-the-server-output2.png"></p><p>The list of IDs for each tab is managed by a reducer defined inside createList.js. I will change the <code>ids</code> reducer to handle the <code>ADD_TODOS_SUCCESS</code> action.</p><p>When I receive a confirmation that the todo has been added on the server, I can return a new list of IDs with existing IDs in the beginning, and a newly added ID at the very end. Unlike the other actions, <code>ADD_TODO_SUCCESS</code> does not have a filter property on the action object, so our initial check would fail.</p><p><strong>createList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> createList = (filter) =&gt; {
+  <span class="hljs-keyword">const</span> ids = (state = [], action) =&gt; {
+    <span class="hljs-keyword">if</span> (filter !== action.filter) {
+      <span class="hljs-keyword">return</span> state;
+    }
+    <span class="hljs-keyword">switch</span> (action.type) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;FETCH_TODOS_SUCCESS&apos;</span>;
+        <span class="hljs-keyword">return</span> action.response.map(todo =&gt; todo.id);
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>:
+        <span class="hljs-keyword">return</span> [...state, action.response.id];
+      <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">return</span> state;
+    }
+  };
+};</code></pre>
+<p>I am removing the top level check, and I will replace it with different checks in different cases. I want to replace the fetched IDs if the filter in the action matches the filter of this list. However, I want the newly added todo to appear in every list except the completed filter, because a newly added todo is not completed.</p><p><strong>createList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> createList = (filter) =&gt; {
+  <span class="hljs-keyword">const</span> ids = (state = [], action) =&gt; {
+    <span class="hljs-keyword">switch</span> (action.type) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;FETCH_TODOS_SUCCESS&apos;</span>;
+        <span class="hljs-keyword">return</span> filter === action.filter ?
+          action.response.map(todo =&gt; todo.id) :
+          state;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>:
+        <span class="hljs-keyword">return</span> filter !== <span class="hljs-string">&apos;completed&apos;</span> ?
+          [...state, action.response.id] :
+          state;
+      <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">return</span> state;
+    }
+  };
+};</code></pre>
+<p>If I run the app now, I can see that if I add a new todo, it appears in the list as soon as add todo success action is dispatched, even though the last time todos were fetched, the new item wasn&apos;t there yet.</p><p><img alt="Output" src="../images/javascript-redux-creating-data-on-the-server-output3.png"></p><p>It will also appear immediately in the active list, before the active todos are even fetched. It will not, however, appear in the completed list because we know that newly added todos are not completed.</p><p>If I add a new todo while I&apos;m looking at the completed list, it will not appear there even though the <code>ADD_TODOS_SUCCESS</code> action has been dispatched, because new todos are not completed. However, if I switch to active or all, I will see it immediately, even before the corresponding list has been fetched.</p><p>Let&apos;s recap the changes necessary for adding todo asynchronously. We handle <code>FETCH_TODOS_SUCCESS</code> only if the <code>action.filter</code> matches the filter that the list was created with, and in this case, we replace the fetched list of todos. Otherwise, we just return the current state.</p><p><strong>createList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> createList = (filter) =&gt; {
+  <span class="hljs-keyword">const</span> ids = (state = [], action) =&gt; {
+    <span class="hljs-keyword">switch</span> (action.type) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;FETCH_TODOS_SUCCESS&apos;</span>;
+        <span class="hljs-keyword">return</span> filter === action.filter ?
+          action.response.map(todo =&gt; todo.id) :
+          state;</code></pre>
+<p>However, to handle <code>ADD_TODO_SUCCESS</code>, we want to check if the filter is not completed, because if we add a todo, it will not be completed, and we want it to appear at the end of the all and the active filter lists.</p><p><strong>createList.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> createList = (filter) =&gt; {
+  <span class="hljs-keyword">const</span> ids = (state = [], action) =&gt; {
+    <span class="hljs-keyword">switch</span> (action.type) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;FETCH_TODOS_SUCCESS&apos;</span>;
+        ...
+      case <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>:
+        <span class="hljs-keyword">return</span> filter !== <span class="hljs-string">&apos;completed&apos;</span> ?
+          [...state, action.response.id] :
+          state;</code></pre>
+<p>I also updated the <code>byId</code> reducer that manages the lookup table to handle the <code>ADD_TODOS_SUCCESS</code> action. We read the added todo from the <code>action.response</code>, and we return a new version of the lookup table that contains it under its ID.</p><p><strong>byId.js</strong></p><pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> byId = (state = {}, action) =&gt; {
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;FETCH_TODOS_SUCCESS&apos;</span>: <span class="hljs-comment">// eslint-disable-line no-case-declarations</span>
+      ...
+    case <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>:
+      <span class="hljs-keyword">return</span> {
+        ...state,
+        [action.response.id]: action.response,</code></pre>
+<p>Finally, the <code>addTodo</code> action creator is no longer synchronous, and instead, it returns a func that calls <code>addTodo</code> API endpoint and dispatches an action with the type <code>ADD_TODO_SUCCESS</code> and the response from the server.</p><p><strong>actions/index.js</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addTodo = (text) =&gt; (dispatch) =&gt; 
+  api.addTodo(text).then(response =&gt; {
+    type: <span class="hljs-string">&apos;ADD_TODO_SUCCESS&apos;</span>,
+    response,
+  });
+});</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript-redux-displaying-error-messages.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Displaying Error Messages">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Creating Data on the Server","level":"1.16","depth":1,"previous":{"title":"Displaying Error Messages","level":"1.15","depth":1,"path":"lessons/javascript-redux-displaying-error-messages.md","ref":"./lessons/javascript-redux-displaying-error-messages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lessons/javascript-redux-creating-data-on-the-server.md","mtime":"2016-08-29T21:57:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-24T21:28:02.324Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

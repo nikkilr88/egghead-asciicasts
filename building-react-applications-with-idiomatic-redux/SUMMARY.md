@@ -14,4 +14,6 @@
 * [Normalizing the State Shape](./lessons/javascript-redux-normalizing-the-state-shape.md)
 * [Wrapping dispatch\(\) to Log Actions](./lessons/javascript-redux-wrapping-dispatch-to-log-actions.md)
 * [Adding a Fake Backend to the Project](./lessons/javascript-redux-adding-a-fake-backend-to-the-project.md)
+* [Displaying Error Messages](./lessons/javascript-redux-displaying-error-messages.md)
+* [Creating Data on the Server](./lessons/javascript-redux-creating-data-on-the-server.md)
 
