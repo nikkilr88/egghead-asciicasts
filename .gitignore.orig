@@ -1,0 +1,8 @@
+node_modules/
+.idea/
+.vscode/
+<<<<<<< HEAD
+
+=======
+enhancedTranscripts.json
+>>>>>>> 6229dc5f3fd6b5342196397fb15a96cee1fb3add

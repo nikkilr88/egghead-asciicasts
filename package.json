@@ -2,7 +2,8 @@
   "name": "egghead-asciicasts",
   "version": "1.0.0",
   "scripts": {
-    "build": "node extractAsciicasts.js",
+    "build": "node extractEnhancedTranscripts.js",
+    "deploy": "node deployToRails.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/eggheadio/egghead-asciicasts#readme",
   "dependencies": {
+    "axios": "0.13.1",
+    "cli-prompt": "^0.6.0",
     "prompt": "1.0.0"
   }
 }
