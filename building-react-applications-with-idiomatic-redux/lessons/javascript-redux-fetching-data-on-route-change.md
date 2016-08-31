@@ -68,6 +68,6 @@ componentDidUpdate(prevProps) {
   }
 }
 ```
-I'm writing exactly the same code. When the todos are fetched, I want to print the current filter, and the corresponding todos. Clicking on a link now changes the route, and so it changes the filter prop. As a result, we fetch the data in the life cycle hooks.
+I'm writing exactly the same code. When the todos are fetched, I want to print the current filter, and the corresponding todos. Clicking on a link now changes the route, and so it changes the filter prop. As a result, we fetch the data in the life cycle hooks. 
 
 ![Data Update on Route](../images/javascript-redux-fetching-data-on-route-change-filter-data-change.png)

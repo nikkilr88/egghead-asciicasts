@@ -1,8 +1,8 @@
 # Build Your First React.js App
 
-Asciicasts for [Tyler McGinnises](https://github.com/tylermcginnis) course on [egghead.io](https://egghead.io/courses/build-your-first-react-js-application).
+Asciicasts for [Dan Abramov](https://github.com/gaearon) course on [egghead.io](https://egghead.io/courses/building-react-applications-with-idiomatic-redux).
 
-There are 15 transcripts, one transcript for each video except the first and 16th video.
+There are 27 transcripts, one transcript for each video.
 
 ## Gitbook
 ```
@@ -12,4 +12,4 @@ gitbook install
 gitbook serve
 ```
 # Library Version
-[React](https://facebook.github.io/react/blog/2015/11/18/react-v0.14.3.html): 0.14.3
+[React](https://facebook.github.io/react/blog/2016/04/08/react-v15.0.1.html): 15.0.2

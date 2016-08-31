@@ -199,7 +199,7 @@ const listByFilter = combineReducers({
 ```
 Because `listByFilter` is defined in this file, the `getVisibleTodo` selector can make assumptions about its `state` shape and access it directly. However, the implementation of `createList` is in a separate file, so this is why it uses the `fromList.getIds` selector to get the IDs from it.
 
-**index.js
+**index.js**
 ```javascript
 export const getVisibleTodos = (state, filter) => {
   const ids = fromList.getIds(state.listByFilter[filter]);

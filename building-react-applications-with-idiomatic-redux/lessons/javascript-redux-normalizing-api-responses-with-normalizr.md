@@ -1,10 +1,10 @@
-In the `byId` reducer, I currently have to **handle different server** actions in a different way, because they have different **response shape**. For example, the `FETCH_TODOS_SUCCES` action has a response, which is an array of todos.
+In the `byId` reducer, I currently have to **handle different server** actions in a different way, because they have different **response shape**. For example, the `FETCH_TODOS_SUCCESS` action has a response, which is an array of todos.
 
 **byId.js**
 ```javascript
 const byId = (state = {}, action) => {
   switch (action.type) {
-    case 'FETCH_TODOS_SUCCES':
+    case 'FETCH_TODOS_SUCCESS':
     action.response.forEach(todo => {
       nextState[todo.id] = todo;
     });
@@ -50,7 +50,7 @@ Next, I am opening the file where I define action creators, and I am adding a na
 import { normalize } from 'normalizr';
 import * as schema from './schema';
 ```
-I'm scrolling down to the `FETCH_TODOS_SUCCES` callback, and adding a normalized response log so that I can see what the normalized response looks like. I'm calling the `normalize` function with the original response as the first argument, and the corresponding schema -- in this case, array of todos -- as the second argument.
+I'm scrolling down to the `FETCH_TODOS_SUCCESS` callback, and adding a normalized response log so that I can see what the normalized response looks like. I'm calling the `normalize` function with the original response as the first argument, and the corresponding schema -- in this case, array of todos -- as the second argument.
 
 **index.js**
 ```javascript
@@ -61,7 +61,7 @@ return api.fetchTodos(filter).then(
       normaliz(response, schema.arrayOfTodos)
     );
     dispatch({
-      type: 'FETCH_TODOS_SUCCES',
+      type: 'FETCH_TODOS_SUCCESS',
       filter,
       response,
     });
@@ -87,11 +87,11 @@ export const addTodo = (text) => (dispatch) =>
 ```
 If I run the app now and look at the response in the action, I will see an array of todo objects, 
 
-![Original Response FETCH_TODOS_SUCCES](../images/javascript-redux-normalizing-api-responses-with-normalizr-original-fetch-response.png)
+![Original Response FETCH_TODOS_SUCCESS](../images/javascript-redux-normalizing-api-responses-with-normalizr-original-fetch-response.png)
 
 however, a normalized response for fetch todo success action looks differently. It contains two fields called entities and result. Entities contains a normalized dictionary called `todos` that contains every `todo` in the response by its `id`. Normalizr found these `todo` objects in the response by following the array of todos schema. Conveniently, they are indexed by `ids`, so they will be easy to merge into the lookup table.
 
-![Normalized Response FETCH_TODOS_SUCCES](../images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-response.png)
+![Normalized Response FETCH_TODOS_SUCCESS](../images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-response.png)
 
 The second field is the `result`. It's an array of `todo ids`. They are in the same order as the `todos` in the original response array. However, Normalizr replaced each `todo` with its `id`, and moved every `todo` into the `todos` dictionary.
 
@@ -112,7 +112,7 @@ I will now change the action creator so that they pass the normalized response i
 return api.fetchTodos(filter).then(
   response => {
     dispatch({
-      type: 'FETCH_TODOS_SUCCES',
+      type: 'FETCH_TODOS_SUCCESS',
       filter,
       response: normalize(response, schema.arrayOfTodos),
     });
@@ -151,7 +151,7 @@ Now, I need to switch to the `ids` reducer to amend it to understand the new act
 **createList.js**
 ```javascript
 switch (action.type) {
-  case 'FETCH_TODOS_SUCCES':
+  case 'FETCH_TODOS_SUCCESS':
     return filter === action.filter ?
     action.response.map(todo => todo.id) :
     state;
@@ -163,12 +163,12 @@ switch (action.type) {
       return state;
 }
 ```
-Now, the action response has a `result` field, which is already an array of `ids`, in case of `FETCH_TODOS_SUCCES`, and our single id of the fetched `todo` in case of `ADD_TODO_SUCCESS`.
+Now, the action response has a `result` field, which is already an array of `ids`, in case of `FETCH_TODOS_SUCCESS`, and our single id of the fetched `todo` in case of `ADD_TODO_SUCCESS`.
 
 **createList.js**
 ```javascript
 switch (action.type) {
-  case 'FETCH_TODOS_SUCCES':
+  case 'FETCH_TODOS_SUCCESS':
     return filter === action.filter ?
     action.response.result :
     state;
@@ -180,20 +180,18 @@ switch (action.type) {
       return state;
 }
 ```
-I can run the app now, and inspect the action response. I can see that, for `FETCH_TODOS_SUCCES`, the response contains the `entities` which contains the `todos` by their `ids`, and the `result` is an array of `ids` in the same order as they were in the original response.
+I can run the app now, and inspect the action response. I can see that, for `FETCH_TODOS_SUCCESS`, the response contains the `entities` which contains the `todos` by their `ids`, and the `result` is an array of `ids` in the same order as they were in the original response.
 
 ![Normalized Fetch Object](../images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-object.png)
 
 I can also add a todo, and the action response will also contain the `entities` and the `result`, where the `entities` contains the `todos` by their IDs, in this case, a single todo. The result is the id of the added todo.
 
-///////////// 6:03 could add screenshot if necessary but it will be very similar to the above photo
-
-Let's recap how to work with normalized responses. `FETCH_TODOS_SUCCES` original response contained an array of `todos`. Normalizr replaces them with an array of their `ids` in the `result` field. The `ADD_TODO_SUCCESS` original response was a single `todo`, so action response `result` becomes its `id`.
+Let's recap how to work with normalized responses. `FETCH_TODOS_SUCCESS` original response contained an array of `todos`. Normalizr replaces them with an array of their `ids` in the `result` field. The `ADD_TODO_SUCCESS` original response was a single `todo`, so action response `result` becomes its `id`.
 
 **createList.js**
 ```javascript
 switch (action.type) {
-  case 'FETCH_TODOS_SUCCES':
+  case 'FETCH_TODOS_SUCCESS':
     return filter === action.filter ?
     action.response.result :
     state;
@@ -235,14 +233,14 @@ Finally, in the action creators, I call the normalize function to get the normal
 return api.fetchTodos(filter).then(
   response => {
     dispatch({
-      type: 'FETCH_TODOS_SUCCES',
+      type: 'FETCH_TODOS_SUCCESS',
       filter,
       response: normalize(response, schema.arrayOfTodos),
     });
   },
   error => { ... });
 ```
-I know that the original response from `FETCH_TODOS_SUCCES` is an array of `todo` objects. I pass the array of `todos` schema. The `ADD_TODO_SUCCESS` response shape is a single `todo` item. I pass the schema for a single `todo` to the normalize function that I import from Normalizr.
+I know that the original response from `FETCH_TODOS_SUCCESS` is an array of `todo` objects. I pass the array of `todos` schema. The `ADD_TODO_SUCCESS` response shape is a single `todo` item. I pass the schema for a single `todo` to the normalize function that I import from Normalizr.
 
 **index.js**
 ```javascript

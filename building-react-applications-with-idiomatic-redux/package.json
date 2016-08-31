@@ -1,7 +1,7 @@
 {
-  "name": "build-your-first-reactjs-app",
+  "name": "building-react-applications-with-idiomatic-redux",
   "version": "1.0.0",
-  "description": "This repo contains asciicasts for [Build Your First React.js App](https://egghead.io/courses/build-your-first-react-js-application)",
+  "description": "This repo contains asciicasts for [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

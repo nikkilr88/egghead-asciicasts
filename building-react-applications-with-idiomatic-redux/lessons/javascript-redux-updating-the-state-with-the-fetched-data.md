@@ -81,7 +81,6 @@ Similarly, the `activeIds` reducer only wants to replace the state when the filt
 
 **todos.js**
 ```javascript
-```javascript
 const activeIds = (state = [], action) => {
   if (action.filter !== 'active') {
     return state;
@@ -148,7 +147,7 @@ Inside the `next state` object, the todos `byId` lookup table is essentially the
 
 We have **filter and logic to the server**, so switching a tab for the first time will take some time for the answers to load. However the **next switch** is filled instantaneous because we have **cached the array** of the fetched IDs. Even though we refresh them by fetching them again, the UI can already render the previous version of the array.
 
-Let's recap how we updated this state in response to the action with the fetch data. The state shape of the `byId` reducer stayed the same. It's still a mapping of todo IDs to the todo objects. However, now it handles the 'REVEIVE_TODOS' action when they are fetched from the server.
+Let's recap how we updated this state in response to the action with the fetch data. The state shape of the `byId` reducer stayed the same. It's still a mapping of todo IDs to the todo objects. However, now it handles the `RECEIVE_TODOS` action when they are fetched from the server.
 
 **todos.js**
 ```javascript

@@ -9,8 +9,6 @@ fetchData() {
 ```
 To show the loading indicator, I dispatch the `requestTodos` action before I `fetchTodos`. It would be great if I could make `requestTodos` dispatched automatically when I fetch the todos because I never want to fire them separately.
 
-I'm removing the explicit `requestTodos` dispatch from the component, 
-
 **VisibleTodoList.js**
 ```javascript
 fetchData() {
@@ -18,7 +16,7 @@ fetchData() {
   fetchTodos(filter);
 }
 ```
-and in the file where I define the action creators, I'm no longer exporting `requestTodos` action creator.
+I'm removing the explicit `requestTodos` dispatch from the component, and in the file where I define the action creators, I'm no longer exporting `requestTodos` action creator.
 
 **index.js**
 ```javascript
