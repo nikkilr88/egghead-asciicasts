@@ -90,7 +90,7 @@ One common problem after enabling routing is, if we go to another path and press
 
 
 
-I'm using `Express` with `webpackDevMiddleware` in my development, so I just need to tell **Express** to serve index HTML no matter what the path is. This way, the dev server always serves the same HTML file, and React Router matches the route on the client.
+I'm using `Express` "See [Getting Started with Express.js](https://egghead.io/courses/getting-started-with-express-js) for more information regarding Express" with `webpackDevMiddleware` in my development, so I just need to tell **Express** to serve index HTML no matter what the path is. This way, the dev server always serves the same HTML file, and React Router matches the route on the client.
 
 
 **devServer.js**
@@ -155,7 +155,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 ```
 
-I change the `getVisibleTodos` function to use the current filter names, `all`, `completed`, and `active`. For consistency, the footer component now also uses these names as the value of the filter prop for the 'FilterLink`, and I re-implemented the `FilterLink` to use the `Link` provided by React Router instead of our own implementation.
+I change the `getVisibleTodos` function to use the current filter names, `all`, `completed`, and `active`. For consistency, the footer component now also uses these names as the value of the filter prop for the `FilterLink`, and I re-implemented the `FilterLink` to use the `Link` provided by React Router instead of our own implementation.
 
 
 **FilterLink.js**

@@ -22,7 +22,7 @@ export const getVisibleTodos = (todos, filter) => {
     case 'active':
       return todos.filter(t => !t.completed);
     default:
-      throw new Error('Unknown filter: ${filter}.`);
+      throw new Error(`Unknown filter: ${filter}.`);
   }
 };
 ```
@@ -42,7 +42,7 @@ export const getVisibleTodos = (state, filter) => {
     case 'active':
       return state.filter(t => !t.completed);
     default:
-      throw new Error('Unknown filter: ${filter}.`);
+      throw new Error(`Unknown filter: ${filter}.`);
   }
 };
 ```

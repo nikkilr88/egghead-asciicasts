@@ -374,7 +374,7 @@ const isFetching = (state = false, action) => {
 
 
 const errorMessage = (state = null, action) => {...}
-
+```
 
 When the request fails, its state becomes the message from the action. But if it succeeds or if a new request starts, it is reset to `null`. Like in other reducers in this file, we are only handling actions that have the same filter as the filter this list was created with.
 
