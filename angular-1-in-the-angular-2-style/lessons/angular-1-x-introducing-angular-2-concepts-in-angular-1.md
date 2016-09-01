@@ -10,7 +10,7 @@ In this series, we are going to revisit our old friend, Eggly -- the trusty book
 
 We are going to learn how to load modules and assets using Webpack. We'll see the basic structure of a component, how to build components using the new .component syntax, how to approximate inputs and outputs using isolated scope to create smart and dumb components, how to use component lifecycle hooks within our controllers, and what that means.
 
-We'll also see how dependency injection works in ES6, and how to test components using the new component controller, provided by [?] Mocks. Now I'm going to start at the 00-start branch and build our application from there.
+We'll also see how dependency injection works in ES6, and how to test components using the new component controller, provided by [?] Mocks. Now I'm going to start at the `00-start branch` and build our application from there.
 
 **bash**
 ```bash
