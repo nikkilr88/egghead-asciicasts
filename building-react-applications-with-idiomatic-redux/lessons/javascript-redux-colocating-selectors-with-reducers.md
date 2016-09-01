@@ -27,7 +27,7 @@ export const getVisibleTodos = (todos, filter) => {
 };
 ```
 
-The convention I follow is simple. The default export is **always the reducer function**, but any named export starting with `get` is a function that prepares the data to be displayed by the UI. We usually call these functions **selectors** because they select something from the current state.
+The convention I follow is simple. **The default export is always the reducer function**, but any named export starting with `get` is a function that prepares the data to be displayed by the UI. We usually call these functions **selectors** because they select something from the current state.
 
 In the reducers, the `state` argument corresponds to the state of this particular reducer. I'll follow the same convention in selectors, where the state argument will correspond to the state of the exported reducer in this file.
 
