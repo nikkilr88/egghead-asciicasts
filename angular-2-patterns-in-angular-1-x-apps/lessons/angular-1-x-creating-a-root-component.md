@@ -95,7 +95,7 @@ Webpack is compiling. It looks like we're good.
 
 Let's hop into the browser, refresh. Now, you can see we have our `categories` column and our `bookmarks` column being picked up by our `appComponent` that we put into our `index.html`.
 
-![Categories and Bookmarks](../images/angular-1-x-creating-a-root-component-categories-bookmarks.png)
+![Categories and Bookmarks](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-creating-a-root-component-categories-bookmarks.png)
 
 Just to review, we created our `app` module, 
 

@@ -98,7 +98,7 @@ From here, we need to update the `categories.html` to use our category item comp
 ```
 Let's hop into the browser. You can see that it's working, but just to prove that it is, let's go ahead and update this template. We'll just put two exclamation points in here. We'll hop back into the browser so you can see that we're rendering the `category-item` component.
 
-![category-item](../images/angular-1-x-connected-and-presentation-components-using-angular-component-bindings-category-item.png)
+![category-item](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-connected-and-presentation-components-using-angular-component-bindings-category-item.png)
 
 Now that we've created an input, let's go ahead and create an output. Let's hop back into our `categoryItemComponent`. We want to create an output of `selected` so that when an item is `selected`, then it emits an event that we can bind to. That's just expression-isolated scope.
 
@@ -145,7 +145,6 @@ onCategoriesSelected(category) {
 ```
 As we click a `category` item, you can see that it is being logged to the console.
 
-![Console.log Category Item](../images/angular-1-x-connected-and-presentation-components-using-angular-component-bindings-console-output.png)
 **Console Output**
 ```javascript
 // CATEGORY SELECTED Object {id: 0, name: "Development", $$hashKey: "object:4"}

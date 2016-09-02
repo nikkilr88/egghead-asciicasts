@@ -71,7 +71,7 @@ export default CategoriesConroller;
 ```
 But let's look in the browser and you can see here that because we're in strict mode, something happened with our dependency injection annotation.
 
-![Strict Mode Error](../images/angular-1-x-creating-services-strict-mode-error.png)
+![Strict Mode Error](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-creating-services-strict-mode-error.png)
 
 We solve this by adding in `ngInject` into our `constructor()` which then allows `ngAnnotation` to properly resolve our dependencies. 
 
@@ -87,7 +87,7 @@ class CategoriesConroller {
 ```
 Now, you can see that our `categories` are being pulled from the `CategoriesModel`. We defined our common module. 
 
-![Categories](../images/angular-1-x-creating-services-categories.png)
+![Categories](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-creating-services-categories.png)
 
 We attach categories model to it, which has our categories collection. Notice that it's just a class very similar to an Angular 2 class.
 

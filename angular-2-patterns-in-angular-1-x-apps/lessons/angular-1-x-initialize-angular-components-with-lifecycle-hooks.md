@@ -24,7 +24,7 @@ The wonderful thing is that component lifecycle hooks have been ported back to A
 ```
 Let's hop into the browser and see what this looks like. We'll click toggle; you see it. Click it again, you don't. See it and you do not. 
 
-![Toggled Visibility](../images/angular-1-x-initialize-angular-components-with-lifecycle-hooks-toggled-visibility.png)
+![Toggled Visibility](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-initialize-angular-components-with-lifecycle-hooks-toggled-visibility.png)
 
 This is a perfect candidate to hook lifecycle hooks into our `categories` component.
 

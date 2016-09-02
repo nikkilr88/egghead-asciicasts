@@ -116,7 +116,7 @@ Then we'll go `ComponentsModule.name`, so we'll hop into our HTML and we'll just
 
 Let's check the console, make sure that nothing is broken. So we'll hop into our browser. We'll just refresh this for fun and you can see that our `categoriesComponent` is rendering. We'll just make this a bit smaller.
 
-![Categories Sidebar](../images/angular-1-x-creating-subcomponents-final.png)
+![Categories Sidebar](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-creating-subcomponents-final.png)
 
 Let's just do a quick review of what we've done. We created a categories directory to put our categories feature. We created a `CategoriesModule` to hold all of our category specific stuff, including `CategoriesComponent` which just holds our template and our styles.
 

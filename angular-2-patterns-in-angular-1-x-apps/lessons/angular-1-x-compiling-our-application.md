@@ -133,7 +133,7 @@ $ npm start
 
 When we reload this, we should look in the console and see `Hello, Eggly ES6.` The reason being is even though we didn't explicitly include `bundle.js`, it was wrapped up in Webpack.
 
-![Hello, Eggly ES6](../images/angular-1-x-compiling-our-application-hello-eggly.png)
+![Hello, Eggly ES6](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-compiling-our-application-hello-eggly.png)
 
 Let's do a quick review. We created `webpack.config.js` with our output, and then our loaders here. 
 

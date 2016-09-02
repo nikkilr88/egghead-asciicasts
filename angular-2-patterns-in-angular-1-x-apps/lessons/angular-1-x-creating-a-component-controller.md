@@ -63,7 +63,7 @@ Let me just make sure that I did this correctly, and I did. Let's make sure that
 
 We have development, design, exercise humor. 
 
-![Finished Categories](../images/angular-1-x-creating-a-component-controller-categories.png)
+![Finished Categories](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-creating-a-component-controller-categories.png)
 
 You can notice the similarity between the Angular 2 component and our Angular 1 controller using this ES6 class.
 

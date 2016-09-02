@@ -161,7 +161,7 @@ Now that we've imported it let's add it in as a dependency, and then from there 
 </div>
 ```
 
-![eggly categories](../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output.png)
+![eggly categories](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output.png)
 
 The next step is when we click a category we want to show only the bookmarks for that category. How we're going to do that is we're going to first jump into the `CategoriesModel`, and we're going to create a mechanism to store the current category.
 
@@ -254,7 +254,7 @@ From here active is going to be applied when `categoriesListController.isCurrent
 
 In this case when you click to logo we want to just clear that out. We'll hop into the browser. You can see that when we click a category that it is maintaining its state. Now what we want to do is set it up so that when we click on a category we filter the bookmarks.
 
-![eggly categories](../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output.png)
+![eggly categories](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output.png)
 
 The first thing we need to do is go into the `BookmarksController`, and we're going to inject the `CategoriesModel`. From there we'll store a local reference, and then we're going to create a local reference called `getCurrentCategory` to the reference or to the `getCurrentCategory` method on the categories model.
 
@@ -297,7 +297,7 @@ This is simply a pass through property, but now what we're going to do is then a
 
 The idea is that when this filter runs it's going to call `bookmarksListController.getCurrentCategory`, which is really going to call `getCurrentCategory` on the model. We're going to click this, and you'll notice that nothing is happening. Let's see what is going on here.
 
-![eggly output incomplete](../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-2.png)
+![eggly output incomplete](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-2.png)
 
 We'll hop into the current category, or rather the category model, and let's just trace out what `this` is within this particular method.
 
@@ -319,7 +319,7 @@ class CategoriesModel {
 
 Refresh, and you can see here that we have `CategoriesModel`, so we have four of these on the left-hand side, but then we have `THIS = bookmarksController`, which is obviously not what we want to happen. The reason why that's happening is because we're overriding the lexical reference to `this`.
 
-![console output](../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output.png)
+![console output](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output.png)
 
 What we need to do is **bind** the `getCurrentCategory` method back to the `CategoriesModel`. Just by adding .bind to `this.CategoriesModel` now we're saying call this method but call it within the context of `CategoriesModel`.
 
@@ -339,9 +339,9 @@ class BookmarksController{
 
 You can see here when we click this that the filter is now working, and if we look in the console it's categories model all the way down.
 
-![eggly output success](../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-3.png)
+![eggly output success](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-3.png)
 
-![eggly console success](../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output-2.png)
+![eggly console success](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output-2.png)
 
 Let's just review what we've done up to this point. In `CategoriesModel` we've created a mechanism to set the `currentCategory` and then retrieve the `currentCategory`.
 

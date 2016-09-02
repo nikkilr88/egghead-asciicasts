@@ -216,22 +216,83 @@ On cancel, we're just going to call `reset()`, and that's just going to set `cur
 
 Let's hop into the browser and check this out. Now you can see that when we're on a category, we can click Create Bookmark and create the bookmark. If we click the Edit icon, it's passing that bookmark in, and we can edit it.
 
-![Create Bookmark](../images/angular-1-x-isolate-state-mutations-in-angular-components-create-bookmark.png)
+![Create Bookmark](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-isolate-state-mutations-in-angular-components-create-bookmark.png)
 
-The problem is you can see as I typed in the title, it immediately updated it in not only the form but in the bookmarks list, as well, and if I canceled it, there's no way to back out of that. This is the problem of shared mutable state. How do we isolate that mutable operation so that we can back out of it or that change does not affect other places in the application?
+The problem is you can see as I typed in the title, it immediately updated it in not only the form but in the bookmarks list, as well, and if I canceled it, there's no way to back out of that. This is the problem of **shared mutable state**. How do we isolate that mutable operation so that we can back out of it or that change does not affect other places in the application?
 
-The problem is that this form is bound directly to the bookmark object, and we need to work around that. The way that we're going to do that is we're going to create a saveBookmarkController. From here, we're going to define our saveBookmarkController class. Then, we're just going to hook into the onChanges event hook.
+The problem is that this form is bound directly to the bookmark object, and we need to work around that. The way that we're going to do that is we're going to create a `saveBookmarkController`. From here, we're going to define our `saveBookmarkController` class. Then, we're just going to hook into the `onChanges` event hook.
 
-Let's just log this out real quick. When this event is fired, we're just going to log out onChangeFired. Let's hook this into our component. We'll add this to the configuration object here. Let's refresh the page. Now, let's clear this, and we'll now select a bookmark to edit.
+Let's just log this out real quick. 
 
-![On Change Fired](../images/angular-1-x-isolate-state-mutations-in-angular-components-on-change.png)
+**save-bookmark/save-bookmark.controller.js**
+```javascript
+class SaveBookmarkController{
+  $onchanges() {
+    console.log('ON CHANGE FIRED!');
+  }
+}
+```
 
-You can see here that when we are updating currentBookmark, that we're firing the console log. This is a closer approximation to a unidirectional data flow in Angular 1 in one-way data binding that when we change the object, we're firing this onChanges event.
+When this event is fired, we're just going to log out `On Change Fired!`. Let's hook this into our component. We'll add this to the configuration object here.
 
-What we're going to do is we're going to create a new property called editedBookmark, and we're just going to use object.assign to return a new object that's a clone of the bookmark object. We'll update the form now to set the mutations on editedBookmark, leaving the bookmark that we sent in intact. We're just creating a local copy.
+**save-bookmark/save-bookmark.component.js**
+```javascript
+let saveBookmarkComponent = {
+  bindings: {
+    bookmark: '<',
+    save: '&',
+    cancel: '&'
+  },
+  template,
+  controller,
+  controllerAs: 'saveBookmarkCtrl'
+};
+```
+export default saveBookmarkComponent;
+
+ Let's refresh the page. Now, let's clear this, and we'll now select a bookmark to edit.
+
+![On Change Fired](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-isolate-state-mutations-in-angular-components-on-change.png)
+
+You can see here that when we are updating `currentBookmark`, that we're firing the console log. This is a closer approximation to a **unidirectional data flow** in Angular 1 in one-way data binding that when we change the object, we're firing this `onChanges` event.
+
+**save-bookmark/save-bookmark.controller.js**
+```javascript
+class SaveBookmarkController{
+  $onchanges() {
+    this.editedBookmark = Object.assign({}, this.bookmark);
+  }
+}
+```
+
+What we're going to do is we're going to create a new property called `editedBookmark`, and we're just going to use `object.assign` to return a new object that's a clone of the bookmark object. We'll update the form now to set the mutations on `editedBookmark`, leaving the bookmark that we sent in intact. We're just creating a local copy.
+
+**save-bookmark/save-bookmark.html**
+```html
+<div class="save-bookmark">
+	<h4 ng-if="!saveBookmarkCtrl.bookmark.id">Create a bookmark in
+		<span class="text-muted">{{saveBookmarkCtrl.editedBookmark.category}}</span>
+	</h4>
+	<h4 ng-if="saveBookmarkCtrl.bookmark.id">Editing {{saveBookmarkCtrl.bookmark.title}}</h4>
+
+	<form class="edit-form" role="form" novalidate
+		ng-submit="saveBookmarkCtrl.save({bookmark:saveBookmarkCtrl.editedBookmark})" >
+		<div class="form-group">
+			<label>Bookmark Title</label>
+			<input type="text" class="form-control" ng-model="saveBookmarkCtrl.editedBookmark.title" placeholder="Enter title">
+		</div>
+		<div class="form-group">
+			<label>Bookmark URL</label>
+			<input type="text" class="form-control" ng-model="saveBookmarkCtrl.editedBookmark.url" placeholder="Enter URL">
+		</div>
+		<button type="submit" class="btn btn-info btn-lg">Save</button>
+		<button type="button" class="btn btn-default btn-lg pull-right" ng-click="saveBookmarkCtrl.cancel()">Cancel</button>
+	</form>
+</div>
+```
 
 Now, if I go here and I update this bookmark to point to the new angular.io site, you can see here that it's not updating, but when I save it, we're passing that up, and it is working.
 
-You can see here that I can create something, and I can cancel it out, no harm, no foul. If I want to update it, because I'm editing the editedBookmark local object, then it's basically isolated to that component. Then, it's only updated when we send it back.
+You can see here that I can create something, and I can cancel it out, no harm, no foul. If I want to update it, because I'm editing the `editedBookmark` local object, then it's basically isolated to that component. Then, it's only updated when we send it back.
 
-This is how you isolate state mutations within a component. You create a local object using object.assign, perform the mutable operations on that. If you want to cancel it, you throw it away. If you want to persist it, then you emit it back up to the parent or smart component.
+This is how you isolate state mutations within a component. You create a local object using `object.assign`, perform the mutable operations on that. If you want to cancel it, you throw it away. If you want to persist it, then you emit it back up to the parent or `smart component`.
