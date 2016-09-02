@@ -1,0 +1,5 @@
+{
+    "title": "Using Angular 2 Patterns in Angular 1.x Apps",
+    "description": "This book covers the [Using Angular 2 Patterns in Angular 1.x Apps](https://egghead.io/courses/angular-1-in-the-angular-2-style) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
