@@ -339,9 +339,9 @@ class BookmarksController{
 
 You can see here when we click this that the filter is now working, and if we look in the console it's categories model all the way down.
 
-![eggly output success](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-3.png)
+![eggly output success](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-3.png)
 
-![eggly console success](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output-2.png)
+![eggly console success](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/using-angular-2-patterns-in-angular-1-x-apps/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output-2.png)
 
 Let's just review what we've done up to this point. In `CategoriesModel` we've created a mechanism to set the `currentCategory` and then retrieve the `currentCategory`.
 
