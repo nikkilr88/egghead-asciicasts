@@ -1,0 +1,15 @@
+# Summary
+
+* [Introducing Angular 2 Concepts in Angular 1](lessons/angular-1-x-introducing-angular-2-concepts-in-angular-1.md)
+* [Compile an Angular Application Written in ES6](lessons/angular-1-x-compile-an-angular-application-written-in-es6.md) 
+* [Create a Top Level Angular Application Component](lessons/angular-1-x-create-a-top-level-angular-application-component.md)
+* [Structure a Complex Angular Component using Subcomponents](lessons/angular-1-x-structure-a-complex-angular-component-using-subcomponents.md)
+* [Build an Angular Component Controller Using ES6 Class](lessons/angular-1-x-build-an-angular-component-controller-using-es6-class.md)
+* [Refactor Angular Controller Logic to Services](lessons/angular-1-x-refactor-angular-controller-logic-to-services.md)
+* [Use Dependency Injection with ES6 and Angular](lessons/angular-1-x-use-dependency-injection-with-es6-and-angular.md)
+* [Containers and Presentation Components Using Angular Component Bindings](lessons/angular-1-x-container-and-presentation-components-using-angular-component-bindings.md)
+* [Initialize Angular Components with Lifecycle Hooks](lessons/angular-1-x-initialize-angular-components-with-lifecycle-hooks.md)
+* [Build Lightweight Controllers by Binding to Models in Angular](lessons/angular-1-x-build-lightweight-controllers-by-binding-to-models-in-angular.md)
+* [Isolate State Mutations in Angular Components](lessons/angular-1-x-isolate-state-mutations-in-angular-components.md)
+* [Communicate State Changes in Angular with an Event Bus](lessons/angular-1-x-communicate-state-changes-in-angular-with-an-event-bus.md) 
+* [Test an Angular Component with $componentcontroller](lessons/angular-1-x-test-an-angular-component-with-componentcontroller.md)
