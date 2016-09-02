@@ -2,7 +2,7 @@ In this lesson, we are going to learn how to set up **Webpack** to convert our c
 
 We will also make heavy use of module loading, and so we need Webpack to help us locate and resolve all of our assets, and more importantly, their dependencies. The first thing we need to do to enable Webpack in our project is to create a configuration file to tell Webpack how to run.
 
-**bash**
+**terminal**
 ```bash
 $ touch webpack.config.js
 ```
@@ -11,7 +11,7 @@ $ touch webpack.config.js
 
 The first thing that we're going to define is what we want our output to actually be. In this case, we want it to be a file with the name of `bundle.js`. From here we're going to define how we're going to load our modules. We'll define a module object, and from here we're going to create an array of loaders.
 
-We'll start with a really simple loader, and we're just going to test for HTML files, so this is just a [regular expression](https://egghead.io/courses/regex-in-javascript) that tests for this HTML pattern. When it matches, it's going to apply this loader to it. In this case we're doing raw, which is a simple loader that just takes the raw content of the HTML file and puts it into the bundle.
+We'll start with a really simple loader, and we're just going to test for HTML files, so this is just a [regular expression](https://egghead.io/courses/regex-in-javascript) that tests for this HTML pattern. When it matches, it's going to apply this loader to it. In this case we're doing `raw`, which is a simple loader that just takes the `raw` content of the HTML file and puts it into the bundle.
 
 **webpack.config.js**
 ```javascript
@@ -65,40 +65,14 @@ import webpack  from 'webpack-stream';
 ...
 ```
 
-Let's create a new Webpack task. We're going to return a new stream that's going to start at our entry point. We'll go pass.entry. we'll take all of the files from that entry point, and we're going to pass them to Webpack with our Webpack configuration file we just created to be processed. Then we'll take the output of that, which is just a bundle.js file, and we're going to send that to our output.
+Let's create a new Webpack task. We're going to return a new stream that's going to start at our entry point. We'll go `pass.entry`. we'll take all of the files from that entry point, and we're going to pass them to Webpack with our Webpack configuration file we just created to be processed. Then we'll take the output of that, which is just a `bundle.js` file, and we're going to send that to our output.
 
-Now that we've created our Webpack task, let's go ahead and add this to our default Gulp task. Since we're here, let's go ahead and add this to our watch task as well. 
+Now that we've created our `Webpack task`, let's go ahead and add this to our `default Gulp task`. Since we're here, let's go ahead and add this to our `watch task` as well. 
 
 **gulpfile.babel.js**
 ```javascript
-'use strict';
 
-import gulp     from 'gulp';
-import webpack  from 'webpack-stream';
-import path     from 'path';
-import sync     from 'run-sequence';
-import serve    from 'browser-sync';
-
-let reload = () => serve.reload();
-let root = 'client';
-
-// helper method for resolving paths
-let resolveToApp = (glob) => {
-  glob = glob || '';
-  return path.join(root, 'app', glob); // app/{glob}
-};
-
-// map of all paths
-let paths = {
-  js: resolveToApp('**/*!(.spec.js).js'), // exclude spec files
-  styl: resolveToApp('**/*.styl'), // stylesheets
-  html: [
-    resolveToApp('**/*.html'),
-    path.join(root, 'index.html')
-  ],
-  entry: path.join(root, 'app/app.js'),
-  output: root
-};
+...
 
 // use webpack.config.js to build modules
 gulp.task('webpack', () => {
@@ -128,7 +102,7 @@ gulp.task('default', (done) => {
 
 Now that we've created our Webpack and hooked it into Gulp, let's create a new JavaScript file to verify this is working.
 
-We're going to create an `app.js` file in our app directory, and we're going to put a simple `console log` here that says, "Hello, Eggly ES6!"
+We're going to create an `app.js` file in our app directory, and we're going to put a simple `console log` here that says, `Hello, Eggly ES6!`
 
 **client/app/app.js**
 ```javascript
@@ -141,17 +115,6 @@ Let's go into our index.html file. We need to actually include our bundle.js fil
 ```html
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Eggly | Angular with ES6</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="A bookmark manager built with AngularJS, and ES6">
-    <link rel="icon" href="favicon.jpg">
-    <base href="/">
-  </head>
   <body>
 
     <h1>Hello Eggly ES6!</h1>
@@ -163,12 +126,12 @@ Let's go into our index.html file. We need to actually include our bundle.js fil
 
 We'll take `bundle.js` here so that our file gets included, and now let's kick things off with `npm start`, and let's hop into the browser.
 
-**bash**
+**terminal**
 ```bash 
 $ npm start
 ```
 
-When we reload this, we should look in the console and see "Hello, Eggly ES6." The reason being is even though we didn't explicitly include bundle.js, it was wrapped up in Webpack.
+When we reload this, we should look in the console and see `Hello, Eggly ES6.` The reason being is even though we didn't explicitly include `bundle.js`, it was wrapped up in Webpack.
 
 ![Hello, Eggly ES6](../images/angular-1-x-compiling-our-application-hello-eggly.png)
 
@@ -185,7 +148,7 @@ loaders: [
     ]
 ```
 
-Our JavaScript loader, specifically, is using `ng-annotate` in Babel. We hooked this into Gulp with `webpack-stream`, and then we created a Webpack task that starts at our entry point, passes that into Webpack, and then puts our output into our destination pack.
+Our JavaScript loader, specifically, is using `ng-annotate` in Babel. We hooked this into Gulp with `webpack-stream`, and then we created a Webpack task that starts at our entry point, passes that into `Webpack`, and then puts our output into our destination pack.
 
 **gulpfile.babel.js**
 ```javascript
@@ -197,4 +160,4 @@ gulp.task('webpack', () => {
 });
 ```
 
-We added it to our default tasks and our watch tasks. We included `bundle.js` into our `index.html`, and then we had a `console log` in `app.js`, just to prove that it was working. This is how you add a Webpack to a project.
+We added it to our `default tasks` and our `watch tasks`. We included `bundle.js` into our `index.html`, and then we had a `console log` in `app.js`, just to prove that it was working. This is how you add a Webpack to a project.

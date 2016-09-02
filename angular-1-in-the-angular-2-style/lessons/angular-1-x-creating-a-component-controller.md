@@ -4,17 +4,17 @@ Our **component configuration object** offers us quite a few additional options 
 
 For reference, let's look at an Angular 2 component real quick and compare where we are going. Using the component configuration object, we're essentially approximating the object that we send into this component metadata here, but now the class underneath serves as the component controller.
 
-This is one of the main reasons we're using [ES6](https://egghead.io/courses/learn-es6-ecmascript-2015) for this project is because how close it resembles its Angular 2 counterpart. Let's see what I mean by creating a categories controller to see how close it resembles this Angular 2 component we just looked at.
+This is one of the main reasons we're using [ES6](https://egghead.io/courses/learn-es6-ecmascript-2015) for this project is because how close it resembles its Angular 2 counterpart. Let's see what I mean by creating a `CategoriesController` to see how close it resembles this Angular 2 component we just looked at.
 
-**bash**
+**terminal**
 ```bash
 $ cd client/app/components/categories
 $ touch categories.controller.js
 ```
 
-We're going to go ahead and create our `categories.controller.js`, and then we'll hop into that and we're going to define an ES6 class and we're going to call this `CategoriesController`. From here, we're going to define our constructor and we're going to initialize a property called categories.
+We're going to go ahead and create our `categories.controller.js`, and then we'll hop into that and we're going to define an ES6 class and we're going to call this `CategoriesController`. From here, we're going to define our constructor and we're going to initialize a property called `categories`.
 
-Now, we'll just hop into our data. We'll just pull the categories JSON out of here, just copy this and paste it in. Then from here, we now have a `CategoriesController` class with a constructor that when it gets initialized will set this categories array with categories objects.
+Now, we'll just hop into our data. We'll just pull the categories JSON out of here, just copy this and paste it in. Then from here, we now have a `CategoriesController` class with a constructor that when it gets initialized will set this `categories` array with categories objects.
 
 **categories/categories.controller.js**
 ```javascript
@@ -32,7 +32,7 @@ class CategoriesController {
 export default CategoriesController;
 ```
 
-We need to export this, so `export default CategoriesController`, and then let's hop into our categories component and make this available to our components. So we're going to import this, `import controller from /categories controller`.
+We need to export this, so `export default CategoriesController`, and then let's hop into our `categories component` and make this available to our components. So we're going to import this, `import controller from /categories controller`.
 
 Then using the shorthand syntax that we did for [template](https://egghead.io/lessons/ecmascript-6-string-templates?course=learn-es6-ecmascript-2015), we're going to go ahead and just set controller. But then we're also going to define controller as, and because this is going to be used to display list of categories, let's do `categoriesListCtrl`.
 
