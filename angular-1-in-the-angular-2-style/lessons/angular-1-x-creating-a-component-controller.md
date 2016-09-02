@@ -49,7 +49,7 @@ const categoriesComponent = {
 };
 ```
 
-Now, we need to hop into our categories template and update this. We'll just delete these bottom items here, and then we're going to add **ng-repeat** to this category item. So new line, ng-repeat, and then we'll go `category in categories` list controller.categories, then we're going to bind to category.name.
+Now, we need to hop into our categories template and update this. We'll just delete these bottom items here, and then we're going to add **ng-repeat** to this category item. So new line, ng-repeat, and then we'll go `category in categoriesListCtrl.categories`, then we're going to bind to `category.name`.
 
 **categories/categories.html**
 ```html

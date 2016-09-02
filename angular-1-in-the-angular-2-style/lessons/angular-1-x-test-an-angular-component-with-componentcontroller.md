@@ -4,7 +4,7 @@ First, let's take a quick moment and talk about how testing works with **Webpack
 
 We're `importing Angular from angular-mocks`, and then we're defining a context for our test, and then we're using that to bundle those up. If we go into the Karma configuration file, you can see that we have **Karma Webpack**, and we're passing in our bundle to be, basically, pre-processed before it goes to Karma.
 
-Then from here, let's look at our category spec. We have a categories module controller, a component template with some very simple tests. We're just testing the name of the module that our category contains a category item, and that our component has template controller as controller equals the category's controller. There's not a lot to test here, but we are going to take this a step further and show how to test the actual component controller.
+Then from here, let's look at our category spec. We have a `CategoriesModule` controller, a component template with some very simple tests. We're just testing the name of the module that our category contains a category item, and that our component has template controller as controller equals the category's controller. There's not a lot to test here, but we are going to take this a step further and show how to test the actual component controller.
 
 Let's initialize some variables here -- `component`, `$componentController`, and `CategoriesModel`. Then from here, let's go ahead and do some additional initialization. Because we're testing a component, we need to import the categories module, and then we are going to mock out the categories model.
 
@@ -45,11 +45,11 @@ beforeEach(inject((_$componentController_, _CategoriesModel_) => {
   }));
 ```
 
-Then from here, let's describe our test block for the controller. Our test is that when the component is created, that the component controller calls `CategoriesModel.getCategories` immediately.
+Then from here, let's describe our test block for the controller. Our test is that when the component is created, that the `$componentController` calls `CategoriesModel.getCategories` immediately.
 
-This is going to be a bit of a funny test, as you'll see in just a moment. The first thing we need to do is create a spy on `getCategories` on `CategoriesModel`, and we're going to call through. From here, let's initialize our component using `$componentController`. So it will take our component name, which is categories, and then its dependencies, in this case, it's just `CategoriesModel`.
+This is going to be a bit of a funny test, as you'll see in just a moment. The first thing we need to do is create a spy on `getCategories` on `CategoriesModel`, and we're going to call through. From here, let's initialize our component using `$componentController`. So it will take our component `name`, which is `categories`, and then its dependencies, in this case, it's just `CategoriesModel`.
 
-Then from here, let's write our assertion, so we expect categories model getCategories to have been called. Let's hop into the command line. We will run our test, and let's see what happens.
+Then from here, let's write our assertion, so we expect `CategoriesModel.getCategories` to have been called. Let's hop into the command line. We will run our test, and let's see what happens.
 
 **categories/categories.spec.js**
 ```javascript

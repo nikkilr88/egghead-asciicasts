@@ -4,7 +4,7 @@ We can simulate that pattern in Angular 1 by creating a single top-level compone
 
 To get started with our first app component, let's create some files. We're going to hop into the command line, and we'll jump into the app directory. We're going to create our `app.html`, which is our template; `app.styl`, which will hold our css; and then `app.component.js`, which is going to hold our **component configuration object** for app component.
 
-**bash**
+**terminal**
 ```bash
 $ cd client/app
 $ touch app.html
@@ -33,7 +33,7 @@ as well as let's hop into our style, `app.styl`, and we'll paste in our styles h
 
 Not important to the concept that we're covering, so let's hop into our `app.component`. We're going to import our template from `app.html`. Then, we will also import our styles via `app.styl`.
 
-From here, let's go ahead and create our component configuration objects. We're going to create an object called "appComponent." We could do template colon template, but using the new [ES6 object literal syntax](https://egghead.io/lessons/ecmascript-6-object-enhancements-in-es6?course=learn-es6-ecmascript-2015), we can just put in template and ES6 will figure it out for us.
+From here, let's go ahead and create our component configuration objects. We're going to create an object called `appComponent.` We could do template colon template, but using the new [ES6 object literal syntax](https://egghead.io/lessons/ecmascript-6-object-enhancements-in-es6?course=learn-es6-ecmascript-2015), we can just put in template and ES6 will figure it out for us.
 
 From here, we're going to export this `appComponent` that we just created. 
 
@@ -68,7 +68,7 @@ angular.module('app', [])
 ;
 ```
 
-From here, let's hop onto our body tag. We're going to go `ng-app="app"`," so we're going to bootstrap to the app module. Then, we're going to do `ng-strict-di`, which just forces us to use dependency injection safe syntax, and `ng-cloak`, just to make things a bit smoother. Let's delete this tag right here.
+From here, let's hop onto our body tag. We're going to go `ng-app="app"`," so we're going to bootstrap to the `app` module. Then, we're going to do `ng-strict-di`, which just forces us to use dependency injection safe syntax, and `ng-cloak`, just to make things a bit smoother. Let's delete this tag right here.
 
 We're going to go app, so this creates the app component or initializes it into our application. 
 
@@ -86,18 +86,18 @@ We're going to go app, so this creates the app component or initializes it into 
 
 Now let's go `npm start` to see this in action. 
 
-**bash**
+**terminal**
 ```bash
 $ npm start
 ```
 
 Webpack is compiling. It looks like we're good.
 
-Let's hop into the browser, refresh. Now, you can see we have our categories column and our bookmarks column being picked up by our appComponent that we put into our index.html.
+Let's hop into the browser, refresh. Now, you can see we have our `categories` column and our `bookmarks` column being picked up by our `appComponent` that we put into our `index.html`.
 
 ![Categories and Bookmarks](../images/angular-1-x-creating-a-root-component-categories-bookmarks.png)
 
-Just to review, we created our app module, 
+Just to review, we created our `app` module, 
 
 **app/app.js**
 ```javascript
@@ -105,7 +105,7 @@ angular.module('app', [])
   .component('app', appComponent)
 ```
 
-which then we attached our app component to that contains our `app.html` template as well as our styling. Then, within our component, we are importing those and attaching our template to our appComponent configuration object.
+which then we attached our `appComponent` to that contains our `app.html` template as well as our styling. Then, within our component, we are importing those and attaching our template to our `appComponent` configuration object.
 
 **app/app.component.js**
 ```javascript
