@@ -1,0 +1,494 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Build Lighweight Controllers by Binding to Models in Angular · Using Angular 2 Patterns in Angular 1.x Apps</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="angular-1-x-compiling-our-application.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="angular-1-x-introducing-angular-2-concepts-in-angular-1.html">
+            
+                <a href="angular-1-x-introducing-angular-2-concepts-in-angular-1.html">
+            
+                    
+                    Introducing Angular 2 Concepts in Angular 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="angular-1-x-compiling-our-application.html">
+            
+                <a href="angular-1-x-compiling-our-application.html">
+            
+                    
+                    Compile an Angular Application Written in ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular.html">
+            
+                <a href="angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular.html">
+            
+                    
+                    Build Lighweight Controllers by Binding to Models in Angular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Build Lighweight Controllers by Binding to Models in Angular</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>In <strong>Angular</strong> we want to keep our controllers small and focused on the view that it is controlling. We accomplish this by moving as much logic and state as we can into models.</p><p>Angular 2 introduced <strong>observables</strong> and <strong>async pipes</strong> which makes it really easy to manage state and communicate that directly to our template.</p><p>We can start to point our Angular 1 applications in that direction by binding to our models directly from within our controllers. In this lesson we will see a simple example of this technique and a slightly more advanced case where we lose the <strong>lexical reference</strong> to the <code>this</code> keyword.</p><p>We&apos;re also going to do a bit of review as we build out the bookmarks component for this example. I have created a <code>BookmarksModel</code>, which you can see here, and I have added it to the <code>CommonModule</code>.</p><p><strong>models/bookmarks.model.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">BookmarksModel</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>$q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;ngInject&apos;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$q <span class="token operator">=</span> $q<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>bookmarks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getBookmarks</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$q<span class="token punctuation">.</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>bookmarks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>common.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">import</span> angular from <span class="token string">&apos;angular&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> BookmarksModel from <span class="token string">&apos;.models/bookmarks.model&apos;</span><span class="token punctuation">;</span></code></pre>
+<p>I&apos;ve also started creating a <code>bookmarks</code>component and have added the styles and the HTML, which you can see here. In the HTML we&apos;re just doing an <code>ng-repeat</code> over the bookmarks collection and here are the styles with the active style being the most important one.</p><p><strong>bookmarks/bookmarks.html</strong></p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bookmarks<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bookmark in bookmarksListCtrl.bookmarks<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>close<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>btn btn-link<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>glyphicon glyphicon-pencil<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p><strong>bookmarks/bookmarks.styl</strong></p><pre><code class="lang-css">.bookmarks
+  .active
+    span, &amp; &gt; a
+      color #5bc0de
+
+  padding-top 96px
+  padding-left 24px</code></pre>
+<p>We&apos;ll get started by jumping into the bookmarks controller. We&apos;re going to define our <code>BookmarksController</code> class, and then we will define our <code>constructor</code>, and we&apos;re going to pass in the <code>BookmarksModel</code>.</p><p><strong>bookmarks.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">BookmarksController</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>BookmarksModel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We&apos;ll add in <code>ngInject</code>, and then from there we will assign a local reference to the <code>BookmarksModel</code>. Then in our <code>$onInit</code> event hook we&apos;re going to fetch the bookmarks from the <code>BookmarksModel</code>. Then we will assign the results of that to <code>this.bookmarks</code>.</p><p><strong>bookmarks/bookmarks.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">BookmarksController</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>BookmarksModel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;ngInject&apos;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>BookmarksModel <span class="token operator">=</span> BookmarksModel<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">$onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>BookmarksModel<span class="token punctuation">.</span><span class="token function">getBookmarks</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>results <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>bookmarks <span class="token operator">=</span> results<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> BookmarksController<span class="token punctuation">;</span></code></pre>
+<p>From there let&apos;s <code>export</code> this, and then we&apos;ll jump into our component, and we&apos;ll hook this up so <code>import template</code>. Then we&apos;ll import the <code>controller</code>. Then let&apos;s import the styles. From there let&apos;s define our component configuration object so <code>bookmarksComponent</code>.</p><p><strong>bookmarks/bookmarks.component.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">import</span> template from <span class="token string">&apos;./bookmarks.html&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> controller from <span class="token string">&apos;./bookmarks.controller&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;./bookmarks.styl&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> bookmarksComponent <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Then we&apos;ll set the <code>template</code>, the <code>controller</code>, and <code>controllerAs</code> we&apos;ll give it a property of or value of <code>bookmarkListCtrl</code>. From there let&apos;s export this.</p><p><strong>bookmarks/bookmarks.component.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">const</span> bookmarksComponent <span class="token operator">=</span> <span class="token punctuation">{</span>
+  template<span class="token punctuation">,</span>
+  controller<span class="token punctuation">,</span>
+  controllerAs<span class="token punctuation">:</span> <span class="token string">&apos;bookmarkListCtrl&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> bookmarksComponent<span class="token punctuation">;</span></code></pre>
+<p>Then we will hop into our bookmarks module, and we&apos;ll build this out, import angular from angular.
+Then we will import the <code>bookmarksComponent</code>. Then we&apos;ll define our module, so <code>BookmarksModule = angular.module</code>.</p><p><strong>bookmarks/bookmark.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">import</span> angular from <span class="token string">&apos;angular&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> bookmarksComponent from <span class="token string">&apos;./bookmarks.component&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> BookmarksModule <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>We&apos;ll give it a name of <code>bookmarks</code>, no dependencies, and then we&apos;ll add our component to it using <code>.component</code>, <code>bookmarks</code> as the selector, and we&apos;ll attach the <code>bookmarksComponent</code> object to that.</p><p><strong>bookmarks/bookmark.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">const</span> BookmarksModule <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">&apos;bookmarks&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">&apos;bookmarks&apos;</span> bookmarksComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> BookmarksModule<span class="token punctuation">;</span></code></pre>
+<p>We&apos;ll export the <code>BookmarksModule</code>, and then from there we&apos;ll hop into our components module and we&apos;ll add this as a dependency so it is available for the rest of the application.</p><p><strong>components/components.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">import</span> angular from <span class="token string">&apos;angular&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> CategoriesModule from <span class="token string">&apos;./categories/categories&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> BookmarksModule from <span class="token string">&apos;./bookmarks/bookmarks&apos;</span>
+
+<span class="token keyword">const</span> ComponentsModule <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">&apos;components&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+  CategoriesModule<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+  BookmarksModule<span class="token punctuation">.</span>name
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Now that we&apos;ve imported it let&apos;s add it in as a dependency, and then from there let&apos;s hop into app.html. We&apos;re going to replace this <code>h1</code> tag with a <code>bookmarks</code> component. Now if we hop into the browser we&apos;ll see not only categories, but we can see bookmarks on the right-hand side.</p><p><strong>app/app.html</strong></p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>container-fluid<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>row<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>col-sm-3 col-md-2 sidebar<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>categories</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>categories</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>col-sm-9 col-md-10 col-md-offset-2 main<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bookmarks</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bookmarks</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p><img alt="eggly categories" src="../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output.png"></p><p>The next step is when we click a category we want to show only the bookmarks for that category. How we&apos;re going to do that is we&apos;re going to first jump into the <code>CategoriesModel</code>, and we&apos;re going to create a mechanism to store the current category.</p><p>So <code>this.currentCategory = null</code>, and then from we&apos;re going to add a getter and a setter method so that we can <code>getCurrentCategory</code> which will return <code>this.currentCategory</code>, and then we&apos;ll create a setter method called <code>setCurrentCategory</code> that will accept a category parameter and then assign that to <code>this.currentCategory</code>.</p><p><strong>models/categories.model.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CategoriesModel</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>$q<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">getCategories</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">setCurrentCategory</span><span class="token punctuation">(</span>category<span class="token punctuation">)</span>
+
+  <span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>currentCategory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>Then from there let&apos;s hop into the categories controller, and we&apos;re going to update <code>onCategorySelected</code> to when a category item is selected. We&apos;re going to capture that category item and pass that into the categories model to store that value.</p><p><strong>categories/categories.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CategoriesController</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>CategoriesModel<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+
+  <span class="token function">$onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">onCategorySelected</span><span class="token punctuation">(</span>categories<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">setCurrentCategory</span><span class="token punctuation">(</span>category<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>Now we&apos;re also going to create another method called <code>isCurrentCategory</code>. We&apos;ll pass in a category item, and then we&apos;re just going to first check if there is a current category by calling <code>this.CategoriesModel</code>, <code>getCurrentCategory</code>.</p><p><strong>categories/categories.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CategoriesController</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>CategoriesModel<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+
+  <span class="token function">$onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">onCategorySelected</span><span class="token punctuation">(</span>categories<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">setCurrentCategory</span><span class="token punctuation">(</span>category<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>If there is then we&apos;re going to compare the ID of the item returned by getCurrentCategory to the category item that we passed in.</p><p><strong>categories/categories.controller.js</strong></p><pre><code class="lang-javascript"><span class="token function">isCurrentCategory</span><span class="token punctuation">(</span>categories<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>id <span class="token operator">===</span> category<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This is the first simple example of binding to a model as we&apos;ll see when we hook in <code>ng-class</code>. We&apos;re going to toggle on an active property, which we saw in the style sheet that we looked at earlier.</p><p><strong>categories/categories.html</strong></p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>assets/img/eggly-logo.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>nav nav-sidebar<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span>
+    <span class="token attr-name">ng-class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>active<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>category in categoriesListCtrl.categories<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>category-item</span>
+      <span class="token attr-name">selected</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>categoriesListCtrl.onCategorySelected(category)<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">category</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>category<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>category-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>From here active is going to be applied when <code>categoriesListController.isCurrentCategory</code>, and the <code>category</code> we pass in evaluates to <code>true</code>. We&apos;re also going to update the logo to capture an <code>ng-click</code>, and from there we&apos;re going to call <code>categoriesListController.onCategoriesCelected</code> to...then we&apos;ll pass in the value of <code>null</code>.</p><p><strong>categories/categories.html</strong></p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>categoriesListCtrl.onCategoriesSelected<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>assets/img/eggly-logo.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>In this case when you click to logo we want to just clear that out. We&apos;ll hop into the browser. You can see that when we click a category that it is maintaining its state. Now what we want to do is set it up so that when we click on a category we filter the bookmarks.</p><p><img alt="eggly categories" src="../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output.png"></p><p>The first thing we need to do is go into the <code>BookmarksController</code>, and we&apos;re going to inject the <code>CategoriesModel</code>. From there we&apos;ll store a local reference, and then we&apos;re going to create a local reference called <code>getCurrentCategory</code> to the reference or to the <code>getCurrentCategory</code> method on the categories model.</p><p><strong>bookmarks/bookmarks.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">BookmarksController</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>BookmarksModel<span class="token punctuation">,</span> CategoriesModel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;ngInject&apos;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>BookmarksModel <span class="token operator">=</span> BookmarksModel<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel <span class="token operator">=</span> CategoriesModel<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">$onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>BookmarksModel<span class="token punctuation">.</span><span class="token function">getBookmarks</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>results <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>bookmarks <span class="token operator">=</span> results<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>getCurrentCategory <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span>getCurrentCategory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> BookmarksController<span class="token punctuation">;</span></code></pre>
+<p>This is simply a pass through property, but now what we&apos;re going to do is then add in a <strong>filter</strong>, and we&apos;re going to filter on the <code>category</code> property. We&apos;re going to compare that against the current category name.</p><p><strong>bookmarks/bookmarks.html</strong></p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bookmarks<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bookmark in bookmarksListCtrl.bookmarks<span class="token punctuation">&quot;</span></span>
+    | <span class="token attr-name"><span class="token namespace">filter:</span></span>{<span class="token attr-name"><span class="token namespace">category:</span>bookmarksListCtrl</span>.<span class="token attr-name">getCurrentCategory</span>}<span class="token punctuation">&gt;</span>
+    &lt;<span class="token attr-name">button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>close<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>btn btn-link<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>glyphicon glyphicon-pencil<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>The idea is that when this filter runs it&apos;s going to call <code>bookmarksListController.getCurrentCategory</code>, which is really going to call <code>getCurrentCategory</code> on the model. We&apos;re going to click this, and you&apos;ll notice that nothing is happening. Let&apos;s see what is going on here.</p><p><img alt="eggly output incomplete" src="../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-2.png"></p><p>We&apos;ll hop into the current category, or rather the category model, and let&apos;s just trace out what <code>this</code> is within this particular method.</p><p><strong>models/categories.model.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CategoriesModel</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>$q<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">getCategories</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">setCurrentCategory</span><span class="token punctuation">(</span>category<span class="token punctuation">)</span>
+
+  <span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;THIS&apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>currentCategory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>Refresh, and you can see here that we have <code>CategoriesModel</code>, so we have four of these on the left-hand side, but then we have <code>THIS = bookmarksController</code>, which is obviously not what we want to happen. The reason why that&apos;s happening is because we&apos;re overriding the lexical reference to <code>this</code>.</p><p><img alt="console output" src="../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output.png"></p><p>What we need to do is <strong>bind</strong> the <code>getCurrentCategory</code> method back to the <code>CategoriesModel</code>. Just by adding .bind to <code>this.CategoriesModel</code> now we&apos;re saying call this method but call it within the context of <code>CategoriesModel</code>.</p><p><strong>bookmarks/bookmarks.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">BookmarksController</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>BookmarksModel<span class="token punctuation">,</span> CategoriesModel<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">$onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>BookmarksModel<span class="token punctuation">.</span><span class="token function">getBookmarks</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>results <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>bookmarks <span class="token operator">=</span> results<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>getCurrentCategory <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span>getCurrentCategory<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>You can see here when we click this that the filter is now working, and if we look in the console it&apos;s categories model all the way down.</p><p><img alt="eggly output success" src="../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-eggly-output-3.png"></p><p><img alt="eggly console success" src="../images/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular-console-output-2.png"></p><p>Let&apos;s just review what we&apos;ve done up to this point. In <code>CategoriesModel</code> we&apos;ve created a mechanism to set the <code>currentCategory</code> and then retrieve the <code>currentCategory</code>.</p><p><strong>models/categories.model.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CategoriesModel</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>$q<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">getCategories</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$q<span class="token punctuation">.</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>categories<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setCurrentCategory</span><span class="token punctuation">(</span>category<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>currentCategory <span class="token operator">=</span> category<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>currentCategory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Then from there within the <code>CategoriesController</code> we are setting the current category, but we are also testing for the current category as well so that we can apply an active filter.</p><p><strong>categories/categories.controller.js</strong></p><pre><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CategoriesController</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>CategoriesModel<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+
+  <span class="token function">$onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+  <span class="token function">onCategorySelected</span><span class="token punctuation">(</span>categories<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">setCurrentCategory</span><span class="token punctuation">(</span>category<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+
+  <span class="token function">isCurrentCategory</span><span class="token punctuation">(</span>categories<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>CategoriesModel<span class="token punctuation">.</span><span class="token function">getCurrentCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>id <span class="token operator">===</span> category<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>Then in the <code>BookmarksController</code> we&apos;re setting <code>this.getCurrentCategory</code> to the <code>getCurrentCategory</code> on the categories model which gets called by the filter.</p><p><strong>bookmarks/bookmarks.html</strong></p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bookmarks<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bookmark in bookmarksListCtrl.bookmarks<span class="token punctuation">&quot;</span></span>
+    | <span class="token attr-name"><span class="token namespace">filter:</span></span>{<span class="token attr-name"><span class="token namespace">category:</span>bookmarksListCtrl</span>.<span class="token attr-name">getCurrentCategory</span>}<span class="token punctuation">&gt;</span>
+    &lt;<span class="token attr-name">button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>close<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>btn btn-link<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>glyphicon glyphicon-pencil<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>But then we had to add in the <code>.bind</code> to keep the reference to the categories model correct. This is how you bind to a model in an Angular 1 application.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="angular-1-x-compiling-our-application.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Compile an Angular Application Written in ES6">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Build Lighweight Controllers by Binding to Models in Angular","level":"1.4","depth":1,"previous":{"title":"Compile an Angular Application Written in ES6","level":"1.3","depth":1,"path":"lessons/angular-1-x-compiling-our-application.md","ref":"lessons/angular-1-x-compiling-our-application.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","hints","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"hints":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Using Angular 2 Patterns in Angular 1.x Apps","gitbook":"*","description":"This book covers the [Using Angular 2 Patterns in Angular 1.x Apps](https://egghead.io/courses/angular-1-in-the-angular-2-style) transcripts and enhances them to become Asciicasts"},"file":{"path":"lessons/angular-1-x-build-lighweight-controllers-by-binding-to-models-in-angular.md","mtime":"2016-09-02T06:57:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-02T06:45:47.520Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
