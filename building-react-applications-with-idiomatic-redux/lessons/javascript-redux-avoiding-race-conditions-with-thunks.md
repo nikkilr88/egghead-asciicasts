@@ -58,7 +58,7 @@ Only after the corresponding `receiveTodos` actions come back, the `isFetching` 
 
 This is a very common pattern, so you don't have to write the `thunk` middleware yourself. Instead, you can open up a terminal and run `npm install --save redux-thunk`.
 
-**Terminal**
+**terminal**
 ```bash
 npm install --save redux-thunk
 ```
