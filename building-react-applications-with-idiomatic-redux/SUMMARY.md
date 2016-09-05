@@ -1,0 +1,13 @@
+# Summary
+* [Fetching Data on Route Change with Redux](./lessons/javascript-redux-fetching-data-on-route-change.md)
+* [Dispatching Actions with Fetched Data](./lessons/javascript-redux-dispatching-actions-with-the-fetched-data.md)
+* [Redux Wrapping dispatch() to Recognize Promises](./lessons/javascript-redux-wrapping-dispatch-to-recognize-promises.md)
+* [Redux MiddleWare Chain](./lessons/javascript-redux-the-middleware-chain.md)
+* [Applying Redux Middleware](./lessons/javascript-redux-applying-redux-middleware.md)
+* [Updating the State with the Fetched Data](./lessons/javascript-redux-updating-the-state-with-the-fetched-data.md)
+* [Refactoring the Reducers](./lessons/javascript-redux-refactoring-the-reducers.md)
+* [Displaying Loading Indicators](./lessons/javascript-redux-displaying-loading-indicators.md)
+* [Dispatching Actions Asynchronously with Thunks](./lessons/javascript-redux-dispatching-actions-asynchronously-with-thunks.md)
+* [Avoiding Race Conditions with Thunks](./lessons/javascript-redux-avoiding-race-conditions-with-thunks.md)
+* [Normalizing Api Responses with Normalizr](./lessons/javascript-redux-normalizing-api-responses-with-normalizr.md)
+* [Updating Data on the Server](./lessons/javascript-redux-updating-data-on-the-server.md)

@@ -1,0 +1,5 @@
+{
+    "title": "Building React Applications with Idiomatic Redux",
+    "description": "This book covers the [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
