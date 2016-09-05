@@ -191,4 +191,4 @@ const configureStore = () => {
 
 ```
 
-This check by itself is not enough, and it will only work correctly if in the production build you use **Define plugin** for Webpack or [inaudible 4:29] transform for **Browserify**.
+This check by itself is not enough, and it will only work correctly if in the production build you use **Define plugin** for Webpack or transform for **Browserify**.
