@@ -1,8 +1,8 @@
-In this lesson, I use **Expect Library** to make test assertions, and **deepFreeze** to make sure that my code is free of **mutations**.
+In this lesson, I use `expect` Library to make test assertions, and `deep-Freeze` to make sure that my code is free of mutations.
 
 Let's say that I want to implement a count release application. I would need to write a few functions that operate on its state, and its state is an array of JavaScript numbers representing the individual counters.
 
-The first function I want to write is called `addCounter`, and all it should do is to append a zero at the end of the past array.
+The first function I want to write is called `addCounter`, and all it should do is to append a `0` at the end of the past array.
 
 ``` javascript
 const addCounter = (list) => {
@@ -30,7 +30,7 @@ const addCounter = (list) => {
 };
 ```
 
-However, we need to learn to avoid mutations in **Redux**, and I'm enforcing this by calling `deepFreeze` on the original array.
+However, we need to learn to avoid mutations in Redux, and I'm enforcing this by calling `deepFreeze` on the original array.
 
 ``` javascript
 deepFreeze(listBefore);
@@ -44,7 +44,7 @@ const addCounter = (list) => {
 };
 ```
 
-Now the tests pass without **mutations**, and I can also use the new ES6 **array spread** operator to write the same code in a more concise way.
+Now the tests pass without mutations, and I can also use the new [ES6 array spread operator](https://egghead.io/lessons/ecmascript-6-using-the-es6-spread-operator) to write the same code in a more concise way.
 
 ``` javascript
 const addCounter = (list) => {
@@ -52,7 +52,7 @@ const addCounter = (list) => {
 };
 ```
 
-My next function is called `removeCounter`, and it accepts two arguments, an array of numbers, and the index of the number to skip from the array.
+My next function is called `removeCounter`, and it accepts two arguments, an array of numbers, and the `index` of the number to skip from the array.
 
 ``` javascript
 const removeCounter = (list, index) => {
@@ -71,7 +71,7 @@ const testRemoveCounter = () => {
 
 If I've got three numbers and I'm passing one as the second argument, I expect to receive an array with two numbers with the second item skipped in the result array.
 
-Usually, to delete an item from the array, I would use the `splice` method. However, `splice` is a **mutating** method, so you can't use it in Redux.
+Usually, to delete an item from the array, I would use the `splice` method. However, `splice` is a mutating method, so you can't use it in Redux.
 
 ``` javascript
 const removeCounter = (list, index) => {
@@ -82,7 +82,7 @@ const removeCounter = (list, index) => {
 
 I'm going to `deepFreeze` the array object, and now I need to figure out a different way to remove an item from the array without mutating it.
 
-I'm using a method called `slice` here, and it doesn't have anything to do with `splice`. It is **not mutating**, and it gives me a part of the array from some beginning to some end index.
+I'm using a method called `slice` here, and it doesn't have anything to do with `splice`. It is not mutating, and it gives me a part of the array from some beginning to some end index.
 
 ``` javascript
 const removeCounter = (list, index) => {
@@ -95,9 +95,9 @@ const removeCounter = (list, index) => {
 
 What Im doing is that Im taking the parts before the `index` I want to skip and after the `index` I want to skip, and I concatenate them to get a new array.
 
-Finally, instead of writing it as a method chain with concat calls, I can use the ES6 **array spread** operator to write it more concisely.
+Finally, instead of writing it as a method chain with `concat` calls, I can use the ES6 array spread operator to write it more concisely.
 
-Now that we implemented adding and removing counters, let's implement increment in the counter. The `incrementCounter` function takes your arguments, the array and the index of the counter that should be incremented, so the return value has the same count of items, but one of them is incremented.
+Now that we implemented adding and removing counters, let's implement increment in the counter. The `incrementCounter` function takes two arguments, the array and the `index` of the counter that should be incremented, so the return value has the same count of items, but one of them is incremented.
 
 ``` javascript
 const incrementCounter = (list, index) => {
@@ -114,7 +114,7 @@ const testIncrementCounter = () => {
 };
 ```
 
-Directly setting the array value at index works, but this is a **mutation**. If we add a `deepFreeze` call, it's not going to work anymore, so how do we replace a single value in the array without mutating it?
+Directly setting the array value at index works, but this is a mutation. If we add a `deepFreeze` call, it's not going to work anymore, so how do we replace a single value in the array without mutating it?
 
 ``` javascript
 const incrementCounter = (list, index) => {
@@ -135,6 +135,6 @@ const incrementCounter = (list, index) => {
 };
 ```
 
-Finally, with the ES6 **spread operator**, we can spread over the left part of the array, specify the new item, and then spread over the right part of the original array, and this looks much nicer.
+Finally, with the ES6 spread operator, we can spread over the left part of the array, specify the new item, and then spread over the right part of the original array, and this looks much nicer.
 
-In this lesson, you learned how to use the `concat` method or the **spread operator**, and the `slice` method to add, remove, and change items in arrays without mutating them, and how to protect yourself with **deepFreeze** from mutation in your tests.
+In this lesson, you learned how to use the `concat` method or the spread operator, and the `slice` method to add, remove, and change items in arrays without mutating them, and how to protect yourself with `deepFreeze` from mutation in your tests.
