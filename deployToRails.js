@@ -18,6 +18,8 @@ prompt('Deploy to rails? (y/n) ', function (val) {
                        axios.put(`${domain}/api/v1/lessons/${et.lesson_slug}`, {
                            enhanced_transcript: et.enhanced_transcript
                        })
+                           .then(response => console.log(response.data.title, response.status))
+                           .catch(error => console.log(error))
                     });
                 } else {
                     console.log('Come back soon!');
