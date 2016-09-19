@@ -21,7 +21,9 @@ export class ContactsComponent{
 }
 ```
 
-I need to map the response and parse it as JSON. Always remember, **if you use a RxJS operator, you need to import it**, `rxjs/add/operator/map`. Then I'm going to assign this to `contacts`, and since this will be an observable, I'm going to add a $ to the end. It's a naming convention for that. I'll say `contacts$` is all of this stuff.
+![I need to map the response and parse it as JSON](https://egghead.io/lessons/rxjs-getting-input-text-with-map). Always remember, if you use a RxJS operator, you need to import it, `rxjs/add/operator/map`. Then I'm going to assign this to `contacts`, and since this will be an observable, I'm going to add a $ to the end. It's a naming convention for that. I'll say `contacts$` is all of this stuff.
+
+>if you use a RxJS operator, you need to import it
 
 **contacts/contacts.component.ts**
 ```javscript
@@ -85,7 +87,7 @@ Let's take these divs and nest an `a` tag inside of it. We can set up, just like
 })
 ```
 
-When I click on Luke, it's going to append 1 onto that. When I click on C3PO, it's going to append a 2 onto that. If I wanted to hard code this, it'd look a little bit different. It wouldn't be c`ontact/contact.id`, because that wouldn't evaluate anything. It's like contacts divided by contact.id.
+When I click on Luke, it's going to append 1 onto that. When I click on C3PO, it's going to append a 2 onto that. If I wanted to hard code this, it'd look a little bit different. It wouldn't be `contact/contact.id`, because that wouldn't evaluate anything. It's like contacts divided by contact.id.
 
 What you do is you make an array, and then you use strings for the parts that you know what the strings and names are, and then comma-separate the values you want to evaluate.
 

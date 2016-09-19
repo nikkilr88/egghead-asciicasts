@@ -80,7 +80,7 @@ var Router = require('react-router').Router;
 var routes = require('./config/routes');
 ```
 
-Now let's go ahead and head over to our terminal. Let's `$ npm install`, save it, react-router at version number **1.0.1**. react-router has a dependency of the history package. Let's go ahead and install version **1.13.1** of that.
+Now let's go ahead and head over to our terminal. Let's `$ npm install`, save it, ![react-router](https://egghead.io/courses/getting-started-with-react-router) at version number **1.0.1**. react-router has a dependency of the history package. Let's go ahead and install version **1.13.1** of that.
 
 **Terminal** 
 ``` bash

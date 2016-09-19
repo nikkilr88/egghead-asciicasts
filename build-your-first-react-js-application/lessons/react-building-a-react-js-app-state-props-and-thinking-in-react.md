@@ -69,7 +69,7 @@ var IndexRoute = Route = Router.IndexRoute;
 
 Now what we want to do is we want to be able to hook up our `Profile` component to our `router`.
 
-Down here, we're going to say `oute`. We're going to specify a new route. So whenever someone goes to our "app/profile/some username", this route is going to be `active`. The component that's going to be activated is this `Profile` component.
+Down here, we're going to say `route`. We're going to specify a new route. So whenever someone goes to our "app/profile/some username", this route is going to be `active`. The component that's going to be activated is this `Profile` component.
 
 **routes.js**
 ``` javascript
@@ -85,11 +85,13 @@ Let's go ahead and verify that this is all hooked up now. When we go to our "app
 
 ![Profile Component](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/github-notetaker-egghead/ProfileComponent.png)
 
-You might have seen this little gross hash up here. You can get rid of that. I'm not going to worry about it in this video, but if you want to get rid of it, go ahead and look into [React router's create hash history](https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md).
+You might have seen this little gross hash up here. You can get rid of that. I'm not going to worry about it in this video, but if you want to get rid of it, go ahead and look into [React router's create hash history](https://egghead.io/lessons/react-react-router-hashhistory-vs-browserhistory).
 
 The reason I'm not going to do it in this video is because you have to have a server. We're obviously serving these just going to the path itself. So we're not going to do it. But you can get rid of these using React router. Don't worry too much about those.
 
-Everything seems to be working, but what we still haven't done is we still haven't figured out a way to get the username that we pass in through the URL into our `Profile` container. **A very fundamental principle of React is this idea of passing props down to a component**.
+Everything seems to be working, but what we still haven't done is we still haven't figured out a way to get the username that we pass in through the URL into our `Profile` container. A very fundamental principle of React is this idea of passing props down to a component.
+
+> A very fundamental principle of React is this idea of passing props down to a component
 
 You'll notice here that our profile component has this state, but what if we were rendering another child component? Let's say we had a component called `DisplayRepos` because we'll eventually have something like that.
 
@@ -170,7 +172,7 @@ Go ahead and make some more components in your `components` folder. Go ahead and
 
 In the `Notes` folder, let's go ahead and make a file called `Notes.js`. What these three files are going to be are the **component definitions** for each of our three components, our user profile component, our user repos component, and our notes component.
 
-Let's go ahead inside of Repos. We're going to require React. Then we'll make a new component using `React.createClass`. We'll have it just render something simple. It's going to render `REPOSSS`.
+Let's go ahead inside of Repos. We're going to require React. Then we'll make a new component using `React.createClass`. We'll have it just render something simple. It's going to render `REPOS`.
 
 **Repos.js**
 ``` javascript
