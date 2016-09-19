@@ -1,0 +1,5 @@
+{
+    "title": "Building Angular 2 Components",
+    "description": "This book covers the [Building Angular 2 Components](https://egghead.io/courses/building-angular-2-components) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
