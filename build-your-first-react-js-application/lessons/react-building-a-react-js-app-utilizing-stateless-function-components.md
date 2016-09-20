@@ -1,16 +1,38 @@
-...I was going to end this series at video number 16 but, as **React** keeps adding more features, I can go ahead and keep adding new videos. What we're going to do in this video is we're going to walk through a **new feature** as of React **0.14** which is called **stateless functional** components.
+I was going to end this series at video number 16 but, as React keeps adding more features, I can go ahead and keep adding new videos. What we're going to do in this video is we're going to walk through a new feature as of React 0.14 which is called **stateless functional components**.
 
-What **stateless functional** components are is you'll notice here that throughout a lot of our code, we have a lot of **components** that simply just have a `render` method. We have `Home`. We have `Main`. We have some other components as well. These components are really simple.
+What stateless functional components are is you'll notice here that throughout a lot of our code, we have a lot of components that simply just have a `render` method. We have `Home`. We have `Main`. We have some other components as well. These components are really simple.
 
-Ideally, if you're doing a good job of programming in React, you're going to have a lot of components that simply take in data as props. For example, this `Main` component, all it does is it **takes in** some **props**, and it **displays** that to the **view**.
+**components/Home.js**
+``` javascript
+class Home extends React.Component {
+  render() {
+    return (
+      <h2 className="text-center">
+        Search By Github Username Above
+      </h2>
+    )
+  }
+}
+
+export default Home;
+```
+Ideally, if you're doing a good job of programming in React, you're going to have a lot of components that simply take in data as props. For example, this `Main` component, all it does is it takes in some props, and it displays that to the view.
 
 Sometimes it would be nice to not have to create a whole class if you want to simply make a component. What we're going to do here is we're going to walk through all of our components and modify them just a little bit to make them a little bit more clean.
 
-I'm going to go ahead and simply make a function here. I'm using the **ES6 Arrow** syntax, which we talked about a few videos ago, but this is fundamentally just a function. The very **first argument** that's going to be passed to our function is **props**. In this example, we're not going to have any props.
+I'm going to go ahead and simply make a function here. I'm using the [ES6 Arrow syntax](https://egghead.io/lessons/arrow-function)  , which we talked about a few videos ago, but this is fundamentally just a function. The very first argument that's going to be passed to our function is props. In this example, we're not going to have any props.
 
-### Home.js
+**components/Home.js**
 ``` javascript
-export default function Home () {
+const Home = () => {
+
+}
+```
+What we can do is this, where we can take the `render` method of our component. If our component, *one*, doesn't have any state and, *two*, only has a `render` method, we can then go ahead and make that just a function. Now this function is pretty much the exact same thing as our class we had earlier. It'll behave the exact same way to React.
+
+**components/Home.js**
+``` javascript
+const Home = () => {
   return (
     <h2 className="text-center">
       Search By Github Username Above
@@ -18,14 +40,11 @@ export default function Home () {
   )
 }
 ```
+Let's go ahead and test this. There we go. Everything still works. Let's go ahead and fly through some of these other components. Let's go to `Main`. Then I'm going to create a function here, which is just going to return our `render` method. You'll notice now that this function actually takes in some props. What React does is it provides props as the first argument into your function.
 
-What we can do is this, where we can take the `render` method of our component. If our component, *one*, **doesn't** have any **state** and, *two*, only has a `render` method, we can then go ahead and make that just a function. Now this function is pretty much the exact same thing as our class we had earlier. It'll **behave** the **exact** same way to **React**.
+What I'm going to do here is kind of a mix of two ES6 features. It's a mixture of [object destructuring](https://egghead.io/lessons/ecmascript-6-destructuring-assignment), which we talked about a few videos ago, and it's also a mixture of this thing called [default parameters](https://egghead.io/lessons/ecmascript-6-default-values-for-function-parameters).
 
-Let's go ahead and test this. There we go. Everything still works. Let's go ahead and fly through some of these other components. Let's go to `Main`. Then I'm going to **create a function** here, which is just going to **return** our `render` method. You'll notice now that this function actually takes in some **props**. What **React** does is it **provides props** as the **first argument** into your function.
-
-What I'm going to do here is kind of a mix of two **ES6** features. It's a mixture of **object destructuring**, which we talked about a few videos ago, and it's also a mixture of this thing called **default parameters**.
-
-### Main.js
+**components/Main.js**
 ``` javascript
 const Main = ({children, history}) => {
   return (
@@ -43,13 +62,13 @@ const Main = ({children, history}) => {
 }
 ```
 
-What we can do here is if you have a **function** that takes in an **object**, you can go ahead and use **open curly brace**, **close curly brace**, and put in the **properties** of that **object**. Then you can **access** the **properties** of that object inside of your function simply as the **variable** that you used here.
+What we can do here is if you have a function that takes in an object, you can go ahead and use open curly brace, close curly brace, and put in the properties of that object. Then you can access the properties of that object inside of your function simply as the variable that you used here.
 
 Again, it would be the exact same thing as doing something like that. Instead, we can go one level deeper. Go ahead and take off history and children from `this.props` and go like that. It's pretty clean.
 
-Let's go ahead and do the rest of our components real quick. Here I'm going to make a `Repos` function. Let's go ahead and grab our `render` method. Notice here, too, this function has `propTypes`. It behaves the exact same way. We can go ahead and stick a **prop type** property on our **function** itself. It'll still behave normal.
+Let's go ahead and do the rest of our components real quick. Here I'm going to make a `Repos` function. Let's go ahead and grab our `render` method. Notice here, too, this function has `propTypes`. It behaves the exact same way. We can go ahead and stick a prop type property on our function itself. It'll still behave normal.
 
-### Repos.js
+**Github/Repos.js**
 ``` javascript
 const Repos = ({repos}) => {
   return (
@@ -70,31 +89,27 @@ const Repos = ({repos}) => {
 }
 ```
 
-In this one, we have `this.props.repos`. I'm going to go ahead and take off `this.props` and throw in `repos` up here. Now let's do `UserProfile`. I'm going to make a function. This function is going to take in some **props**, which is a `bio` object. Then we move our `render` method up. Now I'm going to get rid of `this.props`.
+In this one, we have `this.props.repos`. I'm going to go ahead and take off `this.props` and throw in `repos` up here. Now let's do `UserProfile`. I'm going to make a function. This function is going to take in some props, which is a `bio` object. Then we move our `render` method up. Now I'm going to get rid of `this.props`.
 
-### UserProfile.js
+**GithubUserProfile.js**
 ``` javascript
 const UserProfile = ({bio}) => {
   return (
     <div>
-      {bio.avatar_url && <li className="list-group-item"> <img src={bio.avatar_url} className="img-rounded img-responsive"/></li>}
-      {bio.name && <li className="list-group-item">Name: {bio.name}</li>}
-      {bio.login && <li className="list-group-item">Username: {bio.login}</li>}
-      {bio.email && <li className="list-group-item">Email: {bio.email}</li>}
-      {bio.location && <li className="list-group-item">Location: {bio.location}</li>}
-      {bio.company && <li className="list-group-item">Company: {bio.company}</li>}
-      {bio.followers && <li className="list-group-item">Followers: {bio.followers}</li>}
-      {bio.following && <li className="list-group-item">Following: {bio.following}</li>}
-      {bio.following && <li className="list-group-item">Public Repos: {bio.public_repos}</li>}
-      {bio.blog && <li className="list-group-item">Blog: <a href={bio.blog}> {bio.blog}</a></li>}
+      {bio.avatar_url && <li> <img src={bio.avatar_url}/></li>}
+      {bio.name && <li>Name: {bio.name}</li>}
+      {bio.login && <li>Username: {bio.login}</li>}
+
+      ...
+
     </div>
   )
 }
 ```
 
-I think we just have one or two more. You'll notice this one has some methods on it, so we're not going to do that one. We are going to do `Notes`, which takes in a few things. It takes in a `username`, it takes in `notes`, and it takes in an `addNote` method. Then grab our **return statement**, throw that into here, and format it. Go ahead and update `this.props`. All right.
+I think we just have one or two more. You'll notice this one has some methods on it, so we're not going to do that one. We are going to do `Notes`, which takes in a few things. It takes in a `username`, it takes in `notes`, and it takes in an `addNote` method. Then grab our return statement, throw that into here, and format it. Go ahead and update `this.props`. All right.
 
-### Notes.js
+**Notes/Notes.js**
 ```javascript
 const Notes = ({username, notes, addNote}) => {
   return (
@@ -106,10 +121,9 @@ const Notes = ({username, notes, addNote}) => {
   )
 }
 ```
+Then, the very last one, I believe, is `NotesList`. We have our function. Then we grab our `render` method. Notice here that I'm using the Arrow syntax for my functions. You don't need to do that. You can just use the regular function keyword. Since we've gone all ES6, I'm going to go ahead and do that. Then here we're going to have `notes`.
 
-Then, the very last one, I believe, is `NotesList`. We have our function. Then we grab our `render` method. Notice here that I'm using the **Arrow** syntax for my functions. You don't need to do that. You can just use the regular function keyword. Since we've gone all **ES6**, I'm going to go ahead and do that. Then here we're going to have `notes`.
-
-### NotesList.js
+**Notes/NotesList.js**
 ``` javascript
 const NotesList = ({notes}) => {
   return (
@@ -121,5 +135,4 @@ const NotesList = ({notes}) => {
   )
 }
 ```
-
-This looks great. We're good. Now we have everything functioning the exact same, but now instead of having **classes** all over the place or even using `createClass`, instead we're just having these **lightweight** functions that **return** us whatever our down looks like for this component.
+This looks great. We're good. Now we have everything functioning the exact same, but now instead of having classes all over the place or even using `createClass`, instead we're just having these lightweight functions that return us whatever our dom looks like for this component.
