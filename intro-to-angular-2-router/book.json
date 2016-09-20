@@ -1,0 +1,5 @@
+{
+    "title": "Intro to Angular 2 Router",
+    "description": "This book covers the [Intro to Angular 2 Router](https://egghead.io/courses/intro-to-angular-2-router) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

@@ -1,6 +1,6 @@
 # Summary
 
-* [First Component](lessons/react-building-a-react-js-app-up-and-running-with-react-and-webpack.md)
+* [Up and Running with React and Webpack](lessons/react-building-a-react-js-app-up-and-running-with-react-and-webpack.md)
 * [Basic Routing with React Router](lessons/react-building-a-react-js-app-basic-routing-with-react-router.md)
 * [State, Props, and Thinking in React](lessons/react-building-a-react-js-app-state-props-and-thinking-in-react.md)
 * [Using react-fire to Add Data Persistence](lessons/react-building-a-react-js-app-using-reactfire-to-add-data-persistence.md)
