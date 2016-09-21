@@ -1,187 +1,99 @@
-In the previous lessons, we learned how to split the root registers into many smaller registers that manage parts of the stream tree.
-
-We have a ready ToDo app **reducer** that handles all the actions of our simple ToDo application. Now it's trying to implement the View layer. I'm going to use **React** in this example.
-
-I'm adding **react** and **react-dom** packages from the Facebook CDN. I'm also adding a div with the ID root, which is where I'm going to **render** my react application.
-
-### javascript
-``` javascript
-const render = () => {
-
-};
-
-store.subscribe(render);
-render();
-```
-
-### html
-```html
-<body>
-  <div id='root'></div>
-</body>
-```
-
-Similar to the react counter-example from the eighth lesson, I declare a **render function** that is going to update dom in response to the current application state. I'm going to subscribe to these core changes and call render whenever the store changes and wants to render the initial state.
-
-The implementation of the render method is going to use react, so it's called `ReactDOM.render` for some to-do app component I haven't written yet. It renders it into the div I created inside the HTML. It's div with the ID called "root".
+In the previous lesson, we learned to use the `combineReducer` function, which comes with Redux and **generates one reducer from several other reducers**, delegating to them paths of the state tree.
 
 ``` javascript
-const render = () => {
-  ReactDOM.render(
-    <TodoApp />,
-    document.getElementById('root')
-  );
-};
-
-```
-**React** provides a base class for all components. I'm grabbing from the react object called **reactComponent**. I'm declaring my own `ToDoApp` component that extends the react-based component. This component is only going to have a render function and is going to return a `div`. Inside the div, I'm going to place a button saying add todo them.
-
-``` javascript
-const { Component } = React;
-
-let nextTodoId = 0;
-class TodoApp extends Component {
-  render() {
-    return (
-      <div>
-        <button onClick={() => {
-          store.dispatch({
-            type: 'ADD_TODO',
-            text: 'Test',
-            id: nextTodoId++
-          });
-        }}>
-          Add Todo
-        </button>
-      </div>
-    );
-  }
-}
-```
-
-I don't want to add an input field yet to keep the example simple at first. I'm dispatching the out ToDo action, and I'm going to put a test as my checks for the action. It's going to keep adding to this with the products test.
-
-The ID, I need to specify a sequential ID. This is why I'm declaring an global variable called `NextToID`, and I'm going to keep in command in it. Every time, it's going to emit a new id.
-
-I also want to display a list of the ToDo list. Assuming that I have the ToDos inject as ToDos prop, I'll call map and for every ToDo item, I'm going to show a list item show in the text of that particular ToDo.
-
-``` javascript
-<ul>
-  {this.props.todos.map(todo =>
-    <li key={todo.id}>
-      {todo.text}
-    </li>
-   )}
-</ul>
-```
-
-Finally, because I need to the ToDo as a prop, I'm going to pass it to the `TodoApp` by reading the currents chores straight and written its ToDo field.
-
-``` javascript
-  <TodoApp todos={store.getState().todos} />
-```
-
-![Adding Todos](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/AddTodos.png)
-
-You can see that there is a button at ToDo and anytime I press it, I see a new ToDo with a test text. I'm going to add an input inside my render function, and I'm using the react callback ref API where ref is a function, it gets the note corresponding to the ref, and I'm saving that note with some name. In this case, this.input.
-
-``` javascript
-<input ref={node => {
-  this.input = node;
-}}
-
-<button onClick={() => {
-  store.dispatch({
-    type: 'ADD_TODO',
-    text: this.input.value,
-    id: nextTodoId++
-  });
-  this.input.value = '';
-}}>
-```
-
-I'm able to read the value of the input inside my event handler. I'm reading this job input that value. I'm also able to reserve the value after dispatching the action so that the field is cleared. If I try write something to build and press AddtoDo, the AddtoDo action is dispatched and the field is cleared.
-
-![Adding Todos with this.input](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/getting-started-with-redux/AddTodoThisInput.png)
-
-Let's take a moment to recap how this application works. It starts with a `ToDoApp` **react component**. This component is not aware of how exactly ToDos are being added. However, it can express its desire to mutate the state by dispatching an action with the type ToDo.
-
-```javascript
-<button onClick={() => {
-  store.dispatch({
-    type: 'ADD_TODO',
-    text: this.input.value,
-    id: nextTodoId++
-  });
-  this.input.value = '';
-}}>
-```
-
-For the text field, it uses the current input value and it passes an incrementing ID as the ID of ToDo. Every ToDo needs its own ID, and in this approach, we're just going to increment the counter, so it always gives us the next integer as ID.
-
-It is common for **react components** to dispatch actions in **Redux apps**. However, it is equally important to be able to render the current state. My `ToDoApp` component assumes that it's going to receive ToDos as a prop, and it maps over the ToDo list to display a list of them using the ID as a key.
-
-```html
-<ul>
-  {this.props.todos.map(todo =>
-    <li key={todo.id}>
-      {todo.text}
-    </li>
-  )}
-</ul>
-```
-
-This component is being rendered in the render function that runs any [indecipherable 4:53] changes and initially. The render function reads the current state of this chore and passes the ToDos array that it gets from the current state of this chore to do to the app component as a prop.
-
-```javascript
-const render = () => {
-  ReactDOM.render(
-    <TodoApp
-      todos={store.getState().todos}
-    />,
-    document.getElementById('root')
-  );
-};
-```
-
-The render function is called on every store change so the ToDos prop is always up to date. This was the rendering part of the **redux** flow. Let's recap how mutations work in Redux.
-
-Any state change is caused by a store dispatch call somewhere in the component. When an action is dispatched, this store calls the **reducer** it was created with, with the current state and the action being dispatched.
-
-In our case, this is the `TodoApp` reducer, which we obtained by combining `visibilityFilter` and the `todos` reducer.
-
-It matches the action type and the `switch` statement. If the action type is `ADD_TODO` and indeed, it is equal to add ToDo string. In this case, it will call the child `todo` reducer, passing it `undefined`, because this is no state for a new ToDo that it can pass in the action.
-
-```javascript 
-case 'ADD_TODO':
-  return [
-    ...state,
-    todo(undefined, action)
-  ];
-```
-
-We have a similar state statement inside the ToDo reducer and the action type is add to-do. It returns the initial state of the to-do where the ID and text from the action and the completed field set to false.
-
-```javascript 
-case 'ADD_TODO':
-  return {
-    id: action.id,
-    text: action.text,
-    completed: false
-  };
-```
-
-The ToDos reducer that called it was returned a new array with all existent items and the new item added at the very end. It adds a need to do to the current state.
-
-Finally, the combined producer called ToDo app will use this new array as the new value for the to-dos field in the global state object. It's going to return a new state object where the ToDos field corresponds to the array with the newly-added ToDo item.
-
-```javascript
-const todoApp = combineReducers({
+const { combineReducer } = Redux;
+const todoApp = combineReducer({
   todos,
   visibilityFilter
 });
 ```
+To gain a deeper understanding of how exactly `combinedReducers` works, we will implement it from scratch in this lesson.
 
-The `todoApp` reducer is the root reducer in this application. It is the one the straw was created with. Its next state is a next state of the **Redux chore**, and all the listeners are notified.
+`CombineReducers` is a function, so I'm writing a function declaration. Its only argument is the mapping between the state keys and the reducers, so I'm just going to call it `reducers`.
 
-The render function is subscribed to the straw changes so it is called again, and it gets the fresh state by call and gets state and it passes the fresh ToDos to the component, re-rendering it with the new [indecipherable 7:24] .
+``` javascript
+const combineReducer = (reducers) => {
+
+};
+```
+The return value is supposed to be a reducer itself, so this is a function that returns another function. The signature of the return function is a reducer signature. It has the `state` and the `action`.
+
+``` javascript
+const combineReducer = (reducers) => {
+  return (state = {}, action) => {
+
+  };
+};
+```
+Now, I'm calling the `Object.keys` method, which gives me all the keys of the reducer's object. In our example, this is `todos` and the `visibilityFilter`.
+
+Next, I'm calling the `reduce` method on the keys, because I want to produce a single value, such as the `nextState`, by accumulating over every reducer key and calling the corresponding reducer. Each reducer passed through the `combineReducers` function is only responsible for updating a part of the state. This is why I'm saying that the `nextState` by the given key can be calculated by calling the corresponding reducer by the given key with the current state by the given key and the action.
+
+```javascript
+const combineReducer = (reducers) => {
+  return (state = {}, action) => {
+    return Object.keys(reducers).reduce(
+      (nextState, key) => {
+        nextState[key] = reducers[key](
+          state[key],
+          action
+        );
+        return nextState;
+      },
+      {}
+    );
+  };
+};
+```
+The array reduce wants me to return the next accumulated value from the call back, so I'm returning the `nextState`. I'm also specifying an empty object as the initial next state, before all the keys are processed.
+
+There we have it. This is a working reimplementation of `combinedReducers` utility from Redux.
+
+Let's briefly recap how it works. I'm calling `combinedReducers` with an object whose values are the reducer functions and keys are the state field they manage. 
+
+``` javascript
+const todoApp = combineReducer({
+  todos,
+  visibilityFilter
+});
+```
+Inside the generated reducer, I'm retrieving all the keys of the reducers I passed to `combineReducers`, which is an array of strings, `todos` and `visibilityFilter`.
+
+```javascript
+const combineReducer = (reducers) => {
+  return (state = {}, action) => {
+    return Object.keys(reducers).reduce(
+      (nextState, key) => {
+        nextState[key] = reducers[key](
+          state[key],
+          action
+        );
+        return nextState;
+      },
+      {}
+    );
+  };
+};
+```
+I'm starting with an empty object for my next state and I'm using the reduce operation of these keys to fill it gradually.
+
+Notice that I'm mutating the next state object on every iteration. This is not a problem, because it is the object I created inside the reducer. It is not something passed from outside, so reducer stays a pure function.
+
+To calculate the next state for a given key, it calls the corresponding reducer function, such as `todos` or `visibilityFilter`.
+
+``` javascript
+(nextState, key) => {
+  nextState[key] = reducers[key](
+    state[key],
+    action
+  );
+  return nextState;
+}
+```
+The generated reducer will pass through the child reducer only if part of its state by the key. If its state is a single object, it's only going to pass the relevant part, such as todos or visibility filter, depending on the current key, and save the result in the next state by the same key.
+
+Finally, we use the array reduce operation with the empty object as the initial next state, that is being filled on every iteration until it is the return value of the whole reduce operation.
+
+In this lesson, you learned how to implement the `combinedReducers` utility that comes with Redux from scratch.
+
+It is not essential to use in Redux, so it is fine if you don't fully understand how it works yet. However, it is a good idea to practice functional programming and understand functions can take other functions as arguments and return other functions, because knowing this will help you get more productive in Redux in the long term.

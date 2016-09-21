@@ -15,7 +15,7 @@
 * [Reducer Composition with Arrays](lessons/javascript-redux-reducer-composition-with-arrays.md)
 * [Reducer Composition with Objects](lessons/javascript-redux-reducer-composition-with-objects.md)
 * [Reducer Composition with Combine Reducers](lessons/javascript-redux-reducer-composition-with-combinereducers.md)
-* [ImplementingCombineReducersFromScratch](lessons/javascript-redux-implementing-combinereducers-from-scratch.md)
+* [Implementing CombineReducers from Scratch](lessons/javascript-redux-implementing-combinereducers-from-scratch.md)
 * [React Todo List Example - Adding](lessons/javascript-redux-react-todo-list-example-adding-a-todo.md)
 * [React Todo List Example - Toggling](lessons/javascript-redux-react-todo-list-example-toggling-a-todo.md)
 * [React Todo List Example - Filtering](lessons/javascript-redux-react-todo-list-example-filtering-todos.md)

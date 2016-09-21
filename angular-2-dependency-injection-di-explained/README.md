@@ -1,4 +1,4 @@
-# Using Angular 2 patterns in Angular 1.x Apps
+# Angular 2 dependency injection (DI) explained
 
 ![course image](https://d2eip9sf3oo6c2.cloudfront.net/series/covers/000/000/066/full/EGH_A2_DependencyEngine_Final-cover.png?1473904869)
 
