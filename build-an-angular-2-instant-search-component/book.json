@@ -1,0 +1,5 @@
+{
+    "title": "Build an Angular 2 Instant Search Component",
+    "description": "This book covers the [Build an Angular 2 Instant Search Component](https://egghead.io/courses/build-an-angular-2-instant-search-component) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

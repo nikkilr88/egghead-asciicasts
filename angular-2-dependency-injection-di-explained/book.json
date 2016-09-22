@@ -1,0 +1,5 @@
+{
+    "title": "Angular 2 Dependency Injection (DI) Explained",
+    "description": "This book covers the [Angular 2 Dependency Injection (DI) Explained](https://egghead.io/courses/angular-2-dependency-injection-di-explained) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
