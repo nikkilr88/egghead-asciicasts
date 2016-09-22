@@ -88,4 +88,8 @@ The cool thing is that all dependencies which are declared through their tokens 
 
 In other words, since we've added the `ConsoleService` token to deps, we now get an instance of `ConsoleService`, which we can then pass to the `LogDebugger` construction accordingly. We save the file, and see that we get the same output as before, but now `ConsoleService` is used to log the message.
 
+**Browser Output**
+``` 
+DEBUG: Getting Items...
+```
 To wrap it up, we add a provider for `ConsoleService`, so it can be constructed when we asked for it here in the `deps` property for our factory function, which then gets the actual instance injected, so we can pass it to our `LogDebugger`'s constructor.
