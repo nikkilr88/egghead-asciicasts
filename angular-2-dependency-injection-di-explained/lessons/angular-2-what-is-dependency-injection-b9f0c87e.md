@@ -31,7 +31,7 @@ export class Engine {
   }
 }
 ```
-This code works perfectly fine. We can go into our `main.ts` file and create an instance of `Car`, using `let car = new car`. Once the instance is created, we can call `startEngine()` on it.
+This code works perfectly fine. We can go into our `main.ts` file and create an instance of `Car`, using `let car = new car()`. Once the instance is created, we can call `startEngine()` on it.
 
 **src/main.ts**
 ``` javascript
@@ -76,7 +76,7 @@ If we were writing typescript, which is the case, we can simplify this code by u
 **app/car.ts**
 ``` javascript
 export class Car {
-  
+
   constructor(private engine: Engine, private doors: Doors) {}
 
   startEngine() {

@@ -44,7 +44,7 @@ As we can see here, the debugger can be configured at creation time using the `e
 
 If we go back to our `ListComponent`, add a provider for `LogDebugger`, ask for an instance, and use it in our component, we see that Angular complains that it can't resolve all parameters for `LogDebugger` dependency.
 
-**list/lsit.component.ts**
+**list/list.component.ts**
 ``` javascript
 @Component({
   moduleID: module.id,
