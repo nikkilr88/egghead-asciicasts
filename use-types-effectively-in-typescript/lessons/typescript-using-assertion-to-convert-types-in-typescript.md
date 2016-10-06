@@ -1,6 +1,6 @@
 We have a `SuperHero` and a `BadGuy`. Let's make a function that saves the day if the function's argument is a `SuperHero`, and a commits a bad deed if its argument is a `BadGuy`. Our function needs to accept something that could be a `SuperHero` or a `BadGuy`.
 
-**demo.js**
+**demo.js**typescript-the-basics-of-generics-in-typescript
 ```javascript
 interface SuperHero {
   powers: string[];

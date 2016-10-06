@@ -6,3 +6,4 @@
 * [Sharing Class Behavior with Inheritance in TypeScript](/lessons/typescript-sharing-class-behavior-with-inheritance-in-typescript.md)
 * [Using Assertion to Convert Types in TypeScript](/lessons/typescript-using-assertion-to-convert-types-in-typescript.md)
 * [The Basics of Generics in TypeScript](/lessons/typescript-the-basics-of-generics-in-typescript.md)
+* [Practical Generics in TypeScript](/lessons/typescript-practical-generics-in-typescript.md)
