@@ -30,7 +30,6 @@ SuperHero {
   health: 23,
   strength: 233,
   secretIdentity: 'Jubilation Lee' }
-////
 ```
 
 Let's add some specific properties to our `SuperHero` and `SuperVillain` classes. Let's see if this worked. Now our `SuperHero` and `SuperVillain` classes are inheriting properties from the `ComicBookCharacter` class, but they each have their own specific property as well.
@@ -106,7 +105,7 @@ console.log(jubilee.getSecretId());
 // undefined
 ```
 
-Now, let's add some functionality to a derived class when it's instantiated. The IDE has given us some indication that something is wrong. If we hover over the constructor, we can see that it's expecting super to be called.
+Now, let's add some functionality to a derived class when it's instantiated. The IDE has given us some indication that something is wrong. If we hover over the `constructor`, we can see that it's expecting super to be called.
 
 **demo.js**
 ```javascript
@@ -121,7 +120,7 @@ class SuperVillain extends ComicBookCharacter {
 
 When you extend the class without defining the constructor, the derived class will use the base class as constructor.
 
-Now that we're defining the constructor for the `SuperVillain` class, we have to call `super()`. The IDE is telling us that super expected four arguments. OK, let's put in four arguments. Now, the IDE is complaining about the super arguments, but the message isn't that clear.
+Now that we're defining the constructor for the `SuperVillain` class, we have to call `super()`. The IDE is telling us that super expected four arguments. OK, let's put in four arguments. Now, the IDE is complaining about the `super` arguments, but the message isn't that clear.
 
 **demo.js**
 ```javascript
@@ -158,7 +157,7 @@ class SuperVillain extends ComicBookCharacter {
 // inheritance.ts(17,24): error TS2304: Cannot find name 'd'.
 ```
 
-Now let's see what it says. Can't find any of the super arguments. What does this error mean? We haven't created any of these variables we're passing as super, so let's pass them in the constructor. Let's see if that worked. Nice.
+Now let's see what it says. Can't find any of the `super` arguments. What does this error mean? We haven't created any of these variables we're passing as `super`, so let's pass them in the constructor. Let's see if that worked. Nice.
 
 **demo.js**
 ```javascript
@@ -172,9 +171,9 @@ class SuperVillain extends ComicBookCharacter {
 }
 ```
 
-Super expects four arguments because super is a reference to the base class. The base class is constructor, expects four arguments.
+`super` expects four arguments because `super` is a reference to the base class. The base class is constructor, expects four arguments.
 
-We are passing the arguments into the derived class's constructor so the values can be set upon instantiation and super can extend the base classes properties. Notice how the derived class is constructor, and super arguments don't have to be the same as the base class.
+We are passing the arguments into the derived class's constructor so the values can be set upon instantiation and super can extend the base classes properties. Notice how the derived class is constructor, and `super`arguments don't have to be the same as the base class.
 
 **demo.js**
 ```javascript

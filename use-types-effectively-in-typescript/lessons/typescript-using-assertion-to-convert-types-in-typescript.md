@@ -1,6 +1,6 @@
 We have a `SuperHero` and a `BadGuy`. Let's make a function that saves the day if the function's argument is a `SuperHero`, and a commits a bad deed if its argument is a `BadGuy`. Our function needs to accept something that could be a `SuperHero` or a `BadGuy`.
 
-**demo.js**typescript-the-basics-of-generics-in-typescript
+**demo.js**
 ```javascript
 interface SuperHero {
   powers: string[];
@@ -41,7 +41,7 @@ An **assertion** is how we told the compiler, "We have some information about so
 if ((something.powers as SuperHero) {} // incorrect
 ```
 
-The other syntax is with angle brackets, and it goes before the value. The angle bracket syntax was the original syntax, but it conflicted with JSX, so the as type syntax was created.
+The other syntax is with angle brackets, and it goes before the value. The angle bracket syntax was the original syntax, but it conflicted with JSX, so the `as` type syntax was created.
 
 **demo.js**
 ```javascript 
@@ -50,7 +50,7 @@ if (<SuperHero>something.powers) {} // angle bracket syntax
 
 Type assertions are compile-time assertions. This means that the assertion is only valid at compile time. Once the code is compiled with JavaScript, the type assertion no longer exists, because JavaScript doesn't have type assertions.
 
-Let's finish our if block by calling the `SuperHero` saves the day method. We need to add the else block. Let's call our function with both types. Let's see if it works.
+Let's finish our if block by calling the `SuperHero.savesTheDay` method. We need to add the `else` block. Let's call our function with both types. Let's see if it works.
 
 **demo.js**
 ```javascript
