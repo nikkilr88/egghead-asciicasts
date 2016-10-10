@@ -1,0 +1,5 @@
+{
+    "title": "Use Types Effectively in TypeScript",
+    "description": "Asciicasts for [Use Types Effectively in TypeScript](https://egghead.io/courses/use-types-effectively-in-typescript) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}
