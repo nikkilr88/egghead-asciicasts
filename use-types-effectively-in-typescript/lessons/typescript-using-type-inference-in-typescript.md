@@ -2,13 +2,13 @@
 ``` javascript
 let userName: string = "Silver Surfer";
 ```
-TypeScript gives us **static types**. When we run the compiler, there's no errors because the compiler knows that username is a string. Typescript also gives us **inference**, which just means when there is no annotation the compiler will guess what type we want.
+TypeScript gives us **static types**. When we run the compiler, there's no errors because the compiler knows that `userName` is a string. Typescript also gives us **inference**, which just means when there is no annotation the compiler will guess what type we want.
 
 **eggheadTypes/demo.ts**
 ``` javascript
 let userName = "Silver Surfer";
 ```
-If we set a new value for `username`, even though `username` has no annotation, both the IDE and the compiler are mad because the compiler inferred, or guessed, that username is a `string` because it was initialized with a `string`. Array of strings is not assignable to type `string`.
+If we set a new value for `userName`, even though `username` has no annotation, both the IDE and the compiler are mad because the compiler inferred, or guessed, that `userName` is a `string` because it was initialized with a `string`. Array of strings is not assignable to type `string`.
 
 **eggheadTypes/demo.ts**
 ``` javascript
@@ -16,7 +16,7 @@ let userName = "Silver Surfer";
 userName = ["Silver", "Surfer"]; // error TS2322: type 'string[]' is 
                                  // not assignable to type 'string'.
 ```
-We have to be careful. If we don't annotate `username`, initialize it as `undefined`, and set a value later, like we've done here, when we run the compiler, we get no errors because the compiler can't infer what the type is.
+We have to be careful. If we don't annotate `userName`, initialize it as `undefined`, and set a value later, like we've done here, when we run the compiler, we get no errors because the compiler can't infer what the type is.
 
 **eggheadTypes/demo.ts**
 ``` javascript
@@ -52,6 +52,6 @@ target.onclick = (event: HTMLButtonElement) => event.button;
 ```
 We've typed the argument passed through the function as an `HTMLButtonElement`. It's supposed to be a mouse event. We say that the `HTMLButtonElement` is incompatible with the event that's supposed to be passed, which is the mouse event. A button property does not exist on an `HTMLButtonElement`.
 
-To review, contextual inference is top down. Top down. The compiler knows what the `target` is and its `onclick` method. It's guessing what the event handler argument type is based on the target `onclick` signature.
+To review, **contextual inference is top down**. Top down. The compiler knows what the `target` is and its `onclick` method. It's guessing what the event handler argument type is based on the target `onclick` signature.
 
-Vanilla inference is bottom up. The compiler is inferring what the function return type is based on its arguments. If you initialize your variables `undefined`, the compiler won't be able to infer what the type is.
+**Vanilla inference is bottom up**. The compiler is inferring what the function return type is based on its arguments. If you initialize your variables `undefined`, the compiler won't be able to infer what the type is.
