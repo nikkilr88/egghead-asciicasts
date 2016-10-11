@@ -15,10 +15,13 @@ prompt('Deploy to rails? (y/n) ', function (val) {
                 if (val === 'y' || val === 'Y' || val === 'yes'){
                     const extracted_enhanced_transcripts = JSON.parse(fs.readFileSync('enhancedTranscripts.json').toString());
                     extracted_enhanced_transcripts.forEach((et, index) => {
-                       axios.put(`${domain}/api/v1/lessons/${et.lesson_slug}`, {
-                           enhanced_transcript: et.enhanced_transcript
+                       axios.post(`${domain}/api/v1/enhanced_transcripts`, {
+                           enhanced_transcript: {
+                               markdown: et.enhanced_transcript,
+                               title: et.lesson_slug
+                           }
                        })
-                           .then(response => console.log(response.data.title, response.status))
+                           .then(response => console.log(response.status))
                            .catch(error => console.log(error))
                     });
                 } else {

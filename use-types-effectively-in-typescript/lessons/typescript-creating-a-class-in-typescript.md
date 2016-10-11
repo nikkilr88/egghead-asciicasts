@@ -72,7 +72,7 @@ constructor(alias: string, health: number, strength: number, secretIdentity: str
   this.secretIdentity = secretIdentity;
 }
 ```
-Now we need to update how the instances set their properties and to make sure that the `private` property got set, let's add a method to retrieve it. Let's call the get secret identity method and see if this works. Nice. 
+Now we need to update how the instances set their properties and to make sure that the `private` property got set, let's add a method to retrieve it. Let's call the `getSecretIdentity` method and see if this works. Nice. 
 
 **classes.ts**
 ``` javascript
@@ -107,7 +107,7 @@ class ComicBookCharacter {
 ```
 Adding access modifiers to the constructor arguments lets the class know that they're properties of a class. If the arguments don't have access modifiers, they'll be treated as an argument for the constructor function and not properties of the class. Let's see if this works. Sweet.
 
-Typescript classes also have **static properties**. Static properties are *associated with the class, not the instance*. Our `createTeam` static method is just returning an object. Notice that if I try to call the `static` method on the instance (storm.createTeam), it's unavailable. The `static` method is only available on the class.
+Typescript classes also have **static properties**. Static properties are associated with the class, not the instance. Our `createTeam` static method is just returning an object. Notice that if I try to call the `static` method on the instance (storm.createTeam), it's unavailable. The `static` method is only available on the class.
 
 **classes.ts**
 ``` javascript
@@ -127,7 +127,7 @@ console.log(team) // { name: 'oddCouple',
 ```
 Let's check this out. Run the code. The console log is returning this object. It's got a name and an array of `ComicBookCharacter`.
 
-Even though `static` members can't be called by the instance, they can update `instance private members`. Let's create a `private` class property and set that property in our `static` method. Let's rename the `static` method to create an assigned `team`. We already have the object. For each `member` of the `team`, let's assign their `private team` property as the `team` object that's being created.
+Even though `static` members can't be called by the instance, they can update **instance private members**. Let's create a `private` class property and set that property in our `static` method. Let's rename the `static` method to create an assigned `team`. We already have the object. For each `member` of the `team`, let's assign their `private team` property as the `team` object that's being created.
 
 **classes.ts**
 ``` javascript

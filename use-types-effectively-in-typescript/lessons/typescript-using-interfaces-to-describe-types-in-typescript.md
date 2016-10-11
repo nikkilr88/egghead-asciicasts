@@ -27,13 +27,13 @@ let superHero: ComicBookCharacter = {
   health: 5000      // Type 'boolean' is not assignable to type 'string'.
 }
 let superVillain: ComicBookCharacter = {
-  scretIdentity: "Jack Napier", // Object literal may only specify known 
-  alias: "Joker",               // properties and 'scretIdentity' does not 
+  secretIdentity: "Jack Napier", // Object literal may only specify known 
+  alias: "Joker",               // properties and 'secretIdentity' does not 
   health: 75                    // exist in type 'ComicBookCharacter'
 }
 ```
 
-`Types of property 'alias' are incompatible`. Type `boolean`, which is what we've set our superhero to have, is not assignable to type `string`, which is what the comic character type should be. Object literal may only specify known properties and `'scretIdentity'` identity does not exist in the `ComicBookCharacter` type.
+Types of property 'alias' are incompatible. Type `boolean`, which is what we've set our superhero to have, is not assignable to type `string`, which is what the `ComicBookCharacter` type should be. Object literal may only specify known properties and `'secretIdentity'` identity does not exist in the `ComicBookCharacter` type.
 
 When we create a function, we can type the argument with the `interface`. If we remove the type from the `superHero` and call the function, the IDE and compiler will still catch the errors. These are the same errors as before.
 
@@ -46,7 +46,7 @@ let superHero = {
 
 function getSecretIdentity(character: ComicBookCharacter) {
   if (character.secretIdentity) {
-    consol.log(`${character.alias} is ${character.secretIdentity}`);
+    console.log(`${character.alias} is ${character.secretIdentity}`);
   } else {
     console.log(`${character.alias} has no secret identity`);
   }
@@ -54,11 +54,11 @@ function getSecretIdentity(character: ComicBookCharacter) {
 getSecretIdentity(superHero);  // Object literal may only specify known properties, and 
                                // 'scretIdentity' does not exist in type 'ComicBookCharacter'
 ```
-Object literal may only specify known properties. `'scretIdentity'` does not exist on the `ComicBookCharacter` type. Again, we're talking about the `superVillain` -- line 13, line 26, 19.
+Object literal may only specify known properties. `'secretIdentity'` does not exist on the `ComicBookCharacter` type. Again, we're talking about the `superVillain` -- line 13, line 26, 19.
 
-This time we're talking about the function because we still have the type on the argument being passed to the function. `Types of property 'alias' are incompatible. Type 'boolean' is not assignable to type 'string'`. `Boolean` not assignable type `string`.
+This time we're talking about the function because we still have the type on the argument being passed to the function. Types of property 'alias' are incompatible. Type 'boolean' is not assignable to type 'string'. `Boolean` not assignable type `string`.
 
-Our characters need an `attack` method. We could add it to the `ComicBookCharacter interface`, but we might want someone who's not a `ComicBookCharacter` to be able to `attack`. So let's create an `interface` for a function.
+Our characters need an `attack` method. We could add it to the `ComicBookCharacter` interface, but we might want someone who's not a `ComicBookCharacter` to be able to `attack`. So let's create an `interface` for a function.
 
 **demo.js**
 ``` javascript
@@ -66,7 +66,7 @@ interface AttackFunction {
   (opponent: { alias: string; health: number; }, attackWith: number): number;
 }
 ```
-Notice the `opponent` in line type. In lining the type is still an `interface`. It just doesn't have a name that can be referenced. We need these specific params if `KrustyTheClown` wants to throw down. Notice how we're typing an `interface` param with an `interface`.
+Notice the `opponent` inline type. Inlining the type is still an `interface`. It just doesn't have a name that can be referenced. We need these specific params if `KrustyTheClown` wants to throw down. Notice how we're typing an `interface` param with an `interface`.
 
 **demo.js**
 ``` javascript
@@ -114,15 +114,15 @@ superHero.attack(superVillian, superHero.strength);  // Object literal may only 
                                                      // properties, and 'strength' does not exist 
                                                      // in type 'ComicBookCharacter'
 ```
-Let's see what the compiler says. `Object literal` may only specify known properties, and `strength` does not exist on a `ComicBookCharacter` type. Neither does `insanity`.
+Let's see what the compiler says. Object literal may only specify known properties, and `strength` does not exist on a `ComicBookCharacter` type. Neither does `insanity`.
 
-Since we called the superhero `attack` function, we're seeing the error about `'strength'` again. We could add `strength` and `insanity` to the `ComicBookCharacter` interface.
+Since we called the superhero `attack` function, we're seeing the error about `strength` again. We could add `strength` and `insanity` to the `ComicBookCharacter` interface.
 
 However, we want to make sure that they're optional.
 
 Otherwise, we need to add `strength` and `insanity` to both of our characters. But if we have to add every skill and power to the `ComicBookCharacter` interface, it's going to get pretty bloated.
 
-Let's create an `OptionalAttributes` interface and `extend` the `ComicBookCharacter` interface with the optional attributes interface. Now when we run the compiler, we get no errors. When we run the code, nice.
+Let's create an `OptionalAttributes` interface and "extend" the `ComicBookCharacter` interface with the optional attributes interface. Now when we run the compiler, we get no errors. When we run the code, nice.
 
 **demo.ts**
 ``` javascript
@@ -138,6 +138,6 @@ interface ComicBookCharacter extends OptionalAttributes { ... }
 superHero.attack(superVillian, superHero.strength); // She-Hulk attacked Joker, who's health = -4925
                                                     // She-Hulk has no secret identity
 ```
-So to review, interfaces describe the shape of a value but don't contain definitions. They can be set in line or as a type that can be referenced. Both options are useful.
+So to review, interfaces describe the shape of a value but don't contain definitions. They can be set inline or as a type that can be referenced. Both options are useful.
 
 Interfaces help with typos and errors. They can have optional parameters. They can be used to type other interface parameters or extend it.

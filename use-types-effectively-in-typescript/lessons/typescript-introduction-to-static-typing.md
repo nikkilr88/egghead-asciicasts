@@ -15,15 +15,19 @@ someString = 243233;  // error TS2322: Type 'number is
 ```
 The compiler is mad because I tried to assign a number to a variable that I already said was a string. `someString` is a `string`. I gave it a `number`.
 
-Please note that even though the compiler is mad, it doesn't prevent compilation in most cases. This is because TypeScript is still JavaScript, and JavaScript types are dynamic. Basically, JavaScript doesn't care what type your variable is, but you will if it's the wrong one.
+Please note that even though the compiler is mad, **it doesn't prevent compilation in most cases**. This is because TypeScript is still JavaScript, and JavaScript types are dynamic. Basically, JavaScript doesn't care what type your variable is, but you will if it's the wrong one.
 
 Another useful aspect of TypeScript is exploring APIs with an IDE is way easier. The `coolFunc` function accepts a `string` and a `number`. When we begin typing the function, the IDE helps with auto-complete, but also shows us what type of arguments the function is expecting. 
 
-![CoolFunc auto-complete](../images/typescript-introduction-to-static-typing-coolFunc.png)
+![CoolFunc auto-complete](../images/typescript-introduction-to-static-typing-Func.png)
 
 You can see the first one is a `string`, and the second one is a `number`. When I run the compiler, no errors.
 
-If we pass an argument that the function is not expecting, the IDE will warn us. You can see there's a little red line right here, and there's also one on the side over here. The error that it's pointing out will also show up when you compile. I tried to pass an `{}` to the function that's supposed to be a `number`.
+If we pass an argument that the function is not expecting, the IDE will warn us. You can see there's a little red line right here, and there's also one on the side over here. The error that it's pointing out will also show up when you compile. 
+
+![Warning](../images/typescript-introduction-to-static-typing-warning.png)
+
+I tried to pass an `{}` to the function that's supposed to be a `number`.
 
 **eggheadTypes/demo.ts**
 ``` javascript
