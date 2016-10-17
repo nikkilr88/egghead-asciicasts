@@ -1,4 +1,4 @@
-# Use Types Effectively in TypeScript
+# RxJS Subjects and Multicasting Operators
 
 ![course image](https://d2eip9sf3oo6c2.cloudfront.net/series/covers/000/000/040/full/EGH_RxJS_Multicasting_Final-cover.png?1473449036)
 

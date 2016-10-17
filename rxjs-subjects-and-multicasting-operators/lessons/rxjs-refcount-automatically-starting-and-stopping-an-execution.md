@@ -70,7 +70,7 @@ setTimeout(function () {
 }, 5000);
 ```
 
-It won't actually `unsubscribe`. If we do, after, let's say, seven seconds, we `unsubscribe` B, then that number will go from one to zero. That's when the shared execution will stop. This means a stop.
+It won't actually `unsubscribe`. If we do, after, let's say, seven seconds, we `unsubscribe` `B`, then that number will go from one to zero. That's when the shared execution will stop. This means a stop.
 
 **jsbin**
 ```javascript
@@ -80,7 +80,7 @@ setTimeout(function () {
 }, 7000);
 ```
 
-Let's give this a run. We see initially that A subscribes, and that's what triggers the shared execution start. B subscribes at some other point in time, like here. After a while, A unsubscribes, but that's not enough to stop the shared execution. After B unsubscribes, the number of observers on that auto-connected one changed from one to zero.
+Let's give this a run. We see initially that `A` subscribes, and that's what triggers the shared execution start. `B` subscribes at some other point in time, like here. After a while, `A` unsubscribes, but that's not enough to stop the shared execution. After `B` unsubscribes, the number of observers on that auto-connected one changed from one to zero.
 That's when it unsubscribed. As you can see, we have no leak here.
 
 **Console Output**

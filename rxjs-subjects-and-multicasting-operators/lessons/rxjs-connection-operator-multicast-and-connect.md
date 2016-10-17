@@ -1,4 +1,4 @@
-Now that we know all of the variants of subjects, let's go back and remember why did we need subjects in the first place? Originally, we had one typical observable, but we wanted two observers A and B, to see the same execution of that observable.
+Now that we know all of the variants of subjects, let's go back and remember why did we need subjects in the first place? Originally, we had one typical observable, but we wanted two observers `A` and `B`, to see the same execution of that observable.
 
 Because a `subscribe` on an observable will invoke the execution of that observable, we can only have one `subscribe` to this observable in this code. That's why we used here the `subject`, **because it's a hybrid between an observable and an observer**. Because it's an observer, we can use it here.
 
@@ -92,7 +92,7 @@ It will `subscribe` to that source using the internal `subject` that it is backe
 connectableObservable.subscribe(observerA);
 ```
 
-They are really analogous to doing `subject.subscribe`. It's the same code that we had before. It's just that we are hiding the `subject` behind this `connectableObservable`. If we run this, it actually does the same thing as before. A sees zero, one, and two, and then B arrives late. B sees the same thing that A sees.
+They are really analogous to doing `subject.subscribe`. It's the same code that we had before. It's just that we are hiding the `subject` behind this `connectableObservable`. If we run this, it actually does the same thing as before. `A` sees zero, one, and two, and then `B` arrives late. `B` sees the same thing that `A` sees.
 
 **Console Output**
 ```javascript
@@ -149,7 +149,7 @@ var connectableObservable = Rx.Observable.interval(1000)
   .multicast(new Rx.ReplaySubject(100));
 ```
 
-Now when we `connect` this observable, this `connectableObservable`, it will use a `ReplaySubject` to `subscribe` to this observable. That means that when the late observer arrives here, it will see the last values replayed to it. If we run this B arrives late, but B sees the latest values, zero and one, for instance.
+Now when we `connect` this observable, this `connectableObservable`, it will use a `ReplaySubject` to `subscribe` to this observable. That means that when the late observer arrives here, it will see the last values replayed to it. If we run this `B` arrives late, but `B` sees the latest values, zero and one, for instance.
 
 **Console Output**
 ```javascript

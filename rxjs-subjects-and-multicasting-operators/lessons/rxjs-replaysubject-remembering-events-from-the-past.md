@@ -5,7 +5,7 @@ A `BehaviorSubject` can remember the latest value emitted, but if we wanted `obs
 var subject = new Rx.ReplaySubject();
 ```
 
-The `constructor` doesn't take anymore this initial value. We actually won't see this zero anymore with the `ReplaySubject`. Here, the first argument would be a `bufferSize`. Here, just for first example, we're going to use a `bufferSize` of `2`, which means that when B subscribes, it will see the latest two values.
+The `constructor` doesn't take anymore this initial value. We actually won't see this zero anymore with the `ReplaySubject`. Here, the first argument would be a `bufferSize`. Here, just for first example, we're going to use a `bufferSize` of `2`, which means that when `B` subscribes, it will see the latest two values.
 
 **jsbin**
 ```javascript
@@ -16,7 +16,7 @@ The `constructor` doesn't take anymore this initial value. We actually won't see
 */
 ```
 
-That's the size of the buffer that exists inside the `ReplaySubject`. When we run this, when B subscribes, it's going to see the latest two values.
+That's the size of the buffer that exists inside the `ReplaySubject`. When we run this, when `B` subscribes, it's going to see the latest two values.
 
 **Console Output**
 ```
@@ -40,7 +40,7 @@ We can even use a larger argument here, like `Number.POSITIVE_INFINITY`, for ins
 */
 ```
 
-It's going to remember all of the events that happened in the past. When B subscribes it, we'll just emit all of those events from the past.
+It's going to remember all of the events that happened in the past. When `B` subscribes it, we'll just emit all of those events from the past.
 
 **Console Output**
 ```
@@ -74,7 +74,7 @@ setTimeout(() => subject.next(2), 200);
 setTimeout(() => subject.next(3), 300);
 ```
 
-After 200 milliseconds, we're going to emit two. After 300 milliseconds, we're going to emit three. Let's say that `observerB` would subscribe at 400 milliseconds. It would look something like this in time. B was subscribed at some point here.
+After 200 milliseconds, we're going to emit two. After 300 milliseconds, we're going to emit three. Let's say that `observerB` would subscribe at 400 milliseconds. It would look something like this in time. `B` was subscribed at some point here.
 
 **jsbin**
 ```javascript
@@ -85,7 +85,7 @@ After 200 milliseconds, we're going to emit two. After 300 milliseconds, we're g
 */
 ```
 
-If we have a `windowSize` of 250 milliseconds, then B will see those events that happened at almost 250 milliseconds in the past. It would see two and three, like this. If we run this, we're going to see B will see only two and three.
+If we have a `windowSize` of 250 milliseconds, then `B` will see those events that happened at almost 250 milliseconds in the past. It would see two and three, like this. If we run this, we're going to see `B` will see only two and three.
 
 **jsbin**
 ```javascript
@@ -98,7 +98,7 @@ If we have a `windowSize` of 250 milliseconds, then B will see those events that
 
 Apparently, with a `ReplaySubject`, we can replay more events from the past than we can with a `BehaviorSubject`, because we can customize it with a `bufferSize` parameter, and `windowSize` parameter. Does that mean that a `ReplaySubject` of `bufferSize` = `1` is the same thing as a `BehaviorSubject`?
 
-That's not entirely true. As we see here, even though B is subscribed late, and it sees the latest value, three, there are some differences. If we did it with a `BehaviorSubject`, we would have to provide here the seed argument or the initial value for the `BehaviorSubject`.
+That's not entirely true. As we see here, even though `B` is subscribed late, and it sees the latest value, three, there are some differences. If we did it with a `BehaviorSubject`, we would have to provide here the seed argument or the initial value for the `BehaviorSubject`.
 
 **jsbin**
 ```javascript
@@ -108,7 +108,7 @@ var subject = new Rx.ReplaySubject(1);
 
 We had that as zero, so it means that the `BehaviorSubject` always has a value, and initially, that value is zero. That's not true with a `ReplaySubject`, because initially, it doesn't have any value, or no event happened.
 
-In fact, if you would subscribe here in the beginning, as we did with observer A, A did not see any event previously. It only saw the next events, which were one, two, and three. That's one fundamental difference between a `ReplaySubject` and a `BehaviorSubject`.
+In fact, if you would subscribe here in the beginning, as we did with `observerA`, `A` did not see any event previously. It only saw the next events, which were one, two, and three. That's one fundamental difference between a `ReplaySubject` and a `BehaviorSubject`.
 
 **It's because ReplaySubject's don't actually represent values over time, like your age, that we saw. It just really replays events from the past.** Another difference is with how these subjects handle `complete`.
 
@@ -128,7 +128,7 @@ setTimeout(() => subjec.complete(), 350);
 */
 ```
 
-Now if we had a `bufferSize` of 100, for instance, then it would replay all the previous, at most 100 events from the past, so it would replay one, two, and three. If we run this, we see after the subject completes, B subscribes, and B sees the events, one, two, three.
+Now if we had a `bufferSize` of 100, for instance, then it would replay all the previous, at most 100 events from the past, so it would replay one, two, and three. If we run this, we see after the subject completes, `B` subscribes, and `B` sees the events, one, two, three.
 
 **Console Output**
 ```

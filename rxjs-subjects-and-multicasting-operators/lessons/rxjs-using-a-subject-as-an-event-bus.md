@@ -15,7 +15,7 @@ For instance, we could get rid of this `observable.subscribe` and we could remov
 var observable = Rx.Observable.interval(1000).take(0);
 ```
 
-Now, we have only the `subject` and its observers, A and B. Then, we could do `subject.next` to send the value `1`. Then, we can send `2` and `3` like this.
+Now, we have only the `subject` and its observers, `A` and `B`. Then, we could do `subject.next` to send the value `1`. Then, we can send `2` and `3` like this.
 
 **jsbin**
 ```javascript
@@ -27,7 +27,7 @@ subject.next(3);
 
 Then, when we run this, we see `observerA` sees those events that we manually passed here. We could also, let's say, do `subject.complete` to say that this is done.
 
-We can even, let's say, set an interval to run every second -- every one second. We're going to deliver a value into that `subject`, like `10` every second. Then, A is going to see one, two, three. After two seconds, B arrives, and C is the same.
+We can even, let's say, set an interval to run every second -- every one second. We're going to deliver a value into that `subject`, like `10` every second. Then, `A` is going to see one, two, three. After two seconds, `B` arrives, and C is the same.
 
 **jsbin**
 ```javascript

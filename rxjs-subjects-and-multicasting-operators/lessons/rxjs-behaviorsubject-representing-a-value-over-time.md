@@ -12,7 +12,7 @@ setTimout(function () {
 }, 2000);
 ```
 
-If you run this and see what happens, `observerA` was subscribed in time to receive the values, but B was too late. Because B subscribing doesn't create a new execution, it just shares the execution that is ongoing, it only sees values that will come in the future, but not those that happened in the past.
+If you run this and see what happens, `observerA` was subscribed in time to receive the values, but `B` was too late. Because `B` subscribing doesn't create a new execution, it just shares the execution that is ongoing, it only sees values that will come in the future, but not those that happened in the past.
 
 **Console Output**
 ```
@@ -32,7 +32,7 @@ Let's try to draw a Marble diagram of this situation, so that we know exactly wh
 */
 ```
 
-If we draw here where A appeared, A appeared somewhere here, before. That's why it was able to see one, two, and three. It keeps on observing the future values, as well.
+If we draw here where `A` appeared, `A` appeared somewhere here, before. That's why it was able to see one, two, and three. It keeps on observing the future values, as well.
 
 **jsbin**
 ```javascript
@@ -42,7 +42,7 @@ If we draw here where A appeared, A appeared somewhere here, before. That's why 
 */
 ```
 
-But B, it was subscribed much after the value three was delivered. Maybe somewhere here, B subscribed. It is still observing what's happening on the `subject`, but it doesn't see any values in the future.
+But `B`, it was subscribed much after the value three was delivered. Maybe somewhere here, `B` subscribed. It is still observing what's happening on the `subject`, but it doesn't see any values in the future.
 
 **jsbin**
 ```javascript
@@ -53,7 +53,7 @@ But B, it was subscribed much after the value three was delivered. Maybe somewhe
 */
 ```
 
-How can we fix this? Because there are legitimate cases where we need a late observer like B to receive the current value from the `subject`. For instance, we would like B to see the value three. That's how we can use the so-called `BehaviorSubject`.
+How can we fix this? Because there are legitimate cases where we need a late observer like `B` to receive the current value from the `subject`. For instance, we would like `B` to see the value three. That's how we can use the so-called `BehaviorSubject`.
 
 A `BehaviorSubject` is a `subject` that always has a current value. That's why actually we need to initialize the `BehaviorSubject` with the value, because it always has a value, then it also has to start with a value. That's because this type of `subject` is able to remember, what was the last value emitted?
 
@@ -62,7 +62,7 @@ A `BehaviorSubject` is a `subject` that always has a current value. That's why a
 var subject = new Rx.BehaviorSubject(0);
 ```
 
-Then when late observers arrive, such as B, then the `BehaviorSubject` will pass on to B, what was that value remembered inside the `BehaviorSubject`? Now that we hit this run, we're going to see when A subscribes, A is actually going to receive, here at this spot, zero. Because that's the current value of the `subject`. Then when B subscribes, B will actually see here, three, like that.
+Then when late observers arrive, such as `B`, then the `BehaviorSubject` will pass on to `B`, what was that value remembered inside the `BehaviorSubject`? Now that we hit this run, we're going to see when `A` subscribes, `A` is actually going to receive, here at this spot, zero. Because that's the current value of the `subject`. Then when `B` subscribes, `B` will actually see here, three, like that.
 
 **Console Output**
 ```

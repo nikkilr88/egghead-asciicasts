@@ -10,7 +10,7 @@ Let's look at one more type of `subject` that also has some sort of replay logic
 
 A `BehaviorSubject` will only replay one value to a late observer, and it only does that while the `subject` has not completed yet. The `AsyncSubject` will replay just one value, just like the `BehaviorSubject`, but it only does that after or when the `subject` completes.
 
-Actually, before the `subject` completes, it won't emit any value at all. Let's take a look at how that works. Let's replace this one with an `AsyncSubject`. It takes no arguments here in the `constructor`. Now when we run this, we're going to see that A saw just three, and done, and then B saw three and the completion.
+Actually, before the `subject` completes, it won't emit any value at all. Let's take a look at how that works. Let's replace this one with an `AsyncSubject`. It takes no arguments here in the `constructor`. Now when we run this, we're going to see that `A` saw just three, and done, and then `B` saw three and the completion.
 
 **jsbin**
 ```javascript
@@ -27,7 +27,7 @@ var subject = new Rx.AysncSubject();
 "observerB subscribed"
 ```
 
-It actually works like this, that when A subscribed somewhere here, it didn't see any of these values because it only sees values from the `subject` when the `subject` completes. When it completes here, it will get the last value, and then it's done.
+It actually works like this, that when `A` subscribed somewhere here, it didn't see any of these values because it only sees values from the `subject` when the `subject` completes. When it completes here, it will get the last value, and then it's done.
 
 **jsbin**
 ```javascript
@@ -37,7 +37,7 @@ It actually works like this, that when A subscribed somewhere here, it didn't se
 */
 ```
 
-Then B which subscribed somewhere here, it also receives the last value, the replayed value, three, and then it completes. As we can see, the `AsyncSubject` will only emit one value. That value is exactly the last value from this execution here.
+Then `B` which subscribed somewhere here, it also receives the last value, the replayed value, three, and then it completes. As we can see, the `AsyncSubject` will only emit one value. That value is exactly the last value from this execution here.
 
 **jsbin**
 ```javascript

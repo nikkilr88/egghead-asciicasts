@@ -28,7 +28,7 @@ Let's highlight here that this will actually create an execution of the observab
 ```
 
 
-When you do something like `subscribe` again, so now we have `observerB`, another observer, and we `subscribe`. We're doing that after two seconds, not at the same time as A did. This will also create its own execution of this observable.
+When you do something like `subscribe` again, so now we have `observerB`, another observer, and we `subscribe`. We're doing that after two seconds, not at the same time as `A` did. This will also create its own execution of this observable.
 
 **jsbin**
 ```javascript
@@ -43,7 +43,7 @@ setTimeout(function () {
 }, 2000);
 ```
 
-As we see here, we see A gets zero, and then B, after two seconds, it gets zero and one. B does not get two here together with A. They don't share the same execution. Fundamentally, we have two executions here running in parallel. They're totally independent to each other.
+As we see here, we see `A` gets zero, and then `B`, after two seconds, it gets zero and one. `B` does not get two here together with `A`. They don't share the same execution. Fundamentally, we have two executions here running in parallel. They're totally independent to each other.
 
 **Console Output**
 ```javascript
@@ -60,7 +60,7 @@ As we see here, we see A gets zero, and then B, after two seconds, it gets zero 
 "B done"
 ```
 
-There are cases where you want to have this observing the same events that A did. You can't simply do something like this, like put the `observerB`, receive the event as well. Here, basically that would mean that when A gets an event, B would also get an event.
+There are cases where you want to have this observing the same events that `A` did. You can't simply do something like this, like put the `observerB`, receive the event as well. Here, basically that would mean that when `A` gets an event, `B` would also get an event.
 
 **jsbin**
 ```javascript
@@ -72,4 +72,4 @@ var observerA = {
 };
 ```
 
-That's not really what we want, because then, we want B to start after two seconds. Now B is starting at the same time as A is. This is the kind of situation that we solve with the thing called **subjects** in RxJS. We're going to see, in the following lessons, how to do that, and how to be able to share a single execution with multiple observers.
+That's not really what we want, because then, we want `B` to start after two seconds. Now `B` is starting at the same time as `A` is. This is the kind of situation that we solve with the thing called **subjects** in RxJS. We're going to see, in the following lessons, how to do that, and how to be able to share a single execution with multiple observers.

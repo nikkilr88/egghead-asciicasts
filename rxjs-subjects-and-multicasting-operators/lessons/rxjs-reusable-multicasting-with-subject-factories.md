@@ -19,7 +19,7 @@ If we plot on a marble diagram what happens on this `subject`, we would see zero
 // subject: --0--1--2--3--4--5|
 ```
 
-If we run this code, we're going to see that when A subscribes, A will trigger the shared execution with connect. Then B arrives, and then after that, A leaves. B will see the last event, five. B will see the complete, and then B unsubscribes. When the number of subscribers goes from one to zero, with reference counting, we are stopping the shared execution.
+If we run this code, we're going to see that when `A` subscribes, `A` will trigger the shared execution with connect. Then `B` arrives, and then after that, `A` leaves. `B` will see the last event, five. `B` will see the complete, and then `B` unsubscribes. When the number of subscribers goes from one to zero, with reference counting, we are stopping the shared execution.
 
 **Console Output**
 ```
@@ -41,7 +41,7 @@ If we run this code, we're going to see that when A subscribes, A will trigger t
 ```
 
 
-What happens if we would, after, let's say, eight seconds, A would subscribe again? In this case, after eight seconds, the number of subscribers would go from zero to one. What does that mean? **It means a connect**, because we have reference counting. This means that the source observable would be subscribed using this same `subject`.
+What happens if we would, after, let's say, eight seconds, `A` would subscribe again? In this case, after eight seconds, the number of subscribers would go from zero to one. What does that mean? **It means a connect**, because we have reference counting. This means that the source observable would be subscribed using this same `subject`.
 
 **jsbin**
 ```javascript
@@ -50,7 +50,7 @@ What happens if we would, after, let's say, eight seconds, A would subscribe aga
 ```javascript
 
 
-Pay attention that this `subject` already saw a complete, so this `subject` will not be able to emit zero and one again, because you cannot emit values after complete. What happens is, A subscribes in the beginning. It starts the shared execution, and then after a while, A leaves. B sees the last event, and B unsubscribes, but then when A subscribes again, it changed the number of subscribers from zero to one.
+Pay attention that this `subject` already saw a complete, so this `subject` will not be able to emit zero and one again, because you cannot emit values after complete. What happens is, `A` subscribes in the beginning. It starts the shared execution, and then after a while, `A` leaves. `B` sees the last event, and `B` unsubscribes, but then when `A` subscribes again, it changed the number of subscribers from zero to one.
 
 **jsbin**
 ```javascript
@@ -89,7 +89,7 @@ var shared = Rx.Observable.interval(1000)
 
 As we know that shared execution's going to stop, then after a while, we're going to do that again. With connect, it's going to call the `subjectFactory` to create a new `subject`, and then that's going to be used for the next observers. Let's try to run that and see what happens.
 
-On the first zero to one, this shared execution starts, B arrives, and then after a while, A leaves, B leaves, and then we subscribe again. The number of subscribers goes from zero to one, we connect, we create a new `subject` with the `subjectFactory`, and that's how this shared observable suddenly became reusable.
+On the first zero to one, this shared execution starts, `B` arrives, and then after a while, `A` leaves, `B` leaves, and then we subscribe again. The number of subscribers goes from zero to one, we connect, we create a new `subject` with the `subjectFactory`, and that's how this shared observable suddenly became reusable.
 
 **Console Output**
 ```

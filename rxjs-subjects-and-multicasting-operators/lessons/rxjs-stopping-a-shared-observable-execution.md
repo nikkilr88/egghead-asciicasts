@@ -30,7 +30,7 @@ var connectableObservable = Rx.Observable.interval(1000)
   .multicast(new Rx.Subject());
 ```
 
-we're not adding observers. Then if we remember `subscribe` will always return a subscription, right? So we can keep the reference to that, to both A and B, and the we can do something like after five seconds, we're going to unsubscribe from A and unsubscribe from B.
+we're not adding observers. Then if we remember `subscribe` will always return a subscription, right? So we can keep the reference to that, to both `A` and `B`, and the we can do something like after five seconds, we're going to unsubscribe from `A` and unsubscribe from `B`.
 
 **jsbin**
 ```javascript
