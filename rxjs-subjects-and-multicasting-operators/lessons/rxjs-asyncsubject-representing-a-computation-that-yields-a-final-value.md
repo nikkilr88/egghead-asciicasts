@@ -56,7 +56,7 @@ Because it is heavy, we don't want to repeat that for every single observer. We 
 
 Remembering is a property of replaying. This is what the `AsyncSubject` gives you. **It allows us to remember what the last value in that computation was, the final result of this heavy computation**, so that other observers will get that from memory instead of recalculating it all over again.
 
-In this sense, an `AsyncSubject` is like a **promise** because promises also, they eventually resolve with a value. Then if you do a then on that promise, you will get that value `R`, and you won't recalculate this all over again.
+In this sense, an `AsyncSubject` is like a **promise** because promises also, they eventually resolve with a value. Then if you do a `.then` on that promise, you will get that value `R`, and you won't recalculate this all over again.
 
 **jsbin**
 ```javascript

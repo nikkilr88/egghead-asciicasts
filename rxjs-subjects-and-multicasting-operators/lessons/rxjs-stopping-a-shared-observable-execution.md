@@ -1,4 +1,4 @@
-The `connectableObservable` has the `connect` method to conveniently dictate the start of the shared execution of this source observable. But doing this is actually rather dangerous, because we may be creating a leak, because `connect` here essentially says when should we start the shard execution, but we don't yet have anything saying when to stop the shared execution. Let me give an example.
+The `connectableObservable` has the `connect` method to conveniently dictate the start of the shared execution of this source observable. But doing this is actually rather dangerous, because we may be creating a leak, because `connect` here essentially says when should we start the shared execution, but we don't yet have anything saying when to stop the shared execution. Let me give an example.
 
 **jsbin**
 ```javascript
@@ -58,7 +58,7 @@ setTimeout(function () {
 }, 5000);
 ```
 
-When we run this, we're going to see the source is producing those events and the observers are getting those, and then after five seconds both of those observers unsubscribe, but the shard execution keeps on going, because it doesn't have anything to say when should it stop. `connect` just started it, and it keeps on going on forever. `connect` actually returns a subscription, and we can keep that like this.
+When we run this, we're going to see the source is producing those events and the observers are getting those, and then after five seconds both of those observers unsubscribe, but the shared execution keeps on going, because it doesn't have anything to say when should it stop. `connect` just started it, and it keeps on going on forever. `connect` actually returns a subscription, and we can keep that like this.
 
 **jsbin**
 ```javascript

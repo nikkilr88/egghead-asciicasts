@@ -1,6 +1,6 @@
 With `connect` and `unsubscribe`, we were able to manually control when to start and stop the shared execution of the source observable. If we didn't do that, we could create a leak, so the responsibility is on the programmer to avoid these.
 
-It would be nicer if the observable would automatically `connect` and `unsubscribe`, so then we couldn't leak the shared execution at all. There's an operator for that called `refCount`. It stands for **reference counting**, and it exists on the `connectableObservable`. Just like there is .`connect`, there is also .`refCount`. That's an operator to return an observable.
+It would be nicer if the observable would automatically `connect` and `unsubscribe`, so then we couldn't leak the shared execution at all. There's an operator for that called `refCount`. It stands for **reference counting**, and it exists on the `connectableObservable`. Just like there is `connect`, there is also `refCount`. That's an operator to return an observable.
 
 **jsbin**
 ```javascript
@@ -47,11 +47,17 @@ var observable = connectableObservable.refCount();
 
 If we read this code from top to bottom, at this point when we define this observable, this doesn't have any subscriber,
 
-`var observable = connectableObservable.refCount();`
+**jsbin**
+```
+var observable = connectableObservable.refCount();
+```
 
 but here, we're essentially adding `observerA` to the `connectableObservable`.
 
-`var subA = autoConnectedObservable.subscribe(observerA); // start`
+**jsbin**
+```
+var subA = autoConnectedObservable.subscribe(observerA); // start
+```
 
 Before this line, the number of observables was zero. After this line, the number is one. That's when, exactly, it will perform the `connect`, or start the execution. It's because the number of observers changed from zero to one.
 

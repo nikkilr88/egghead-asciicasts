@@ -19,7 +19,7 @@ If we plot on a marble diagram what happens on this `subject`, we would see zero
 // subject: --0--1--2--3--4--5|
 ```
 
-If we run this code, we're going to see that when `A` subscribes, `A` will trigger the shared execution with connect. Then `B` arrives, and then after that, `A` leaves. `B` will see the last event, five. `B` will see the complete, and then `B` unsubscribes. When the number of subscribers goes from one to zero, with reference counting, we are stopping the shared execution.
+If we run this code, we're going to see that when `A` subscribes, `A` will trigger the shared execution with `connect`. Then `B` arrives, and then after that, `A` leaves. `B` will see the last event, five. `B` will see the complete, and then `B` unsubscribes. When the number of subscribers goes from one to zero, with reference counting, we are stopping the shared execution.
 
 **Console Output**
 ```
@@ -47,7 +47,7 @@ What happens if we would, after, let's say, eight seconds, `A` would subscribe a
 ```javascript
 // subject: --0--1--2--3--4--5|
 //                               A
-```javascript
+```
 
 
 Pay attention that this `subject` already saw a complete, so this `subject` will not be able to emit zero and one again, because you cannot emit values after complete. What happens is, `A` subscribes in the beginning. It starts the shared execution, and then after a while, `A` leaves. `B` sees the last event, and `B` unsubscribes, but then when `A` subscribes again, it changed the number of subscribers from zero to one.
@@ -60,7 +60,7 @@ setTimeout(function () {
 }, 8000);
 ```
 
-The source observable is subscribed, but this `subject` has already emitted complete, and that means that it cannot emit zero, one, two, and three. This makes the `shared` observable not really reusable. We want to be able to use this multiple times. The way that this is written right now, just makes the shared observable not be reusable, because once the last observer leaves, we can't really use it any more.
+The source observable is subscribed, but this `subject` has already emitted `complete`, and that means that it cannot emit zero, one, two, and three. This makes the `shared` observable not really reusable. We want to be able to use this multiple times. The way that this is written right now, just makes the shared observable not be reusable, because once the last observer leaves, we can't really use it any more.
 
 How could we make it reusable? Gladly, `multicast` can take a `subject` like this `.multicast(subject)`, or it can take a `subjectFactory`. A `subjectFactory` is a function that once you call it, it will return to you a new `subject`, let's say like this. That's good, because now if we would create a second `subject`, `subject2`, then we would be able to start emitting those values for `observerA`, like that.
 
@@ -75,9 +75,9 @@ function subjectFactory () {
 // subject2:                     --0--1--2--3--4--5|
 ```
 
-Because this one is done, it cannot do anything anymore, but this one can, because it's completely new. `multicast` can take either a `subject`, which will be the same one forever, or it can take a `subjectFactory`, which is basically a way of creating new subjects. The `subjectFactory` will be called when we connect.
+Because this one is done, it cannot do anything anymore, but this one can, because it's completely new. `multicast` can take either a `subject`, which will be the same one forever, or it can take a `subjectFactory`, which is basically a way of creating new subjects. The `subjectFactory` will be called when we `connect`.
 
-Here, when we subscribe for the first time, when the number of subscribers goes from zero to one, we're going to call connect. We're going to create a new `subject`, and we're going to use that `subject` to `multicast` here on this source observable.
+Here, when we subscribe for the first time, when the number of subscribers goes from zero to one, we're going to call `connect`. We're going to create a new `subject`, and we're going to use that `subject` to `multicast` here on this source observable.
 
 **jsbin**
 ```javascript
@@ -87,9 +87,9 @@ var shared = Rx.Observable.interval(1000)
   .refCount();
 ```
 
-As we know that shared execution's going to stop, then after a while, we're going to do that again. With connect, it's going to call the `subjectFactory` to create a new `subject`, and then that's going to be used for the next observers. Let's try to run that and see what happens.
+As we know that shared execution's going to stop, then after a while, we're going to do that again. With `connect`, it's going to call the `subjectFactory` to create a new `subject`, and then that's going to be used for the next observers. Let's try to run that and see what happens.
 
-On the first zero to one, this shared execution starts, `B` arrives, and then after a while, `A` leaves, `B` leaves, and then we subscribe again. The number of subscribers goes from zero to one, we connect, we create a new `subject` with the `subjectFactory`, and that's how this shared observable suddenly became reusable.
+On the first zero to one, this shared execution starts, `B` arrives, and then after a while, `A` leaves, `B` leaves, and then we subscribe again. The number of subscribers goes from zero to one, we `connect`, we create a new `subject` with the `subjectFactory`, and that's how this shared observable suddenly became reusable.
 
 **Console Output**
 ```
@@ -117,4 +117,4 @@ On the first zero to one, this shared execution starts, `B` arrives, and then af
 "A done"
 ```
 
-It means that it can stop a shared execution, but it can also start again by creating a new shared execution with a new `subject`. Bear in mind that with a `multicast`, you can either pass a static `subject` here that's created just once, or you can pass a `subjectFactory`, which is a way of creating an entirely new `subject` for each connect, or for each new shared execution.
+It means that it can stop a shared execution, but it can also start again by creating a new shared execution with a new `subject`. Bear in mind that with a `multicast`, you can either pass a static `subject` here that's created just once, or you can pass a `subjectFactory`, which is a way of creating an entirely new `subject` for each `connect`, or for each new shared execution.

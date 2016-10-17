@@ -53,7 +53,7 @@ The result is an observable of six random numbers. We can delay each of those nu
 var resultDelayed = result.delay(500);
 ```
 
-Then we can merge the original, the `result`, with the delayed. Now if I subscribe to this, and I say get the x event and put it in the console. Let's run this.
+Then we can `merge` the original, the `result`, with the delayed. Now if I subscribe to this, and I say get the `x` event and put it in the console. Let's run this.
 
 **jsbin**
 ```javascript
@@ -124,14 +124,14 @@ var result = Rx.Observable.interval(1000).take(6)
   });
 ```
 
-You may be asking yourself, "When does this connect?", because all of the shared observables are backed by a `subject`. That happens when we subscribe to this result.
+You may be asking yourself, "When does this connect?", because all of the shared observables are backed by a `subject`. That happens when we `subscribe` to this result.
 
 **jsbin**
 ```javascript
 result.subscribe(x => console.log(x));
 ```
 
-When we subscribe to the result, it will subscribe to this multicasted thing, which runs the sandbox,
+When we `subscribe` to the result, it will subscribe to this multicasted thing, which runs the sandbox,
 
 **jsbin**
 ```javascript

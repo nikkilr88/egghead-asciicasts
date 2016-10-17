@@ -70,7 +70,7 @@ OK. That actually solves the problem. If you notice here, observers are meant fo
 
 That sounds like the bridge is observable. In fact, if you change the name of `addObserver` to `subscribe`, then the bridge suddenly really looks like an observable because it has the same API here, where you can register the observer inside the bridge.
 
-Now it seems like the bridge is a hybrid. The bridge is an observer, definitely. It also looks like an observable. That's, in fact, what a **subject** is. Let's introduce now a subject. You create the subject by saying, `var subject = new Rx.Subject();`
+Now it seems like the bridge is a hybrid. The bridge is an observer, definitely. It also looks like an observable. That's, in fact, what a **subject** is. Let's introduce now a subject. You create the `subject` by saying, `var subject = new Rx.Subject();`
 
 There you go. **A subject is an observer, and a subject is also an observable.** We can just use `subject` here instead of bridge. This should also work.
 

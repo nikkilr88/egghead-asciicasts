@@ -8,7 +8,7 @@ var shared = Rx.Observable.interval(1000)
   .refCount();
 ```
 
-The way of reading `publish` `refCount()` is if you have an observable like this that you want to have a shared execution, then you `publish` to broadcast it, or `multicast` it. We use `refCount()` to automatically start the execution when the first subscriber arrives, and automatically stop when the last subscriber leaves.
+The way of reading `.publish().refCount()` is if you have an observable like this that you want to have a shared execution, then you `publish` to broadcast it, or `multicast` it. We use `refCount()` to automatically start the execution when the first subscriber arrives, and automatically stop when the last subscriber leaves.
 
 As a reminder, let's write here that `publish` is a `multicast` with a subject.
 
