@@ -10,7 +10,7 @@
 * [Connection operator: multicast and connect](lessons/rxjs-connection-operator-multicast-and-connect.md)
 * [Stopping a shared observable execution](lessons/rxjs-stopping-a-shared-observable-execution.md)
 * [RefCount: automatically starting and stopping an execution](lessons/rxjs-refcount-automatically-starting-and-stopping-an-execution.md)
-* [Multicasting shortcuts: publish() and variants](lessons/rxjs-multicasting-shortcuts-publish-and-variants.md)
+* [Multicasting shortcuts: publish\(\) and variants](lessons/rxjs-multicasting-shortcuts-publish-and-variants.md)
 * [Reusable multicasting with Subject factories](lessons/rxjs-reusable-multicasting-with-subject-factories.md)
 * [Multicast with a selector argument, as a sandbox](lessons/rxjs-multicast-with-a-selector-argument-as-a-sandbox.md)
 * [Conclusion: when to use Subjects](lessons/rxjs-conclusion-when-to-use-subjects.md)
