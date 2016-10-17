@@ -28,7 +28,7 @@ var bridgeObserver = {
 };
 ```
 
-This will be an intermediate between A and B. Let's create the `bridgeObserver`. As you can see, it is an observer because it has these three functions, `next`, `error`, and `complete`. It also has here an array of its child observers.
+This will be an intermediate between `A` and `B`. Let's create the `bridgeObserver`. As you can see, it is an observer because it has these three functions, `next`, `error`, and `complete`. It also has here an array of its child observers.
 
 It has also a function called `addObserver`, where you can pass an `observer` here, and that will be simply added to that array of observers. When the bridge receives an event from the execution, when it receives a `next` event, it will relay that to its child observers.
 
@@ -41,7 +41,7 @@ observable.subscribe(bridgeObserver);
 bridgeObserver.addObserver(observerA);
 ```
 
-B as well, instead of subscribing, it will be simply added to the bridge.
+`B` as well, instead of subscribing, it will be simply added to the bridge.
 
 **jsbin**
 ```javascript
@@ -50,7 +50,7 @@ setTimeout(function() {
 }, 2000);
 ```
 
-Now when we run this, we're going to see just one execution because we have just one `subscribe`. As you can see, B is added to the bridge after two seconds, and it shares the same execution as A was seeing.
+Now when we run this, we're going to see just one execution because we have just one `subscribe`. As you can see, `B` is added to the bridge after two seconds, and it shares the same execution as `A` was seeing.
 
 **Console Output**
 ```
@@ -85,7 +85,7 @@ setTimout(function () {
 }, 2000);
 ```
 
-As you can see, after two seconds, B comes in. They share the same execution.
+As you can see, after two seconds, `B` comes in. They share the same execution.
 
 **Console Output**
 ```
@@ -103,4 +103,4 @@ As you can see, after two seconds, B comes in. They share the same execution.
 
 A subject is not, anyhow, a scary concept. It is really an observer, and also an observable, because it has a `subscribe`. It has more than just those two. It also has **operators**, just like an observable has operators, like `map` and etc.
 
-A subject also has methods attached to it, such as `map`, `filter`, `reduce`, and etc. It really behaves like an observable. It has all the operators. It has `subscribe`. It also behaves like an observer. It has `next`, `error`, and `complete`. That's how it can act as a bridge between the actual observable and multiple observers, like A and B.
+A subject also has methods attached to it, such as `map`, `filter`, `reduce`, and etc. It really behaves like an observable. It has all the operators. It has `subscribe`. It also behaves like an observer. It has `next`, `error`, and `complete`. That's how it can act as a bridge between the actual observable and multiple observers, like `A` and `B`.
