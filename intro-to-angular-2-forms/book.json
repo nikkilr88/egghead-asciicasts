@@ -1,0 +1,5 @@
+{
+    "title": "Learn the Basics of Angular 2 Forms",
+    "description": "This book covers the [Learn the Basics of Angular 2 Forms](https://egghead.io/courses/intro-to-angular-2-forms) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
