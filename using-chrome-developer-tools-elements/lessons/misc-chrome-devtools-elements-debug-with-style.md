@@ -1,4 +1,4 @@
-We've seen how by right-clicking and saying inspect we can open the elements inspector to let us examine the structure of our page, and even to make changes to that structure. But there's another really important component of the elements panel, and that has to do with style.
+We've seen how by right-clicking and clicking `inspect` we can open the elements inspector to let us examine the structure of our page, and even to make changes to that structure. But there's another really important component of the elements panel, and that has to do with style.
 
 ![Inspect Elements Style Tab](../images/misc-chrome-devtools-elements-debug-with-style-styles.png)
 
@@ -6,7 +6,7 @@ By looking at any element here **when you select something you see all of the cu
 
 ![Source style.css tab](../images/misc-chrome-devtools-elements-debug-with-style-style-css.png)
 
-You can see here I've got another rule that is currently commented out, and I'm going to switch back to my source real quick and bring it in. We can refresh. You can see that we've added margin, padding, and border to our kitten image.
+You can see here I've got another rule that is currently commented out, and I'm going to switch back to my source real quick and bring it in. We can refresh. You can see that we've added `margin`, `padding`, and `border` to our kitten image.
 
 ![Kitten Margin, Padding, And Border](../images/misc-chrome-devtools-elements-debug-with-style-kitten-margin-padding-and-border.png)
 
@@ -14,7 +14,7 @@ Let's go back to our elements panel and inspect that kitten image, and now you c
 
 ![img kitten styles](../images/misc-chrome-devtools-elements-debug-with-style-elements-styles-selector.png)
 
-Then you can go over here and you can look at this little visualization which is incredibly useful. This is a nested hierarchy of all the different things that are contributing dimensions to whatever element that you have selected. I don't know if you've ever been in the situation where you're trying to tweak CSS to make sur everything shows up correctly. If you have you know how frustrating it can be to be like, "Oh my god, where the hell did that extra three pixels come from?" This is where this is a total lifesaver.
+Then you can go over here and you can look at this little visualization which is incredibly useful. This is a nested hierarchy of all the different things that are contributing dimensions to whatever element that you have selected. I don't know if you've ever been in the situation where you're trying to tweak CSS to make sure everything shows up correctly. If you have you know how frustrating it can be to be like, "Oh my god, where the hell did that extra three pixels come from?" This is where this is a total lifesaver.
 
 ![Margins Visualization](../images/misc-chrome-devtools-elements-debug-with-style-margins-visualization.png)
 
@@ -26,15 +26,15 @@ Just like with the elements, the structural HTML elements above, we can add and 
 
 ![Unpersisted Style Changes](../images/misc-chrome-devtools-elements-debug-with-style-unpersisted-style-changes.png)
 
-This makes this a very useful tool for exploration because you can make whatever changes you want, see what they're going to look like, and then decide later if you want to port them back over. Now when we select this `h1` here, there's something a little bit weird going on, because if you remember from our style.css we have a ruleset for hover on `h1` where it changes the background color to white and the color to black, which is what we see here.
+This makes this a very useful tool for exploration because you can make whatever changes you want, see what they're going to look like, and then decide later if you want to port them back over. Now when we select this `h1` here, there's something a little bit weird going on, because if you remember from our `style.css` we have a ruleset for hover on `h1` where it changes the background color to white and the color to black, which is what we see here.
 
 ![Hover Styling](../images/misc-chrome-devtools-elements-debug-with-style-hover-styling.png)
 
-But if we switch over to elements and we have our `h1` selected here, it's not showing us that rule. The reason for that is that what's in the DOM right now is just the `h1`. If we want to see it with the hover state selected, there's this little pin that you can click it, click hover, and look at that. Now we have our rule showing up, and over here it has shown up that way. You can do that from here, you can do that for all of the different pseudo-selectors, and you see browser level stuff.
+But if we switch over to elements and we have our `h1` selected here, it's not showing us that rule. The reason for that is that what's in the DOM right now is just the `h1`. If we want to see it with the `hover` state selected, there's this little pin that you can click it, click hover, and look at that. Now we have our rule showing up, and over here it has shown up that way. You can do that from here, you can do that for all of the different pseudo-selectors, and you see browser level stuff.
 
 ![Force element state pin](../images/misc-chrome-devtools-elements-debug-with-style-force-elements-pin.png)
 
-Not only can you do that from here, you can also right click here and select. So we can right click on that element in the elements panel, and select hover,
+Not only can you do that from here, you can also right click here and select. So we can right click on that element in the elements panel, and select `hover`,
 
 ![Right Click Hover](../images/misc-chrome-devtools-elements-debug-with-style-element-right-click-hover.png)
 
@@ -44,13 +44,13 @@ Here on the left it is showing all of the properties that got set, and where the
 
 ![Populated Properties](../images/misc-chrome-devtools-elements-debug-with-style-populated-properties.png)
 
-and we don't care where they got set. Let's say somewhere in our CSS we said that all images have a border of, I don't know, 10 pixels, but only images of class kitten have a border of 3 pixels.
+and we don't care where they got set. Let's say somewhere in our CSS we said that all images have a border of, I don't know, 10 pixels, but only images of class `.kitten` have a border of 3 pixels.
 
 You see here on the left this visualizer says look, the more general rule for image specified 10 pixels, the more specific rule for `img.kitten`specified only 3, so this is crossed out.
 
 ![Specific Ruling](../images/misc-chrome-devtools-elements-debug-with-style-specific-rulling.png)
 
-But maybe we're working on a large website and we forgot that the kitten rule is going to override that, so this is a very helpful thing to show us. Finally, maybe we've got a ton of different rules, so let's step through here and see all of the rules that are currently active for borders on this image.
+But maybe we're working on a large website and we forgot that the `.kitten` rule is going to override that, so this is a very helpful thing to show us. Finally, maybe we've got a ton of different rules, so let's step through here and see all of the rules that are currently active for borders on this image.
 
 ![Border Rules](../images/misc-chrome-devtools-elements-debug-with-style-border-rules.png)
 

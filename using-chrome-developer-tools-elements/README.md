@@ -1,4 +1,4 @@
-# RxJS Subjects and Multicasting Operators
+# Debug the DOM in Chrome with the Devtools Elements Panel
 
 ![course image](https://d2eip9sf3oo6c2.cloudfront.net/series/covers/000/000/060/full/EGH_Chrome_Elements-cover.png?1476466129)
 

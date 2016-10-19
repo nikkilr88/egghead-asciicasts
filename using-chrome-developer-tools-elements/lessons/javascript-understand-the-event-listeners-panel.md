@@ -1,4 +1,4 @@
-Anyone who spends enough time working in the JavaScript mines will eventually get pretty familiar with working with **events**. There's all kinds of different events in the JavaScript ecosystem ranging from things like using an event emitter to dispatch a notification that some piece of code has changed state or subscribing to a pub sub mechanism in something like Angular or using React synthetic events. jQuery has all sorts of abstract events that you can subscribe to and schlep around.
+Anyone who spends enough time working in the JavaScript mines will eventually get pretty familiar with working with **events**. There's all kinds of different events in the JavaScript ecosystem ranging from things like using an event emitter to dispatch a notification that some piece of code has changed state or subscribing to a pub sub mechanism in something like Angular or using [React synthetic events](https://egghead.io/lessons/react-react-synthetic-event-system). jQuery has all sorts of abstract events that you can subscribe to and schlep around.
 
 One really important really common kind of event is the **native dom event**. A lot of these other kinds of events get built on top of this actually. We'll take a little bit of a look at what I mean by that in a second.
 
@@ -36,7 +36,7 @@ What other events should we be looking at? Here's this kitten. When I click it i
 
 ![Kitten Clicker](../images/javascript-understand-the-event-listeners-panel-kitten-clicker.png)
 
-Let's get rid of ancestors. But this is weird. What is emptyfunction.js? My click handler here is just this empty function. The good news is you don't really have to worry about that.
+Let's get rid of ancestors. But this is weird. What is `emptyfunction.js`? My click handler here is just this empty function. The good news is you don't really have to worry about that.
 
 What that is is just something that React is doing under the hood. The React hook event, if we look at the source code here, when the kitten image is clicked, it calls `this.incrementCount` which is...Whatever. This is pretty vanilla React code. But this `incrementCount`, this handler isn't what's showing up. The reason for that...
 

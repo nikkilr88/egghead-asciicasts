@@ -1,4 +1,4 @@
-Another excellent feature of the Elements panel in the Chrome DevTools is that you can press Escape to open the console. This slides in as a third panel in addition to the structure and the style. It has some pretty special features.
+Another excellent feature of the Elements panel in the Chrome DevTools is that you can press `esc` to open the console. This slides in as a third panel in addition to the structure and the style. It has some pretty special features.
 
 ![console panel](../images/misc-chrome-devtools-elements-console-integration-console.png)
 
@@ -10,7 +10,7 @@ This changes. As we change our currently selected element, the value of `$0` wil
 
 ![Console Memory](../images/misc-chrome-devtools-elements-console-integration-console-memory.png)
 
-You've got zero through four, so the five most recent elements are available to you as a stack. You can do things like treat them as an array here, whatever. If you're doing some kind of like console jockeying and you need to remember the stack of the things you've cared about, this is a great way to do that.
+You've got zero through four, so the five most recent elements are available to you as a **stack**. You can do things like treat them as an array here, whatever. If you're doing some kind of like console jockeying and you need to remember the stack of the things you've cared about, this is a great way to do that.
 
 Of course, most of us are not going to be maintaining a stack-based approach. We're going to be digging through. We're going to be like, "OK, I got to find this image like when we find all images with the `class` `kitten`."
 
@@ -47,7 +47,7 @@ monitorEvents($('h1'), 'click')
 
 What's going to happen is we're getting this event. It's logging out to the console. This is for debugging. You're not mutating your code. You're not adding a cool event handler that's going to get wired back into your React application. **This is strictly for debugging**, but it can be super useful.
 
-Anything that you get a reference to, you can listen for that event. You can do, maybe instead of the `h1`, we want to listen to anything with the `.kitten` `class`. We want to listen to `mouseover`. Now, whenever we get a `mouseover` image, we get that event fired.
+Anything that you get a reference to, you can listen for that event. You can do, maybe instead of the `h1`, we want to listen to anything with the `.kitten class`. We want to listen to `mouseover`. Now, whenever we get a `mouseover` image, we get that event fired.
 
 ![Mouseover Event](../images/misc-chrome-devtools-elements-console-integration-mouseover-event.png)
 

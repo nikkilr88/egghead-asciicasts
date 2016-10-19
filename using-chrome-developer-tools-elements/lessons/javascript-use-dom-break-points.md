@@ -20,7 +20,7 @@ Now we see a subtree modified breakpoint that's been set on this particular `h2`
 
 ![Subtree Modifications](../images/javascript-use-dom-break-points-h2-nodes.png)
 
-That's going to look like this. I click. You'll notice this didn't go over to 13 right away. Instead it sent me over here to my sources panel. This is debug stuff here that we're going to get too far into, but it shows me that this function was called `setTextContent`. It was called with the node as the `span`, and when I click that, it takes me right back to that `span`. It shows me that the text argument is the value 13.
+That's going to look like this. I click. You'll notice this didn't go over to 13 right away. Instead it sent me over here to my sources panel. This is debug stuff here that we're going to get too far into, but it shows me that this function was called `setTextContent`. It was called with the node as the `span`, and when I click that, it takes me right back to that `span`. It shows me that the `text` argument is the value 13.
 
 **setTextContent.js**
 ```javascript
@@ -48,7 +48,7 @@ Let's go over to our source code, and we've got...Again, this isn't a React less
 count: this.state.count + 1, url: 'http://placekitten.com/${width}/${height}'
 ```
 
-I'm going to save that. Pay attention to this `src` attribute of the image. I click. It triggers the breakpoint. It's setting, let's see, `propName` here is `src`. Value here is `placekitten.com/524/597`. Now I've stepped into this, and I can do all sorts of stuff with the debugger.
+I'm going to save that. Pay attention to this `src` attribute of the image. I click. It triggers the breakpoint. It's setting, let's see, `propName` here is `src`. `value` here is `placekitten.com/524/597`. Now I've stepped into this, and I can do all sorts of stuff with the debugger.
 
 ![Debugger](../images/javascript-use-dom-break-points-debugger-propName.png)
 
@@ -58,7 +58,7 @@ Again, I can disable this breakpoint without removing it, in case I just want to
 
 ![Break on Node Removal](../images/javascript-use-dom-break-points-break-on-node-removal.png)
 
-In order to demonstrate what that looks like, we're going to have to change our code base a little bit so that this node gets removed from the DOM when a certain is met. Let's just bring our code over here, and here's our render function. Here's our `image`. We've got our `br`, and then we have this `h2`. What we want to do is get rid of this `h2` or only show it conditionally.
+In order to demonstrate what that looks like, we're going to have to change our code base a little bit so that this node gets removed from the DOM when a certain condition is met. Let's just bring our code over here, and here's our `render` function. Here's our `image`. We've got our `br`, and then we have this `h2`. What we want to do is get rid of this `h2` or only show it conditionally.
 
 Let's just say something like this. Let's say `var h2String =` and we'll just put this here. We're going to say if `this.state.count >= 10`, `h2String = ''`, right? Then we're going to drop this right in here like so. 
 
@@ -72,14 +72,14 @@ render: function() {
   }
 
   return (<div>
-    <img className="kittens' src={this.state.url} onClick={this.incrementCount}
+    <img className="kittens" src={this.state.url} onClick={this.incrementCount} />
     <br />"
     {h2String}
   </div>)
 }
 ```
 
-Look at what this is doing if you're not familiar with React. All we're doing is conditionally defining this thing. If the count is greater than 10, we're just going to put an empty string. Otherwise, we're going to put this nicely formed JSX element.
+Look at what this is doing if you're not familiar with React. All we're doing is conditionally defining this thing. If the `count` is greater than 10, we're just going to put an empty string. Otherwise, we're going to put this nicely formed JSX element.
 
 Let's refresh the page and see if this works. We've got our `h2`, 0 is so far less than 10. Let's go ahead and start clicking, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Oh, our breakpoint. Look at this. `parentNode.removeChild`.
 
