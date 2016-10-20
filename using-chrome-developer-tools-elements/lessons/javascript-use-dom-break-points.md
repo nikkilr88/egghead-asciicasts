@@ -4,21 +4,21 @@ Some of you watching this are already familiar with how the debugger works. Some
 
 The good news is that this lesson is going to teach you how to trigger the debugger in a few interesting ways from the elements inspector. If you look, we're inspecting an element, let's say this `h2`. Again, down here we've got styles. We've got event listeners. Go over here to **DOM breakpoints**. Breakpoints are how the debugger gets triggered.
 
-![DOM Breakpoints Tab](../images/javascript-use-dom-break-points-breakpoints-tab.png)
+![DOM Breakpoints Tab](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-breakpoints-tab.png?1476907384)
 
 As we can see right now, there are currently no breakpoints selected on this thing. Let's look at how our application works. When we click the cat image, we see that this counter is incrementing.
 
-![Cat incrementer](../images/javascript-use-dom-break-points-cat-incrementing.png)
+![Cat incrementer](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-cat-incrementing.png?1476907384)
 
 Every time we click, the state here changes. What if we wanted to dig into our code base and understand what's happening every time that state changes? Well, that's where breakpoints get super useful.
 
 If you look down here, when you right-click on this node, we can go to break on, subtree modifications.
 
-![Subtree Modifications](../images/javascript-use-dom-break-points-subtree-modifications.png)
+![Subtree Modifications](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-subtree-modifications.png?1476907385)
 
 Now we see a subtree modified breakpoint that's been set on this particular `h2`. What does this mean? This means that every time the subtree is modified, and the subtree is all of the nodes that are inside of it. Every time one of these nodes changes, our breakpoint is going to be triggered.
 
-![Subtree Modifications](../images/javascript-use-dom-break-points-h2-nodes.png)
+![Subtree Modifications](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-h2-nodes.png?1476907385)
 
 That's going to look like this. I click. You'll notice this didn't go over to 13 right away. Instead it sent me over here to my sources panel. This is debug stuff here that we're going to get too far into, but it shows me that this function was called `setTextContent`. It was called with the node as the `span`, and when I click that, it takes me right back to that `span`. It shows me that the `text` argument is the value 13.
 
@@ -33,13 +33,13 @@ I can just proceed, and the whole thing updates. I can do that again and again, 
 
 If you remember when I clicked over here...By the way, I can then uncheck that box. It didn't remove the breakpoint, but it temporarily disabled it.
 
-![Disabled Breakpoint](../images/javascript-use-dom-break-points-disabled-breakpoint.png)
+![Disabled Breakpoint](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-disabled-breakpoint.png?1476907384)
 
 That's really useful. Let's clear it out. Let's go ahead and remove the subtree modification breakpoint, and what were the other two things here? Instead of breaking on subtree modifications, we can break on attribute modifications.
 
 Rather than doing that here, let's go ahead and do that on the kitten itself. Let's go up to this image, and let's break on attribute modifications every time any attribute of this kitten image changes. We're going to hit a breakpoint. Right now, nothing's happening.
 
-![Attribute Modifications](../images/javascript-use-dom-break-points-attribute-modifications.png)
+![Attribute Modifications](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-attribute-modifications.png?1476907384)
 
 Let's go over to our source code, and we've got...Again, this isn't a React lesson, so don't worry too much about what's going on here, but every time we click, we're calling `incrementCount`. In `incrementCount`, I've got it pre-computed here, but commented out. It's going to change the URL. It's going to randomly generate a new kitten URL.
 
@@ -50,13 +50,13 @@ count: this.state.count + 1, url: 'http://placekitten.com/${width}/${height}'
 
 I'm going to save that. Pay attention to this `src` attribute of the image. I click. It triggers the breakpoint. It's setting, let's see, `propName` here is `src`. `value` here is `placekitten.com/524/597`. Now I've stepped into this, and I can do all sorts of stuff with the debugger.
 
-![Debugger](../images/javascript-use-dom-break-points-debugger-propName.png)
+![Debugger](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-debugger-propName.png?1476907384)
 
 When I'm done, I go ahead and continue, and I see that I got a new image loaded.
 
 Again, I can disable this breakpoint without removing it, in case I just want to enjoy all these kittens. Let's go ahead and get rid of this. Remove it entirely, and then there's the third on there. Let's go back to our `h2`, and we want to break on node removal. Now, this breakpoint is going to fire whenever this node is removed from the DOM.
 
-![Break on Node Removal](../images/javascript-use-dom-break-points-break-on-node-removal.png)
+![Break on Node Removal](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_javascript-use-dom-break-points/javascript-use-dom-break-points-break-on-node-removal.png?1476907384)
 
 In order to demonstrate what that looks like, we're going to have to change our code base a little bit so that this node gets removed from the DOM when a certain condition is met. Let's just bring our code over here, and here's our `render` function. Here's our `image`. We've got our `br`, and then we have this `h2`. What we want to do is get rid of this `h2` or only show it conditionally.
 

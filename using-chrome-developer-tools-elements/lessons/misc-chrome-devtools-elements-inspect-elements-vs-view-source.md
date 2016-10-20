@@ -2,7 +2,7 @@ Anyone who remembers poking around in HTML in the '90s or even in the early '00s
 
 So you could look and you could see, "Oh, look, here's a `button`, here's a `div`, here's a paragraph tag. At some point the things that we started doing started getting so complex that `view source` became a little bit less useful. Here's the Wikipedia page for JavaScript, and if you view the source, and this is just what came down from the server, you're going to find so much crap, a lot of vendor-specific stuff, you're going to find a ton of inline JavaScript and CSS, you're going to find all of these spans, there's just a ton of crap that isn't actually helpful to you.
 
-![Wikipedia Javascript Page "View Source"](../images/misc-chrome-devtools-elements-inspect-elements-vs-view-source-javascript-wiki-source.png)
+![Wikipedia Javascript Page "View Source"](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_misc-chrome-devtools-elements-inspect-elements-vs-view-source/misc-chrome-devtools-elements-inspect-elements-vs-view-source-javascript-wiki-source.png?1476906484)
 
 At the other end of the spectrum, if you go to something like a **React** application, here's a very simple React application. When you click the kitten, the counter increments. When you hover of this, whatever, it's a simple React application. But, if we go to view the page source, you're going to see that this isn't very useful either, but for the opposite reason. We have here an empty `div` and a `script` tag, and that's it, this is all that the server rendered. What happens here is that React is actually mutating the DOM for us.
 
@@ -23,7 +23,7 @@ At the other end of the spectrum, if you go to something like a **React** applic
 
 What gets served down by the server is actually very different from what is actually in the DOM by the time we're viewing it. So instead of viewing source, what we all do now is, you know this trick, right? You can `inspect` element. This brings up the dev tools panel with the elements tab selected.
 
-![Elements Tab](../images/misc-chrome-devtools-elements-inspect-elements-vs-view-source-elements-tab.png)
+![Elements Tab](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_misc-chrome-devtools-elements-inspect-elements-vs-view-source/misc-chrome-devtools-elements-inspect-elements-vs-view-source-elements-tab.png?1476906484)
 
 Now instead of showing us only the empty root `div`, we actually have all of the content that React has put into the DOM.
 
@@ -36,6 +36,6 @@ If we do things that mutate things, if we click this image we see that this valu
 
 Similarly, if you go over to something fairly complex like the JavaScript Wikipedia page and you `inspect`, you see the source here. It's still a lot of crap, but now you at least can figure out what you're looking at. If I'm hovering over this, OK, it's highlighting it, I can tell this table is that inset, here's that caption.
 
-![Wikipedia javascript page inspect](../images/misc-chrome-devtools-elements-inspect-elements-vs-view-source-wikipedia-javascript-inspect.png)
+![Wikipedia javascript page inspect](https://d2eip9sf3oo6c2.cloudfront.net/asciicasts/Debug%20the%20DOM%20in%20Chrome%20with%20the%20Devtools%20Elements%20Panel/original_misc-chrome-devtools-elements-inspect-elements-vs-view-source/misc-chrome-devtools-elements-inspect-elements-vs-view-source-wikipedia-javascript-inspect.png?1476906485)
 
 It allows you to explore it in a structured way and collapse what you're not looking it. **So inspecting elements is now what `view source` was to us back in the day**, and it's a really useful tool to get familiar with.
