@@ -49,7 +49,7 @@ button{
 }
 `]
 ```
-That means in our `ngClass`, that the left-hand side or key of this is going to be called `mousedown`, because this Class relates to this. The right-hand side of this, so the value of this object, is going to be a true or false statement based on whether or not we want to apply this Class.
+That means in our `ngClass`, that the left-hand side or key of this is going to be called `mousedown`, because this Class relates to this. The right-hand side of this, so the value of this object, is going to be a `true` or `false` statement based on whether or not we want to apply this Class.
 
 **simple-form.component.ts**
 ``` javascript

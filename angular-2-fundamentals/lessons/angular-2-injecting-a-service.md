@@ -23,7 +23,7 @@ import { MailService } from './mail.service'
 })
 export class AppModule { }
 ```
-Now that it's provided in this `app.module.ts`, if you go to your `app.component.ts`, you can inject it in the `constructor` of your `AppComponent`. I'm going to say `private mail:MailService`, and I'll inject that again. Make sure your import is pointing to the proper service, so importing mail from `mail.service`.
+Now that it's provided in this `app.module.ts`, if you go to your `app.component.ts`, you can inject it in the `constructor` of your `AppComponent`. I'm going to say `private mail:MailService`, and I'll inject that again. Make sure your `import` is pointing to the proper service, so importing mail from `mail.service`.
 
 **app.component.ts**
 ``` javascript
@@ -43,7 +43,7 @@ export class AppComponent {
   constructor(private mail:MailService){}
 }
 ```
-Now whatever I put on `mail.service.ts`...If I navigate back to it, and say that I have a message and the message is, `You've got mail!`. 
+Now whatever I put on `mail.service.ts`...If I navigate back to it, and say that I have a `message` and the `message` is, `You've got mail!`. 
 
 **mail.service.ts**
 ``` javascript

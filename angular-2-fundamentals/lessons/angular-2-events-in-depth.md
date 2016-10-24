@@ -51,4 +51,4 @@ Now when we click and I type something, `Hello`, and click, you'll see the `Mous
 
 ![MouseEvent with Value](../images/angular-2-events-in-depth-MouseEvent-with-value.png)
 
-This will work on any DOM Event. If you were to say `mouseover` and hit save, now instead of `onClick`, every time I mouse over this button, you'll see those MouseEvents firing, and the value `Hello` of the form logging out as well.
+This will work on any DOM Event. If you were to say `mouseover` and hit save, now instead of `onClick`, every time I mouse over this button, you'll see those mouse events firing, and the value `Hello` of the form logging out as well.

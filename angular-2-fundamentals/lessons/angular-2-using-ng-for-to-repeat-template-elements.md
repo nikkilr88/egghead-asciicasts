@@ -14,7 +14,7 @@ export class MailService {
   constructor() { }
 }
 ```
-With these `messages` in our `MailService`, I can hop over to my `app.component`. I'm going to delete everything in this template, and I'll even clear up some of this stuff as well. We don't need that. We don't need that. All we're doing is injecting this `mail` service.
+With these `messages` in our `MailService`, I can hop over to my `app.component`. I'm going to delete everything in this `template`, and I'll even clear up some of this stuff as well. We don't need that. We don't need that. All we're doing is injecting this `mail` service.
 
 **app.component.ts**
 ``` javascript
@@ -44,4 +44,4 @@ template: `<div>
 ``` 
 Now this `message` variable that we're creating for each of these messages can be used inside of the list element like so. I'll just say `{{message}}` inside of the curly braces, and I'll hit save. You'll see each of these messages show up as a list element inside of this unordered list.
 
-You might be wondering about this asterisk here. That just represents that this list element is considered a template that can be regenerated and reused based on the information passed in. `ngFor` is a **structural directive**. It will take this list element, use it as a template, and do something with it. In this case this `ngFor` directive is saying, "Hey, take all these messages and then create one for each message. Then let us use this message variable inside of it."
+You might be wondering about this asterisk here. That just represents that this list element is considered a `template` that can be regenerated and reused based on the information passed in. `ngFor` is a **structural directive**. It will take this list element, use it as a `template`, and do something with it. In this case this `ngFor` directive is saying, "Hey, take all these messages and then create one for each message. Then let us use this message variable inside of it."

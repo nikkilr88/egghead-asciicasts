@@ -57,7 +57,7 @@ Then we can display that `message` above the input. This message is going to be 
 </div>`
 })
 ```
-When I hit save, you'll see we have this message above each of the inputs, and that it created a component for each input. The difference between this (message) without the square brackets is when I hit save you'll see that it won't evaluate this `message`. It will treat this `message` as if it were a string. You'll see `message`, `message`, and `message`.
+When I hit save, you'll see we have this message above each of the inputs, and that it created a component for each input. The difference between this message without the square brackets is when I hit save you'll see that it won't evaluate this `message`. It will treat this `message` as if it were a string. You'll see `message`, `message`, and `message`.
 
 ![Message as String](../images/angular-2-passing-data-to-components-with-input-message-as-string.png)
 

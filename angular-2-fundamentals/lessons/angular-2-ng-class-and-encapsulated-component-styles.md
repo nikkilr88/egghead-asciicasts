@@ -1,6 +1,6 @@
 To understand how to style things, you have to understand how the DOM is set up. When we write an `app-simple-form` component, in the DOM you'll see `app-simple-form` and then nested inside of it you'll see a `div` and then inside of that `div` you'll see an `input` and a `button`.
 
-Although you might be used to writing `div`s inside of frameworks when you build a component to represent the outer element of that component, you actually don't need to do that because this input and button will be wrapped inside of this `app-simple-form`. We can add styles here, so we'll say `styles`. This is an array of strings.
+Although you might be used to writing `div` inside of frameworks when you build a component to represent the outer element of that component, you actually don't need to do that because this input and button will be wrapped inside of this `app-simple-form`. We can add styles here, so we'll say `styles`. This is an array of strings.
 
 Then I can add a style to `app-simple-form`. I'll just add a style of `margin-bottom: 10px`.
 
@@ -27,7 +27,7 @@ Then I can add a style to `app-simple-form`. I'll just add a style of `margin-bo
   
 })
 ```
-When I do this, you won't see anything change over here. There's no margin bottom applied to it. That's because our component doesn't have any display to find. Meaning that on our `app-simple-form`, which we can reference in here through `:host`, we need to define a display such as `block` or I'm going to choose `flex`.
+When I do this, you won't see anything change over here. There's no `margin-bottom` applied to it. That's because our component doesn't have any display to find. Meaning that on our `app-simple-form`, which we can reference in here through `:host`, we need to define a `display` such as `block` or I'm going to choose `flex`.
 
 **simple-form.component.ts**
 ``` javascript
@@ -74,7 +74,7 @@ The other piece here I need to show is that if I want to select everything, ever
 }
 `]
 ```
-You can see it's isolating this and this `font-family` to only the items, the input, and the button that are inside of my component. It's not affecting this stuff outside of my component.
+You can see it's isolating this and this `font-family` to only the items, the `input`, and the `button` that are inside of my component. It's not affecting this stuff outside of my component.
 
 ![Style contained](../images/angular-2-ng-class-and-encapsulated-component-styles-style-contained.png)
 

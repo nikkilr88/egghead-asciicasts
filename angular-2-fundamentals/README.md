@@ -2,7 +2,7 @@
 
 ![course image](https://d2eip9sf3oo6c2.cloudfront.net/series/covers/000/000/023/full/angular_2_fundamentals.jpg?1445328152)
 
-Asciicasts for [John Lindquist's](https://github.com/johnlindquist) course, Using Angular 2 Patterns in Angular 1.x Apps on [egghead.io](https://egghead.io/courses/angular-2-fundamentals).
+Asciicasts for [John Lindquist's](https://github.com/johnlindquist) course, Get Started with Angular 2 on [egghead.io](https://egghead.io/courses/angular-2-fundamentals).
 
 ## Description
 

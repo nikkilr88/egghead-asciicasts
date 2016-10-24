@@ -47,7 +47,7 @@ export class AppComponent {
   title = `Let's get started!`;
 }
 ```
-I'll hit save. Once the browser refreshes you'll see that its `simple-form works`. That's coming from this template inside of my `app-simple-form` component. You'll remember that I've named this `simple-form` this `app-` is coming from my configuration and Angular CLI-json. Look for the `prefix`.
+I'll hit save. Once the browser refreshes you'll see that its `simple-form works`. That's coming from this template inside of my `app-simple-form` component. You'll remember that I've named this `simple-form` this `app-` is coming from my configuration and Angular CLI-json. Look for the prefix.
 
 This is just to ensure there's at least some prefix or name space for your project to avoid conflicts with other projects. You can name this to whatever you want.
 

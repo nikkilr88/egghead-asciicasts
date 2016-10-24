@@ -48,7 +48,7 @@ Meaning that I can access the values off of this input, and pass them into other
 <input #myInput type="text">
 <button (click)="onClick(myInput.value)">Click me!</button>
 ```
-I'll say value, and then log out that value. When I hit save now, the myInput is here. We're getting the value off the input which is passed in a handler, and then logged out in the console. If I type in here and click the button, you'll see that `type` is logged out.
+I'll say value, and then log out that value. When I hit save now, the `myInput` is here. We're getting the value off the `input` which is passed in a handler, and then logged out in the console. If I type in here and click the `button`, you'll see that `type` is logged out.
 
 **simple-form.component.ts**
 ``` javascript
@@ -57,7 +57,7 @@ I'll say value, and then log out that value. When I hit save now, the myInput is
                          // something else
   }
 ```
-If I delete this and type `something else`, and click again, you'll see `something else` is logged out. You got to prove that this is a ref to this actual input. If you delete this `.value` completely, you'll see that when I save and click the button now, it gives me this actual element. 
+If I delete this and type `something else`, and click again, you'll see `something else` is logged out. You got to prove that this is a ref to this actual `input`. If you delete this `.value` completely, you'll see that when I save and click the `button` now, it gives me this actual element. 
 
 ![Element Logged Out](../images/angular-2-using-events-and-refs-logged-element.png)
 

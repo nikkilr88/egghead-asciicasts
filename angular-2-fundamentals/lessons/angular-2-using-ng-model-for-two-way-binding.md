@@ -1,4 +1,4 @@
-Now that we have the message through in `@Input`, we can actually use `ngModel` on our `<input>` element. That will look like this, `[(ngModel)]` with the square brackets, the parens, and then `ngModel`. This is combining two things we've talked about already where the parens represent an Event, and the square brackets represents pushing values in on Inputs.
+Now that we have the `message` through in `@Input`, we can actually use `ngModel` on our `<input>` element. That will look like this, `[(ngModel)]` with the square brackets, the parens, and then `ngModel`. This is combining two things we've talked about already where the parens represent an Event, and the square brackets represents pushing values in on Inputs.
 
 **simple-form.component.ts**
 ``` javascript
@@ -12,7 +12,7 @@ Now that we have the message through in `@Input`, we can actually use `ngModel` 
   styles:[]
 })
 ```
-You can think of the square brackets and parens in a combination as two-way binding, where if we give it this `message`, when the message changes from outside of this `<input>` it will push new value in. When the value changes from inside the `<input>`, it will pass the new value out to this message. You can think of the parens as out, and the square brackets as in.
+You can think of the square brackets and parens in a combination as two-way binding, where if we give it this `message`, when the `message` changes from outside of this `<input>` it will push new value in. When the value changes from inside the `<input>`, it will pass the new value out to this `message`. You can think of the parens as out, and the square brackets as in.
 
 You'll see that once I hit save, that if I change the value of this, I'll delete this and a couple of words, you'll see that the value above it changes as well. So this `{{message}}` and this `message` are staying in sync, because the value of this `<input>` element is changing.
 

@@ -1,4 +1,4 @@
-When you add a style sheet to your project -- I'll just add `tachyons` in here and hit save -- you'll notice that those styles will apply to everything in your project. That's the expected behavior. I can actually go into my components and for example on my `button` I could say I want to use the classes from this library of `white` text on a background of black with the `code` font.
+When you add a style sheet to your project -- I'll just add `tachyons` in here and hit save -- you'll notice that those styles will apply to everything in your project. That's the expected behavior. I can actually go into my components and for example on my `button` I could say I want to use the classes from this library of `white` text on a background of `bg-black` with the `code` font.
 
 **simple-form.component.ts**
 ``` javascript
@@ -10,7 +10,7 @@ When I hit save, you'll see that it grabs all of those. It made this white. It m
 
 ![Button styles](../images/angular-2-controlling-how-styles-are-shared-with-view-encapsulation-button-styles-overwritten.png)
 
-While my `styles` that I defined in here have not leaked out to my project, styles that I pass in globally are available inside of my components. You can stop that behavior by defining `encapsulation` inside your project. If I say `encapsulation: ViewEncapsulation.Native`. Make sure to import that. 
+While my `styles` that I defined in here have not leaked out to my project, `styles` that I pass in globally are available inside of my components. You can stop that behavior by defining `encapsulation` inside your project. If I say `encapsulation: ViewEncapsulation.Native`. Make sure to import that. 
 
 **simple-form.component.ts**
 ``` javascript
