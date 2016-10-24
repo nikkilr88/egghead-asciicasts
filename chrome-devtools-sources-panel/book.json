@@ -1,0 +1,5 @@
+{
+    "title": "Debug JavaScript in Chrome with DevTool Sources",
+    "description": "This book covers the [Debug JavaScript in Chrome with DevTool Sources](https://egghead.io/courses/chrome-devtools-sources-panel) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
