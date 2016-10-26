@@ -1,4 +1,4 @@
-It's pretty cool how using today's tooling we can write really relatively little code in order to get some pretty powerful results. Looking at our little sample application here, this is a React application. I've got my index file, which is rendering what I'm calling my greeter. That's like saying, "Hello Egghead," and allowing me to change my name. Then it embeds this kitten.
+It's pretty cool how using today's tooling we can write really relatively little code in order to get some pretty powerful results. Looking at our little sample application here, this is a React application. I've got my index file, which is rendering what I'm calling my greeter. That's like saying, `Hello Egghead`, and allowing me to change my name. Then it embeds this kitten.
 
 **index.js**
 ```html
@@ -43,7 +43,7 @@ module.exports = {
 }
 ```
 
-This is going to create a source map for us so that when our application builds, it's going to provide a mapping from the giant bundle.js file to our elegant, small source files. Now that I've got that turned on, if I refresh my page, I'm going to see that I've actually got one more source here in my list of sources. This is stuff being provided by webpack itself. Webpack is now allowing me to look directly at my source files.
+This is going to create a source map for us so that when our application builds, it's going to provide a mapping from the giant `bundle.js` file to our elegant, small source files. Now that I've got that turned on, if I refresh my page, I'm going to see that I've actually got one more source here in my list of sources. This is stuff being provided by webpack itself. Webpack is now allowing me to look directly at my source files.
 
 ![Source mapping](../images/tools-unbundle-your-javascript-with-source-maps-in-chrome-devtools-source-mapping.png)
 

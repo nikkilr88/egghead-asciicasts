@@ -18,11 +18,11 @@ Other stuff that you're going to find here, we're using these kitten placeholder
 
 ![Kitten Placeholder](../images/tools-examine-a-page-s-source-resources-with-chrome-devtools-kitten-placeholder.png)
 
-Additionally, depending on how you've got Chrome set up, you might see a bunch of stuff with `(no domain)`. This is sort of a miscellaneous catchall for things that it couldn't quite figure out how to parse. In my experience, what you'll find there a lot of times is just scripts and stuff that are loaded as part of any Chrome extensions you might be running. If you're running an ad blocker, react-dev-tools, or whatever, sometimes it just loads that stuff in there.
+Additionally, depending on how you've got Chrome set up, you might see a bunch of stuff with `(no domain)`. This is sort of a miscellaneous catch-all for things that it couldn't quite figure out how to parse. In my experience, what you'll find there a lot of times is just scripts and stuff that are loaded as part of any Chrome extensions you might be running. If you're running an ad blocker, react-dev-tools, or whatever, sometimes it just loads that stuff in there.
 
 ![No domain](../images/tools-examine-a-page-s-source-resources-with-chrome-devtools-no-domain.png)
 
-You can get to the `Sources` panel by opening your dev tools and clicking Sources. You can also get there any time you do a `console.log`. I have a log statement every time I get the name from the server. It logs it out here. It shows you this, `bundle.js` line 19710.
+You can get to the `Sources` panel by opening your dev tools and clicking Sources. You can also get there any time you do a `console.log`. I have a log statement every time I get the name from the server. It logs it out here. It shows you this, `bundle.js:19710`.
 
 ![Line ref](../images/tools-examine-a-page-s-source-resources-with-chrome-devtools-line-ref.png)
 

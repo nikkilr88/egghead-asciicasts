@@ -25,7 +25,7 @@ I can click on the kitten as many times as I want, and that's not going to do an
 ![Get Name From Server Trigger](../images/tools-set-breakpoints-for-the-chrome-debugger-get-name-from-server-trigger.png)
 
 
-Again, we look over here at the call stack until we find a file name that's familiar to us, and we can see that what's actually causing the debugger to fire is this call right here on line 15 of `Greeter.js`, which is doing a `get request to the `/name` URL.
+Again, we look over here at the call stack until we find a file name that's familiar to us, and we can see that what's actually causing the debugger to fire is this call right here on line 15 of `Greeter.js`, which is doing a `get` request to the `/name` URL.
 
 **Greeter.js**
 ```javascript
@@ -64,7 +64,7 @@ function getB() {
 
 Now, when this runs -- let's refresh the page -- every time it gets to that word, it's going to go ahead and trigger the debugger. That's useful because you can set some conditionals. For instance, we could say, let's put this here.
 
-We only want to trigger this if A is already at least 2. `if (a > 1) { debugger; }`. Then if I refresh this page, let's resume, resume, resume, now `a` is greater than 1, so the `debugger` fires. If we look at the scope, we're going to see that `a` is 2. Those first two times that this would have triggered, it didn't trigger, it waited until the third one.
+We only want to trigger this if `a` is already at least `2`. `if (a > 1) { debugger; }`. Then if I refresh this page, let's resume, resume, resume, now `a` is greater than 1, so the `debugger` fires. If we look at the scope, we're going to see that `a` is `2`. Those first two times that this would have triggered, it didn't trigger, it waited until the third one.
 
 One last note, when you set a `debugger` over here, you can actually right-click on it to edit the breakpoint. You can put in a condition. Let's do this a little bit more reasonably. Let's get rid of that manual call to `debugger`, and so now we're just back to our standard application.
 

@@ -18,7 +18,6 @@ console.log("Kitten:", kitten);
 kitten.style.display = "none";
 ```
 
-
 ![No More Kitten](../images/tools-use-snippets-to-store-behaviors-in-chrome-devtools-no-more-kitten.png)
 
 I've also got one here which is going to get references to my various buttons that I'm working with. It's going to simulate some clicks and change events so that the dom gets updated as though I were clicking through and doing all these things in the order I've been doing them. But now instead of having to click through and focus on fields and stuff like that, all I have to do is right click that and click `run`.
