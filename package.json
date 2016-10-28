@@ -24,6 +24,7 @@
   "dependencies": {
     "axios": "0.13.1",
     "cli-prompt": "^0.6.0",
+    "dotenv": "^2.0.0",
     "prompt": "1.0.0"
   }
 }

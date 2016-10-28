@@ -1,5 +1,9 @@
 # egghead.io asciicasts
 
+## Setting up .env
+Create a .env file in the root of the project (see .env.template). The easiest way to get an `EGGHEAD_AUTH_TOKEN` is to
+go to any egghead course and click on RSS feed button, then, copy the user_token that appears in the URL. 
+
 ## Steps to Deploy Asciicasts:
 
 * `npm install`

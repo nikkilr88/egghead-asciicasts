@@ -4,3 +4,4 @@ node_modules/
 enhancedTranscripts.json
 .DS_Store
 _book
+.env
