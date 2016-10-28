@@ -3,7 +3,7 @@ const fs = require('fs')
 const prompt = require('cli-prompt');
 const axios  = require('axios');
 
-axios.defaults.headers.common['AuthToken'] = process.env.EGGHEAD_AUTH_TOKEN;
+axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.EGGHEAD_AUTH_TOKEN}`;
 
 prompt('Deploy to rails? (y/n) ', function (val) {
     const deploy = val;
