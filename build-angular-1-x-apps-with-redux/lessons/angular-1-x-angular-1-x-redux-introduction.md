@@ -1,0 +1,9 @@
+Welcome to the series where we are going to learn how to integrate **Redux** into an existing Angular application.
+
+One of the most challenging aspects of programming is **state management**. The complexity involved with managing state exponentially increases with each moving piece that we introduce. For every piece of shared, mutable `state` that we have in our application, there is an opportunity for unintended behavior. For instance, let us say that we have a collection that is shared between two `controllers`; how do we modify it from one `controller` with absolute certainty that it isn't going to adversely affect the other?
+
+This is where Redux comes riding in on a white horse and saves the day! By applying Redux to our application, we consolidate all of our states into a **single JavaScript object** called a **store** that can only be modified by dispatching an action. To further simplify things, `state` mutations within our `store` are handled by pure, stateless functions called **reducers**.
+
+Redux was initially created for **React**, but it is in fact, a really solid programming pattern that we can easily apply to our Angular applications. The beauty of Redux is its simplicity in so much that someone could create an implementation of Redux in less than 10 minutes. This is exactly what we will do in the first couple lessons as we build out our `reducers`, `actions` and application `store` by hand before we introduce **ng-redux** to handle the rest of our abstractions.
+
+We will also learn how to combine `reducers`, introduce **middleware** for async operations, map state directly to our actions, test reducers and even hook up **Redux devtools**. By the end of the series, you will have the tools in your hands to tame state management within your angular application while reducing the overall complexity thanks to the simplicity of Redux.

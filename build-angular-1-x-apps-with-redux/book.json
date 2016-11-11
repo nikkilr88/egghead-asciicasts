@@ -1,0 +1,5 @@
+{
+    "title": "Build Angular 1.x Apps with Redux",
+    "description": "This book covers the [Build Angular 1.x Apps with Redux](https://egghead.io/courses/build-angular-1-x-apps-with-redux) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
