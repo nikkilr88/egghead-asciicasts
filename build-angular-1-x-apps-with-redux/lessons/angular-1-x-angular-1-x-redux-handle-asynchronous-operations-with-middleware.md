@@ -4,7 +4,7 @@ Redux has this concept of **middleware** that allows us to insert custom logic i
 
 The main thing with Thunk middleware is that it allows us to **return a function instead of an action**, and then this function can encapsulate the async operation and dispatch the appropriate action when the operation is complete.
 
-To use `Thunk` middleware, we need to first install the NPM package. From the command line, `nom install --save redux-thunk`. 
+To use `Thunk` middleware, we need to first install the npm package. From the command line, `npm install --save redux-thunk`. 
 #### terminal
 ``` bash
 $ npm install --save redux-thunk

@@ -9,5 +9,5 @@ There are 13 transcripts, one transcript for each video.
 ## Description
 One of the hardest things about writing non-trivial applications is managing state. In our attempt to effectively manage state, we introduce additional complexity by trying to control application flow and the amount of code volume that comes from all of this. Redux gives us the ability to address state management and communication in astonishingly simple semantics that can be explained in just a couple minutes. The beauty of Redux is that it is not only a library but a pattern that works very will within Angular 1.x applications. In this series, we are going to learn how to integrate redux (the pattern) into Eggly from scratch and then introduce **ng-redux** and add in **Redux** DevTools at the end for fun.
 ## Library Version
-[React](https://facebook.github.io/react/blog/2015/11/18/react-v0.14.3.html): 1.5.7
-[Redux](https://github.com/reactjs/redux/releases):
+[Angular](https://github.com/angular/angular/blob/master/CHANGELOG.md): 1.4.9
+[Redux](https://github.com/reactjs/redux/releases): 3.5.2

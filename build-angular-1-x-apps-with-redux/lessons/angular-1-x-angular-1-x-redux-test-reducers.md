@@ -70,13 +70,13 @@ import { bookmarks, GET_BOOKMARKS, CREATE_BOOKMARK, UPDATE_BOOKMARK, DELETE_BOOK
 ```
 Now that we have these imported, let's start with our initial `describe` block, where we're letting the world know that we're testing `bookmarks`. Then from here, let's create an `initialState` constant of two `bookmarks`.
 
-We'll go with an `id: 0`. We'll give it a title of `AngularJS`. We'll create one more `bookmark` item. We'll give this a title of `Egghead.io`. Let's go ahead and write our first test, just to make sure that we've spun up everything correctly.
+We'll go with an `id: 0`. We'll give it a title of `AngularJS`. We'll create one more `bookmark` item. We'll give this a title of `egghead.io`. Let's go ahead and write our first test, just to make sure that we've spun up everything correctly.
 #### bookmarks.spec.js
 ``` javascript
 describe('Bookmarks', () => {
     const initialState = [
       {id: 0, title: 'AngularJS'},
-      {id: 1, title: 'Egghead.io'}
+      {id: 1, title: 'egghead.io'}
     ];
 
   })
