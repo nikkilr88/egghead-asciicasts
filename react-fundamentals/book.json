@@ -1,0 +1,5 @@
+{
+    "title": "Start Using React to Build Web Applications",
+    "description": "This book covers the [Start Using React to Build Web Applications](https://egghead.io/courses/react-fundamentals) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
