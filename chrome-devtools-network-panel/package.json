@@ -1,5 +1,5 @@
 {
-  "name": "chrome-devtools-sources-panel",
+  "name": "chrome-devtools-network-panel",
   "version": "1.0.0",
   "description": "This repo contains asciicasts for [Debug HTTP with Chrome DevTools Network Panel](https://egghead.io/courses/chrome-devtools-network-panel)"
 }
