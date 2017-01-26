@@ -27,7 +27,8 @@ class App extends React.Component {
 }
 export default App
 ```
-We can see when we mount, our `componentWillMount`, render, and didMount have fired. When I click on this, you can see it's multiplying our `val` by two. We were able to set the `state` or intercept the `state` before it actually rendered.
+
+We can see when we mount, our `componentWillMount`, `render`, and `componentDidMount` have fired. When I click on this, you can see it's multiplying our `val` by two. We were able to set the `state` or intercept the `state` before it actually rendered.
 
 In `componentDidMount`, we have access to our component in the DOM. We could `log` out, `ReactDOM.findDOMNode`, and we could just pass at `this`.
 

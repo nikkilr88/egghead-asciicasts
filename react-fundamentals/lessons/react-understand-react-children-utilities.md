@@ -20,7 +20,7 @@ class Parent extends React.Component {
   }
 }
 ```
-In this case, in our `Parent` component, which we're rendering in our `App` component, we have two children, each a `<div>`, one with a `className` of `childA`, and another with a `className` of `childB`. We're expecting those to be represented in this items variable. We do in fact see that. We've got an array with two objects representing each of children.
+In this case, in our `Parent` component, which we're rendering in our `App` component, we have two children, each a `<div>`, one with a `className` of `childA`, and another with a `className` of `childB`. We're expecting those to be represented in this `items` variable. We do in fact see that. We've got an array with two objects representing each of children.
 
 However, if we remove the second child and try to rerun the same code, we're going to get an error that says, `Map is not a function of props.children`. If we log out `this.props.children` before we call a `map` method, we're going to see that our children in this case is actually a single object.
 
@@ -45,7 +45,11 @@ render(){
   return null
 }
 ```
-We'll get the exact same result, with one or more children. There it is with two, and we get that right there. In addition to `map` and `toArray`, we also have a standard `forEach`, same signature. In this case, let's log something out since this won't return an array.
+We'll get the exact same result, with one or more children. There it is with two, and we get that right there. 
+
+![two children](../images/react-understand-react-children-utilities-two-children.png)
+
+In addition to `map` and `toArray`, we also have a standard `forEach`, same signature. In this case, let's log something out since this won't return an array.
 
 ``` javascript
 render(){
@@ -53,7 +57,7 @@ render(){
     .forEach(this.props.children, child => console.log(child.props.className))
 }
 ```
-We'll say child.props.classname, save that. We should see `childA` and `childB`, and we do.
+We'll say `child.props.classname`, save that. We should see `childA` and `childB`, and we do.
 
 Another method that we have is `React.children.only`. This is going to return a single child. If it's more than one child, it will throw an error. Let's assign that to items. I'm expecting an error, which we did get, because we have more than one child. We're going to delete the second child, and now we've got a single child.
 

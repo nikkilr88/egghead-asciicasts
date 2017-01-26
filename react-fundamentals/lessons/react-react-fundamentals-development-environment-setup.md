@@ -1,4 +1,5 @@
-In order to set up an environment for working with **React**, we can use the `create-react-app` package available to us over `npm`. The installation for that is to `npm i`, then `create-react-app`. We'll throw in a tag `-g` there to install that globally. I've already got that installed. I'm going to go ahead and use the tool that is provided to us, which is `create-react-app`.
+
+In order to set up an environment for working with **React**, we can use the `create-react-app` package available to us over `npm`. The installation for that is `npm i create-react-app -g` to install globally. I've already got that installed. I'm going to go ahead and use the tool that is provided to us, which is `create-react-app`.
 #### terminal
 ``` bash
 $ npm i create-react-app -g
@@ -39,7 +40,7 @@ One interesting thing about `create-react-app` is, when we do have an error, we'
 
 We'll also see that here in the terminal. In `App.js`, let's go ahead and kill this guy right now. The error we're seeing is because we deleted the `App.css`. I'm going to go ahead and kill this off right now.
 
-We're going to `import React from 'react'`. Then we're going to create a quick constant variable here called `App`. This is going to be our first component. It's going to output an `<h1>` that says `Hello`. Then we're going to `export` that by `default`. 
+We're going to `import React from 'react'`. Then we're going to create a quick `const` variable here called `App`. This is going to be our first component. It's going to output an `<h1>` that says `Hello`. Then we're going to `export` that by `default`. 
 #### App.js
 ``` javascript
 import React from 'react';

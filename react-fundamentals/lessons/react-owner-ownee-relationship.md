@@ -28,7 +28,7 @@ In our JSX, we're outputting our `state.text` value. We're also outputting an `<
 
 ![state.text](../images/react-owner-ownee-relationship-state-text.png)
 
-What we're going to do is we're going to create a new component. This is going to be a stateless function component. We're going to call it `Widget`. It's going to take in `props`. We're going to return this input JSX right here. We're just going to drop that down there, get this guy into one line.
+What we're going to do is we're going to create a new component. This is going to be a **stateless function** component. We're going to call it `Widget`. It's going to take in `props`. We're going to return this input JSX right here. We're just going to drop that down there, get this guy into one line.
 
 ``` javascript
 class App extends React.Component {

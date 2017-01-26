@@ -72,7 +72,7 @@ We've got `onCopy`, `onCut` and `onPaste`. I'm going to go ahead and save that. 
   cols="30" 
   rows="10"/>
 ```
-We get our standard `onfocus` and `onblur` events. When we focus on the field, we get our focus, and when we move away we get our blur, so focus and blur. We get the whole series of mouse events, so `mouseOver`, `mouseDown` and up.
+We get our standard `onFocus` and `onBlur` events. When we focus on the field, we get our focus, and when we move away we get our blur, so focus and blur. We get the whole series of mouse events, so `mouseOver`, `mouseDown` and up.
 
 We also get some more obscure ones. This will be `onDoubleClick`. When we click in the text area, we're going to get our focus. If I double-click, we get our double-click event. Do that one more time. Double-click and there is our double-click event.
 

@@ -40,7 +40,8 @@ class App extends React.Component {
   }
 }
 ```
-When we save that, we can see it's not such a great component, we don't even necessarily need a component for this guy, but what we're going to do is we're going to rename this to `NumInput`, we're going to create a more composable, more reusable component, taking advantage of the similar APIs between the number input and the range input. So to get us started I'm going to create some prop types, so we've got `NumInput.propTypes`, set that to an object and for the sake of brevity I'm just going to paste these in, we'll take a quick look at them.
+
+When we save that, we can see it's not such a great component, we don't even necessarily need a component for this guy, but what we're going to do is we're going to rename this to `NumInput`, we're going to create a more composable, more reusable component, taking advantage of the similar APIs between the `number` input and the `range` input. So to get us started I'm going to create some prop types, so we've got `NumInput.propTypes`, set that to an object and for the sake of brevity I'm just going to paste these in, we'll take a quick look at them.
 
 ``` javascript
 NumInput.propTypes = {
@@ -67,7 +68,8 @@ NumInput.defaultProps = {
   type: 'range'
 }
 ```
-Now here in our component, going to paste in some initial settings. So our `type`, `min`, `max`, `step`, and `defaultValue` are all set to the props that are passed into our component, our update method does not change, we need to implement our label which we'll drop right here after the input.
+
+Now here in our component, going to paste in some initial settings. So our `type`, `min`, `max`, `step`, and `defaultValue` are all set to the props that are passed into our component, our `update` method does not change, we need to implement our label which we'll drop right here after the input.
 
 ``` javascript
 <div>
@@ -81,7 +83,8 @@ Now here in our component, going to paste in some initial settings. So our `type
     {label}
 </div>
 ```
-We may want to come back and make an option to have that be before or after the input. So to implement that I'm just going to say `let label = this.props.label !== ''` and if that's the case, we'll go ahead and output a `<label>` tag, we won't worry about the for value, and it's innerHTML will be `this.props.label`, and just for this demo, we'll go ahead and also output `this.props.val` otherwise it will just be an empty string. We'll go and save that.
+We may want to come back and make an option to have that be before or after the input. So to implement that I'm just going to say `let label = this.props.label !== ''` and if that's the case, we'll go ahead and output a `<label>` tag, we won't worry about the for value, and it's inner html will be `this.props.label`, and just for this demo, we'll go ahead and also output `this.props.val` otherwise it will just be an empty string. We'll go and save that.
+
 #### App.js
 ``` javascript
 let label = this.props.label !== '' ? 

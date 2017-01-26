@@ -34,8 +34,13 @@ class App extends React.Component {
 ```
 Just so we can see that change in the browser, I'm going to update our value to, `This is the prop value`, and we can see that there in our browser. Now, we can define the properties that we're going to be looking for in our component by adding a property to our component called `PropTypes`.
 
-This is going to be an object where each key is the name of the property, and each key's value is the type of value that we're looking for. If we're `txt`, I can say I'm looking for `React.PropTypes.string`. I'm going to create one more here which can be called `cat`. I'm going to say `React.PropTypes.number` is what we're looking for. In this case, we're looking for a number. I can save that. Everything's going to work just fine.
+#### Browser
+```
+this is the prop value
+```
 
+This is going to be an object where each key is the name of the property, and each key's value is the type of value that we're looking for. If we're `txt`, I can say I'm looking for `React.PropTypes.string`. I'm going to create one more here which can be called `cat`. I'm going to say `React.PropTypes.number` is what we're looking for. In this case, we're looking for a number. I can save that. Everything's going to work just fine.
+#### App.js
 ``` javascript
 class App extends React.Component { ... }
 
@@ -69,4 +74,4 @@ App.defaultProps = {
   txt: "this is the default txt"
 }
 ```
-Once I clear that out, we get our, "This is the default text," which is the default property that we set for our component.
+Once I clear that out, we get our, `This is the default text`, which is the default property that we set for our component.

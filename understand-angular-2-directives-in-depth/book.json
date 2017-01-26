@@ -1,0 +1,5 @@
+{
+    "title": "Understand Angular 2 Directives in Depth",
+    "description": "Asciicasts for [Understand Angular 2 Directives in Depth](https://egghead.io/courses/understand-angular-2-directives-in-depth) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}
