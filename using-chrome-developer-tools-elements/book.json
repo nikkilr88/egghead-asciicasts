@@ -1,0 +1,5 @@
+{
+    "title": "Debug the DOM in Chrome with the Devtools Elements Panel",
+    "description": "Asciicasts for [Debug the DOM in Chrome with the Devtools Elements Panel](https://egghead.io/courses/using-chrome-developer-tools-elements) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}

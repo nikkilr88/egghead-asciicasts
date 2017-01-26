@@ -15,7 +15,7 @@ That's the value we're trying to get at, `React`. We're going to create our **st
 ``` javascript
 const Button = (props) => <button>{props.children}</button>
 ```
-We're going to save that and there in the browser, we can see that we've created an HTML button, and we've allowed that in our HTML, or text content of react to pass through.
+We're going to save that and there in the browser, we can see that we've created an HTML `<button>`, and we've allowed that in our HTML, or text content of react to pass through.
 
 I also said we could access nested components, this time around, I'm going to create a `class` component, for no other reason other than to illustrate it a little bit differently.
 
@@ -28,6 +28,7 @@ class Heart extends React.Component {
   }
 }
 ```
+
 We're going to jump up here, back to our `App` component, and inside of the opening and closing `<Button>` tags, I'm going to say `I`, we're going to drop in our nested component, which is going to be our `Heart` component.
 
 ``` javascript
@@ -35,6 +36,7 @@ render(){
   return <Button>I <Heart /> React</Button>
 }
 ```
+
 We're going to save that, and we can see that using `props.children` allowed both the text values, as well as the nested component to flow on through into our HTML button.
 
 ![Button](../images/react-accessing-child-properties-button.png)

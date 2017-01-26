@@ -1,6 +1,7 @@
-In this lesson, we're going to talk about iterating over a data set in order to create our JSX. Right here in our `render` method, right before our `return` statement, I'm going to say `let items` equal `this.state.items`. That's going to set that data up.
+In this lesson, we're going to talk about iterating over a data set in order to create our JSX. Right here in our `render` method, right before our `return` statement, I'm going to say `let items = this.state.items`. That's going to set that data up.
 
-We're going to set up our `constructor`, where we'll call `super()` to get our context. We're going to say `this.state` equals `items`, and we'll set that to an array. Now to get that data, we're going to use `fetch` to make an AJAX call to the Star Wars API. We'll just hit up the people endpoint there.
+We're going to set up our `constructor`, where we'll call `super()` to get our context. We're going to say `this.state = {items: []}`, and we'll set that to an array. Now to get that data, we're going to use `fetch` to make an AJAX call to the Star Wars API. We'll just hit up the people endpoint there.
+
 #### App.js
 ``` javascript
 import React from 'react';
@@ -67,7 +68,7 @@ const Person = (props) => <h4>{props.person.name}</h4>
 ```
 Come up here, and rather than returning the `<h4>`, we're going to return a `Person` component. We'll say `Person={item}`. Save that, and now again, we've got our data, but we're back to the same error. Now in this case, it's not telling us that the key is needed on the `<h4>`, because in the context of this component, the `<h4>` has no siblings.
 
-The key is needed amongst siblings. Here on the `Person` component, we're going to say key equals `item.name`. Save that, and everything is working fine.
+The `key` is needed amongst siblings. Here on the `Person` component, we're going to say `key={item.name}`. Save that, and everything is working fine.
 
 ``` javascript
 <div>
@@ -84,7 +85,7 @@ if(this.state.filter){
     .includes(this.state.filter.toLowerCase()))
 }
 ```
-That'll give us our `item`. Then, we'll say if the `item.name.toLowerCase` includes `this.state.filter`, also `toLowerCase`, then, we'll have our filtered item. Let's go ahead and set up a quick filter method. This is just going to take an event off of an input. We're going to set our state of `filter` equal to `e.target.value`.
+That'll give us our `item`. Then, we'll say if the `item.name.toLowerCase` includes `this.state.filter`, also `toLowerCase`, then, we'll have our filtered item. Let's go ahead and set up a quick `filter` method. This is just going to take an event off of an input. We're going to set our state of `filter` equal to `e.target.value`.
 
 ``` javascript
 filter(e){
@@ -92,3 +93,5 @@ filter(e){
 }
 ```
 That'll just be the result of an `<input>` field. We'll just set that right here. Input, and on its `onChange` event, we'll say `this.filter`. We'll `bind` that to `this`. Save that. We've got our data. We've got our input field here. If I type L, we're going to get all the names with L. If I type C, we're going to get C3PO. V, we're going to get Darth Vader.
+
+![fin](../images/react-dynamically-generated-components-finished.png)

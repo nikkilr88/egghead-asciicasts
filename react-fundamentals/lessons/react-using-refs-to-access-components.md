@@ -70,7 +70,7 @@ Now, when we type in the first field, the `a` field, it's updating both our `a` 
 
 ![Updates both state values](../images/react-using-refs-to-access-component-update-both-state-values.png)
 
-We can use a `ref` for that. On this guy, I'm going to say `ref="a"`, and on the second field, I'm going to say `ref="b"`, and that gives us a reference to each of these. I'm going to go ahead and kill off the event in our update method, and I'm going to set `a` to `this.refs.a.value`.
+We can use a `ref` for that. On this guy, I'm going to say `ref="a"`, and on the second field, I'm going to say `ref="b"`, and that gives us a reference to each of these. I'm going to go ahead and kill off the event in our `update()` method, and I'm going to set `a` to `this.refs.a.value`.
 
 ``` javascript
 update(){
@@ -96,7 +96,7 @@ update(){
     ) 
   }
 ```
-`ref` actually returns the node that we're referencing, here, I can say `this.refs.b.value`. Now, in the browser, when I type in the a field, it's updating our a state. When I type in the `b` field, it's updating our `b` state. The `ref` attribute or prop can also take a callback.
+`ref` actually returns the node that we're referencing, here, I can say `this.refs.b.value`. Now, in the browser, when I type in the a field, it's updating our `a` state. When I type in the `b` field, it's updating our `b` state. The `ref` attribute or prop can also take a callback.
 
 ![Updating seperate state values](../images/react-using-refs-to-access-components-update-seperate-state-values.png)
 
@@ -163,7 +163,7 @@ class Input extends React.Component {
   }
 }
 ```
-Now, what we could do is, we can actually strip this back down, get rid of the `ReactDOM` find node part, and we could say, `this.a` which is our component.ref, we're getting the `refs` of our a component `input`, which is going to be that input field, and get its `value`.
+Now, what we could do is, we can actually strip this back down, get rid of the `ReactDOM` find node part, and we could say, `this.a` which is our `component.ref`, we're getting the `refs` of our a component `input`, which is going to be that input field, and get its `value`.
 
 ``` javascript
 update() {

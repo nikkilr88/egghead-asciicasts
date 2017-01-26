@@ -21,7 +21,7 @@ We can tag on `isRequired` in order to get our component to throw an error that 
 
 ![Prop isRequired](../images/react-custom-proptype-validation-prop-isRequired.png)
 
-If we want to achieve further validation, we can instead of returning a `React.PropTypes`, we can return a custom function. This function is going to take in `props`, which is all the props that our components received, `propName`, which is the name for this particular prop, as well as our component.
+If we want to achieve further validation, we can instead of returning a `React.propTypes`, we can return a custom function. This function is going to take in `props`, which is all the props that our components received, `propName`, which is the name for this particular prop, as well as our component.
 
 ``` javascript
 Title.propTypes = {

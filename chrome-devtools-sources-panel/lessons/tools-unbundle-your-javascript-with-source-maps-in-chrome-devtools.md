@@ -49,7 +49,7 @@ This is going to create a source map for us so that when our application builds,
 
 Here's that very nice, short `index.js` page. Here's our `Greeter.js`. Here's our `Kitten.js`. This looks just like what we have in our sources. This is great because if I then click get name from server,
 
-![Get Name From Server](../images/tools-unbundle-your-javascript-with-source-maps-in-chrome-devtools-get-name-from-server.js)
+![Get Name From Server](../images/tools-unbundle-your-javascript-with-source-maps-in-chrome-devtools-get-name-from-server.)
 
 now instead of sending me to line 19,710 in `bundle.js` instead it's sending me to line 18 of `Greeter.js`.
 

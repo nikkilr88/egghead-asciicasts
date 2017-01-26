@@ -38,7 +38,7 @@ const HOC = (InnerComponent) => class extends React.Component {
   }
 }
 ```
-We can do a lot of things here, but the first thing we're going to do is render our new component. We're simply going to return our `InnerComponent`, whatever that was, in its JSX syntax. To use this, let's see, on the Button, we're going to wrap the entire function in our `HOC` method. 
+We can do a lot of things here, but the first thing we're going to do is render our new component. We're simply going to return our `InnerComponent`, whatever that was, in its JSX syntax. To use this, let's see, on the `Button`, we're going to wrap the entire function in our `HOC` method. 
 
 ``` javascript
 const Button = HOC((props) => <button>{props.children}</button>)
@@ -68,7 +68,7 @@ const HOC = (InnerComponent) => class extends React.Component {
   ...
 }
 ```
-If our `Label` component, which is also a class component, had its own `componentWillMount` phase, we could log out there `label will mount`. We'll see the higher order component fire off twice. Then we'll see the label component fire off once. There we go.
+If our `Label` component, which is also a class component, had its own `componentWillMount` phase, we could log out there `label will mount`. We'll see the higher order component fire off twice. Then we'll see the `Label` component fire off once. There we go.
 
 ``` javascript
 class Label extends React.Component {
@@ -77,7 +77,7 @@ class Label extends React.Component {
   }
 }
 ```
-We could also create some state for these guys. Here, in our higher order component, let's set up a `constructor`. We'll call `super()` in order to get our context. We'll go on and give this some state. We'll say `this.state = {count: 0}`. Then we're going to go ahead and set up an `update` method here. In that, we'll simply `increment` that `state` of `count`. We'll say `count: this.state.count + 1`.
+We could also create some state for these guys. Here, in our higher order component, let's set up a `constructor`. We'll call `super()` in order to get our context. We'll go on and give this some state. We'll say `this.state = {count: 0}`. Then we're going to go ahead and set up an `update` method here. In that, we'll simply increment that `state` of `count`. We'll say `count: this.state.count + 1`.
 
 ``` javascript
 const HOC = (InnerComponent) => class extends React.Component {
@@ -115,4 +115,4 @@ class Label extends React.Componet {
   }
 }
 ```
-We'll say `update={this.update.bind(this)}`. Then on our button, we'll say `onClick={props.update}`. Save that. As we click on the button, it is updating that state. On the label, we'll say `onMouseMove={this.props.update}`. Clean that up a little bit. Save that. On our button, the state of count is updated when we click on it. On the label, it's updated when we move the mouse.
+We'll say `update={this.update.bind(this)}`. Then on our button, we'll say `onClick={props.update}`. Save that. As we click on the button, it is updating that state. On the label, we'll say `onMouseMove={this.props.update}`. Clean that up a little bit. Save that. On our button, the state of count is updated when we click on it. On the `Label`, it's updated when we move the mouse.

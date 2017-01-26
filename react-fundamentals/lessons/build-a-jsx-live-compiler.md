@@ -1,4 +1,5 @@
-In this lesson, we're going to create an in-browser JSX transpiler. Here, in our `index.html` of our `create-react-app` application, I'm bringing in the standalone version of `Babel`.
+In this lesson, we're going to create an in-browser **JSX** transpiler. Here, in our `index.html` of our `create-react-app` application, I'm bringing in the standalone version of `Babel`.
+
 
 Here, in our code, we've got a simple component that says returning a `<div>`. We're going to add to that a `<header>`. This is where we're going to place our error, if we have one. That's going to come from our state. We're going to have a `<div>` with a `className="container`. We'll be styling that in just a moment.
 
@@ -52,7 +53,8 @@ update(e) {
   }
 }
 ```
-What we're going to try to do is set our state of `output` to `window.babel`. We're accessing that library that we're bringing in over CDN. We're going to call its `transform` method. Into that, we're going to pass our `code`.
+
+What we're going to try to do is set our state of `output` to `window.babel`. We're accessing that library that we're bringing in over CDN. We're going to call its `transform` method. Into that, we're going to pass our code.
 
 I'm going to break this up a little bit, so we can see it a little better. Along with our code, we need to pass our options. What we need is the `presets`, which is an array.
 
@@ -75,7 +77,9 @@ Assuming that doesn't fail, we're going to set our error to empty string. If it 
 
 Let's go ahead and save that. See if we messed anything up. It's going to be a little hard to see here before we style it. I'm going to go ahead and create a `<div>`, close it. It looks like everything is working.
 
-Now, we need to create our style. Right here in source, I'm going to create a new file, `app.css`. We're going to import that into our component right here. After we import our React package, we're going to say `import 'App.css'`, and we'll go ahead and start setting that up.
+![Unstyled compiler](../images/build-a-jsx-live-compiler-unstyled.png)
+
+Now, we need to create our style. Right here in source, I'm going to create a new file, `app.css`. We're going to `import` that into our component right here. After we import our React package, we're going to say `import 'App.css'`, and we'll go ahead and start setting that up.
 
 On our `body`, we're going to have a `margin` of zero, a `padding` of zero. We're going to try to set everything up to be a `font-family` of `monospace`.
 
@@ -111,9 +115,9 @@ pre {
   background-color: #f8f8f8;
 }
 ```
-For our `pre` and our `textarea`, give each of those a `width` of 50 percent. Use that `monospace` family. We'll have the font size match the header size, so 28 pixels.
+For our `pre` and our `textarea`, give each of those a `width` of 50 percent. Use that `monospace` family. We'll have the `font-size` match the `<header>` size, so 28 pixels.
 
-Give that a `margin` of zero, a `padding` of, let's go with 10. A `color`, something blackish. That's starting to come together.
+Give that a `margin` of zero, a `padding` of ten, and `color` of something blackish. That's starting to come together.
 
 ``` css
 pre, textarea {
@@ -129,6 +133,7 @@ textarea:focus {outline: 0}
 ```
 In OS X, we're going to get this outline here. Let's go ahead and get rid of that. We'll say `textarea:focus {outline: 0}`. Let's blow this up. If we start typing here, let's say starting off our `<div>`, we haven't enclosed it. We are getting an error message.
 
-If I close that, we get a react.create element over on the right. Let's try a class name really quick. This seems to be working just fine.
+If I close that, we get a `react.create` element over on the right. Let's try a class name really quick. This seems to be working just fine.
+
 
 ![Final Output](../images/build-a-jsx-live-compiler-final-output.png)
