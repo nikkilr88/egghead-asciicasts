@@ -1,0 +1,5 @@
+{
+    "title": "Build a GraphQL Server",
+    "description": "This book covers the [Build a GraphQL Server](https://egghead.io/courses/build-a-graphql-server) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

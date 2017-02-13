@@ -1,0 +1,5 @@
+{
+  "name": "build-a-graphql-server",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Build a GraphQL Server](https://egghead.io/courses/build-a-graphql-server)"
+}
