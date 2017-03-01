@@ -1,0 +1,5 @@
+{
+    "title": "Professor Frisby Introduces Composable Functional JavaScript",
+    "description": "Asciicasts for [Professor Frisby Introduces Composable Functional JavaScript](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}
