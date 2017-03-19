@@ -1,0 +1,5 @@
+{
+    "title": "Deploy Web Apps with Zeit Now",
+    "description": "This book covers the [Deploy Web Apps with Zeit Now](https://egghead.io/courses/deploy-web-apps-with-zeit-now) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
