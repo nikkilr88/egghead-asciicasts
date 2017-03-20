@@ -25,7 +25,7 @@ We're going to import these. So we write in our index.js.
 ####index.js
 ```javascript
 var getGreeting = require("./getGreeting");
-var getDate = require("getDate");
+var getDate = require(`getDate.js`);
 ```
 
 Here, replace this with it called `getGreeting`. Here, we're going to have it called `getDate` So far so good.
@@ -47,16 +47,33 @@ Yeah, that one gets me every time. Quick bug. `${./getDate}` There we go. Everyt
 
 ![Everything in order](../images/tools-view-source-on-your-remote-server-with-zeit-s-now-everything-as-expected.png)
 
-Let's go ahead and introduce a bug. Let's go into "getdate" and just call this "getISO" string with a lowercase as right. Something that's pretty easy to do. Let's deploy this. In order to use Cloud View Source, your deploying needs to be public.
+Let's go ahead and introduce a bug. Let's go into `getDate.js` and just call this `toISOString` with a lowercase "s" `toISOstring`. Something that's pretty easy to do. Let's deploy this. In order to use Cloud View Source, your deploying needs to be public.
 
-If you're running a free instance as of Now, then all your deployments are always going to be public automatically. If you're running a paid instance, like I am, you just have to pass in the "-P flag." We're going to deploy this in a public way. We're going to go over here, navigate to this end point.
+####getDate.js
+```javascript
+module.exports = function() {
+    return new Date().toISOstring();
+}
+```
 
-Oh, no. ".2 iso string" is not a function. It looks like that's in "getdate.js" line two. What we can do is append "/_src" to our URL. Look at that. This is the actual code that's been deployed. There's no ambiguity. This is definitely the code that has the error in it.
+If you're running a free instance as of now, then all your deployments are always going to be public automatically. If you're running a paid instance, like I am, you just have to pass in the `-p` flag. `now -p` We're going to deploy this in a public way. We're going to go over here, navigate to this end point. `https://zeit-now-egghead-flujcasumn.now.sh`
 
-This is not some past version, or future version. We know that the error was in "getdate" line two. That allows us to highlight that. Now, here's a cool thing that you can do. Anything that you highlight in this remote view source tool actually generates a new URL.
+![Error: Not a function](../images/tools-view-source-on-your-remote-server-with-zeit-s-now-error.png)
+
+Oh, no. `.toISOstring is not a function`. It looks like that's in `getDate.js` line two. What we can do is append `/_src` to our URL.
+
+![In-Browser Source](../images/tools-view-source-on-your-remote-server-with-zeit-s-now-in-browser-source.png)
+
+Look at that. This is the actual code that's been deployed. There's no ambiguity. This is definitely the code that has the error in it.
+
+This is not some past version, or future version. We know that the error was in `getDate.js` line two. Now, here's a cool thing that you can do. Anything that you highlight in this remote view source tool actually generates a new URL.
+
+![Highlight](../images/tools-view-source-on-your-remote-server-with-zeit-s-now-highlight.png)
 
 If you're running debug or something, if you're doing QA for your team -- you can highlight that. Say, "Hey, I found the error. I'm going to give you this URL." Somebody can take this, open this URL in another window, open it.
 
-See, the highlight is still there. OK, I see what the problem is. I can fix that and redeploy. All your code is here. You can look at this including your start scripts and all of that. This is just a cool extra feature. Again, this is only available on public projects.
+![Still There](../images/tools-view-source-on-your-remote-server-with-zeit-s-now-still-there.png)
 
-Generally speaking, you don't want this to be available once you've deployed to productions. Make sure that you're not accessing and redeploying code that anybody can introspect and view the source on because that could be catastrophic. It's a great tool for debugging, and it's a lot of fun.
+See, the highlight is still there. OK, I see what the problem is. I can fix that and redeploy. All your code is here. You can look at this including your `"start"` scripts and all of that. This is just a cool extra feature. Again, this is only available on public projects.
+
+Generally speaking, you don't want this to be available once you've deployed to productions. Make sure that you're not accessing and redeploying code that anybody can introspect and view the source on because that could be *catastrophic*. It's a great tool for debugging, and it's a lot of fun.
