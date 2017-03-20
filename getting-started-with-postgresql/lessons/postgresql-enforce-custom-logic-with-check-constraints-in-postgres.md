@@ -11,7 +11,7 @@ INSERT INTO movies (title, release_date, count_stars, director_id) VALUES (
 );
 ```
 
-We could also have done it maybe even `count_stars` of `0`. That's a shame, isn't it? Why don't we go ahead and delete from `movies` where the ID is `4`, `5`, or `6`. 
+We could also have done it maybe even `count_stars` of `0`. That's a shame, isn't it? Why don't we go ahead and `DELETE FROM movies` where the ID is `4`, `5`, or `6`. 
 
 ```sql
 DELETE FROM movies WHERE id IN (4,5,6);

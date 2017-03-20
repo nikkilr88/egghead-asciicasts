@@ -35,7 +35,7 @@ For good measure, I'll show you what it looks like if you want to `INSERT` into 
 
 There's something under the hood that is going to tell us what the next `ID` is. We don't really want to mess with this ourselves. I'm just letting you know. Don't mess with it if you have a serial column.
 
-If we really want to see what it's like to `INSERT` a bunch of values, let's `INSERT` into the movies table. Again, we going to leave off the ID. We'll add the title, the release date, the count stars and the director ID. Another value statement here. This is going to be a list of fields.
+If we really want to see what it's like to `INSERT` a bunch of values, let's `INSERT` into the `movies` table. Again, we going to leave off the ID. We'll add the `title`, the `release_date`, the `count_stars` and the `director_id`. Another `VALUES` statement here. This is going to be a list of fields.
 
 ```sql
 INSERT INTO movies (title, release_date, count_stars, director_id) VALUES ();
@@ -43,7 +43,7 @@ INSERT INTO movies (title, release_date, count_stars, director_id) VALUES ();
 
 Remember, if you don't remember all the columns on it you can take a look at what your table definition is, all the different Postgres editors have different ways of doing this. You have to look at your particular one. These are going to go in the order that I specify them in.
 
-The title will be "Kill Bill," and the release date was October 10th 2003. Count stars, I haven't seen it, you can hate on me later, I'll assume it was a three. Then a one. We'll also do a select star from movies, just so we see what that's about. Here's our movie, here's "Kill Bill," our count stars, our director ID. This should be linked up with the first Quentin Tarantino.
+The `title` will be `"Kill Bill"` and the release date was October 10th 2003. `count_stars`, I haven't seen it, you can hate on me later, I'll assume it was a `3`. Then a `1`. We'll also do a `SELECT * FROM movies`, just so we see what that's about. Here's our movie, here's `"Kill Bill"`, our `count_stars`, and our `director_id`. This should be linked up with the first `Quentin Tarantino`.
 
 ```sql
 INSERT INTO movies (title, release_date, count_stars, director_id) VALUES (
@@ -54,7 +54,7 @@ INSERT INTO movies (title, release_date, count_stars, director_id) VALUES (
 );
 ```
 
-Let's just see here. Let's switch up the title and release date, just to prove that we can do these in any order that we want to. We'll flip this, and this. It's not aligned, but our editor will understand either way. Just doing that so it's easier for us to read as humans.
+Let's just see here. Let's switch up the `title` and `release_date`, just to prove that we can do these in any order that we want to. We'll flip this, and this. It's not aligned, but our editor will understand either way. Just doing that so it's easier for us to read as humans.
 
 Let's also `INSERT` a second movie, to show what that's like. Remember, we put the comma, and then, we open up another parenthesis to put this in. Let's say, this was the movie "Funny People." That is a Judd Apatow movie. We have to go look for his `ID` 11. Let's say that's five stars, because any movie I've seen is five stars.
 

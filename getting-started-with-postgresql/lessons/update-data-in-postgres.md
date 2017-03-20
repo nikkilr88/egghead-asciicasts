@@ -31,7 +31,7 @@ FROM movies;
 | 2  | Funny People    | 2009-07-29 | 1           | 2          |
 | 3  | Blazing Saddles | 1974-02-07 | 1           | 3          |
 
-It's important to notice that we did in fact get this error. Title is Kill Bill. We have five stars now, that limited to just one movie and before we limit it to multiple movies or all of the movies. We can prove that we can limit to a subset of the movies here but more than one.
+It's important to notice that we did in fact get this error. `title` is Kill Bill. We have five stars now, that limited to just one movie and before we limit it to multiple movies or all of the movies. We can prove that we can limit to a subset of the movies here but more than one.
 
 Where the count stars is one, let's give this a three maybe. We see "Funny People" and "Blazing Saddles" now have three stars. 
 
@@ -49,7 +49,7 @@ FROM movies;
 | 2  | Funny People    | 2009-07-29 | 3           | 2          |
 | 3  | Blazing Saddles | 1974-02-07 | 3           | 3          |
 
-Obviously, we can use any field here. If we want it to say where the release date is greater than, we keep using 1975, so this will be everything except Blazing Saddles.
+Obviously, we can use any field here. If we want it to say where the `release_date` is greater than, we keep using 1975, so this will be everything except Blazing Saddles.
 
 We'll set the count stars equal to zero. Pretty simple. 
 

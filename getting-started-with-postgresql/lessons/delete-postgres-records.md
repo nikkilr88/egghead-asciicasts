@@ -1,6 +1,7 @@
 Now we're going to talk about deleting data. I'm going to go ahead and paste in a bunch of inserts here for our movies and select all of our movies just so we can see that we have a bunch of "Kill Bills." 101 Kill Bills. I guess that's "101 Dalmatians" for Kill Bills.
 
-Just like with `UPDATE`s, with `DELETE`s, it's helpful to run the `SELECT` statement first. Let's `SELECT` all `FROM movies WHERE` the `count_stars` is greater than 90. Actually, let's just `SELECT` the `COUNT` of that so we know how many we're going to be deleting here.
+Just like with `UPDATE`s, with `DELETE`s, it's helpful to run the `SELECT` statement first. Let's `SELECT * FROM movies WHERE`
+ the `count_stars` is greater than 90. Actually, let's just `SELECT` the `COUNT` of that so we know how many we're going to be deleting here.
 
 ```sql
 SELECT COUNT(*)
@@ -18,7 +19,7 @@ WHERE count_stars < 90;
 /* => 90 */
 ```
 
-We're going to `DELETE` where they are greater than 90 and we're going to check back at this again. Remember, there are 10 of those movies. We should expect that 91 movies are left. We're going to `DELETE` from Movies where the count stars is greater than 90. That's 10 movies. Now we're down to 91.
+We're going to `DELETE` where they are greater than 90 and we're going to check back at this again. Remember, there are 10 of those movies. We should expect that 91 movies are left. We're going to `DELETE FROM movies WHERE count_stars` is greater than 90. That's 10 movies. Now we're down to 91.
 
 ```sql
 DELETE FROM
@@ -26,7 +27,7 @@ movies
 WHERE count_stars > 90;
 ```
 
-Let's remove this guy so where the count star is now greater than 70. That's 20, so we expect another 20 movies to be released. 71 movies should be left. That is, in fact, what we see.
+Let's remove this guy so where the `count_star` is now greater than 70. That's 20, so we expect another 20 movies to be released. 71 movies should be left. That is, in fact, what we see.
 
 ```sql
 DELETE FROM

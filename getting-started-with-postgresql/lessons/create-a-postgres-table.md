@@ -47,4 +47,4 @@ Just for good measure, I'm going to `INSERT` some data here. Don't worry about w
 | 1  | Kill Bill    | 2010-10-10 | 3           | 1          |
 | 2  | Funny People | 2009-07-29 | 5           | 2          |
 
-Now we have our `directors` table up here. We see `ID`s were inserted for us, because we only inserted some names up here. The same thing happens for us down here in the movies table. We inserted a couple movies, and this is what those tables look like when we fill in some more data.
+Now we have our `directors` table up here. We see `ID`s were inserted for us, because we only inserted some names up here. The same thing happens for us down here in the `movies` table. We inserted a couple `movies`, and this is what those tables look like when we fill in some more data.
