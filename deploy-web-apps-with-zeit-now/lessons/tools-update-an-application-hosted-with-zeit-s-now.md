@@ -4,7 +4,7 @@
 
 Let's go visit the old one first. That's going to say `Hello Universe!` And then let's grab this new one. That's going to say `Hello World!` That's the problem. Which URL should my customers be going to? I'm confused now. What should I do?
 
-The answer is neither. Obviously, you don't want to share a URL that looks like this. `https://zeit-now-egghead-qypecncaja.now.sh` Instead, we're going to create a Now alias which is built-in support for this and this is an important part of the Now workflow.
+The answer is neither. Obviously, you don't want to share a URL that looks like this. `https://zeit-now-egghead-qypecncaja.now.sh` Instead, we're going to create a Now `alias` which is built-in support for this and this is an important part of the Now workflow.
 
 To use it, we're going to type `now alias`, and then we're going to paste the URL that we want to be pointing to. In this case, it's our most recent deploy `https://zeit-now-egghead-qypecncaja.now.sh`, and then we're going to give it a name. In this case, let's say `egghead-course`.
 
@@ -18,7 +18,7 @@ Now, look what it said. It says `Alias created https://egghead-course.now.sh`.
 
 Now, if I go here to `egghead-course.now.sh`, I see that I'm getting the same thing that I was getting here. Great. I can alias to a URL. How does that actually help me solve my problem? The trick is that I never give this URL to anyone ever. This is internal. This is a reference. `https://zeit-now-egghead-qypecncaja.now.sh`
 
-Think of this as almost like a `git commit` hash. That's effectively what this is. This is a specific snapshot of my logic and I don't want any of my customers to be looking at snapshots. What I want them to be looking at is a nice user-friendly URL. `https://egghead-course.now.sh`
+Think of this as almost like a `git commit` **hash**. That's effectively what this is. This is a specific snapshot of my logic and I don't want any of my customers to be looking at snapshots. What I want them to be looking at is a nice user-friendly URL. `https://egghead-course.now.sh`
 
 Let's say I go through then and I make some more edits. I say `Hello World!` I add a paragraph here. `"This is a new paragraph of content!"`.
 
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 
 I'm going to deploy this. I'm going to get yet another URL. That's running. Let's paste that new URL in here. `This is a new paragraph of content!`
 
-Our alias is still pointing at the old one, so this is crucial. Once I see that this deployment works the way I expect it to work, all I have to do is go back and type now `alias` with the new URL, the name `egghead-course`.
+Our alias is still pointing at the old one, so this is crucial. Once I see that this deployment works the way I expect it to work, all I have to do is go back and type `now alias` with the new URL, the name `egghead-course`.
 
 ```bash
 $ now alias https://zeit-now-egghead-ynpxdiwkmq.now.sh egghead-course

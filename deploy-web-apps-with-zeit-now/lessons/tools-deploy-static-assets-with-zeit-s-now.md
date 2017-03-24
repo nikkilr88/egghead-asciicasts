@@ -50,7 +50,7 @@ Now, we can also force `now` to deploy something statically. If we go over here 
 
 ![index.js](../images/tools-deploy-static-assets-with-zeit-s-now-index-js.png)
 
-You can force `now` to deploy things statically. It looks like it stripped out the `package.json`. It just didn't actually send it up, but the only other thing in there was `index.js`. If you have a folder that has a `package.json` in it, but you want to for whatever reason share the contents of that folder via `now`, but I'm not saying it's a good idea.
+You can force `now` to deploy things statically. It looks like it stripped out the `package.json`. It just didn't actually send it up, but the only other thing in there was `index.js`. If you have a folder that has a `package.json` in it, but you want to for whatever reason share the contents of that folder via `now`. I'm not saying it's a good idea, I'm just saying that you can do it.
 
-I'm just saying that you can do it. You do that by typing `now --static`. `now`
-can be used to serve node projects. It can be used to serve `Docker` containers. It can be used to serve directories containing static data.
+You do that by typing `now --static`. 
+`now` can be used to serve node projects. It can be used to serve `Docker` containers. It can be used to serve directories containing static data.

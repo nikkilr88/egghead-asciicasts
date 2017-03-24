@@ -30,7 +30,7 @@ In order to take these environment variables and make them true on the now deplo
 $ now -e GREETING=Egghead
 ```
 
-Let's deploy. We'll come over here, wait for that to finish up. Cool. "Hello, egghead." That worked. 
+Let's deploy. We'll come over here, wait for that to finish up. Cool. `Hello Egghead` That worked. 
 
 You can actually do this with multiple things. Let's change this a little bit. Let's say this becomes `${greeting}` and this becomes `${name}`. That's a little bit more appropriate. We say, `var name = process.env.NAME;`
 
@@ -62,7 +62,7 @@ Now you might be saying to yourself, "I really don't want to have to type out al
 
 Now when you do `npm run deploy`, it'll do that for you. It's not three letters, but that's something. That still works.
 
-A problem you'll run into sometimes...This is fine for simple strings. There's not necessarily going to be any kind of a problem saving all of this to Git and publishing it. This is not a secret. This is just a config variable that we have set for this version.
+A problem you'll run into sometimes...This is fine for simple strings. There's not necessarily going to be any kind of a problem saving all of this to **git** and publishing it. This is not a secret. This is just a config variable that we have set for this version.
 
 But what if instead of the name egghead, it's something like `-e TWITTER_API_KEY=`? You don't actually want to paste something in there because then if you commit, package that JSON to Git, now you've got your secret key...It's a bad practice.
 

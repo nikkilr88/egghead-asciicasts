@@ -2,11 +2,11 @@ We've seen how **Now** from **ZEIT** can be used to deploy **Node** projects, `d
 
 But at some point, you want to make a little bit more personal. You want to add your own domain name. With the free account, you can't do this, but if you subscribe to Now, there's reasonably straightforward way to map your own domain name and treat it as though it were just another alias. Let's take a look at how that works.
 
-I'm going to go over here to [gandi.net](https://www.gandi.net/domain/register), which is what I use to register domain names. I'm just going to get something like egghead clock. I'm going to get this for really cheap.
+I'm going to go over here to [gandi.net](https://www.gandi.net/domain/register), which is what I use to register domain names. I'm just going to get something like `Eggheadclock`. I'm going to get this for really cheap.
 
 ![gandi.net](../images/tools-use-a-custom-domain-name-with-zeit-s-now-gandi-dot-net.png)
 
-What do they have, a dot com or something for not a lot of money? Can't imagine there's too many egghead clocks out there. What's even cheaper? There's an EU. Eggheadclock.info for 8.27, that fits the bill perfectly.
+What do they have, a dot com or something for not a lot of money? Can't imagine there's too many egghead clocks out there. What's even cheaper? There's an EU. `Eggheadclock.info` for 8.27, that fits the bill perfectly.
 
 ![eggheadclock.info](../images/tools-use-a-custom-domain-name-with-zeit-s-now-eggheadclock-info.png)
 

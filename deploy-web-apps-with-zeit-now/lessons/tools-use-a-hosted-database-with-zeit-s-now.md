@@ -1,6 +1,6 @@
-A lot of times when people start playing with now and getting excited about deploying their applications, there comes this crucial moment. They're like, "This is awesome. Where do I put my database?"
+A lot of times when people start playing with **Now** and getting excited about deploying their applications, there comes this crucial moment. They're like, "This is awesome. Where do I put my database?"
 
-That's actually a little bit tricky because this is all your **Now** stuff gets served up on servers that are abstracted out from under you. You can't run a local **MySQL** database the way you might be doing if you were running your own, say, like a Lamp Stack.
+That's actually a little bit tricky because this is all your Now stuff gets served up on servers that are abstracted out from under you. You can't run a local **MySQL** database the way you might be doing if you were running your own, say, like a Lamp Stack.
 
 There's no **Mongo** instance that's running concurrently with your server because you don't have access to the server. Right now, what the Now team has been recommending to people is that they use a third party database, like just a hosted database solution.
 
@@ -92,7 +92,7 @@ module.exports = {
         MongoClient.connect(url, function(err, db) {
             logRequest(greeting, timestamp, db, function(err, result) {
                 db.close();
-                cd(err, result);
+                cb(err, result);
             });
         });
     }
@@ -175,7 +175,7 @@ Now we're live on the Web. There have been six visits to this page because, reme
 
 ![Hosted Webpage](../images/tools-use-a-hosted-database-with-zeit-s-now-hosted-webpage.png)
 
-If we go over here to our mlab.com database, we should be able to see collections. Let's refresh this page. There we go. We've got a collection called visits with six documents. You can see first five documents here all say, `"hi, egghead!!"` The last one says, `"HIYA, FRIEND!!"` The timestamps all vary.
+If we go over here to our `mlab.com` database, we should be able to see collections. Let's refresh this page. There we go. We've got a collection called visits with six documents. You can see first five documents here all say, `"hi, egghead!!"` The last one says, `"HIYA, FRIEND!!"` The timestamps all vary.
 
 ![Collection](../images/tools-use-a-hosted-database-with-zeit-s-nowtools-use-a-hosted-database-with-zeit-s-now-collection.png)
 
