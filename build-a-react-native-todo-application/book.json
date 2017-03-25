@@ -1,0 +1,5 @@
+{
+    "title": "Build a React Native Todo Application",
+    "description": "This book covers the [Build a React Native Todo Application](https://egghead.io/courses/build-a-react-native-todo-application) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
