@@ -1,0 +1,5 @@
+{
+  "name": "deploy-web-apps-with-zeit-now",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Deploy Web Apps with Zeit Now](https://egghead.io/courses/deploy-web-apps-with-zeit-now)"
+}
