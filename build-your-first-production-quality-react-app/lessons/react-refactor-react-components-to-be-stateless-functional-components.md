@@ -124,6 +124,7 @@ I need to get my properties from my `todo` into the `TodoItem` component. If you
 
 This would work, but it's going to get very verbose. There's a much faster way to do this. I'm going to take these out of here and I'm going to replace them with a pair of curly braces surrounding a reference to `todo` preceded by the **spread operator**.
 
+####TodoList.js
 ```jsx
 <div className="Todo-List">
     <ul>
