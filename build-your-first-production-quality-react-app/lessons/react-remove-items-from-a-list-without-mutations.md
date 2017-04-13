@@ -38,7 +38,7 @@ test('addTodo should not mutate the existing todo array', () => {
 })
 ```
 
-I'll execute these tests by running `npm test`. As expected, we have two failing tests because we haven't actually implemented `removeTodo` yet. I'll start by going to the top of test file. I want to import `removeTodo` `from` `todoHelpers`. Our test will still fail because `removeTodo` is not a function. Now we can open `todoHelpers.js`.
+I'll execute these tests by running `npm test`. As expected, we have two failing tests because we haven't actually implemented `removeTodo` yet. I'll start by going to the top of test file. I want to `import {removeTodo} from './todoHelpers'`. Our test will still fail because `removeTodo` is not a function. Now we can open `todoHelpers.js`.
 
 We can `export` a `const` we'll call `removeTodo`. We'll set that to equal a function that's going to accept a `list` and an `id` value. We want to return a new array with all of the items in the `list` except for the one with the matching `id`. Just like an update, we're going to start by grabbing an index value for the index of the item in the `list` with the matching `id`.
 
@@ -60,7 +60,7 @@ export const removeTodo = (list, id) => {
 }
 ```
 
-I'll use the spread operator to spread those values out into this new array. Then I need all the items that come after the item we're removing. I'll use the spread operator again, `list.slice` one more time. This time it will be from `removeIndex+1`. I can save that. 
+I'll use the [spread operator](https://egghead.io/lessons/ecmascript-6-using-the-es6-spread-operator) to spread those values out into this new array. Then I need all the items that come after the item we're removing. I'll use the spread operator again, `list.slice` one more time. This time it will be from `removeIndex+1`. I can save that. 
 
 ```jsx
 export const removeTodo = (list, id) => {
@@ -84,7 +84,7 @@ import {addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo} from 
 Now I want to add a `handleRemove` method to this component. I'm going to drop down here under `state`. I'll add `handleRemove`. I'm going to set that to equal a function that's going to take an `id` and an `evt` object.
 
 ```jsx
-handleRemove = (id, evt)
+handleRemove = (id, evt) => {}
 ```
 
 We're going to call `handleRemove` from the `onClickableLink`. To prevent that link from updating the address bar, we'll call `preventDefault` on the `evt` object. Then we want to get our `updatedTodos`. I'll find `updatedTodos`.
@@ -152,6 +152,7 @@ const handleRemove = partial(props.handleRemove, props.id)
 
 Then we can come down to our link and declare `onClick` is going to equal our locally declared `handleRemove` function. 
 
+```jsx
 return (
     <li>
         <a href="#" onClick={handleRemove}>X</a>

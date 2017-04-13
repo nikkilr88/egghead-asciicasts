@@ -67,7 +67,7 @@ export const filterTodos = (list, route) => {
 }
 ```
 
-We'll start with the active `case`. We're going to compare this to what we expect to see in our route, which is going to be `'/active'`. In this `case`, we'll `return` `list.filter()`, passing in our `item` and returning if the item that `isComplete` is `false`. 
+We'll start with the active `case`. We're going to compare this to what we expect to see in our route, which is going to be `'/active'`. In this `case`, we'll `return list.filter()`, passing in our `item` and returning if the `item` that `isComplete` is `false`. 
 
 ```jsx
 export const filterTodos = (list, route) => {
@@ -92,7 +92,7 @@ export const filterTodos = (list, route) => {
 }
 ```
 
-This time if the item is complete, we'll return those. Then, we'll have a `default` which will just return the entire `list`.
+This time if the item `isComplete`, we'll return those. Then, we'll have a `default` which will just return the entire `list`.
 
 ```jsx
 export const filterTodos = (list, route) => {

@@ -46,7 +46,7 @@ I just want to verify that it works, so I'm going to open another tab and I'm ju
 
 ![Array Of Todos](../images/react-load-data-from-a-server-with-fetch-array-of-todos.png)
 
-Let's create a new file under `lib`. We'll call this `todoService.js`. This is where we'll keep all of our code related to API calls.
+Let's create a new file under `lib/`. We'll call this `todoService.js`. This is where we'll keep all of our code related to API calls.
 
 I'm going to start with a `const`, but I'm going to call `baseUrl`, and I'm going to set that to equal `http://localhost:8080/todos`. The first thing I want to do with this API is use it to load the `todos` into the application when the application starts.
 

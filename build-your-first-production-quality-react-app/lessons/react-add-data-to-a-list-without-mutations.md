@@ -71,7 +71,7 @@ Then finally, we have the *Assert* part of the test, where we actually set our e
 expect(result).toEqual(expected)
 ```
 
-With our test in place, I'm going to save that, Jest will automatically rerun our test. This time we're going to get a type error because `addTodo` is not a function. Because we haven't defined it yet.
+With our test in place, I'm going to save that, **Jest** will automatically rerun our test. This time we're going to get a type error because `addTodo` is not a function. Because we haven't defined it yet.
 
 ![addTodo not defined](../images/react-add-data-to-a-list-without-mutations-typeerror-not-a-function.png)
 

@@ -14,6 +14,7 @@ I'm going to duplicate this line. I'm going to say, if our `message` is defined 
 <div className="Todo-App">
     {this.state.errorMessage && <span className='error'>{this.state.errorMessage}</span>}
     {this.state.message && <span className='success'>{this.state.message}</span>}
+</div>
 ```
 
 We should see `Todo Added` displayed. The problem with this is that `message` is going to sit there and it won't go away. 

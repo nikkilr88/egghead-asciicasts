@@ -5,6 +5,7 @@ We'll start with a `Link.js` that'll hold our component, and I'm also going to a
 ####index.js
 ```jsx
 export {Link} from './Link'
+```
 
 In `Link`, I'm going to `import React, {Component} from 'react'`, and then I'll `export class Link extends Component`, and we'll give our `Link` a `render()` method. We want to `render()` out a hyperlink.
 

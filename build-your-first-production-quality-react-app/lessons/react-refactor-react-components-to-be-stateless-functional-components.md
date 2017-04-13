@@ -5,7 +5,7 @@ Currently the `"Todo-List"` output in this app is being rendered directly in the
 import React from 'react'
 ```
 
-Let's just export a const. We'll call `TodoList` and that's going to equal an arrow function that takes `props`. We're going to have that return some **JSX**. For now we'll just make that a place holder that says `Todo List`.
+Let's just export a const. We'll call `TodoList` and that's going to equal an arrow function that takes `props`. We're going to have that return some **JSX**. For now we'll just make that a place holder that says `TodoList`.
 
 ####TodoList.js
 ```jsx
@@ -83,9 +83,10 @@ Now that we've moved this JSX into a stateless functional component we can no lo
 
 ```jsx
 {props.todos.map( todo => 
+    ... }
 ```
 
-Then we're going to have to update `App.js` to pass `todos` into our `props`. I'll jump over to App.js and I'm going to add a `todos` attribute on this component. We're going to pass in `this.state.todos` and everything is working as expected.
+Then we're going to have to update `App.js` to pass `todos` into our `props`. I'll jump over to `App.js` and I'm going to add a `todos` attribute on this component. We're going to pass in `this.state.todos` and everything is working as expected.
 
 ```jsx
 <TodoForm handleInputChange={this.handleInputChange}
@@ -135,7 +136,7 @@ This would work, but it's going to get very verbose. There's a much faster way t
 
 That's going to take all the properties of `todo` and spread them out and pass them into this component as their own individual properties. With that in place we can save.
 
-When the browser reloads we'll see everything is still working. We haven't broken anything and all of our refactoring has been successful. There is one exception though. If I go into the browser and I open up the `DevTools` we're going to see that I have a warning about looping over items without a unique key prop.
+When the browser reloads we'll see everything is still working. We haven't broken anything and all of our refactoring has been successful. There is one exception though. If I go into the browser and I open up the DevTools we're going to see that I have a warning about looping over items without a unique key prop.
 
 ![Looping Without Unique Key Error](../images/react-refactor-react-components-to-be-stateless-functional-components-looping-without-key-error.png)
 

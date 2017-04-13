@@ -24,9 +24,9 @@ export class Router extends Component {
 } 
 ```
 
-I also want to give the `Router` some `state`, so we're going to just use property initializer syntax, so I can just say `state` equals and assign an object at the class level. The `Router` is going to maintain a single `state` property that represents the current route, so we'll just define `route` on the `state` object.
+I also want to give the `Router` some `state`, so we're going to just use property initializer syntax, so I can just say `state` equals and assign an object at the class level. The `Router` is going to maintain a single `state` property that represents the current `route`, so we'll just define `route` on the `state` object.
 
-Initially, we're going to have to calculate our route, so I'm going to do that in a function I'll call `getCurrentPath`, and we'll call that here. Then we're going to come up here, outside of our `class`, and define `getCurrentPath`.
+Initially, we're going to have to calculate our `route`, so I'm going to do that in a function I'll call `getCurrentPath`, and we'll call that here. Then we're going to come up here, outside of our `class`, and define `getCurrentPath`.
 
 ```jsx
 export class Router extends Component { 
@@ -56,7 +56,7 @@ const getCurrentPath = () => {
 }
 ```
 
-Now, this was at the state's route property when this component is loaded, but it won't be updated when we click on a link. Let's create a method that will update the route and handle the call to `history.pushState` in this component.
+Now, this was at the state's `route` property when this component is loaded, but it won't be updated when we click on a link. Let's create a method that will update the `route` and handle the call to `history.pushState` in this component.
 
 I'm going to drop down under `state`, and I'm going to define a new method, I'll call it `handleLinkClick`. This is going to accept a single argument, we'll call `route`. In here, I'm just going to call `this.setState`, passing it in an object that contains `route`.
 

@@ -68,7 +68,7 @@ If I do a full page reload, it will `fetch` our `todos` from the server, and it 
 ####db.json
 ```json
 {
-    "id", 81718,
+    "id": 81718,
     "name": "New Todo",
     "isComplete": false
 }

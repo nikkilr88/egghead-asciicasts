@@ -49,10 +49,10 @@ In the current code, we define a pipeline that takes in an `id` and our current 
 
 Let's start by pulling apart the pipeline we currently have defined. I'll start by defining a function, I'm going to call `getToggledTodo`, and that's going to be my pipeline minus the third function. I'm just going to cut this `pipe(findById, toggleTodo`, and paste it back in `getToggledTodo`. Now we're going to `pipe` `findById` to `toggleTodo`.
 
-````jsx
+```jsx
 handleToggle = (id) => {
     const getToggledTodo = pipe(findById, toggleTodo)
-    const getUpdatedTodos = , partial(updateTodo, this.state.todos))
+    const getUpdatedTodos = partial(updateTodo, this.state.todos)
     const updatedTodos = getUpdatedTodos(id, this.state.todos)
     this.setState({todos: updatedTodos})
 }
@@ -60,11 +60,11 @@ handleToggle = (id) => {
 
 Now I can use this to get the updated item. I'll define `const updated` and I'm going to set that to equal a call to `getToggledTodo`. I'm going to pass in my `id`, followed by `this.state.todos`.
 
-````jsx
+```jsx
 handleToggle = (id) => {
     const getToggledTodo = pipe(findById, toggleTodo)
     const updated = getToggledTodo(id, this.state.todos)
-    const getUpdatedTodos = , partial(updateTodo, this.state.todos))
+    const getUpdatedTodos = partial(updateTodo, this.state.todos)
     const updatedTodos = getUpdatedTodos(id, this.state.todos)
     this.setState({todos: updatedTodos})
 }
@@ -72,11 +72,11 @@ handleToggle = (id) => {
 
 Now `getUpdatedTodos`, it's just going to equal the `partial` application of `updateTodo` with `this.state.todos`, which gives us a function that just needs an `updated` item. We'll pass `updated` into `updatedTodos`.
 
-````jsx
+```jsx
 handleToggle = (id) => {
     const getToggledTodo = pipe(findById, toggleTodo)
     const updated = getToggledTodo(id, this.state.todos)
-    const getUpdatedTodos = , partial(updateTodo, this.state.todos))
+    const getUpdatedTodos = partial(updateTodo, this.state.todos)
     const updatedTodos = getUpdatedTodos(updated)
     this.setState({todos: updatedTodos})
 }
@@ -84,11 +84,11 @@ handleToggle = (id) => {
 
 Then our `this.setState` call doesn't have to change, and now we can call `saveTodo` with our `updated` item. Then we'll call `.then` to handle the response, and we'll just show a temporary error message using `this.showTempMessage` and we'll pass in `'Todo Updated'`.
 
-````jsx
+```jsx
 handleToggle = (id) => {
     const getToggledTodo = pipe(findById, toggleTodo)
     const updated = getToggledTodo(id, this.state.todos)
-    const getUpdatedTodos = , partial(updateTodo, this.state.todos))
+    const getUpdatedTodos = partial(updateTodo, this.state.todos)
     const updatedTodos = getUpdatedTodos(updated)
     this.setState({todos: updatedTodos})
     saveTodo(updated)

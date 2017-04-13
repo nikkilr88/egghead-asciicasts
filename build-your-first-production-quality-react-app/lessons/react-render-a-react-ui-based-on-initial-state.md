@@ -125,7 +125,7 @@ Now, I want to set my inputs check state based on the `todos` `isComplete` flag.
 </div>  
 ```
 
-We'll see that our first item is now checked, but if we look at our DevTools, we have a warning. The warning is telling us `"You provided a 'checked' prop to a form field without an 'onChange' handler."`. At the moment, we don't have an `onChange` handler. The way we can get rid of this warning is to change that `checked` property to `defaultChecked`.
+We'll see that our first item is now `checked`, but if we look at our DevTools, we have a warning. The warning is telling us `"You provided a 'checked' prop to a form field without an 'onChange' handler."`. At the moment, we don't have an `onChange` handler. The way we can get rid of this warning is to change that `checked` property to `defaultChecked`.
 
 ```jsx
 <div className="Todo-List">

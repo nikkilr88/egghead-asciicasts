@@ -24,7 +24,7 @@ handleSubmit(evt) {
 
 Now I basically have a function that's twice as long and has two very different concerns. Since we're updating the `currentTodo` value, each time the value of the input changes we know if the form is valid or not before the form ever gets submitted. We can use that to our advantage and avoid having this ugly conditional code in our form submit handler.
 
-I'm going to revert handleSubmit to how it was before adding the `if` statement, and let's see how we can move the handling of an invalid form into its own function. I'm going to drop down under `handleSubmit` and I'm going to create a new method called `handleEmptySubmit`. It's going to take an `evt` just like the other one and I'm going to call `event.preventDefault()`.
+I'm going to revert `handleSubmit` to how it was before adding the `if` statement, and let's see how we can move the handling of an invalid form into its own function. I'm going to drop down under `handleSubmit` and I'm going to create a new method called `handleEmptySubmit`. It's going to take an `evt` just like the other one and I'm going to call `event.preventDefault()`.
 
 ```jsx
 handleEmptySubmit(evt) {
@@ -67,7 +67,7 @@ In order for our `handleEmptySubmit` method to work we're going to need to come 
 this.handleEmptySubmit = this.handleEmptySubmit.bind(this)
 ```
 
-With that in place I can save the file and we'll take a look at how this works in the browser. Take a look at the `React` developer tools and I'm going to expand this out. I'm going to find my `TodoForm` component. We'll see that it has a `handleSubmit` property that's `bound` to `handleEmptySubmit`. That's because we have no value in here.
+With that in place I can save the file and we'll take a look at how this works in the browser. Take a look at the `React Developer Tools` and I'm going to expand this out. I'm going to find my `TodoForm` component. We'll see that it has a `handleSubmit` property that's `bound` to `handleEmptySubmit`. That's because we have no value in here.
 
 ![No Value Within Input Field](../images/react-prevent-empty-form-values-with-conditional-submit-handlers-no-value-in-input-field.png)
 

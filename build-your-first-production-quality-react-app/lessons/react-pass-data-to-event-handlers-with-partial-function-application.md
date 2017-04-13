@@ -73,7 +73,7 @@ The other change we can make here is we can take this `defaultChecked` now that 
 </li>
 ```
 
-Now in the browser, I'm going to open up the `React` developer tools. I'm going to expand out `todos` in `State`. I'm going to look at the first item. We'll see here that we have our `id: 1`, `isComplete: true`, our `name: 'Learn JSX'` That `isComplete` matches what the checkbox is doing.
+Now in the browser, I'm going to open up the **React Developer Tools**. I'm going to expand out `todos` in `State`. I'm going to look at the first item. We'll see here that we have our `id: 1`, `isComplete: true`, our `name: 'Learn JSX'` That `isComplete` matches what the checkbox is doing.
 
 ![First Todo](../images/react-pass-data-to-event-handlers-with-partial-function-application-todos-first.png)
 
@@ -152,7 +152,7 @@ export const partial = () => {}
 
 First, we'll define our arguments. If you remember from the test we're passing `add` from the first argument which is our function. We're going to make this generic. We're going to use `fn` to represent our function and we're passing our argument.
 
-We want to be able to accept multiple arguments. What I am going to do is I'm going to use the **Rest operator** here, which is going to take a comma separated list of arguments, anything that comes after that first one, and it's going to bundle them up in an array.
+We want to be able to accept multiple arguments. What I am going to do is I'm going to use the [Rest operator](https://egghead.io/lessons/javascript-es6-rest-parameters) here, which is going to take a comma separated list of arguments, anything that comes after that first one, and it's going to bundle them up in an array.
 
 ```jsx
 export const partial = (fn, ...args) => {}

@@ -7,7 +7,7 @@ In the `todo` directory, I'm going to create a new file and I'm going to call th
 import React from 'react'
 ```
 
-Instead of creating a class that extends component like in `App.js`, we can define this component as a plain JavaScript function. I'm going to declare `const` call `TodoForm` and I'll just define this as an arrow function, and our return value will go inside these parenthesis. 
+Instead of creating a class that `extend Component` like in `App.js`, we can define this component as a plain JavaScript function. I'm going to declare `const` call `TodoForm` and I'll just define this as an arrow function, and our return value will go inside these parenthesis. 
 
 ```jsx
 import React from 'react'
