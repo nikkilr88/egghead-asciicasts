@@ -1,0 +1,5 @@
+{
+    "title": "Build Your First Production Quality React App",
+    "description": "This book covers the [Build Your First Production Quality React App](https://egghead.io/courses/build-your-first-production-quality-react-app) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
