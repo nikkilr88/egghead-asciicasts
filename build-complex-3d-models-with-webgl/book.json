@@ -1,0 +1,5 @@
+{
+    "title": "Build Complex 3D models with WebGL",
+    "description": "This book covers the [Build Complex 3D models with WebGL](https://egghead.io/courses/build-complex-3d-models-with-webgl) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
