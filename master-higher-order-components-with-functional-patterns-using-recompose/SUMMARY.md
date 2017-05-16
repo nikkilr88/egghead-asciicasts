@@ -1,0 +1,18 @@
+# Summary
+
+* [Introduction](README.md)
+* [Write a Higher Order Component from Scratch](./lessons/react-write-a-higher-order-component-from-scratch.md)
+* [Compose Multiple Higher Order Components Together using Recompose](./lessons/react-compose-multiple-higher-order-components-together-using-recompose.md)
+* [Add Local State to a Functional Stateless Component using Recompose](./lessons/react-add-local-state-to-a-functional-stateless-component-using-recompose.md)
+* [Add Local State with Redux-like Reducers using Recompose](./lessons/react-add-local-state-with-redux-like-reducers-using-recompose.md)
+* [Add Lifecycle Hooks to a Functional Stateless Component using Recompose](./lessons/react-add-lifecycle-hooks-to-a-functional-stateless-component-using-recompose.md)
+* [Transform Props using Recompose](./lessons/react-transform-props-using-recompose.md)
+* [Lock Props using Recompose](./lessons/react-lock-props-using-recompose.md)
+* [Flatten a Prop using Recompose](./lessons/react-flatten-a-prop-using-recompose.md)
+* [Show a Spinner While a Component is Loading using Recompose](./lessons/react-show-a-spinner-while-a-component-is-loading-using-recompose.md)
+* [Replace a Component with Non-Optimal States using Recompose](./lessons/react-replace-a-component-with-non-optimal-states-using-recompose.md)
+* [Render Nothing in Place of a Component using Recompose](./lessons/react-render-nothing-in-place-of-a-component-using-recompose.md)
+* [Set the HTML Tag of a Component via a Prop using Recompose](./lessons/react-set-the-html-tag-of-a-component-via-a-prop-using-recompose.md)
+* [Compute Expensive Props Lazily using Recompose](./lessons/react-compute-expensive-props-lazily-using-recompose.md)
+* [Optimize Component Rendering using Recompose](./lessons/react-optimize-component-rendering-using-recompose.md)
+* [Learn How Recompose Optimizes Higher Order Components](./lessons/react-learn-how-recompose-optimizes-higher-order-components.md)

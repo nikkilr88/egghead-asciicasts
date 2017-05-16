@@ -1,0 +1,5 @@
+{
+    "title": "Higher Order Components with Functional Patterns Using Recompose",
+    "description": "This book covers the [Higher Order Components with Functional Patterns Using Recompose](https://egghead.io/courses/master-higher-order-components-with-functional-patterns-using-recompose) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
