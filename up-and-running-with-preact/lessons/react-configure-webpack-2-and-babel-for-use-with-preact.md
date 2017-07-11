@@ -54,18 +54,13 @@ Webpack now sees this as the starting point of our application. When it runs, it
 
 Now for the output, we need to specify the path and the file name separately. We'll see `output` and we'll give an object. We'll provide the `path` as the current `directory` plus `build`. Webpack will generate this directory for us, we don't have to do that.
 
-If you need this to work across platforms, you would have to bring in path module, 
-
-```javascript
-const path = require('path');
-```
-remove the forward slash here, and call path.join. 
+If you need this to work across platforms, you would have to bring in path module, remove the forward slash here, and call path.join. 
 
 ```javascript
 {
 	...
 	output: {
-		path: path.join(__, 'biuld')
+		path: path.join(__, 'build')
 	}
 }
 ```
@@ -78,7 +73,7 @@ Next, we need to actually name the final JavaScript file, we'll say filename, an
 {
 	...
 	output: {
-		path: path.join(__, 'biuld'),
+		path: path.join(__, 'build'),
 		filename: 'bundle.js'
 	}
 }
@@ -102,15 +97,110 @@ Next, we actually just give the name of the loader under the loader key, and the
 
 We pass the name of it here, along with any options that are specific to this plugin. This is the preact-specific part, because all of this configuration here would be pretty much the same across any project that uses babel.
 
-When it comes to transforming JSX, this plugin if you notice, is react-jsx. What does that mean? If we look at this snippet in our code, if we had a block of JSX like this, this plugin because it's the react plugin, would generate this code.
+####webpack.config.js
+```javascript
+    module: {
+        rules: [
+            {
+                test: /\.jsx?/i,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env'],
+                    plugins: [
+                        ['transform-react-jsx', { pragma: 'h' }]
+                    ]
+                }
+            }
+        ]
+    },
+```
 
-But because we're using preact, we actually just need this. Everything about this is the same apart from this first section. That's what we are configuring here.
+When it comes to transforming JSX, this plugin if you notice, is `react-jsx`. What does that mean? If we look at this snippet in our code, if we had a block of JSX like this, 
 
-Next, to configure source maps, we just use dev tool and source map, and finally for the server, we use the dev-server key, a content base is the src directory where our index.js lives.
+```html
+<div class="app">
+	<h1>Hello!</h1>
+</div>
+```
 
-We say compress true to enable gzip compression, and history API fallback true, this will allow us to do some routing later on. Now, let's fire up the dev server to make sure everything's working. We'll add a script to our package.json file, we'll use start, and then we'll say webpack-dev-server inline. This will stop webpack from serving the application in 
+this plugin because it's the react plugin, would generate this code.
+
+```javascript
+React.createElement('div', {class: 'app'}, [
+	React.createElement('h1', null, 'Hello!')
+]);
+```
+But because we're using preact, we actually just need this. 
+
+```javascript
+h('div', {class: 'app'}, [
+	h('h1', null, 'Hello!')
+])
+```
+Everything about this is the same apart from this first section.
+
+```javascript
+React.createElement
+```
+
+That's what we are configuring here.
+
+```javascript
+['transform-react-jsx', { pragma: 'h' }]
+```
+
+Next, to configure `source maps`, we just use `devtool` and `source-map`, and finally for the server, we use the `devServer` key, a `contentBase` is the `src` directory where our `index.js` lives.
+
+We say `compress` `true` to enable gzip compression, and `historyApiFallback` `true`. 
+
+```javascript
+    devServer: {
+        contentBase: path.join(__dirname, 'src'),
+        compress: true,
+        historyApiFallback: true
+    }
+```
+
+This will allow us to do some routing later on. 
+
+Now, let's fire up the dev server to make sure everything's working. We'll add a script to our `package.json` file, we'll use `start`, and then we'll say `webpack-dev-server inline`. This will stop `webpack` from serving the application in 
 an iframe.
 
-Next in the src directory, we'll need an HTML file, we'll call it index.html, insert some boilerplate, a script tag that points to bundle.js, then we can simple run yarn start.
+####package.json
+```javascript
+"scripts": {
+	"start": "webpack-dev-server --inline"
+}
+```
 
-You see in the initial output we get this address. If we access this address in the browser, open up dev tools, you can see the index.js log that we added here, and if we go ahead and make a change to this, write to the browser, and you can see it works as expected.
+Next in the src directory, we'll need an HTML file, we'll call it `index.html`, insert some `boilerplate`, a script tag that points to `bundle.js`, 
+
+####index.html
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="bundle.js"></script>
+</body>
+</html>
+```
+
+then we can simple run `yarn start`. 
+
+####Terminal
+```bash
+yarn start
+```
+You see in the initial output we get this address. 
+
+```bash
+http://localhoast:8080/
+```
+
+If we access this address in the browser, open up dev tools, you can see the index.js log that we added in `index.js`, and if we go ahead and make a change to this, write to the browser, and you can see it works as expected.
