@@ -16,7 +16,7 @@ module.exports = {
 ```
 Now, we just need to fill in the gaps. For the input, we don't need to tell webpack about all of the files that we're going to use, we just need to give it the entry point to our application.
 
-Webpack will then trace the dependencies and then bring in everything it needs to. That's why webpack calls this the entry, and we'll just use a single string source. 
+Webpack will then trace the dependencies and then bring in everything it needs to. That's why webpack calls this the `entry`, and we'll just use a single string `./src`. 
 
 ```javascript
 module.exports = {
@@ -86,9 +86,15 @@ Next, we need to actually name the final JavaScript file, we'll say filename, an
 
 Now before we add our transformations, we can confirm that we have our entry and our output set correctly by running webpack.
 
-If we say `nodemodules.bin/webpack`, we can see that bundle.js was created from src/index.js, and you can see that it creates it a build directory, and we have a bundle.js. If we open it, you can see we have some webpack boilerplate.
+If we say `nodemodules.bin/webpack`, we can see that `bundle.js` was created from `src/index.js`, and you can see that it creates it a build directory, and we have a `bundle.js`. If we open it, you can see we have some webpack boilerplate.Scroll down just a bit, you can see the code that we added, index.js is now here. 
 
-Scroll down just a bit, you can see the code that we added, index.js is now here. Next, we move on to the transformations. Here, we need to configure babel. Under the module key, we provide rules and then an object with the configuration for our loader.
+####bundle.js
+```javascript
+	(function(module, exports) {
+console.log('index.js');
+	})
+```
+Next, we move on to the transformations. Here, we need to configure babel. Under the module key, we provide rules and then an object with the configuration for our loader.
 
 For test, we'll give a regular expression that will match any file ending in .js or .jsx. This is how webpack knows which files to process with this loader.
 
