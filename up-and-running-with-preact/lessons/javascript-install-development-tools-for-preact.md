@@ -5,7 +5,7 @@ For that we'll use the `webpack-dev-server`. This will watch our source files fo
 Next, we need something that can actually transform our code, as we'll be writing something that looks more like this. 
 
 #### scratch_16.js
-```javascript
+```html
 import { h, Component } from 'preact';
 
 export default class App extends Component {
@@ -24,7 +24,7 @@ First of all, when developing we want to be able to use the latest and greatest 
 
 The second reason is that some features such as jsx are simply not part of the JavaScript language. A block of jsx like this, 
 
-```javascript
+```html
 return (
 	<div class="app">
 	    <h1>Hello!</h1>

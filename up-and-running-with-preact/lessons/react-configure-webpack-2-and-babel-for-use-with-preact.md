@@ -40,7 +40,7 @@ We'll create directory `src`, and inside there, we create a file called `index.j
 console.log('index.js');
 ```
 
-Webpack now sees this as the starting point of our application. When it runs, it will look at whatever we provided for entry, in this case, it's the path to a directory, and it will load index.js file by default.
+Webpack now sees this as the starting point of our application. When it runs, it will look at whatever we provided for entry, in this case, it's the path to a directory, and it will load `index.js` file by default.
 
 ####webpack.config.js
 ```javascript
@@ -52,9 +52,9 @@ Webpack now sees this as the starting point of our application. When it runs, it
 }
 ```
 
-Now for the output, we need to specify the path and the file name separately. We'll see `output` and we'll give an object. We'll provide the `path` as the current `directory` plus `build`. Webpack will generate this directory for us, we don't have to do that.
+Now for the output, we need to specify the path and the file name separately. We'll see `output` and we'll give an object. We'll provide the `path` as the current directory plus `build`. Webpack will generate this directory for us, we don't have to do that.
 
-If you need this to work across platforms, you would have to bring in path module, remove the forward slash here, and call path.join. 
+If you need this to work across platforms, you would have to bring in `path` module, remove the forward slash here, and call `path.join`. 
 
 ```javascript
 {
@@ -67,7 +67,7 @@ If you need this to work across platforms, you would have to bring in path modul
 
 This will ensure the directory separator is correct on each operating system.
 
-Next, we need to actually name the final JavaScript file, we'll say filename, and we'll call it `bundle.js`. 
+Next, we need to actually name the final JavaScript file, we'll say `filename`, and we'll call it `bundle.js`. 
 
 ```javascript
 {
@@ -79,26 +79,26 @@ Next, we need to actually name the final JavaScript file, we'll say filename, an
 }
 ```
 
-Now before we add our transformations, we can confirm that we have our entry and our output set correctly by running webpack.
+Now before we add our transformations, we can confirm that we have our `entry` and our `output` set correctly by running webpack.
 
-If we say `nodemodules.bin/webpack`, we can see that `bundle.js` was created from `src/index.js`, and you can see that it creates it a build directory, and we have a `bundle.js`. If we open it, you can see we have some webpack boilerplate.Scroll down just a bit, you can see the code that we added, index.js is now here. 
+If we say `nodemodules.bin/webpack`, we can see that `bundle.js` was created from `src/index.js`, and you can see that it creates it a `build` directory, and we have a `bundle.js`. If we open it, you can see we have some webpack boilerplate. Scroll down just a bit, you can see the code that we added, `index.js` is now here. 
 
 ####bundle.js
 ```javascript
 	(function(module, exports) {
-console.log('index.js');
+		console.log('index.js');
 	})
 ```
-Next, we move on to the transformations. Here, we need to configure babel. Under the module key, we provide rules and then an object with the configuration for our loader.
+Next, we move on to the transformations. Here, we need to configure babel. Under the `module` key, we provide `rules` and then an object with the configuration for our loader.
 
 For test, we'll give a regular expression that will match any file ending in .js or .jsx. This is how webpack knows which files to process with this loader.
 
-Next, we actually just give the name of the loader under the loader key, and then we need to provide some options to it. We're using the env loader which will automatically give us the latest JavaScript features by default. Then, we added one additional plugin for transforming JSX.
+Next, we actually just give the name of the loader under the `loader` key, and then we need to provide some options to it. We're using the env loader which will automatically give us the latest JavaScript features by default. Then, we added one additional plugin for transforming JSX.
 
 We pass the name of it here, along with any options that are specific to this plugin. This is the preact-specific part, because all of this configuration here would be pretty much the same across any project that uses babel.
 
 ####webpack.config.js
-```javascript
+```json
     module: {
         rules: [
             {
@@ -145,15 +145,15 @@ React.createElement
 
 That's what we are configuring here.
 
-```javascript
+```json
 ['transform-react-jsx', { pragma: 'h' }]
 ```
 
 Next, to configure `source maps`, we just use `devtool` and `source-map`, and finally for the server, we use the `devServer` key, a `contentBase` is the `src` directory where our `index.js` lives.
 
-We say `compress` `true` to enable gzip compression, and `historyApiFallback` `true`. 
+We say `compress: true` to enable gzip compression, and `historyApiFallback: true`. 
 
-```javascript
+```json
     devServer: {
         contentBase: path.join(__dirname, 'src'),
         compress: true,
@@ -163,7 +163,7 @@ We say `compress` `true` to enable gzip compression, and `historyApiFallback` `t
 
 This will allow us to do some routing later on. 
 
-Now, let's fire up the dev server to make sure everything's working. We'll add a script to our `package.json` file, we'll use `start`, and then we'll say `webpack-dev-server inline`. This will stop `webpack` from serving the application in 
+Now, let's fire up the dev server to make sure everything's working. We'll add a script to our `package.json` file, we'll use `start`, and then we'll say `webpack-dev-server inline`. This will stop webpack from serving the application in 
 an iframe.
 
 ####package.json
@@ -173,7 +173,7 @@ an iframe.
 }
 ```
 
-Next in the src directory, we'll need an HTML file, we'll call it `index.html`, insert some `boilerplate`, a script tag that points to `bundle.js`, 
+Next in the `src` directory, we'll need an HTML file, we'll call it `index.html`, insert some `boilerplate`, a script tag that points to `bundle.js`, 
 
 ####index.html
 ```html
@@ -203,4 +203,4 @@ You see in the initial output we get this address.
 http://localhoast:8080/
 ```
 
-If we access this address in the browser, open up dev tools, you can see the index.js log that we added in `index.js`, and if we go ahead and make a change to this, write to the browser, and you can see it works as expected.
+If we access this address in the browser, open up dev tools, you can see the `index.js` log that we added in `index.js`, and if we go ahead and make a change to "Hello!", write to the browser, and you can see it works as expected.
