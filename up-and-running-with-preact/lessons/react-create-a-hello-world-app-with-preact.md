@@ -1,6 +1,6 @@
-Here we have two elements, a `div` with a class of up, and a `H1`, some text content, `Hello World`. 
+Here we have two elements, a `div` with a class of `app`, and a `H1`, some text content, `Hello World`. 
 
-####script
+####index.html
 ```html
 <div class="app">
 	<h1>Hello world!</h1>
@@ -10,8 +10,10 @@ Here we have two elements, a `div` with a class of up, and a `H1`, some text con
 To recreate this in JavaScript, we will have to say, `app` is equal to `document.createElement` and we'll use a `div`, then we will add the class, by saying, `classList.add(app)`.
 
 ```javascript
-const app = document.createElement('div');
-app.classList.add('app');
+<script>
+	const app = document.createElement('div');
+	app.classList.add('app');
+</script>
 ```
 
 Next, to create the header, we do the same thing with `document.createElement`, this time using `H1` and to set the `Hello World` text, we use `textContent`. We'll assign a string to that. There we have our two elements.
@@ -91,6 +93,11 @@ render(app, document.querySelector('main'));
 
 Now, you see we have the exact same result.
 
+####Browser Output
+```
+Hello world!
+```
+
 Behind the scenes, preact will create elements, it will add attributes for us, and it will nest elements within other elements. This is definitely a nicer way to write user interfaces but we can go one step further and use JSX, which will get rid of these raw function calls for us.
 
 Let's switch to a webpack and babel setup and see how that looks. We can start the dev server with `yarn start`. 
@@ -102,13 +109,13 @@ $ yarn start
 
 Next, in the `src` `index.js` file, which is our entry point, we'll import `H` and `render` from preact. We'll also import our `app` component, which we haven't created yet but we're going to put it inside a component's directory, call it `App`.
 
-####Index.js
+####index.js
 ```javascript
 import { h, render } from 'preact;'
 import App from './components/App';
 ```
 
-Now, we can let WebStorm create that directory for us, as well as this file. We'll export a function called `app`. This will return some JSX, just as we had before. We'll have a `div`, a class of `app` and then we'll nest inside it a `H1` element with `Hello World`.
+Now, we can let WebStorm create that directory for us, as well as this file. We'll export a function called `App`. This will return some JSX, just as we had before. We'll have a `div`, a class of `app` and then we'll nest inside it a `H1` element with `Hello World`.
 
 ####App.js
 ```html
