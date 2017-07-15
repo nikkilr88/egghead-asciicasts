@@ -1,0 +1,13 @@
+To help you think in Reactive Programming, we need to understand not just what event streams are, but especially why we should use them. To me, it boils down to one simple reason. It allows you to specify the dynamic behavior of a value completely at the time of creation.
+We're going to code an example here, but I'm going to write that property down, because it's really important to understand it. Also, it might be better to grasp once it's written down.
+Let's see the opposite example of this. Let's say you have a variable A, which has initially the value 3. Then you have a variable B, which is 10 * A. If we console log out B, we will see 30.
+Let's say we change A to be 4. If we console log B, B is still 30. It didn't catch up with this new value of 4, because it's statically declared as 10 * A at the time that this line passed through the flow of control. What we need to do is actually, again, set B to that formula. Now, when we console log B, we see 44. But, if you noticed, I made a type here. Instead of 10, I wrote 11.
+This means that B, even though it's a value evolving over time, it's not a constant. This declaration here does not specify the dynamic behavior of that value B at the time of declaration, because later I just say it's 11.
+Ideally, what I would want is I just say that B is always 10 * A, and whenever A changes, then B will be 10 * A's new value.
+That is what we can accomplish with event streams. Let's say that I have steam A is an event stream of just the value 3. Then I have stream B, which is stream A mapped. Each of these A values will be mapped to 10 * A.
+If I add an event listener to that stream B and I console log, we will see B being 30.
+But now I want to change the value of stream A. Here is where a lot of people get stuck, because they want to change stream A. So, they feel like doing this, set to 4, or something like this. But, this is not what we should do. Why?
+Because A is also a dynamic value over time, and that means that we need to specify that dynamic behavior completely at the time of declaration. This is not the time of declaration. But instead this is the time of declaration, and that's where the trick is.
+We need to specify not just B's behavior once, but also A's behavior once. We cannot change A later. We have to specify how A will work over time. And we have to specify only at the time of the declaration.
+If we do this, now we have an event stream that has just simply two events. It has event 3, and then it has event 4, and B will change accordingly whenever A changes. If we run this, we see B being 30 and 40.
+The why, remember, is because Reactive Programming allows you to specify the dynamic behavior completely only once, at declaration.
