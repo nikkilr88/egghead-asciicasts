@@ -8,3 +8,8 @@
 * [Define Stateful Components in Preact](./lessons/react-define-stateful-components-in-preact.md)
 * [Use State and Props in the Component Render Function](./lessons/react-use-state-and-props-in-the-component-render-function.md)
 * [Use Link State to Automatically Handle State Changes](./lessons/react-use-link-state-to-automatically-handle-state-changes.md)
+* [Reduce the Size of a React App in Two Lines with preact-compat:](./lessons/angular-1-x-reduce-the-size-of-a-react-app-in-two-lines-with-preact-compat.md)
+* [Handle Simple Routing with preact-router](./lessons/react-handle-simple-routing-with-preact-router.md)
+* [Integrate react-router with Preact](./lessons/react-integrate-react-router-with-preact.md)
+* [Integrate Redux with Preact](./lessons/react-integrate-redux-with-preact.md)
+* [Use Redux Dev-Tools with Preact](./lessons/react-use-redux-dev-tools-with-preact.md)
