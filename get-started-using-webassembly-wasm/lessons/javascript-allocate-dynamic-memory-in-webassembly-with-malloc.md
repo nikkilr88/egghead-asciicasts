@@ -108,7 +108,7 @@ For the imports object, I'm going to need to pass an environment import, which c
 
 I'm just going to call this with arbitrary values, and then log the results. For linking in `malloc` and `free`, I've actually already prebuilt from C into **WebAssembly** a `malloc` and `free` implementation, which I'm just going to load from the existing file at `memory.wasm`.
 
-The link to this file is included in the lesson description. This `memory.wasm` file takes a single `env` import, which sets the `memory`. The reason for this is that `malloc` and `free` both need to act on the program's memory, which is defined in the program itself, because it exported its own memory.
+The link to this file is included [here](https://github.com/guybedford/wasm-stdlib-hack/blob/master/dist/memory.wasm). This `memory.wasm` file takes a single `env` import, which sets the `memory`. The reason for this is that `malloc` and `free` both need to act on the program's memory, which is defined in the program itself, because it exported its own memory.
 
 ```jsx
 fetchAndInstantiateWasm('./program.wasm', {

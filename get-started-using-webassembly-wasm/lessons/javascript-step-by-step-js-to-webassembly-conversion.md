@@ -2,7 +2,7 @@ We're going to take this JavaScript application that renders circles into the pa
 
 Our `init` functions sets that initial state of the circles and our `timeStep` function then updates the positions based on the velocities and bouncing off the edges. The details of the functions aren't actually that important.
 
-For the conversion into **WebAssembly** the important thing is how this code interfaces with JavaScript and how we manage its interface. We're going to do the conversion into C. We create a new C file, and let's just copy and paste all the JavaScript except for the render call directly into the C file.
+For the conversion into **WebAssembly** the important thing is how this code interfaces with JavaScript and how we manage its interface. We're going to do the conversion into `C`. We create a new `C` file, and let's just copy and paste all the JavaScript except for the render call directly into the `C` file.
 
 We can now start the conversion. The `circleCount` is going to be a constant of our compilation process so we'll set it up as a macro. 
 
@@ -10,9 +10,9 @@ We can now start the conversion. The `circleCount` is going to be a constant of 
 #define CIRCLE_COUNT = 1000
 ```
 
-For the `circleData` we could just set it up as an array of floats like we've done in JavaScript, but in C we can do better than that.
+For the `circleData` we could just set it up as an array of floats like we've done in JavaScript, but in `C` we can do better than that.
 
-The xy and r values of each circle can be represented in a C `struct`, with each entry set as a `float` data type. It's still effectively the same representation in memory as three floats in a row that we had manually in our typed array.
+The `x`, `y`, and `r` values of each circle can be represented in a `C` `struct`, with each entry set as a `float` data type. It's still effectively the same representation in memory as three floats in a row that we had manually in our typed array.
 
 ```cpp
 #define CIRCLE_COUNT = 1000
@@ -24,7 +24,7 @@ struct Circle {
 }
 ```
 
-The velocity data can then be stored in the same way with the x and y components of velocity as floats. 
+The velocity data can then be stored in the same way with the `vx` and `vy` components of velocity as floats. 
 
 ```cpp
 #define CIRCLE_COUNT = 1000
@@ -41,20 +41,20 @@ struct CircleV {
 }
 ```
 
-To actually initialize the `circleData`, we need to create an array of these circle `struct`s. The way we initialize that in C is with the `struct` `Circle` and then the name of the array that we're creating.
+To actually initialize the `circleData`, we need to create an array of these circle `struct`s. The way we initialize that in `C` is with the `struct` `Circle` and then the name of the array that we're creating.
 
 ```cpp
 struct Circle circleData
 ```
 
-We're going to statically set aside the full amounts of circles, which is 1,000 times the size of the circle, which is three floats. So we end up setting aside the same amounts of memory as we did in JavaScript with our explicit `init`, but with C it knows the size of the object so we don't need to add our multiple of three. We can do the same for the circle velocity.
+We're going to statically set aside the full amounts of circles, which is 1,000 times the size of the circle, which is three floats. So we end up setting aside the same amounts of memory as we did in JavaScript with our explicit `init`, but with `C` it knows the size of the object so we don't need to add our multiple of three. We can do the same for the circle velocity.
 
 ```cpp
 struct Circle circleData[CIRCLE_COUNT];
 struct CircleV circleData[CIRCLE_COUNT];
 ```
 
-Now we're ready to write our `timeStep` functions. Converting their signatures into valid C function signatures, both these functions have no return value so they are `void`. The `displayWidth` and `displayHeight` are both `float` arguments.
+Now we're ready to write our `timeStep` functions. Converting their signatures into valid `C` function signatures, both these functions have no return value so they are `void`. The `displayWidth` and `displayHeight` are both `float` arguments.
 
 ```cpp
 void init (float displayWidth, float displayHeight) {
@@ -66,7 +66,7 @@ void timeStep (float displayWidth, float displayHeight) {
 }
 ```
 
-To iterate over the array of `circleData`, we no longer need to do this complex iteration. We can simply have a single integer which is iterating over the full `circleCount` and incrementing by one. C can take care of the rest for us.
+To iterate over the array of `circleData`, we no longer need to do this complex iteration. We can simply have a single integer which is iterating over the full `circleCount` and incrementing by one. `C` can take care of the rest for us.
 
 ```cpp
 void init (float displayWidth, float displayHeight) {
@@ -121,7 +121,7 @@ We're going to still be calling `Math.random()` underneath because we don't have
 float randomf ();
 ```
 
-By simply defining the signature it will be treated as an external function and we can then replace all calls to `Math.random()` with `randomf()`. The C file should really remain the source of truth for where the `circleCount` is defined.
+By simply defining the signature it will be treated as an external function and we can then replace all calls to `Math.random()` with `randomf()`. The `C` file should really remain the source of truth for where the `circleCount` is defined.
 
 It's annoying to have to define it as well within the JavaScript so let's create a function that will simply provide that. In order to actually get our data out of **WebAssembly** we need to know where the address is to the `circleData` object. This is the thing that we want to have access to from JavaScript.
 
@@ -139,11 +139,11 @@ int getCircleDataOffset () {
 }
 ```
 
-To quickly compile I'm going to copy the C code into **WasmFiddle**. Once the build completes successfully the .wast format comes up at the bottom of the page and we can then download the **WebAssembly** binary file.
+To quickly compile I'm going to copy the `C` code into **WasmFiddle**. Once the build completes successfully the .wast format comes up at the bottom of the page and we can then download the **WebAssembly** binary file.
 
 Checking the .wast output, we can see that we're importing the `randomf` function from an `"env"` module that we're going to populate shortly.
 
-We're also exporting our memory as well as all of the functions that we've created in our C file. In a new HTML file lets now wire in the **WebAssembly**. First copy in a helper function to load the **WebAssembly**. I'm going to call it with the path to our **WebAssembly** file which I have located in a folder called `./lib/dynamics.wasm`.
+We're also exporting our memory as well as all of the functions that we've created in our `C` file. In a new HTML file lets now wire in the **WebAssembly**. First copy in a helper function to load the **WebAssembly**. I'm going to call it with the path to our **WebAssembly** file which I have located in a folder called `./lib/dynamics.wasm`.
 
 ```jsx
 <!doctype html> 

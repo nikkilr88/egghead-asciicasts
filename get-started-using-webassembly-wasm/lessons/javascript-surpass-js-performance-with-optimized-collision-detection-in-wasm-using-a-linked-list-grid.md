@@ -153,7 +153,7 @@ For the collision detection algorithm, I'm going to copy the loop over all of th
 
 ####C Code
 ```cpp
-for (int p = 0k; p < GRID_WIDTH; p++) {
+for (int p = 0; p < GRID_WIDTH; p++) {
 	for (int q = 0; q < GRID_HEIGHT; q++) {
 		const cell = col[q];
 
@@ -166,7 +166,7 @@ When reading the `grid` cell, this is now the pointer to our `CellCircle` record
 
 ####C Code
 ```cpp
-for (int p = 0k; p < GRID_WIDTH; p++) {
+for (int p = 0; p < GRID_WIDTH; p++) {
 	for (int q = 0; q < GRID_HEIGHT; q++) {
 		struct CellCircle* iCellCircle = grid[p][q];
 

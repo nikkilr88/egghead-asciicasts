@@ -29,7 +29,7 @@ and update their calls, add includes for the `math` and `stdbool` libraries.
 
 Our use of `sqrt`, `pow` and `ceil` can then be in-lined by the compiler by using these functions.
 
-Next, define our `Circle` and `CircleV` structs and initialize arrays of these -- of the length, `CIRCLE_COUNT` -- for their static allocation. Add a get `circleCount` function and a `getCircleDataOffset` function to know where to find the address of the `Circle` position data in wasm memory.;
+Next, define our `Circle` and `CircleV` structs and initialize arrays of these -- of the length, `CIRCLE_COUNT` -- for their static allocation. Add a get `circleCount` function and a `getCircleDataOffset` function to know where to find the address of the `Circle` position data in wasm memory.
 
 ```cpp
 #define CIRCLE_COUNT 2000
@@ -46,7 +46,7 @@ struct CircleV {
 };
 
 struct Circle circleData[CIRCLE_COUNT];
-struct CircleVD circleData[CIRCLE_COUNT];
+struct CircleV circleData[CIRCLE_COUNT];
 
 int getCircleCount () {
 	return CIRCLE_COUNT;
@@ -61,7 +61,7 @@ Finally, we fix up the index access within our `circleData` `struct` arrays to c
 
 The second argument of this function is the imports. We need to set the `env`, which contains a `randomf` and the `exp` function.
 
-The promise gives us back the instantiated module, and we can then read off the `circleCount` and `circleData`_offset from the functions that we exported. We can construct our typed array data for the `circleData`, using the offset that we've been provided, as well as the fact that we know that it's going to be three times the `circleCount` in length in the WebAssembly memory.
+The promise gives us back the instantiated module, and we can then read off the `circleCount` and `getCircleDataOffset` from the functions that we exported. We can construct our typed array data for the `circleData`, using the offset that we've been provided, as well as the fact that we know that it's going to be three times the `circleCount` in length in the WebAssembly memory.
 
 ```jsx
 <!doctype html> 
@@ -86,7 +86,7 @@ The promise gives us back the instantiated module, and we can then read off the 
 			});
 		}
 
-		fetchAndInstantiateWasm('./lib/dynamics-coll .wasm', {
+		fetchAndInstantiateWasm('./lib/dynamics-coll.wasm', {
 			env: {
 				randomf: Math.random,
 				expf: math.exp

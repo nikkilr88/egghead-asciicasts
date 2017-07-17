@@ -60,17 +60,7 @@ I can call this function directly, passing the URL of our program file, which is
 <!doctype html>
   <title>WASM Test</title>
   <script>
-    function fetchAndInstantiateWasm (url, imports) {
-      return fetch(url)
-      .then(res => {
-        if (res.ok)
-          return res.arrayBuffer();
-        throw new Error(`Unable to fetch Web Assembly file ${url}.`);
-      })
-      .then(bytes => WebAssembly.compile(bytes))
-      .then(module => WebAssembly.instantiate(module, imports || {}))
-      .then(instance => instance.exports);
-    }
+    function fetchAndInstantiateWasm (url, imports) {...}
 
     fetchAndInstantiateWasm('https://cdn.rawgit.com/guybedford/wasm-intro/f61eb0d0/2-c-wasm/program.wasm')
     .then(m => {

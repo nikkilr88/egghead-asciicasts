@@ -52,7 +52,7 @@ void toLowerCase () {
 }
 ```
 
-To make this really easy to run, I'm then just going to run the `consoleLog()` function on the address of the out string, with the total length, and remove the `main` function. To be able to write to the input string in JavaScript, I'm going to create a `getinStrOffset` function, just like we have before, that returns the address of the input string in the **WebAssembly** memory.
+To make this really easy to run, I'm then just going to run the `consoleLog()` function on the address of the out string, with the total length, and remove the `main` function. To be able to write to the input string in JavaScript, I'm going to create a `getInStrOffset` function, just like we have before, that returns the address of the input string in the **WebAssembly** memory.
 
 ```
 char* getInStrOffset () {
