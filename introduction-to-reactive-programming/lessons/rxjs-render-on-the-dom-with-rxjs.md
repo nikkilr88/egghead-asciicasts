@@ -1,17 +1,103 @@
-Now we will see how to use reactive programming in practice. We are going to use RxJS as the tool, which is one of the most popular reactive programming libraries out there. We will build a small piece of user interface.
-This here is a suggestions box showing a couple of GitHub users that you could follow. It has these features. On start up, it loads accounts from the API, and it displays three suggestions. Each of these rows is a user with their avatar and their username. When you click refresh, it should replace these users with more, three users, and if you click X, then it replaces that user with another suggested user to follow.
-Let's start with the easiest feature, which is, on start up, load three user accounts from the back end. Now, this is really just about doing a request, getting a response, and rendering that response. We need somehow do that with event streams, and let's just start by representing our requests, which are an event stream of strings.
-These strings, I mean the URL of GitHub's user endpoint. This is just a stream of strings. It does really nothing. We need to somehow make something happen when this string is emitted. We do that by subscribing to that stream, and we get the request URL that the stream emits, and we do something inside here.
-How do we normally make network requests in JavaScript? Well, one of the options is to use jQuery to get a promise from this URL. Now this will return us a promise, and once you have the promise, you can give a "Done handler" for the response. Now, inside here, we can, for instance, console log that response.
-But, wait a second. Why are we using this way of making network requests if observables can handle asynchronous data streams? Aren't these supposed to already handle these? Why are we using the solution that doesn't look like event streams?
-We can try doing this with event streams by creating a response event stream. The way we do that is by wrapping that promise from jQuery inside an observable like this. What we have here is a response stream that will be created from that promise, and now we can subscribe to that response stream and console log that.
-If you look at this, it means that the observable can do whatever the promise is doing. Does this mean that a promise is like a simplified version of an observable? You can put one thing in the other. In a way, yeah. Promises are basically a simplified version of an event stream that can have only one value or only one event, which is either the resolved value or an error. They can have only one.
-Observables go beyond that. Of course, they can have just one event happening on them, but they can also have multiple. That's why observables are more powerful than promises because they can have multiple events. This is pretty nice, and it shows how observables are more powerful.
-We still have a problem with our example here, because we have a subscribe inside another subscribe and this reminds us of callback hell. We don't want to go to that direction, definitely. How can we solve this?
-We know that Rx observables have operators such as map and things like that. What if we were to try mapping the request to the response? That makes some sense. Let's create a response stream that will be the request stream mapped. It means that we're mapping each of these request URL strings to...
-Well, we need to map it somehow to the response, and the only way that we can get a response is by waiting for that network request to happen. I just wrote this, but I will explain what it means. Usually, we are mapping from a string to a number or a string to an object or something. Now we have to map from a string to something that will happen later in time.
-Usually, we don't map from simple objects and numbers to observables, but this is what we're doing here now. We're mapping to an observable. This looks a bit different to what you're used to, because this is what the marble diagram would look like. This yellow circle is the request URL string, and it's being mapped to an observable of that response. This is what we're doing here.
-What you get, as a result, is basically an observable of observables and we call this sometimes meta stream. You are probably confused right now, and that's OK. We normally don't work with this, because gladly we have a way of solving this, and that is by calling flatMap. When we call flatMap, instead of getting an output that looks like this, we get an output that looks flat, like that.
-What's flatMap do? It basically flattens the meta stream that we got as output here, after it maps. That's basically what it does. In other words, it's emitting on the trunk stream everything that happens on these branch streams, and then it looks nice. flatMap is kind of like promise.then. You can think of it as that.
-Now that we have this response stream built from the request stream, we can just subscribe to that response stream and we can put it in the console. Now we have only one subscribe. We don't have that mess of a subscribe inside another subscribe. And, this works.
-That's part one. Keep on watching, and we're going to see how to build the whole user interface.
+Logging the response to the console like this is not enough. We also need to render that data on the DOM. Here, we can see our desired output. This was created simply with HTML. Here, we have our `"header"` with who to follow. On the right, we have the refresh button. We also have a list with the three suggestions.
+
+![HTML and results](../images/rxjs-render-on-the-dom-with-rxjs-html-and-results.png)
+
+Here, we have some placeholder data like this will not be displayed and either this. The first link is a link to the `"username"`. We'll take to the GitHub users profile page. We're supposed to fill this `href` with that link. We're supposed to fill the text content of this link with the user's login name. Also, there's an `<img />` element here where we will put the avatar for that user.
+
+```html
+<li class="suggestion1">
+    <img />
+    <a href="#" target="_blank" class="username">this will not be displayed</a>
+    <a href="#" class="close close1">x</a>
+</li>
+```
+
+How do we do that in Rx with observables? We have this `responseStream` that emits actually an array of users. It has an array containing probably some hundreds of users. We need only three of those. We need to represent somehow the first user, the second user, and the third user. We can do that by creating one stream of events for each of these users.
+
+For instance, we can create a stream for the suggestion of the first user to follow. We do that by getting the `responseStream` which emits arrays. We're going to get those lists of users.
+
+```javascript
+var suggestion1Stream = responseStream.map(listUser => ...)
+```
+
+We're going to `.map` that to one of those entries. We do that by doing `Math.floor`, then `Math.random` multiplied by the amount of items in that array. This will give us one random user in that array of users. 
+
+```javascript
+var suggestion1Stream = responseStream.map(listUser => 
+	listUser[Math.floor(Math.random()*listUser.length)]
+);
+```
+
+Then we need to do the same thing for the second user like this.
+
+```javascript
+var suggestion2Stream = responseStream.map(listUser => 
+	listUser[Math.floor(Math.random()*listUser.length)]
+);
+```
+
+As you can see, this is very repetitive code. We could actually put this in a function so we can reuse it. Let's call that function `createSuggestionStream`. Given the `responseStream`, it will `.map` that `responseStream` to one random user. There we can call that function by just doing `createSuggestionStream` and giving it the `responseStream`. This will return us an event stream that has one random user. We just do the same for the second user and for the third user.
+
+```javascript
+function createSuggestionStream(responseStream) {
+	return responseStream.map(listUser => 
+		listUser[Math.floor(Math.random()*listUser.length)]
+	);
+} 
+
+var suggestion1Stream = createSuggestionStream(responseStream);
+var suggestion2Stream = createSuggestionStream(responseStream);
+var suggestion3Stream = createSuggestionStream(responseStream);
+```	
+
+Now that we have the streams, they don't do anything by themselves. That's the idea of event streams. You need to always add an event listener or `subscribe` to them and then you have your user. Inside here, we finally have one single user, not an array. We need to render that to the DOM here.
+
+```javascript
+suggestion1Stream.subsribe(user => {
+	
+});
+```
+
+I'm going to call `renderSuggestion` with a `user` and a selector which is `'.suggestion1'`. Of course, this `renderSuggestion` function doesn't exist yet. I need to create that.
+
+So let's go ahead and create that. `renderSuggestion`, it takes some piece of `userData` and a `selector`. What I want this to do is get that data, get the element behind that `selector`, and put the data in that element. Let's go again and get our `element` behind that `selector`. Let's get the `"username"` link in that `element` which is `".username"` class. We can do something with this `element`.
+
+We can get the `href` and put `userData.html_url` if I remember correctly. We can do `usernameEl` and we can set the `textContent` to be `userData.login` if I remember correctly again.
+
+```javascript
+function renderSuggestion(userData, selector) {
+	var element = document.querySelector(selector);
+	var usernameEl  = element.querySelector('.username');
+	usernameEl.href = userData.html_url;
+	usernameEl.textContent = userData.login;
+}
+```
+
+`imgEl`, now we need to get that particular `imgEl` which is inside that list item. We set the `src` for this to be `userData.avatar_url`. This `userData` is an object returned by GitHub's API. If you want to see how the whole structure of this object is, the JSON, you can check the GitHub's specifications.
+
+```javascript
+function renderSuggestion(userData, selector) {
+	var element = document.querySelector(selector);
+	var usernameEl  = element.querySelector('.username');
+	usernameEl.href = userData.html_url;
+	usernameEl.textContent = userData.login;
+	var imgEl = element.querySelector('img');
+	imgEl.src = userData.avatar_url;
+}
+```
+
+So we run this. `suggestion1Stream` got its data from the `responseStream`. We just `subscribe` to that `suggestion1Stream` and we render this to the DOM. We do that with the other users like this, basically copy pasting and changing the selectors and the stream names two and three. We run again. We're going to see the users rendered to the DOM.
+
+```javascript
+suggestion1Stream.subscribe(user => {
+	renderSuggestion(user, '.suggestion1');
+});
+
+suggestion2Stream.subscribe(user => {
+	renderSuggestion(user, '.suggestion2');
+});
+
+suggestion3Stream.subscribe(user => {
+	renderSuggestion(user, '.suggestion3');
+});
+```
