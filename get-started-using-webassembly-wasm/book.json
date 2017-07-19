@@ -1,0 +1,5 @@
+{
+    "title": "Get Started Using WebAssembly (wasm)",
+    "description": "This book covers the [Getting Started With PostgreSQL](https://egghead.io/courses/get-started-using-webassembly-wasm) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

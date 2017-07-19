@@ -1,0 +1,17 @@
+# Summary
+
+* [Create and Run a Native WebAssembly Function](./lessons/javascript-create-and-run-a-native-webassembly-function.md)
+* [Compile C Code into WebAssembly](./lessons/javascript-compile-c-code-into-webassembly.md)
+* [Call a JavaScript Function from WebAssembly](./lessons/javascript-call-a-javascript-function-from-webassembly.md)
+* [Read WebAssembly Memory from JavaScript](./lessons/angular-1-x-read-webassembly-memory-from-javascript.md)
+* [Write to WebAssembly Memory from JavaScript](./lessons/javascript-write-to-webassembly-memory-from-javascript.md)
+* [Allocate Dynamic Memory in WebAssembly with Malloc](./lessons/javascript-allocate-dynamic-memory-in-webassembly-with-malloc.md)
+* [Create and Import a WebAssembly Memory](./lessons/javascript-create-and-import-a-webassembly-memory.md)
+* [Compiling C/C++ to WebAssembly using LLVM, Binaryen and WABT](./lessons/javascript-compiling-c-c-to-webassembly-using-llvm-binaryen-and-wabt.md)
+* [Clone and Build LLVM with the Experimental WebAssembly Target](./lessons/javascript-clone-and-build-llvm-with-the-experimental-webassembly-target.md)
+* [Install Binaryen and the WebAssembly Binary Toolkit (WABT)](./lessons/javascript-install-binaryen-and-the-webassembly-binary-toolkit-wabt.md)
+* [Typed Arrays in High Performance JavaScript](./lessons/javascript-typed-arrays-in-high-performance-javascript.md)
+* [Step-by-Step JS to WebAssembly Conversion](./lessons/javascript-step-by-step-js-to-webassembly-conversion.md)
+* [A First Comparison of the Performance between JS and WebAssembly](./lessons/javascript-a-first-comparison-of-the-performance-between-js-and-webassembly.md)
+* [Optimize Collision Detection in JS with a Grid](./lessons/javascript-optimize-collision-detection-in-js-with-a-grid.md)
+* [Surpass JS Performance with Optimized Collision Detection in WASM using a Linked List Grid](./lessons/javascript-surpass-js-performance-with-optimized-collision-detection-in-wasm-using-a-linked-list-grid.md)
