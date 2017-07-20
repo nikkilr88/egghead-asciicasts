@@ -1,0 +1,5 @@
+{
+    "title": "Step-by-Step Async JavaScript with RxJS",
+    "description": "This book covers the [Step-by-Step Async JavaScript with RxJS](https://egghead.io/courses/step-by-step-async-javascript-with-rxjs) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
