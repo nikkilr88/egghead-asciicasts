@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](fREADME.md)
+* [Introduction](README.md)
 * [Starting a Stream with SwitchMap](./lessons/rxjs-starting-a-stream-with-switchmap.md)
 * [Stopping a Stream with TakeUntil](./lessons/rxjs-stopping-a-stream-with-takeuntil.md)
 * [Updating Data with Scan](./lessons/rxjs-updating-data-with-scan.md)
