@@ -1,4 +1,4 @@
-We'll start by creating an empty file called `webpack.cofig.js` in the root of the project. We want to export an object so we can assign it to `module.exports`. The best way to think about a webpack configuration file is to break it into sections.
+We'll start by creating an empty file called `webpack.config.js` in the root of the project. We want to export an object so we can assign it to `module.exports`. The best way to think about a webpack configuration file is to break it into sections.
 
 We always need some input, some output, some transformations, a choice of source maps, and some server configuration. 
 
