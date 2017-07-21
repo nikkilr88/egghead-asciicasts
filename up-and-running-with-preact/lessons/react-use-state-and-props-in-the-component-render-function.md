@@ -2,7 +2,7 @@ In this example, we're rendering a user card that is based on some data that we 
 
 When the component is mounted in the page, we use `fetch` to get the response from GitHub, pass it as `json`, and then we `setState` on this component, and then we render the user card once the data arrives, or a please wait sign if we're still in a loading state. Now what you'll notice here is there are quite a few references to `this.state`.
 
-This is something that preact can actually help us out with. Unlike React, in preact, we actually get to use two arguments from the render method, we have `props` and `state`. These are just provided as a convenience to you.
+This is something that preact can actually help us out with. Unlike React, in preact, we actually get to use two arguments from the `render` method, we have `props` and `state`. These are just provided as a convenience to you.
 
 ####App.js
 ```javascript
@@ -21,7 +21,7 @@ render(props, state) {
 }
 ```
 
-We can remove this.state to make it a little bit shorter, 
+We can remove `this.state` to make it a little bit shorter, 
 
 ```javascript
 render(props, state) {
@@ -37,7 +37,7 @@ render(props, state) {
 }
 ```
 
-we can even go one step further and use destructuring here to pull off just the properties of the local state that you're interested in. In our case, we just want loading and user. We can say loading and user.
+we can even go one step further and use destructuring here to pull off just the properties of the local state that you're interested in. In our case, we just want `loading` and `user`. We can say loading and user.
 
 ```javascript
 render(props, {loading, user}) {
@@ -71,11 +71,11 @@ render(props, {loading, user}) {
 
 hit save, and you can see it's still working as it did before. 
 
-![The Result](../images/react-define-functional-components-in-preact.png)
+![The Result](../images/react-define-functional-components-in-preact-the-result.png)
 
 Now the same thing applies for props too, so let's change this `Please wait...` text here to actually display the URL that we're currently fetching.
 
-If we look back in the index file, we actually pass through this config, urls, user, that means on the props we can get config, and then we can say `fetching` `config.urls.user`, 
+If we look back in the `index.js` file, we actually pass through this `config`, `.urls`, `user`, that means on the props we can get config, and then we can say `fetching` `config.urls.user`, 
 
 ```javascript
 render({config}, {loading, user}) {
@@ -109,4 +109,4 @@ componentDidMount() {
 
 and there you see the loading message for two seconds followed by the user card.
 
-![Fetching](../images/fetching-react-define-functional-components-in-preact.png)
+![Fetching](../images/react-define-functional-components-in-preact-fetching.png)

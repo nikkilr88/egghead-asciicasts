@@ -1,4 +1,4 @@
-We have this small application here which when provided a user name will access the GitHub API and display this user card. Inside this profile component, we're using some internal state and we're making the API call inside one of the lifecycle hooks.
+We have this small application here which when provided a user name will access the GitHub API and display this user card. Inside this `Profile` component, we're using some internal state and we're making the API call inside one of the lifecycle hooks.
 
 As a demonstration of how to use `Redux` with `Preact`, we'll refactor this to no longer use internal state and we'll also remove this fetch call from here, and we'll be able to place this in a separate file.
 
@@ -47,7 +47,7 @@ export default function (state,action) {
 }
 ```
 
-In the case that the user is fetched correctly, we'll say that this is fulfilled, we'll set the user equal to the action.payload, and loading will be false. The default case will be to return the state.
+In the case that the user is fetched correctly, we'll say that this is fulfilled, we'll set the user equal to the `action.payload`, and `loading` will be `false`. The `default` case will be to return the state.
 
 ```javascript
 export default function (state,action) {
@@ -68,7 +68,7 @@ export default function (state,action) {
 }
 ```
 
-Now, we have our reducer, so we can go ahead and create the store. We'll say `const store = createStore`. We'll pass in the `reducer` we just created. Our initial state will be `loading: true`, and `user: null`. There's a third argument we'll call `applyMiddleware` from `redux`, and we'll pass in `thunk`.
+Now, we have our reducer, so we can go ahead and create the `store`. We'll say `const store = createStore`. We'll pass in the `reducer` we just created. Our initial state will be `loading: true`, and `user: null`. There's a third argument we'll call `applyMiddleware` from `redux`, and we'll pass in `thunk`.
 
 ####index.js
 ```javascript
@@ -81,7 +81,7 @@ const store = createStore(reducer, {
 ...
 ```
 
-This will allow us to do some asynchronous things later on. OK, we have the `store`, and we'll just move `import app` below `import reducer`. Now we'll change the `render` method and wrap our `app` inside a `div`. Then we'll use the `provider` component from `preact-redux`, we'll pass the `store` as a `prop`.
+This will allow us to do some asynchronous things later on. OK, we have the `store`, and we'll just move `import app` below `import reducer`. Now we'll change the `render` method and wrap our `app` inside a `<div>`. Then we'll use the `Provider` component from `preact-redux`, we'll pass the `store` as a `prop`.
 
 ```html
 ...
@@ -94,15 +94,15 @@ render((
 ), document.querySelector('main'));
 ```
 
-Now any component rendered within this component will have access to the store should they request it. We hit save now, we should see everything still working.
+Now any component rendered within this component will have access to the `store` should they request it. We hit save now, we should see everything still working.
 
-![Still working](../images/react-define-functional-components-in-preact.png)
+![Still working](../images/react-define-functional-components-in-preact-the-result.png)
 
-Now we can go ahead and update the profile component to use the store.
+Now we can go ahead and update the `Profile` component to use the store.
 
 The first thing we can do is remove this `constructor` in `Profile.js` now, because it won't be needed at all. Next, this section, all of `fetch`, can be extracted into a separate function. Let's create a file called `actions.js` and we'll just `export` a `function` called `fetchUser`.
 
-This will receive the `username`, and then it will `return` a `function`, and thanks to the Redux-thunk middleware, we'll have access to the `dispatch` function in here.
+This will receive the `username`, and then it will `return` a `function`, and thanks to the `redux-thunk` middleware, we'll have access to the `dispatch` function in here.
 
 ####actiion.js
 ```javascript
@@ -128,7 +128,7 @@ export function fetchUser (username) {
 }
 ```
 
-Just before this Ajax call happens, we'll dispatch the action userFetch. That will allow our user interface to update to a loading state.
+Just before this Ajax call happens, we'll dispatch the action `userFetch`. That will allow our user interface to update to a loading state.
 
 ```javascript
 export function fetchUser (username {
@@ -205,6 +205,6 @@ render({loading,user})
 
 hit save, and we can see it's working again. 
 
-![Still working](../images/react-define-functional-components-in-preact.png)
+![Still working](../images/react-define-functional-components-in-preact-the-result.png)
 
-As you can see, everything about Redux works just as you'd expect to with preact. The only real difference is you need to bring in the preact-redux library, rather than react-redux.
+As you can see, everything about Redux works just as you'd expect to with preact. The only real difference is you need to bring in the `preact-redux` library, rather than `react-redux`.

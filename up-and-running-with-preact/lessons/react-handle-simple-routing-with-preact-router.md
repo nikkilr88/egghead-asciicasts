@@ -1,4 +1,4 @@
-In this example we have an app component that renders a `div`, and inside that we have a `user` component that has a `name` and `image` property. Now let's add some routing to this application, so that a user can search for a GitHub user name.
+In this example we have an `App` component that renders a `div`, and inside that we have a `User` component that has a `name` and `image` property. Now let's add some routing to this application, so that a user can search for a GitHub user name.
 
 ####App.js
 ```html
@@ -24,7 +24,7 @@ If we type shakyShane, for example, which is mine, then we want to navigate to t
 $ yarn add preact-router
 ```
 
-Then we'll import it, we just need the `router` here from `preact-router`. We no longer need this `user` component here. Then we'll add the `router`. We can start adding the components that we want to match for a certain path. When we hit the home page like this, we'll have a `home` component, we'll say that just matches `path="/"`. 
+Then we'll `import` it, we just need the `router` here from `preact-router`. We no longer need this `User` component here. Then we'll add the `router`. We can start adding the components that we want to match for a certain path. When we hit the home page like this, we'll have a `Home` component, we'll say that just matches `path="/"`. 
 
 ####App.js
 ```html
@@ -57,7 +57,7 @@ export default function Home() {
 }
 ```
 
-We'll use a `section` tag as a wrapper for the rest of our elements, then we'll have a title saying `Enter a GitHub User Name`. Then we'll create an `input` with a `type` of `search`, this will allow this `input` to act much like a form.
+We'll use a `<section>` tag as a wrapper for the rest of our elements, then we'll have a title saying `Enter a GitHub User Name`. Then we'll create an `input` with a `type` of `search`, this will allow this `input` to act much like a form.
 
 ```html
 import { h } from 'preact';
@@ -86,7 +86,7 @@ Give it a `placeholder`, and then we'll say `onSearch`, we'll grab hold of the e
 ...
 ```
 
-Now let's close that input, and now let's get this rendering to the screen. Back in our app file, where we have the `home` component here, we can import this now, so `import Home from ./Home`. 
+Now let's close that `<input>`, and now let's get this rendering to the screen. Back in our app file, where we have the `home` component here, we can `import` this now, so `import Home from ./Home`. 
 
 ####App.js
 ```javascript
@@ -95,16 +95,16 @@ import Home from './Home';
 
 If we hit save, you can see we now have the input field on the screen. 
 
-![Input Field](../images/inputfield-react-handle-simple-routing-with-preact-router.png)
+![Input Field](../images/react-handle-simple-routing-with-preact-router-inputfield.png)
 
-Now back to that search method. From `preact-router`, we have a function called `route`, which is how we can navigate around our application. We'll import that from `preact-router`. 
+Now back to that search method. From `preact-router`, we have a function called `route`, which is how we can navigate around our application. We'll `import` that from `preact-router`. 
 
 ####Home.js
 ```javascript
 import { Route } from 'preact-router';
 ```
 
-Then we'll create a `function` here called `search`. This will get the `query`, and then we can just call `route`, pass in `/profile`, this is a path in a component that we haven't written yet, but we'll get to that. Then we'll encode the query so that's a valid URL.
+Then we'll create a `function` here called `search`. This will get the `query`, and then we can just call `route`, pass in `/profile`, this is a path in a component that we haven't written yet, but we'll get to that. Then we'll encode the `query` so that's a valid URL.
 
 ```javascript
 function search(query) {
@@ -112,9 +112,9 @@ function search(query) {
 }
 ```
 
-At this point, if I type in the input shakyShane, hit enter, we're not going to get anything, because we haven't implemented the profile route yet, so let's go and do that. 
+At this point, if I type in the `<input>` shakyShane, hit enter, we're not going to get anything, because we haven't implemented the profile route yet, so let's go and do that. 
 
-Back in the App we'll add another component here called `Profile`. This will match the path `profile/:user`. With this, we're instructing the router to match paths that begin with profile, then have a slash, and the next segment in the URL we've chosen to name it user here. This means that inside the profile component, we'll get a property called user, and it will be equal to whatever the string is here.
+Back in the `App` we'll add another component here called `Profile`. This will match the path `profile/:user`. With this, we're instructing the router to match paths that begin with profile, then have a slash, and the next segment in the URL we've chosen to name it user here. This means that inside the profile component, we'll get a property called user, and it will be equal to whatever the string is here.
 
 ####App.js
 ```html
@@ -126,9 +126,9 @@ Back in the App we'll add another component here called `Profile`. This will mat
 ...
 ```
 
-If we type profile/hello in the search bar, inside the profile component now, we'll have props.user available to us, and it will be set to the string hello. This is how we'll build the profile page, because we'll use this string to query GitHub's API and then display the results. Now let's build this profile component.
+If we type profile/hello in the search bar, inside the profile component now, we'll have `props.user` available to us, and it will be set to the string `"hello"`. This is how we'll build the profile page, because we'll use this string to query GitHub's API and then display the results. Now let's build this profile component.
 
-We'll create a new file called `Profile.js`, and I've prepared a file in advance here. We import `h` and `component` from preact as we do with all component, and we use the `user` component that we saw at the beginning of the lesson, which is just that user card that has image and name properties.
+We'll create a new file called `Profile.js`, and I've prepared a file in advance here. We import `h` and `component` from preact as we do with all component, and we use the `User` component that we saw at the beginning of the lesson, which is just that user card that has `image` and `name` properties.
 
 ####Profile.js
 ```javascript
@@ -177,7 +177,7 @@ Then we use the `componentDidMount` lifecycle event as the trigger for our API c
 
 This is the part that's been set by preact's router, and we take the response, convert it to JSON, and if it's successful, we set the `user` on the state, and we set `loading` to `false`. In the `render` method, we're just extracting `loading` and `user` directly from the state, and then we're either showing a loading indicator, or that user card.
 
-Now back in the App file, we can import the `Profile` component, 
+Now back in the `App.js` file, we can import the `Profile` component, 
 
 ####App.js
 ```javascript
@@ -217,4 +217,4 @@ export default function Error() {
 }
 ```
 
-Now if we go to a URL that's not matched by the router, it will show this error component, and give us a link to go back home. If we click this, you can see we navigate correctly.
+Now if we go to a URL that's not matched by the router, it will show this `error` component, and give us a link to go back home. If we click this, you can see we navigate correctly.

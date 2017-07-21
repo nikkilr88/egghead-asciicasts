@@ -91,9 +91,9 @@ If we say `nodemodules.bin/webpack`, we can see that `bundle.js` was created fro
 ```
 Next, we move on to the transformations. Here, we need to configure babel. Under the `module` key, we provide `rules` and then an object with the configuration for our loader.
 
-For test, we'll give a regular expression that will match any file ending in .js or .jsx. This is how webpack knows which files to process with this loader.
+For `test`, we'll give a regular expression that will match any file ending in `.js` or `.jsx`. This is how webpack knows which files to process with this loader.
 
-Next, we actually just give the name of the loader under the `loader` key, and then we need to provide some options to it. We're using the env loader which will automatically give us the latest JavaScript features by default. Then, we added one additional plugin for transforming JSX.
+Next, we actually just give the name of the loader under the `loader` key, and then we need to provide some options to it. We're using the `env` loader which will automatically give us the latest JavaScript features by default. Then, we added one additional plugin for transforming JSX.
 
 We pass the name of it here, along with any options that are specific to this plugin. This is the preact-specific part, because all of this configuration here would be pretty much the same across any project that uses babel.
 
@@ -149,7 +149,7 @@ That's what we are configuring here.
 ['transform-react-jsx', { pragma: 'h' }]
 ```
 
-Next, to configure `source maps`, we just use `devtool` and `source-map`, and finally for the server, we use the `devServer` key, a `contentBase` is the `src` directory where our `index.js` lives.
+Next, to configure source maps, we just use `devtool` and `source-map`, and finally for the server, we use the `devServer` key, a `contentBase` is the `src` directory where our `index.js` lives.
 
 We say `compress: true` to enable gzip compression, and `historyApiFallback: true`. 
 
@@ -163,7 +163,7 @@ We say `compress: true` to enable gzip compression, and `historyApiFallback: tru
 
 This will allow us to do some routing later on. 
 
-Now, let's fire up the dev server to make sure everything's working. We'll add a script to our `package.json` file, we'll use `start`, and then we'll say `webpack-dev-server inline`. This will stop webpack from serving the application in 
+Now, let's fire up the dev server to make sure everything's working. We'll add a script to our `package.json` file, we'll use `"start"`, and then we'll say `webpack-dev-server --inline`. This will stop webpack from serving the application in 
 an iframe.
 
 ####package.json
@@ -173,7 +173,7 @@ an iframe.
 }
 ```
 
-Next in the `src` directory, we'll need an HTML file, we'll call it `index.html`, insert some `boilerplate`, a script tag that points to `bundle.js`, 
+Next in the `src` directory, we'll need an HTML file, we'll call it `index.html`, insert some boilerplate, a script tag that points to `bundle.js`, 
 
 ####index.html
 ```html

@@ -27,7 +27,7 @@ Everything else about this user information here can be considered to be static 
 </div>
 ```
 
-and we'll create a new file called `User.js`. We'll import 'h' from preact as we do on any file that contains JSX, and then we can export function called `User`. This will return the JSX we copied from the other file. Then we'll also export as the default. 
+and we'll create a new file called `User.js`. We'll `import` 'h' from preact as we do on any file that contains JSX, and then we can `export` function called `User`. This will return the JSX we copied from the other file. Then we'll also `export` as the `default`. 
 
 ####User.js
 ```html
@@ -59,11 +59,11 @@ Now back in our app file, we can remove this,
 </div>
 ```
 
-completely, and use the user component. We need to import `User`, and when we save, you can see that we still get the same result.
+completely, and use the user component. We need to `import` `User`, and when we save, you can see that we still get the same result.
 
-![The Result](../images/react-define-functional-components-in-preact.png)
+![The Result](../images/react-define-functional-components-in-preact-the-result.png)
 
-Now, let's tackle those two pieces of potentially dynamic data, the image source and the user name. If we go back to the user component, where we were providing a hard-coded string here, 
+Now, let's tackle those two pieces of potentially dynamic data, the image source and the user name. If we go back to the `User` component, where we were providing a hard-coded string here, 
 
 ###User.js
 ```html
@@ -76,7 +76,7 @@ we can remove this url including the double quotes, and we can instead provide a
 <img src={} />
 ```
 
-Functional components receive props argument, and then we can decide what we want to call this field. Perhaps we'll say `props.image`. We can do the same thing for the name, so get rid of this text, two curlies, and that's a `props.name`.
+Functional components receive `props` argument, and then we can decide what we want to call this field. Perhaps we'll say `props.image`. We can do the same thing for the name, so get rid of this text, two curlies, and that's a `props.name`.
 
 ```html
 <img src={props.image} />
@@ -86,7 +86,7 @@ Functional components receive props argument, and then we can decide what we wan
 <p class="user__name"> {props.name}</p>
 ```
 
-OK, so now we have a user component that accepts some properties and returns some JSX. This is why we call it a functional component, it doesn't maintain any internal state, it just takes props in and gives JSX back.
+OK, so now we have a `User` component that accepts some properties and returns some JSX. This is why we call it a functional component, it doesn't maintain any internal state, it just takes `props` in and gives JSX back.
 
 Now we need to actually pass these properties in when we use this component. Back in the app file, you pass them in like any other HTML attribute. We can say `image` is equal to, paste that image in there, and `name` is equal to `James Osborne`. 
 
@@ -98,9 +98,9 @@ Now we need to actually pass these properties in when we use this component. Bac
 
 Let's break this onto multiple lines, and as you can see, we now have the same results.
 
-Now we have this reusable user component that encapsulates everything it needs to do with styling, or class names, or how it uses data, all within its own component and it allows similar components pass in this data. The benefits of splitting your code up into functional components like this becomes really clear when you need to reuse them.
+Now we have this reusable `User` component that encapsulates everything it needs to do with styling, or class names, or how it uses data, all within its own component and it allows similar components pass in this data. The benefits of splitting your code up into functional components like this becomes really clear when you need to reuse them.
 
-Let's say we wanted to add a second user, then we can just change the image source and the name, 
+Let's say we wanted to add a second user, then we can just change the `image` source and the `name`, 
 
 ```html
 <User image="https://avatars0.githubusercontent.com/u/1643522?v=3",
@@ -111,9 +111,9 @@ Let's say we wanted to add a second user, then we can just change the image sour
 
 and there you see we've managed to reuse all of the code inside this component and just provide the dynamic parts when we actually call it.
 
-![The Result with Two Users](../images/two-users-react-define-functional-components-in-preact.png)
+![The Result with Two Users](../images/react-define-functional-components-in-preact-two-users.png)
 
-In reality you probably won't be hard-coding these strings anyway, but rather you'll have some sort of data source that has these values in it. Let's say we have this array of users where I've just extracted the image and the name from each of these. 
+In reality you probably won't be hard-coding these strings anyway, but rather you'll have some sort of data source that has these values in it. Let's say we have this array of `users` where I've just extracted the `image` and the `name` from each of these. 
 
 ```javascript
 const users = [
@@ -128,9 +128,9 @@ const users = [
 ]
 ```
 
-Now we want to provide a user component for each user. The way we do that is that we map over that data.
+Now we want to provide a user component for each user. The way we do that is that we `.map` over that data.
 
-We could say `users.map` and we'll have access to each user, and we can return from this that user component then if the property names of your data match up with the properties inside this component, you could just spread the `user` into the component and then add a `key`. We'll use the `user.name`, save that, 
+We could say `users.map` and we'll have access to each user, and we can return from this that `User` component then if the property names of your data match up with the properties inside this component, you could just spread the `user` into the component and then add a `key`. We'll use the `user.name`, save that, 
 
 ```html
 export function App() {
@@ -144,7 +144,7 @@ export function App() {
 
 and we get the same result.
 
-![The Result](../images/two-users-react-define-functional-components-in-preact.png)
+![The Result](../images/react-define-functional-components-in-preact-the-result.png)
 
 Now no matter how many items we had in this array, everything will still work. Just for clarity, this here,
 
@@ -154,7 +154,7 @@ Now no matter how many items we had in this array, everything will still work. J
 ...
 ```	
 
-is exactly the same as providing user.image there and name = user.name.
+is exactly the same as providing `user.image` there and `name = {user.name}`.
 
 ```html
 ...
@@ -162,4 +162,4 @@ is exactly the same as providing user.image there and name = user.name.
 ...
 ```
 
-Finally, we use this key attribute which is something that preact uses internally to keep track of the elements that it's rendering, so we can just set it to something that's unique to this user object.
+Finally, we use this `key` attribute which is something that preact uses internally to keep track of the elements that it's rendering, so we can just set it to something that's unique to this `user` object.

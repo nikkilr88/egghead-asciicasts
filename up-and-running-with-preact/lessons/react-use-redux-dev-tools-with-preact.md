@@ -2,7 +2,7 @@ We have this application where on page load, it looks at this part of the URL, c
 
 We are using Redux inside this preact app, so let's add support for Redux dev tools.
 
-First, we'll need to import `compose-function` from Redux. To make this more readable, we'll move this object, 
+First, we'll need to `import` `compose-function` from Redux. To make this more readable, we'll move this object, 
 
 ####index.js
 ```javascript
@@ -26,12 +26,12 @@ const store = createStore(reuder, initialState, applyMiddleware(thunk));
 ...
 ```
 
-Now we'll go to the GitHub page of the Redux dev tools extension, and we'll scroll down to the advanced section. We'll copy this piece of code here that is highlighted. 
+Now we'll go to the GitHub page of the [Redux dev tools extension](https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup), and we'll scroll down to the advanced section. We'll copy this piece of code here that is highlighted. 
 
 ![Advanced section code](../images/advanced-code-react-use-redux-dev-tools-with-preact.png)
 
 
-We need this advanced way of configuring it, because we're using middlewares in our Redux store. Paste that in here, and instead of calling applyMiddleware directly here, we'll wrap it in compose enhancers.
+We need this advanced way of configuring it, because we're using middlewares in our Redux store. Paste that in here, and instead of calling `applyMiddleware` directly here, we'll wrap it in compose enhancers.
 
 ```javascript
 ... 
@@ -50,7 +50,7 @@ const store = createStore(reuder, initialState, comopseEnhancers(applyMiddleware
 
 If we save that, go back to the browser, reload the page, you can see that we've got the Redux dev tools experience, where all actions are logged as well as changes to the state tree, and the diff in between changes. 
 
-![Redux Dev Tools](../images/redux-dev-tools-react-use-redux-dev-tools-with-preact.png)
+![Redux Dev Tools](../images/react-use-redux-dev-tools-with-preact-redux-dev-tools.png)
 
 That's it, there's nothing else special you need.
 
