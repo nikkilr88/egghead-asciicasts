@@ -1,0 +1,17 @@
+The first thing we need to do is require the http module, and next we're going to create a server object and we'll create that using the http.createServer method. We're going to provide a callback to that that has two paramaters, a request and a response. We can demonstrate how this works right away by just writing out response.end and pass in the string, "Hello, World!" The only other thing we need to do to make this functional, is specify the port that we're going to listen on. We're going to specify port 3000.
+
+Server.listen also accepts an optional hostname parameter where we can provide the IP address that we want the server to listen on. If you don't provide the hostname parameter it listens on all IP addresses that are assigned to this server. Additionally, you can provide a path to a file on the server, and that will cause node to listen on a UNIX socket rather than on a TCP socket.
+
+We're just going to have it listen on port 3000, and we can go ahead and start up our server, and then when we browser to localhost on port 3000, we see that it returns, "Hello, World!" just like we wanted it to in our response.end statement. We can use response.writeHead to provide a status code and some optional headers.
+
+Since this is a valid request for us, we want to return the status code of 200, this is the place also where if you are issuing a redirect to specify 302, or if you want to return that page was not found, you could specify 404 here as well. So we'll put in our 200, and then we're going to provide content type of text/plain. So when we restart our server and refresh our page, nothing actually changes and that's OK.
+
+But to demonstrate how the content-type works, if we include some strong tags here when we restart, we see that the strong tags are actually written out as text. So if we change our content-type from text/plain to HTML, when we refresh the page the word world is actually written out using a bold font because of the strong tag. Our request object has a URL property that we can use to check which URL the client has requested.
+
+So that the client is requesting the root URL, we're going to return "Hello, World!" But if they request goodbye, we want to return "Goodbye, World!" So when we browse to our application again, the root returns "Hello, World!" And when we specify the goodbye route, it returns "Goodbye, World!" Our request object also has a method parameter, so we can test to see what http method the client has requested.
+
+So if they issue a get request we want to return "Goodbye, World!" but if they issue a post, we want to return the phrase, "Posting, goodbye cruel world!" So we can restart our node application again, browsing to the root we get "Hello, World!" When we browse to goodbye, we get "Goodbye, World!"
+
+We can use the WebStorm REST client to test our post call, so we'll provide our server address here, and the path of goodbye, and when we specify post as our http method and run that, we get our string, "Posting, goodbye cruel world!" Just as we expected. Now this is completely functional, but you can imagine for a large site with a lot of content and a lot of routes, that this is going to become a lot to manage really quickly.
+
+That's where packages like Express.js or Happy.js come into aid you, because they're going to abstract a lot of the details of managing these routes away from you, which allows you to focus on writing code that delivers value to your business rather than writing boilerplate code.
