@@ -1,0 +1,7 @@
+Now that we've extracted out our types of hour and second, the next thing I want to work on are these hard coded plus ones, which I want to extract so that I can pass them in and change that if I want.
+I'm going to move this plus one up into this object that comes in and call it "payload." Instead of plus one, I'll say payload, and same thing here, I'll say payload.
+Now in my app, I need to pass a payload along, so we'll start by hard coding it. We'll hard code that to just one. Now when I refresh, we'll have this same behavior of it incrementing by one second, and when I click, it's incrementing by the hour.
+What I want to do is move this one up even further into here where I map to something that has a one. Instead of mapping to just hour, I'm going to map to an object, where the type is hour, and the payload is one. Then here I'm going to map to an object where the type is second and the payload is one.
+That way, this object that comes through, instead of just being a type, I'm going to call it an "action." I can delete this entire object there, and we'll just call that the action. That way, we've extracted everything that came through before, and it's being passed as an object with both the type and payload and a type and a payload.
+Now when I refresh, you can see I'll have the same exact behavior, one second and one hour. I could also change it so that when I click, I would update by four hours and every second it would update by three seconds.
+That's now configurable, so whenever I refresh, you can see three seconds, three seconds, four hours.
