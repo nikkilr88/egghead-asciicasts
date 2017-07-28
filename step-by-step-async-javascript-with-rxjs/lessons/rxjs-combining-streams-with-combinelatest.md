@@ -24,6 +24,8 @@ As soon as I type something, I'll type the letter A, you'll see that we get A as
 
 If I type B, you'll see we'll now have that same `.startWith()` object, and then A, B. If I begin a `timer$` you'll see that we now get A, B, and a continuous stream of objects. I'll type C. You see we get A, B, C. All of these will have the counts on them. Count 8, between 9, 10, 11, 12. I can add a D. We're getting both of these combined into an array.
 
+
+#### Console Output
 ```
 [Object, "abcd"]
 ```
@@ -43,7 +45,7 @@ Because this mapping is such a common thing to do when combining two streams, yo
 ```javascript
 Observable.combineLatest(
 	timer$, 
-	input$
+	input$,
 	(array)=> ({count: array[0].count, text: array[1]})
 )
 	.subscribe((x)=> console.log(x)); 
@@ -54,7 +56,7 @@ The data in here does not come in as an array, it actually comes in as two param
 ```javascript
 Observable.combineLatest(
 	timer$, 
-	input$
+	input$,
 	(timer, input)=> ({count: timer.count, text: input})
 )
 	.subscribe((x)=> console.log(x)); 

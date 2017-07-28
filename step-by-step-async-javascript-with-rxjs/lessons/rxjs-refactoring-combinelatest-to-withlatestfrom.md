@@ -16,7 +16,7 @@ Observable.combineLatest(
 	);
 ```
 
-One way to think about the solution is to use `.combineLatest()` from the instance of the `timer$` instead of creating a new `Observable` from it. If I place that there and remove the unnecessary comma, we're now seeing combine this `timer$`. We'll move do to a next line and we'll move `.combineLatest()` and we'll indent everything else.
+One way to think about the solution is to use `.combineLatest()` from the instance of the `timer$` instead of creating a new `Observable` from it. If I place that there and remove the unnecessary comma, we're now seeing combine this `timer$`. We'll move to the next line, move `.combineLatest()`, and we'll indent everything else.
 
 ```javascript
 timer$

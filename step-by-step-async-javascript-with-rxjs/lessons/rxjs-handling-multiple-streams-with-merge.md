@@ -7,7 +7,7 @@ const resetButton = document.querySelector('#reset');
 const reset$ = Observable.fromEvent(resetButton, 'click');
 ```
 
-The way to think about this is when my interval fires, I want it to pass this increment function, but when my `reset` fires, I want it to pass the `reset` function. in Rxjs if you wanted to do one thing or another thing, you should think `Observable.merge()`.
+The way to think about this is when my interval fires, I want it to pass this increment function, but when my `reset` fires, I want it to pass the `reset` function. In Rxjs if you wanted to do one thing or another thing, you should think `Observable.merge()`.
 
 ```javascript
 start$
@@ -87,4 +87,4 @@ start$
 
 Then when I click start, it's going to switch over to `incOrReset$`. `incOrReset$` is either going to push out every single second from my interval stream or when I click the `resetButton`. What they're going to push through into the scan operator are functions.
 
-Either an increment function which takes an accumulator, this accumulator, and then increases the count by one or a `reset` function which simply resets it back to the original data. Then in my scan operator, it's going to take that function and call it on the current state or the current accumulator of our stream.
+Either an increment function which takes an accumulator, this accumulator, and then increases the `count` by one or a `reset` function which simply resets it back to the original data. Then in my scan operator, it's going to take that function and call it on the current state or the current accumulator of our stream.

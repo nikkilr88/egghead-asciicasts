@@ -7,7 +7,7 @@ timer$
 	.do((x)=> console.log(x))
 	.takeWhile((data)=> data.count <= 3)
 	.withLatestFrom(
-		intput$.do((x)=> console.log(x)),
+		input$.do((x)=> console.log(x)),
 		(timer, input)=> ({count: timer.count, text: input})
 	)
 	.filter((data)=> data.count === parseInt(data.text))

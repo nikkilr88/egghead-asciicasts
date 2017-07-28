@@ -23,7 +23,7 @@ start$
 	.subscribe((x)=> console.log(x));
 ```
 
-When this function is called, I get this `acc` as this first argument. We'll just go ahead and return a new object with a property called "`count`," which is `acc.count + 1`. For something more advanced, you'll probably use object assign, but we just have one property for now.
+When this function is called, I get this `acc` as this first argument. We'll just go ahead and return a new object with a property called "`count`," which is `acc.count + 1`. For something more advanced, you'll probably use object assign, [which you can learn more about here](https://egghead.io/lessons/javascript-combine-objects-with-object-assign-and-lodash-merge), but we just have one property for now.
 
 ```javascript
 start$
