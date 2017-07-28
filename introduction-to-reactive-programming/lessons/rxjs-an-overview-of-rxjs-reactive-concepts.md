@@ -1,6 +1,6 @@
 Let's zoom out a bit and see what we accomplished. The first thing that you notice from this code, it basically only has `var` declarations and `function` definitions. It's a fully declarative code.
 
-Apart from, of course, the subscribes here at the bottom. These look somewhat familiar. They are not that much different from document.addEventListener. Giving a custom event such as `'suggestion1'`, and a call back. This
+Apart from, of course, the subscribes here at the bottom. These look somewhat familiar. They are not that much different from document.addEventListener. Giving a custom event such as `'suggestion1'`, and a call back. This:
 
 ```javascript
 document.addEventListener('suggestion1', user =>{

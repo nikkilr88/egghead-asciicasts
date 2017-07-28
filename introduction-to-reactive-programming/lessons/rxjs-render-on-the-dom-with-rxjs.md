@@ -50,7 +50,7 @@ var suggestion2Stream = createSuggestionStream(responseStream);
 var suggestion3Stream = createSuggestionStream(responseStream);
 ```	
 
-Now that we have the streams, they don't do anything by themselves. That's the idea of event streams. You need to always add an event listener or `subscribe` to them and then you have your user. Inside here, we finally have one single user, not an array. We need to render that to the DOM here.
+Now that we have the streams, they don't do anything by themselves. That's the idea of event streams. You need to always add an event listener or `subscribe` to them and then you have your `user`. Inside here, we finally have one single `user`, not an array. We need to render that to the DOM here.
 
 ```javascript
 suggestion1Stream.subsribe(user => {

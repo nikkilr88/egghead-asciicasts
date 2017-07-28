@@ -100,7 +100,7 @@ function createSuggestionStream(responseStream, closeClickStream) {
 }
 ```
 
-But, here we have a problem, right? We don't have a list of users available in the scope. Why? Because it's sort of trapped inside of the `responseStream`. I mean, the `responseStream` emits these Rs. These Rs are exactly what I mean with this list of users. So, passing in `R` is the same as saying `listUsers`. 
+But, here we have a problem, right? We don't have a list of users available in the scope. Why? Because it's sort of trapped inside of the `responseStream`. I mean, the `responseStream` emits these `R`s. These `R`s are exactly what I mean with this list of users. So, passing in `R` is the same as saying `listUsers`. 
 
 This is the `listUsers`, and it's sort of trapped inside the `responseStream`. We want to get that. How do we do that? Well, what if we had an operator that would be called, `mapButPleaseAlsoUseTheLatestValueFromThatStream`? You give that here, which would be in our case the `responseStream`.
 
@@ -109,7 +109,7 @@ Now, that's a really long name for an operator. People have made a nice name for
 ```javascript
 function createSuggestionStream(responseStream, closeClickStream) {
 	closeClickStream.withLatestFrom(responseStream,
-									(ev, listUsers) => getRandomUser(listUsers))
+		(ev, listUsers) => getRandomUser(listUsers))
 
   	return responseStream.map(getRandomUser)
 		.startWith(null)

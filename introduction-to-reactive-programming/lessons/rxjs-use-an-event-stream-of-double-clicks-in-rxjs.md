@@ -14,7 +14,9 @@ var counter = 0;
 
 button.addEventListener()
 
-setTimeout(() );
+setTimeout(() ); 
+
+// This code is immediately deleted
 ```
 
 It wouldn't take three lines of code in this approach. It would take a bit more than that. Let's see the event stream approach instead, which is reactive programming. Say we somehow are 	able to get the event stream of single clicks by just giving the DOM element and the event type. We just `'click'`, and this will create for us that event stream based on the DOM `addEventListener()`.

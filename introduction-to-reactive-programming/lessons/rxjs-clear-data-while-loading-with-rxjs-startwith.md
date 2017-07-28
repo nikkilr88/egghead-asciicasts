@@ -41,7 +41,7 @@ renderSuggestion(null, '.suggestion3');
 
 There will be no flash of placeholders, but not so fast. I know this would actually solve the problem, but let's reflect for a moment. Why is this a bad idea?
 
-The element over here is a dynamic value changing over time. In lesson number three we learned that in reactive programming we should specify the dynamic behavior of this value completely at the time of declaration.
+The suggested users element over here is a dynamic value changing over time. In lesson number three we learned that in reactive programming we should specify the dynamic behavior of this value completely at the time of declaration.
 
 Where was this declared? Well, if you think of the data that is behind this thing, this was declared here in `suggestion1Stream`. Where was it actually defined? Was inside this `createSuggestionStream`, if you look at this, you cannot see that at startup it is empty.
 

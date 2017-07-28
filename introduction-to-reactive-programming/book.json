@@ -1,5 +1,5 @@
 {
     "title": "Introduction to Reactive Programming",
-    "description": "This book covers the [Deploy Web Apps with Zeit NowIntroduction to Reactive Programming](https://egghead.io/courses/introduction-to-reactive-programming) transcripts and enhances them to become Asciicasts",
+    "description": "This book covers the [Introduction to Reactive Programming](https://egghead.io/courses/introduction-to-reactive-programming) transcripts and enhances them to become Asciicasts",
     "plugins": ["prism", "-highlight", "hints"]
 }

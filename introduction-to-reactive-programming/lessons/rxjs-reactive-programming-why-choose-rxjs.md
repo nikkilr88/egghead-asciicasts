@@ -14,10 +14,10 @@ Let's see the opposite example of this. Let's say you have a `var a`, which has 
 var a = 3;
 var b = 10 * a;
 
-console.log(b);
+console.log(b); // 30
 ```
 
-Let's say we change `a` to be 4. If we `console.log()` `b`, `b` is still 30. It didn't catch up with this new value of 4, because it's statically declared as `10 * a` at the time that this line passed through the flow of control. What we need to do is actually, again, set `b` to that formula. Now, when we `console.log()` `b`, we see 44. But, if you noticed, I made a type here. Instead of 10, I wrote 11.
+Let's say we change `a` to be 4. If we `console.log()` `b`, `b` is still 30. It didn't catch up with this new value of 4, because it's statically declared as `10 * a` at the time that this line passed through the flow of control. What we need to do is actually, again, set `b` to that formula. Now, when we `console.log(b)`, we see 44. But, if you noticed, I made a type here. Instead of 10, I wrote 11.
 
 ```javascript
 // it allows you to specify the dynamic behavior completely at the time of declaration
@@ -25,11 +25,11 @@ Let's say we change `a` to be 4. If we `console.log()` `b`, `b` is still 30. It 
 var a = 3;
 var b = 10 * a;
 
-console.log(b);
+console.log(b); // 30
 
 a = 4;
 b = 11 * a;
-console.log(b); 
+console.log(b);  // 44
 ```
 
 This means that `b`, even though it's a value evolving over time, it's not a constant. This declaration here does not specify the dynamic behavior of that value `b` at the time of declaration, because later I just say it's 11.
@@ -46,7 +46,7 @@ var streamB = streamA.map(a => 10 * a);
 If I add an event listener to that `streamB` and I `console.log()`, we will see `b` being 30.
 
 ```javascript
-streamB.subscribe(b => console.log(b));
+streamB.subscribe(b => console.log(b)); // 30
 ```
 
 But now I want to change the value of `streamA`. Here is where a lot of people get stuck, because they want to change `streamA`. So, they feel like doing this, `set` to 4, or something like this. But, this is not what we should do. Why?

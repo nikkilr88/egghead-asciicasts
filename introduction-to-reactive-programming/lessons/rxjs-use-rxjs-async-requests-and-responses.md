@@ -41,7 +41,7 @@ requestStream.subscribe(requestUrl => {
 });
 ```
 
-What we have here is a `responseStream` that will be created from that promise, and now we can `subsribe` to that `responseStream` and `console.log()` that.
+What we have here is a `responseStream` that will be created from that promise, and now we can `subscribe` to that `responseStream` and `console.log()` that.
 
 ```javascript
 requestStream.subscribe(requestUrl => {
@@ -57,7 +57,7 @@ If you look at this, it means that the `Observable` can do whatever the promise 
 
 Observables go beyond that. Of course, they can have just one event happening on them, but they can also have multiple. That's why observables are more powerful than promises because they can have multiple events. This is pretty nice, and it shows how observables are more powerful.
 
-We still have a problem with our example here, because we have a `subsribe` inside another `subsribe` and this reminds us of callback hell. We don't want to go to that direction, definitely. How can we solve this?
+We still have a problem with our example here, because we have a `subscribe` inside another `subscribe` and this reminds us of callback hell. We don't want to go to that direction, definitely. How can we solve this?
 
 We know that `Rx.Observable` has operators such as `.map` and things like that. What if we were to try mapping the request to the `response`? That makes some sense. Let's create a `responseStream` that will be the `requestStream` mapped. It means that we're mapping each of these `requestUrl` strings to...
 
@@ -89,7 +89,7 @@ What you get, as a result, is basically an `Observable` of observables and we ca
 
 What's `.flatMap` do? It basically flattens the meta stream that we got as output here, after it maps. That's basically what it does. In other words, it's emitting on the trunk stream everything that happens on these branch streams, and then it looks nice. `.flatMap` is kind of like `promise.then`. You can think of it as that.
 
-Now that we have this `responseStream` built from the `requestStream`, we can just `subsribe` to that `responseStream` and we can put it in the console. Now we have only one `subsribe`. We don't have that mess of a `subsribe` inside another `subsribe`. And, this works.
+Now that we have this `responseStream` built from the `requestStream`, we can just `subscribe` to that `responseStream` and we can put it in the console. Now we have only one `subscribe`. We don't have that mess of a `subscribe` inside another `subscribe`. And, this works.
 
 ```javascript
 responseStream.subscribe(response => {
