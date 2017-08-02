@@ -10,21 +10,21 @@ ships =
 ```
 a bunch of spaceship data, and instead of just spitting out raw text in the browser, I want to actually insert real HTML. Before we actually do that, though, we're going to have to adjust our imports.
 
-Right now, we're just importing the `text` function from `Html`. Delete `text`, and put in `(..)` instead so that we can import everything from `Html` into our modules namespace. Also, we're going to want to import `Html.Attributes` so that we have access to things like style, for example.
+Right now, we're just importing the `text` function from `Html`. Delete `text`, and put in `(..)` instead so that we can import everything from `Html` into our modules namespace. Also, we're going to want to import `Html.Attributes` so that we have access to things like `style`, for example.
 
 ```javascript
 import Html exposing (..)
 import Html.Attributes exposing (..)
 ```
 
-Back down to `renderShips`. This is going to take in a list of `ships`, and we're going to return a `div`. Div is a function that comes from the HTML library. It takes two arguments, which are two lists, `[] []`. The first is a list of HTML attributes, and the second is a list of other pieces of HTML.
+Back down to `renderShips`. This is going to take in a list of `ships`, and we're going to return a `div`. `div` is a function that comes from the `Html` library. It takes two arguments, which are two lists, `[] []`. The first is a list of HTML attributes, and the second is a list of other pieces of HTML.
 
 ```javascript
 renderShips ships =
     div [] []
 ```
 
-That is the pattern that the whole Elm HTML library uses, so it's good to learn. First thing we want to do is give this div an attribute of `style`, which takes a list of tuples. A tuple is expressed by these parentheses right here, and a comma inside the parentheses.
+That is the pattern that the whole Elm `Html` library uses, so it's good to learn. First thing we want to do is give this `div` an attribute of `style`, which takes a list of tuples. A tuple is expressed by these parentheses right here, and a comma inside the parentheses.
 
 ```javascript
 renderShips ships =
@@ -53,7 +53,7 @@ That value just comes with CSS, and it'll know to use my Apple system font. Let'
  []
 ```
 
-Now, let's add some HTML children. First thing I want to do is add an `h1`. It has no attributes, but it's going to have some children, which are `text "Ships"`. Remember, we've got to use the text function whenever we want to render a string.
+Now, let's add some HTML children. First thing I want to do is add an `h1`. It has no attributes, but it's going to have some children, which are `text "Ships"`. Remember, we've got to use the `text` function whenever we want to render a string.
 
 ```html
 ...
@@ -66,7 +66,7 @@ Now, let's add some HTML children. First thing I want to do is add an `h1`. It h
 ]
 ```
 
-In this case, we need to turn this string into a piece of HTML that we can pass as a child to H1. Next, let's drop in a `ul` with no attributes. For the children, instead of passing in a normal list, I'm going to call a new function by mapping over a list of data, `list.map`. Then we'll call a function, `renderShip`, which doesn't exist yet, and then, we'll pass in `ships` as the data.
+In this case, we need to turn this string into a piece of HTML that we can pass as a child to `h1`. Next, let's drop in a `ul` with no attributes. For the children, instead of passing in a normal list, I'm going to call a new function by mapping over a list of data, `list.map`. Then we'll call a function, `renderShip`, which doesn't exist yet, and then, we'll pass in `ships` as the data.
 
 ```html
 ...
@@ -76,7 +76,7 @@ In this case, we need to turn this string into a piece of HTML that we can pass 
 ]
 ```
 
-Above the renderShips function, let's make that new function, `renderShip`, which takes in a `ship`, and will return an `li` with no attributes. It does have some children. That first child is going to be `text ship.name`. Second child is going to be `text`, and then a `", "`. 
+Above the `renderShips` function, let's make that new function, `renderShip`, which takes in a `ship`, and will return an `li` with no attributes. It does have some children. That first child is going to be `text ship.name`. Second child is going to be `text`, and then a `", "`. 
 
 ```html
 renderShip ship = 
@@ -86,7 +86,7 @@ renderShip ship =
         ]
 ```
 
-Then, let's put it in bold, so we'll put in a `b` tag with no attributes, but some children. `text <| String`, since the cost of the `ship` is an `int`, `ship.cost`. 
+Then, let's put it in bold, so we'll put in a `b` tag with no attributes, but some children. `text <| toString`, since the cost of the `ship` is an `int`, `ship.cost`. 
 
 ```html
 renderShip ship = 

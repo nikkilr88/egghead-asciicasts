@@ -8,17 +8,19 @@ Question is how do I go about finding something like this? Let's just take a loo
 
 ![Searching for string](../images/elm-discover-new-packages-using-the-elm-package-index-search-STRING.png)
 
-It looks like it might have some functions around strings that we can go explore, see if somebody's already done this. Over here on the right-hand side, we have the sub packages of this whole package, we'll go click on string.extra. 
+It looks like it might have some functions around strings that we can go explore, see if somebody's already done this. Over here on the right-hand side, we have the sub packages of this whole package, we'll go click on `string.extra`. 
 
 ![String.extra on the right](../images/elm-discover-new-packages-using-the-elm-package-index-string.extra.png)
 
-Now, we get a listing of the functions that are available in this library, capitalize which we're not looking for. But the second function in the list is called "pluralize." It looks like what we want. Let's take a quick look at the arguments here.
+Now, we get a listing of the functions that are available in this library, capitalize which we're not looking for. But the second function in the list is called `pluralize`. It looks like what we want. Let's take a quick look at the arguments here.
 
 ![Arguments in pluralize](../images/elm-discover-new-packages-using-the-elm-package-index-pluralize-arguments.png)
 
-It takes a `string` and a `string` and a `number` and it will return a `string`. Let's look at the example. It looks like you can give it the singular form and then the plural form, and then the number, and it'll return the appropriate pluralization of that string.
+It takes a `string`, `string`, `number` and it will return a `string`. Let's look at the example. It looks like you can give it the singular form and then the plural form, and then the number, and it'll return the appropriate pluralization of that string.
 
 Let's give it a try. In order to start using this package, we should take note of this name right here, the user name, the user who published the package, and the name of the package itself.
+
+![Username and name of package](../images/elm-discover-new-packages-using-the-elm-package-index-username.png)
 
 Once we remember those things, we can go over to our terminal and open up a new shell even while the Elm active server is running. Here, we can type `elm-package install` and then the user name, `NoRedInk/` and then the package, `elm-string-extra`, then hit enter.
 
@@ -27,7 +29,7 @@ Once we remember those things, we can go over to our terminal and open up a new 
 elm-package install NoRedInk/elm-string-extra
 ```
 
-It's going to ask if we want to add that to the Elm package.JSON as a dependency and we do. Then, it'll give us a summary of the things that it wants to install.
+It's going to ask if we want to add that to the Elm `package.json` as a dependency and we do. Then, it'll give us a summary of the things that it wants to install.
 
 We approve of that too, and now, we're set to use it. Let's go back to our editor and we can `import String.Extra exposing (pluralize)`.
 

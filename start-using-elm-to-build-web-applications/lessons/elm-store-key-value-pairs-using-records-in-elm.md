@@ -33,11 +33,11 @@ When I write something like this, with a dot at the beginning, Elm knows to gene
 
 ![Spock written in the browser](../images/elm-store-key-value-pairs-using-records-in-elm-spock.png)
 
-Now, let's try rendering Spock's age instead of his name. It looks like we got a compiler error. 
+Now, let's try rendering Spock's `age` instead of his `name`. It looks like we got a compiler error. 
 
 ![Error with Numbers](../images/elm-store-key-value-pairs-using-records-in-elm-error-with-numbers.png)
 
-The pipe is expecting the right argument to be a string, but it's a number. That's because text expects just a string, and the age field is taking an int. We can fix that by throwing it after `text` but before `.age`, `toString`, which is a global function in Elm that takes any value, and turns it into a string.
+The pipe is expecting the right argument to be a string, but it's a number. That's because `text` expects just a string, and the `age` field is taking an int. We can fix that by throwing it after `text` but before `.age`, `toString`, which is a global function in Elm that takes any value, and turns it into a string.
 
 ```javascript
 main = 
@@ -58,7 +58,7 @@ I want to take a `dog`, and return a string. The problem is, I don't know how to
 
 That's because we haven't given it a type. Up here at the top, above `dog`, we'll type `type alias Dog =`. `type alias` means that I'm giving a new name to a type. Records can be types all in themselves. Right here, the first field, I'm going to type `name`.
 
-Then, I'll give it a type, which is `string`. Then, I'll type `age`, and I'll give it a type, which is `int`. 
+Then, I'll give it a `type`, which is `string`. Then, I'll type `age`, and I'll give it a type, which is `int`. 
 
 ```javascript
 type alias Dog =
