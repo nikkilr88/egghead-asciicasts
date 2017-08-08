@@ -1,8 +1,25 @@
-To clean this up a little bit, let's go ahead and since we're just taking an `action` and dispatching an `action`, we can just go ahead and call this `.subscribe(store.dispatch.bind(store))`. We'll just use it as the callback, meaning whatever gets passed into subscribe will just be dispatched to the store. I'm also going to pull out my `click$.map` too from here. I'll drop it up here because it makes more sense to do this at declaration when I'm actually assigning it.
+To clean this up a little bit, let's go ahead and since we're just taking an `action` and dispatching an `action`, we can just go ahead and call this `.subscribe(store.dispatch.bind(store))`. 
 
-####app.ts
+###app.ts
+```javascript
+Observable.merge(
+    this.click$.mapTo({type:HOUR, payload:4}),
+    Observable.interval(1000).mapTo({type: SECOND, payload: 1})
+    )
+    .subscribe((action)=>{
+        store.dispatch(action)
+    })
+```
+will turn into: 
+
 ```javascript
 ...
+    .subscribe(store.dispatch.bind(store))
+```
+
+We'll just use it as the callback, meaning whatever gets passed into subscribe will just be dispatched to the store. I'm also going to pull out my `click$.map` too from here. I'll drop it up here because it makes more sense to do this at declaration when I'm actually assigning it.
+
+```javascript
 export class App {
     click$ = new Subject().mapTo({type:HOUR, payload:4});
     ...
@@ -33,7 +50,7 @@ Observable.merge(
 ...
 ```
 
-What I want to do is be able to send a different value other than `4` through whenever I click on something. If I have something like an `<input>` and it's a `number` input, then we'll just go ahead and give this a default `value` of `0`. I want to send whatever is in this input through to the click. Then we can just do that with a ref here. I'll call this "Input Num." Then we'll pass along `inputNum.value` whenever this is clicked. 
+What I want to do is be able to send a different value other than `4` through whenever I click on something. If I have something like an `<input>` and it's a `number` input, then we'll just go ahead and give this a default `value` of `0`. I want to send whatever is in this input through to the click. Then we can just do that with a ref here. I'll call this `#inputNum`. Then we'll pass along `inputNum.value` whenever this is clicked. 
 
 ```html
 @Component({
@@ -55,7 +72,7 @@ export class App {
 }
 ```
 
-This `map` function right now is returning an object. If you just return an object from an arrow function, you do have to wrap that in parens or else it will think `{type:HOUR, payload: 4}` is the function block. But we want it to be an object. Now we want to take this value and assign that to the payload, but also because this is going to come through as a string and not a number. We will want to `parseInt` or number it just to convert it from a string into a number.
+This `map` function right now is returning an object. If you just return an object from an arrow function, you do have to wrap that in parens or else it will think `{type:HOUR, payload: 4}` is the function block. But we want it to be an object. Now we want to take this `value` and assign that to the payload, but also because this is going to come through as a string and not a number. We will want to `parseInt` or number it just to convert it from a string into a number.
 
 ```javascript
 export class App {

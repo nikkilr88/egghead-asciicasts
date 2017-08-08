@@ -26,13 +26,13 @@ constructor() {
 What I'm going to do here just to show this off is change this interval to five seconds so that now when I refresh here, you see that I forgot to `import` `merge`. 
 
 ```javascript
-import 'rxjsadd/observable/merge';
+import 'rxjs/add/observable/merge';
 ```
 
 You'll forget to import these a lot, so just expect these to pop up every now and again. I'll say import/merge. Let's save again. I'll refresh. Now you'll see this clock. Nothing happens, nothing happens, nothing happens, but after five seconds it'll show up. 
 
 ![Appears after 5s](../images/angular-2-handle-clicks-and-intervals-together-with-merge-appears-after-5s.png)
 
-Now it's just sitting there, but I can click Update to make it update. Then after five seconds it automatically updates itself.
+Now it's just sitting there, but I can click `Update` to make it update. Then after five seconds it automatically updates itself.
 
 We have those two streams working for us. Whenever I click or whenever five seconds passes my clock will now update.

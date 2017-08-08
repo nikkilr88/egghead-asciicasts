@@ -2,24 +2,33 @@ Now I want to implement it so that if I click on a person, that it's going to ad
 
 ####app.ts
 ```html
-...
-    <div (click)="person$.next() *ngFor="person of people | async">
-        {{person.name}} is in {{person.time | date:'jms'}}
-    </div>
-...
+@Component({
+    selector: 'app',
+    directives: [Clock],
+    template: `
+        <input #inputNum type="number" value="0">
+        <button(click)="click$.next(inputNum.value)">Update</button>
+        <clock [time]="time | async"></clock>
+
+        <div (click)="person$.next() *ngFor="person of people | async">
+            {{person.name}} is in {{person.time | date:'jms'}}
+        </div>
+})
 ```
 
-So this person is going to be a subject.
+So this `person$` is going to be a `Subject`.
 
 ```javascript
 export class App {
-    ...
+    click$ = new Subject()
+        .map((value)=> ({type:HOUR, payload:parseInt(value)}));
+
     person$ = new Subject()
     ...
 }
 ```
 
-We're also going to need this person that gets clicked on so it's looping through the people and getting each individual person, so that we can check against that person and increment their time. 
+We're also going to need this `person` that gets clicked on so it's looping through the `people` and getting each individual person, so that we can check against that person and increment their time. 
 
 ```html
 ...
@@ -58,7 +67,8 @@ Then we can check for `ADVANCE` inside of my `people` reducer. I'll write, `case
 I want to `return` the `state`, but I'm going to return a new mapped version of this state where the `map` -- again, a mapping function goes through all of the people and does something with them -- by `default`, it's just going to `return` the `person`. So this would give us just a copy of that same state.
 
 ```javascript
-export const people ...
+export const people 
+    ...
     switch (type) {
         case ADVANCE: 
             return state.map((person)=>{
@@ -73,7 +83,8 @@ If I were to refresh now, it would give us the same thing, but I want to check a
 We want the time to be something that uses our `clock` reducer, so our clock is going to take a state of `person.time`. 
 
 ```javascript
-export const people ...
+export const people 
+    ...
     switch (type) {
         case ADVANCE: 
             return state.map((person)=>{
@@ -126,6 +137,6 @@ Now when I click on one of the people, lets change it to increments of five. Ref
 
 ![Clicking on the names changes the hours](../images/angular-2-use-a-reducer-to-change-an-object-s-property-inside-an-array-clicking-names-changes-time.png)
 
-The same clock reducer that we use to manage the main clock is also the clock reducer that we can use to manage the time of a person, or of these people, so sometimes there are scenarios where a reducer, I wouldn't even need to use it in the store. So it wouldn't get these type actions, right? Because right now I'm just sending the type manually. I'm not dispatching the type through the store.
+The same clock reducer that we use to manage the main clock is also the `clock` reducer that we can use to manage the time of a `person`, or of these people, so sometimes there are scenarios where a reducer, I wouldn't even need to use it in the store. So it wouldn't get these type actions, right? Because right now I'm just sending the type manually. I'm not dispatching the type through the store.
 
 If that's the case, if I didn't have this main `clock` and I just wanted to use this reducer as a helper for my people reducer, then I wouldn't have to register it inside of my `main.ts`. Because this is only for the stores and the store passing along those types. I could delete that and still just use that inside of my people reducer, but since I'm using my clock reducer for my main clock, I need to keep it in the provide store registration, where it will pass the types for the clock.

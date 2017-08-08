@@ -5,18 +5,28 @@ I'm going to move this `+ 1` up into this object that comes in and call it `payl
 ####reducers.ts
 ```javascript
 export const clock = (state = new Date(), {type, payload})=>
-...
-    date.setSeconds(date.getSeconds() + payload);
-...
-    date.setHours(date.getHours() + payload);
-...
+    const date  = new Date(state.getTime());
+    switch(type){
+        case SECOND;
+            date.setSeconds(date.getSeconds() + payload);
+            return date;
+
+        case HOUR;
+            date.setHours(date.getHours() + payload);
+            return date;
+    }
+    return state;
+};
 ```
 
 Now in my `app.ts`, I need to pass a `payload` along, so we'll start by hard coding it. We'll hard code that to just `1`. 
 
 ####app.ts
 ```javascript
-...
+Observable.merge(
+    this.click$.mapTo(HOUR),
+    Observable.interval(1000).mapTo(SECOND)
+    )
     .subscribe((type)=>{
         store.dispatch({type, payload: 1})
     })
@@ -33,10 +43,9 @@ Wednesday, March 23, 2016, 8:34:24 pm {clicked}
 Wednesday, March 23, 2016, 9:34:24 pm {clicked}
 ```
 
-What I want to do is move this `1` up even further into where where I `.map` to something that has a `1`. Instead of mapping to just `HOUR`, I'm going to map to an object, where the `type` is `HOUR`, and the `payload` is `1`. Then in the `observable`, I'm going to map to an object where the `type` is `SECOND` And the `payload` is `1`.
+What I want to do is move this `1` up even further into where I `.map` to something that has a `1`. Instead of mapping to just `HOUR`, I'm going to map to an object, where the `type` is `HOUR`, and the `payload` is `1`. Then in the `observable`, I'm going to map to an object where the `type` is `SECOND` And the `payload` is `1`.
 
 ```javascript 
-...
 Observable.merge(
     this.click$.mapTo({type:HOUR, payload:1}),
     Observable.interval(1000).mapTo({type: SECOND, payload:1})
@@ -69,7 +78,6 @@ Wednesday, March 23, 2016, 9:34:24 pm {clicked}
 I could also change it so that when I click, I would update by four hours and every second it would update by three seconds.
 
 ```javascript 
-...
 Observable.merge(
     this.click$.mapTo({type:HOUR, payload:4}),
     Observable.interval(1000).mapTo({type: SECOND, payload:3})

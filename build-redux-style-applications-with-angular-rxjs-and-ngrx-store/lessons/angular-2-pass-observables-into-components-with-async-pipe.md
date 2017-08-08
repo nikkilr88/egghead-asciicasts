@@ -11,7 +11,7 @@ import {Component} from 'angular2/core';
 export class Clock
 ```
 
-Then we can use that clock inside of our `app.ts`. We're going to comment out our `<h1>` and make sure I add that `clock` to my `directives`. 
+Then we can use that `Clock` inside of our `app.ts`. We're going to comment out our `<h1>` and make sure I add that `clock` to my `directives`. 
 
 ####app.ts
 ```javascript
@@ -47,12 +47,15 @@ I also need to import `Input`.
 import {Component, Input} from 'angular2/core';
 ```
 
-I can render out the time in my template. We will use an `<h3>` this time and render out time. 
+I can render out the `time` in my template. We will use an `<h3>` this time and render out time. 
 
 ```html
-...
-    template: '<h3>{{time}}</h3>'
-...
+@Component({
+     selector: 'app',
+     directives:[Clock],
+     template: '<h3>{{time}}</h3>'
+     })
+    ...
 ```
 
 In my `app.ts`, I can come in my `<clock>` and pass in the `time`. This time is my input and the brackets around it mean that it's an input you can pass a value into. I'll go ahead and assign that to `time`. I have to run it through the `async |` just as I did up above. 
@@ -78,7 +81,7 @@ Wednesday, March 23, 2016, 11:34:31 pm {clicked}
 Thursday, March 24, 2016, 2:34:31 am {clicked}
 ```
 
-Then lastly I'll just take this `date` filter. I'll cut this out. I'll come in and paste it inside my `clock` component in `app.ts`. 
+Then lastly I'll just take this `date` filter and I'll cut it out. I'll come in and paste it inside my `clock` component in `clock.ts`. 
 
 ####clock.ts
 ```javascript

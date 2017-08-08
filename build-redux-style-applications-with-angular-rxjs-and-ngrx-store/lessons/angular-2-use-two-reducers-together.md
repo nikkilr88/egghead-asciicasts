@@ -10,7 +10,7 @@ const defaultPeople = [
 ]
 ```
 
-If I try it right now you'll see I'll have an undefined type error in the console. You can't read type of undefined.
+If I try it right now you'll see I'll have an `undefined type error` in the console. You can't read type of undefined.
 
 ![Undefined type error](../images/angular-2-use-two-reducers-together-undefined-type-error.png)
 
@@ -22,7 +22,7 @@ export const clock = (state = new Date(), {type, payload} = type: "")=> {
 }
 ```
 
-Now when I hit Save and Refresh, you can see now I'll get the time Sarah is in this time zone and I can do that for each of our people here. I'll copy and paste clock. I'm also going to update this pipe here. We're using `date` and the `date` is formatted just `jms`, to give us the hour and seconds.
+Now when I hit Save and Refresh, you can see now I'll get the time Sarah is in this time zone and I can do that for each of our people here. I'll copy and paste `clock`. I'm also going to update this pipe here. We're using `date` and the `date` is formatted just `jms`, to give us the hour and seconds.
 
 ```html
 ...

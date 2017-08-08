@@ -4,10 +4,21 @@ What we have to do is use something like `.mapTo`, and we're going to send along
 
 ####app.ts
 ```javascript
-...
-    this.click$.mapTo('hour')
-    Observable.interval(1000).mapTo('second')
-...
+constructor() {
+    this.clock = Observable.merge(
+        this.click$.mapTo('hour')
+        Observable.interval(1000).mapTo('second')
+    )
+        .startWith(new Date())
+        .scan((acc, curr)=> {
+            const date = new Date(acc.getTime());
+
+            date.setSeconds(date.getSeconds() + 1);
+
+            return date;
+            });
+    }
+}
 ```
 
 I need to go ahead and `import` `mapTwo`.
@@ -18,9 +29,10 @@ import 'rxjs/add/operator/mapTo';
 
 Now, what comes through in this `curr` is either second or hour, because those are the things being pushed through in this `Observable.merge`, either hour or second will come through into my scan function.
 
-I can go ahead and check, and see if the current is second, `if(curr === 'second'). If it is, we'll just go ahead and update the seconds. Or if the current is equal to hour, `if(curr === 'hour')`, let's go ahead and copy `date.setSeconds...`, paste it, and change `seconds` to `hours`.
+I can go ahead and check, and see if the current is second, `if(curr === 'second')`. If it is, we'll just go ahead and update the seconds. Or if the current is equal to hour, `if(curr === 'hour')`, let's go ahead and copy `date.setSeconds...`, paste it, and change `seconds` to `hours`.
 
 ```javascript
+...
 .scan((acc, curr)=> {
     const date = new Date(acc.getTime());
 

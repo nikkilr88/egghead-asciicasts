@@ -2,13 +2,15 @@ To add a button to control our clock, I'll go ahead and create a `<button>` tag.
 
 ####app.ts
 ```html
-...
-template: 
+@Component({
+    selector: 'app',
+    template: ` 
     <button (click)="onClick()">Update</button>
-...
+    `
+})
 ```
 
-In the `export class`, you'd create that on click handler.
+In the `export class`, you'd create that `onClick` handler.
 
 ```javascript
 export class App {
@@ -16,11 +18,10 @@ export class App {
 
     }
     ...
-}    
-...
+}     
 ```
 
-Or from the other side, typically, what you do in our XJS is you'd say, in the `constructor`, `Observable.fromEvent`. Find the element, and then pass in the event name you want to listen to.
+Or from the other side, typically, what you do in RxJS is you'd say, in the `constructor`, `Observable.fromEvent`. Find the element, and then pass in the event name you want to listen to.
 
 ```javascript
 constructor(){
@@ -29,7 +30,7 @@ constructor(){
 ```
 We have these two different conflicting approaches where we want to find an event, or we want to handle a click. The way we're going to solve this for now is I'm going to delete this event handler, `onClick()`. I'm going to delete this from event, `Observable.fromEvent(, 'click')`.
 
-What I'm going to do is create something called a subject, which I'll call `click`. This will be a `new Subject()`. 
+What I'm going to do is create something called a `Subject`, which I'll call `click`. This will be a `new Subject()`. 
 
 ```javascript
 export class App {
@@ -43,13 +44,13 @@ I need to `import` `subject`.
 import {Subject} from "rxjs/Subject";
 ```
 
-What this subject will allow me to do is call `next` every time I click.
+What this `Subject` will allow me to do is call `next` every time I click.
 
 ```html
 <button (click)="onClick$.next()">Update</button>
 ```
 
-What next is going to do is push the stream forward one tick. If I take out all of this clock stuff, 
+What `next()` is going to do is push the stream forward one tick. If I take out all of this `clock` stuff, 
 
 ```javascript
 clock = Observalbe

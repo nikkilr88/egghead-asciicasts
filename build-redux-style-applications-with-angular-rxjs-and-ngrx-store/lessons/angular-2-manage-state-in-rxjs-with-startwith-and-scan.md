@@ -5,7 +5,7 @@ When you think I need to track something in RxJS, think, I want to `.startWith` 
 ####app.ts
 ```javascript
 constructor() {
-    this.lock = Observable.merge(
+    this.clock = Observable.merge(
         this.click$, 
         Observable.interval(5000)
     )
@@ -40,7 +40,7 @@ To be able to update this, I need to say that when something comes through, I wa
 }
 ```
 
-Since we have a copy of it, it's going to behave the exact same way, since it's just returning that copy. But what we can do is take that date and change it. I'll say `date.setSeconds`, `date.getSeconds`, and then add one.
+Since we have a copy of it, it's going to behave the exact same way, since it's just returning that copy. But what we can do is take that `date` and change it. I'll say `date.setSeconds`, `date.getSeconds`, and then add one.
 
 ```javascript
 ...

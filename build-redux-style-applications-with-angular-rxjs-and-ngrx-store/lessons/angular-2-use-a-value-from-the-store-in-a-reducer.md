@@ -2,21 +2,33 @@ Finally, since we don't want all of our time travelers lost somewhere in time, w
 
 ####app.ts
 ```html
-...
-    <div (click)="person$.next() *ngFor="person of people | async">
-        {{person.name}} is in {{person.time | date:'jms'}}
-    </div>
+@Component({
+    selector: 'app',
+    directives: [Clock],
+    template: `
+        <input #inputNum type="number" value="0">
+        <button(click)="click$.next(inputNum.value)">Update</button>
+        <clock [time]="time | async"></clock>
 
-    <button (click)="recall$next()">Recall</button>
-...
+        <div (click)="person$.next() *ngFor="person of people | async">
+            {{person.name}} is in {{person.time | date:'jms'}}
+        </div>
+
+        <button (click)="recall$next()">Recall</button>
+})
 ```
 
 We'll set up the subject for that, `recall$`, it's a `new Subject()`.
 
 ```javascript
 export class App {
-    ...
+    click$ = new Subject()
+        .map((value)=> ({type:HOUR, payload:parseInt(value)}));
+
     recall$ = new Subject();
+
+    person$ = new Subject()
+        .map((value)=>({payload: value, typeADVANCE}));
     ...
 }
 ```
@@ -35,11 +47,11 @@ Our recalls are going to be mapped to, or using with the other store, using `wit
 ...
 ```
 
-The store selected clock, we want to get the latest from that time and use that. The way we do that is the next parameter here is a function where the first argument would be the latest value from `this.reacall$` and the next argument would be the latest value from `this.time`.
+The store selected `clock`, we want to get the latest from that time and use that. The way we do that is the next parameter here is a function where the first argument would be the latest value from `this.reacall$` and the next argument would be the latest value from `this.time`.
 
 We're not going to use the first argument, and when you don't use the first argument, you, just as a convention, you write `_`, saying, "Hey, I'm not going to use that, so don't worry about it."" But I do want to use the second one.
 
-If you're going to use both of them, you usually say `(x,y)` or name them something and combine them somehow. But I'm not going to use the first one, so I'm just going to say underscore just to let them know I'm not going to use it. I'm just going to push out Y, meaning pushing out the time.
+If you're going to use both of them, you usually say `(x,y)` or name them something and combine them somehow. But I'm not going to use the first one, so I'm just going to say underscore just to let them know I'm not going to use it. I'm just going to push out `y`, meaning pushing out the time.
 
 ```javascipt
 ...

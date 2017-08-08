@@ -28,7 +28,7 @@ bootstrap(App, [
 Where `provideStore` is going to come from is from `ngrx/store`. I'll go ahead and provide store. 
 
 ```javascript
-import{provideStore} from '@ngrx/store';
+import {provideStore} from '@ngrx/store';
 ```
 
 The store that I want to provide is an object with key value pairs to those reducers.

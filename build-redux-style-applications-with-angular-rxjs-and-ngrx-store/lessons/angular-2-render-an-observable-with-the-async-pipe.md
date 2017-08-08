@@ -9,7 +9,7 @@ export class App {
 }
 ```
 
-We need to `import` Observable, which we'll do from `RxJS/Observable`. We want to import `Observable`.
+We need to `import` Observable, which we'll do from `rxjs/Observable`. We want to import `Observable`.
 
 ####app.ts
 ```javascript
@@ -58,9 +58,12 @@ we'll hit Save and refresh, and you might expect to get the clock. But what we g
 That object pushes out values asynchronously so we have a `|` called `async` which can handle that. If we just say `|` and then the word `async`,
 
 ```javascript
-...
-<h1>{{clock | async}}</h1>
-...
+@Component({
+     selector: 'app',
+     template:
+         <h1>{{clock | async}}</h1>
+ 
+ })
 ```
 
 and we refresh. Now you can see we get zero, one, two, three, every one second, it's incrementing.
@@ -70,8 +73,11 @@ and we refresh. Now you can see we get zero, one, two, three, every one second, 
 What's happening here with this async pipe is that if we do the same thing just in the `constructor`, if we were to say, `this.clock.subscribe`, as you would with any other Observable, and then just log out the result, and bind it to the console. 
 
 ```javascript
-constructor(){
-    this.clock.subscribe(console.log.bind(console));
+export class App{
+    clock = Observable.interval(1000);
+
+    constructor(){
+        this.clock.subscribe(console.log.bind(console));
 }
 ```
 

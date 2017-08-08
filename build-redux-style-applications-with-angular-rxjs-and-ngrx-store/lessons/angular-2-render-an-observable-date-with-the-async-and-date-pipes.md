@@ -9,7 +9,7 @@ export class App {
 }
 ```
 
-Don't forget, every time you use a method you have to import it. I'll go ahead and import map. 
+Don't forget, every time you use a method you have to import it. I'll go ahead and import `map`. 
 
 ```javascript
 import 'rxjs/add/operator/map';
