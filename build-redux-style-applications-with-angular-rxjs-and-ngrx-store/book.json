@@ -1,0 +1,5 @@
+{
+    "title": "Build Redux Style Applications with Angular, RxJS, and ngrx/store",
+    "description": "This book covers the [Build Redux Style Applications with Angular, RxJS, and ngrx/store](https://egghead.io/courses/build-redux-style-applications-with-angular-rxjs-and-ngrx-store) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

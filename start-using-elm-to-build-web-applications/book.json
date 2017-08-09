@@ -1,5 +1,0 @@
-{
-    "title": "Start Using Elm to Build Web Applications",
-    "description": "This book covers the [Start Using Elm to Build Web Applications](https://egghead.io/courses/start-using-elm-to-build-web-applications) transcripts and enhances them to become Asciicasts",
-    "plugins": ["prism", "-highlight", "hints"]
-}
