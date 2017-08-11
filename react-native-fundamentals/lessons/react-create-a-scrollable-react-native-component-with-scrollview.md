@@ -1,27 +1,53 @@
 Let's go ahead and make the profile component. I'm going to go ahead to my components folder and create a new file called "profile.js," and also, going to require the badge component we just built.
+
 And then, I'm going to use the structuring to get everything I need. ScrollView is a new one we haven't used yet, a new component we haven't used yet.
+
 Basically, what it allows you to do is that it's like view, but it's a view that can scroll, it's pretty straightforward. OK, set my styles. Now, we're going to create our profile class. That, of course, extends, react our component, and then we export it.
+
 Inter-vendor method, what our UI is going to look like. If you remember, it's going to have the badge, and then, it's going to have all of the locations, the followers, the email and the bio of the user we looked up with GitHub.
+
 This is where we were going to use ScrollView. This style is going to be styles.container, and now, what we're going to do, we're going to render our first badge component we made.
+
 Remember, we need to pass the user info. What's interesting is we are taking are most apparent component, which is our main GS component.
+
 We're getting the users info, and then, we are passing that all the way down to this profile, but we're also going to pass it down to badge. You can pass data down as deep as you want.
+
 We need to take all of the data that we are getting from GitHub and organize it in a way to looks good on the screen. When I'm going to do is I'm going to come up here, and I'm going to stay inside of render. I'm going to cache the user info property, just to save me some typing.
+
 Now, if we go and check out what GitHub gives us back, we are in our terminal, we are just going to curl that end point.
+
 Notice it gives us back a lot of stuff, and a lot of stuff we don't really care about. We're not really going to show the ID, we are not going to really show this subscription URL or any of those things.
+
 What we're going to do is we're going to make an array of everything we are interested in getting from that response object, or from the user object we are passing in. And so, we're interested in the company, the location, the followers, following email, bio, as well as the list of public repos.
+
 You'll notice here again that all of the strings or properties on the object we are getting back from GitHub. We are going to map to over each one of these items, and create a view component for each of these items. That way, when we show our list, once we're finished mapping, we'll have almost an array of view components that we can then use down here.
+
 If you're unfamiliar with map, all what allows you to do is it allows you to group over every item in an array, and it modifies that item and returns a new array. We're going to say, list is going to equal our top array.map. We're going to use that arrow syntax here. Map gives us the item, as well as the mix.
+
 We're going to check to see if the item we're looking for, the very first iteration will be company. If user info does not have a company property, then, just return an empty view. What happens is a lot of the times, different people fill out their GitHub profile differently.
+
 Some people might include their company, and some people might not, we want to check for that. You'll notice we're using this key property right here. Anytime you use map, because react will use these keys to figure out what changed in the list for better optimization.
+
 Each of these items in this list, each of the values you give to the key attribute need to be unique so that react can do that dipping. If that part of the user's profile is filled out, what we want to do is then return this view.
+
 It's going to have a key, as well, we are going to give it a key of index. Again, if you're not used to map, all this index is, is the position of whatever iteration we are on.
+
 Here, the index is going to be zero, here it's one, here it's two, et cetera. In this view, we're going to have another view, to style as our real container.
+
 Then, we're going to have some texts styles, we're going to be title, we're going to leave this blank for now, just to finish off this component. This is going to be userinfo@adam. The goal here is to loop through this entire array, and to have the title be the item in the array.
+
 Company, location, and then, have this text component be that value. The problem here is, if we just loop through this array, noticed this isn't really formatted the way we want it, especially public repos. We want something like public repos.
+
 What we're going to do here is we are going to create a function that'll format our data for us. We're going to say GetRo title, we're going to pass in our user info object, and then, the specific item we are on. Then what we'll do is up here, we'll create a GetRo title function.
+
 Pass in the user, and the item, then, what we want to do is we want to check if the item is public repos, because if it's any of these, we can just capitalize the first letter, but if it's public repos, we need to sure about this underscore.
+
 We're going to say item equals, if it's public repos, then, item is going to equal the same thing it is, except we're going to replace the underscore with a space. If it's not, it'll just be item.
+
 And then, we need to check if the first letter is a thing, or even if item is a thing and it's a string, then, go ahead and take that first letter, upper case it and tack it on that other word. If it's not, just return item.
+
 Here, what's going to happen is if the word is, "company," we're going to take the C, capitalize it, and then, add on O-M-P-A-N-Y right here.
+
 Now, we should get the proper title and the proper value. Now, all we need to do is notice that we saved all of these into a list variable. This list variable is now an array full of these view components. We can do down here is that we just render that to the screen, then, we should see the badge.
+
 Under that, we should see, all laid out, all of the items in our list array. Let's check that now. We enter your username, view profile, and there we go, there's all our information.
