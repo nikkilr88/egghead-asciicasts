@@ -1,6 +1,6 @@
-Now what we're going to do in this video is we're going to clean up our `Dashboard` component. We're going to need two more components here. We're going to need the `Image` component, and we're going to need the `TouchableHighlight` component.
+Now what we're going to do in this video is we're going to clean up our `<Dashboard>` component. We're going to need two more components here. We're going to need the `Image` component, and we're going to need the `TouchableHighlight` component.
 
-####Dashboard.js
+#### Dashboard.js
 ```javascript
 var {
     Text,
@@ -13,7 +13,7 @@ var {
 
 We've used `TouchableHighlight` before. This is a reminder. It's basically just a wrapper for making `<Views>` respond properly to touches. `Image` is an `Image` component that's going to allow us to throw in images.
 
-If we go down here, to our `render` function, let's throw in an `<Image>`. An `<Image>` takes in a `source`. If that source if coming from a URL, you're going to have a `uri:` property, and then the value is going to be the URL that the Image is located at. Ours is on our `userInfo` object we're passing in. They key is avatar_url. Before we finish, let's go ahead and add a style that's already been made for us.
+If we go down here, to our `render` function, let's throw in an `<Image>`. An `<Image>` takes in a `source`. If that source if coming from a URL, you're going to have a `uri:` property, and then the value is going to be the URL that the Image is located at. Ours is on our `userInfo` object we're passing in. They key is `avatar_url`. Before we finish, let's go ahead and add a `style` that's already been made for us, `{styles.image}`.
 
 ```html
 class Dashboard extends React.Component{
@@ -29,13 +29,13 @@ class Dashboard extends React.Component{
 };
 ```
 
-Let's verify we're good there. If we run this, search for "tylermcginnis," there we go. We get the picture now.
+Let's verify we're good there. If we run this, search for "tylermcginnis", there we go. We get the picture now.
 
 ![Picture on Dashboard](../images/react-use-images-in-a-react-native-application-picture-on-dashboard.png)
 
-Now what we need to do is...If you remember, in the actual app, we had three buttons we could click. One of them took us to the profile page. One of them took us to the repos page. The other one took us to the notes page.
+Now what we need to do is, if you remember, in the actual app, we had three buttons we could click. One of them took us to the profile page. One of them took us to the repos page. The other one took us to the notes page.
 
-Let's go ahead and build those right now. Start by deleting our `<Text>` components and replace them with `<TouchableHighlight>`. Let's keep style blank for now. We're going to have `onPress =`, we'll make a goToProfile function. We'll `.bind(this)` so we get the appropriate context, and then our `underlayColor` is going to be `'#88D45F'`.Then we'll have some text in here, and then the style on this as well is going to be `styles.buttonText`. Then close `<TouchableHighlight>`.
+Let's go ahead and build those right now. Start by deleting our `<Text>` components and replace them with `<TouchableHighlight>`. Let's keep `style` blank for now. We're going to have `onPress =`, we'll make a `goToProfile` function. We'll `.bind(this)` so we get the appropriate context, and then our `underlayColor` is going to be `'#88D45F'`.Then we'll have some text in here, and then the style on this as well is going to be `styles.buttonText`. Then close `<TouchableHighlight>`.
 
 ```html
 class Dashboard extends React.Component{
@@ -87,7 +87,7 @@ There are a few ways that you can make the backgrounds different colors on these
 
 `goToProfile` is going to be zero, `goToRepos` is going to be one, and then `goToNotes` is going to be two. That's going to return us an object which is going to style the specific button as well as that background color.
 
-Let's go up here, t the top of our class, let's make a `makeBackground()` function. It's going to take in which specific button we're using, `(btn)`, and then we're going to have a style object. Don't worry too much about this. This is just Flexbox stuff.
+Let's go up here, to the top of our class, let's make a `makeBackground()` function. It's going to take in which specific button we're using, `(btn)`, and then we're going to have a style object. Don't worry too much about this. This is just Flexbox stuff.
 
 We're going to do `flexDirection: 'row'`, `alignSelf: 'stretch'`, `justifyContent: 'center'`, and `flex: 'one'`. 
 
@@ -133,9 +133,9 @@ class Dashboard fextends React.Component{
 ...
 ```
 
-Now what we can do is down here on our buttons, we can set the styles equal to whatever gets returned from calling `makeBackground`. We're going to pass in `0` for `Profile`, and then we pass in `1` for `Repos`, then we pass in `2` for `Notes` These are on the instance itself around the class, so we need to add the `this.` keyword to those.
+Now what we can do is down here on our buttons, we can set the `styles` equal to whatever gets returned from calling `makeBackground`. We're going to pass in `0` for `Profile`, and then we pass in `1` for `Repos`, then we pass in `2` for `Notes` These are on the instance itself around the class, so we need to add the `this` keyword to those.
 
-Also we need to change "Profile" in each of the `<Text>` components. This is going to be "View Repos." This will be "View Notes." Let's check that out. Very cool.
+Also we need to change "Profile" in each of the `<Text>` components. The second is going to be "View Repos." The third will be "View Notes." 
 
 ```html
 ...

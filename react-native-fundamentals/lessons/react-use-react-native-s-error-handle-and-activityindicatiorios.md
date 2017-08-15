@@ -1,11 +1,11 @@
-You'll notice if I search for username, the data's loading when I click Search, but we don't get that loading indicator bar. Even though we have that `isLoading` property on the state object, we're not really using it yet. Another thing, the `Main` component is missing. If I search for a username that's not found, it doesn't give me any feedback. Let's go ahead and add those things.
+If I search for username, the data's loading when I click Search, but we don't get that loading indicator bar. Even though we have that `isLoading` property on the state object, we're not really using it yet. Another thing, the `Main` component is missing. If I search for a username that's not found, it doesn't give me any feedback. Let's go ahead and add those things.
 
 First, we're going to create a variable in the `render` of the `Main.js` file called `showErr`. What this is going to be is it's going to be a `<Text>` element which will show if there's an error and not show if there's not an error. We're going to say, `this.state.error`, if that's a thing, then showErr is going to be this `<Text>` component with the actual name of the error there, `{this.state.error}`. If it's not a thing, then just render this empty `<View></View>`.
 
-####Main.js
+#### Main.js
 ```javascript
 var showErr = {
-    thisstate.error ? <Text> {this.state.error} </Text : <View></View>
+    this.state.error ? <Text> {this.state.error} </Text : <View></View>
 };
 ```
 
@@ -28,9 +28,10 @@ Down between the `</TouchableHighlight>` and `{showErr}, we're going to type `Ac
 ...
     </TouchableHighlight>
     <ActivityIndicatorIOS
-        animating={thisstate.isLoading}
+        animating={this.state.isLoading}
         color="#111"
-        size="large"></ActivityIndicatorIOS>
+        size="large">
+    </ActivityIndicatorIOS>
     {showErr}
 ...
 ```

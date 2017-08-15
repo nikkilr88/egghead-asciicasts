@@ -2,11 +2,11 @@ We're going to make this component,
 
 ![Make this a component](../images/react-use-proptypes-in-reusable-react-native-components-make-notes-component.png)
 
-and then reuse that component in the profile component, the repositories component, and the notes component we're going to build. In our `Components` folder, let's go ahead and create a new file called `Badge.js`. We're going to `require('react-native')`. We're going to disjuncture our object and get some stuff it needs.
+and then reuse that component in the `<Profile>` component, the `<Repositories>` component, and the `<Notes>` component we're going to build. In our `Components` folder, let's go ahead and create a new file called `Badge.js`. We're going to `require('react-native')`. We're going to disjuncture our object and get some stuff it needs.
 
 We'll need some `Text`, `View`, the `Image`, and a `StyleSheet`, so that equal to React. I'm going to paste it in the styles.
 
-####Badge.js
+#### Badge.js
 ```javascript
 import React, { Component } from 'react';
 
@@ -44,7 +44,7 @@ var styles = StyleSheet.create({
 });
 ```
 
-Now what we're going to do is let's go ahead and make our `class Badge` which `extends React.Component` and type out the `render()`. As always, `module.exports = Badge`. 
+Now what we're going to do is let's go ahead and make our `class Badge` which `extends React.Component` and type out the `render()`. As always, `module.exports = Badge;`. 
 
 ```javascript
 class Badge extends React.Component{
@@ -67,14 +67,14 @@ class Badge extends React.Component{
     render(){
         return (
             <View style={styles.container}>
-                <Image style={styles.image} source={{this.props.userInfo.avatar_url}} />
+                <Image style={styles.image} source={{uri: this.props.userInfo.avatar_url}} />
             </View>
         )
     }
 }
 ```
 
-We're also going to have some text here. Let's have the name attribute as a property. The text is going to be `{this.props.userInfo.name}`. We're going to have some more text whose value is going to be `{this.props.userInfo.login}`.
+We're also going to have some `<Text>` here. Let's have the name attribute as a property. The text is going to be `{this.props.userInfo.name}`. We're going to have some more `<Text>` whose value is going to be `{this.props.userInfo.login}`.
 
 ```html
 class Badge extends React.Component{
@@ -92,7 +92,7 @@ class Badge extends React.Component{
 
 Now that we have this component, you'll notice here that this component is very much reliant on this `userInfo` object. If we don't pass this `userInfo` object in, this entire component is going to break. What React gives us is this thing called `propTypes`. We can get the name of the class, add `propTypes` on to it. What this will do is this will verify that certain properties are there, certain properties of certain type. It's super useful.
 
-If when we invoke our `Badge` class or when we use our `Badge` component, if we don't pass in `userInfo` object, it's going to throw an error in the console. We're going to say our `propTypes`. We need to have some `userInfo` and it's going to be an object and it is required. 
+When we invoke our `Badge` class or when we use our `Badge` component, if we don't pass in `userInfo` object, it's going to throw an error in the console. We're going to say our `propTypes`. We need to have some `userInfo` and it's going to be an object and it is required. 
 
 ```javascript
 Badge.propTypes = {
