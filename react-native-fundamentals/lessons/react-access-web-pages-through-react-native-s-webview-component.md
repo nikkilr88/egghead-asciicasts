@@ -1,14 +1,96 @@
-We want to make it so when someone comes to the repos page, if they click on one of these, the names of the repository, we want them to be taken to a web view to see GitHub's URL.
-Notice we have this on press hammer set up right here, but we're not really doing anything with it yet. Let's change that. We're going to navigate to a new route.
-The component we're going to use is one we haven't made yet, but we will make it. We're going to name it web_view, the title is just going to be web view, and then what we're going to pass it is this URL which we're getting when we invoke the "open page" function, which is coming in from right here.
-Now, what we need to do is go into find what this web view is.
-If I don't do it now, I'm going to forget. I'm going to go up here and say, "web view." We don't need to capitalize that, we're going to put it in helpers, and then it's going to be called web view.
-Here, let me change the name down here. Let's go into our helper folder, create a new file called "webview.js." Then, we're going to require react and then we're going to need a few things.
-We're going to need a view, we're going to need a web view now, which is new. The styles for this component, we're going to have a container. It's just going to be flex one, background color of F6F6EF, and a flex direction of column.
-Now, we have our style set up. Let's go ahead and create our class or our component. We're going to have, we'll call it web view. It's going to extend, react component as normal, we'll return something from this render and then so I don't forget, modular exports equals web view.
-Then, what we're going to return is a view with our style and inside of that, we're going to use web view.
-What web view will allow us to do is it'll load a URL, which we're getting from the stop props, the URL that we're passing in inside of the apps view.
-Now that we have that, the last thing we need to do is add a prop type on here because we don't want this to run unless we give it a URL. We're going to say URL is "react to all prop types." It's going to be a string, and we're going to make it "required."
-If everything went well, what we should be able to do now is come back over here, do not find variable web, web view 27, because we called that web view. We're here, we type in a name, we go to repos, and then we should be able to come to any of these, maximum call size stack exceed.
-I did some digging and I did something stupid. Notice, I have a web view variable here, I also named my class "web view." Let's change this to just be web, web here, and web here.
-Now, the only web view we should have is the web view we're using. Let's go and try this now, I'm going to recompile it, search for a username, view repos, and then angular. There we go, there's our web view.
+We want to make it so when someone comes to the repos page, if they click on one of the names of the repository, we want them to be taken to a web view to see GitHub's URL.
+
+Notice we have this `onPress` handler set up inside of `Repositories.js`, but we're not really doing anything with it yet. Let's change that. We're going to navigate to a new route.
+
+The component we're going to use is one we haven't made yet, but we will make it. We're going to name it `component: Web_View`, the `title:` is just going to be `'Web View'`. Then what we're going to `passProps` is this `{url}` which we're getting when we invoke the `openPage` function, which is coming in on the `onPress`.
+
+####Repositories
+```javascript
+class Repositories extends react.Component{
+    openPage(url{
+        this.props.navigator.push({
+            component: Web_View,
+            title: 'Web View',
+            passProps: {url}
+            })
+        })
+    ...
+}
+```
+
+Now, what we need to do is go and define what this `Web_View` is. If I don't do it now, I'm going to forget. I'm going to go up here and `require` `Web View`. We're going to put it in helpers, and then it's going to be called web view.
+
+```javascript
+var Web_View = require('./Helpers/WebView');
+```
+
+Let's go into our `Helpers` folder, create a new file called `WebView.js` Then, we're going to `require` `react` and then we're going to need a few things. We're going to need a `View`, we're going to need a `WebView` now, which is new, and a `StyleSheet`. 
+
+####WebView.js
+```javascript
+var React = require('rect-native');
+
+var {
+    View,
+    WebView,
+    StyleSheet
+} = React;
+```
+
+The `styles` for this component, we're going to have a `container`. It's just going to be `flex: 1`, `backgroundColor: #F6F6EF`, and a `flexDirection: column`.
+
+```javascript
+var styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: #F6F6EF,
+        flexDirection: column
+    }
+})
+```
+
+Now, we have our style set up. Let's go ahead and create our `class` for our component. We'll call it WebView. It's going to `extends React.Component` as normal, we'll `return` something from this `render` and then so I don't forget, `modular.exports = WebView`.
+
+```javascript
+class WebView extends React.Component{
+    render(){
+        return(
+
+        )
+    }
+};
+
+module.exports = WebView;
+```
+
+Then, what we're going to return is a `<View>` with our `style={styles.container}` and inside of that `<View>`, we're going to use `WebView`.
+
+What web view will allow us to do is it'll load a url, which we're getting from `{this.props.url}`, the url that we're passing in inside of the apps view.
+
+```html
+class WebView extends React.Component{
+    render(){
+        return(
+            <View style={styles.container}>
+                <WebView url={this.props.url} />
+            </View>
+        )
+    }
+};
+```
+
+Now that we have that, the last thing we need to do is add a `propType` on here because we don't want this to run unless we give it a `url`. We're going to say `url:` is `React.PropTypes`. It's going to be a `string`, and we're going to make it `isRequired`.
+
+```javascript
+WebView.propTypes = {
+    url: react.PropTypes.string.isRequired
+}
+```
+
+In the app, we type in a name, we go to repos, and then we should be able to come to any of these, but we have an error: maximum call size stack exceed.
+
+I did some digging and I did something stupid. Notice, I have a `WebView` variable, I also named my class `WebView`. Let's change our class to just be `Web` and everywhere we reference it, our class, propTypes, and exports
+
+Now, the only `WebView` we should have is the `WebView` component we're using. Let's go and try this now, I'm going to recompile it, search for a username, view repos, and then angular. There we go, there's our web view.
+
+![Web View on application](../images/react-access-web-pages-through-react-native-s-webview-component-web-view.png)
