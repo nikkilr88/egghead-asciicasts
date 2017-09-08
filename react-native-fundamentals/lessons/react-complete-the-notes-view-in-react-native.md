@@ -7,7 +7,7 @@ var Notes = require('./Notes');
 
 Then, in our `Notes.js`, you might remember that our `Notes` is expecting to receive `userInfo` and some `notes`.
 
-What we need to do is we need to grab those `Notes` before we take the user to the `Notes.js` route. So, in our `goToNotes` button, we're going to do `api.getNotes`. We're going to pass it the `(this.props.userInfo.login)`. Then, that will return us a promise with the response of the data, `.then((res) => `. Then, what we're going to do is we're going to just check to make sure `res` is a thing. We're going to say res=res or if that's not true, then we're just going to make an empty object, `res = res || {}`. 
+What we need to do is we need to grab those `Notes` before we take the user to the `Notes.js` route. So, in our `goToNotes` button, we're going to do `api.getNotes`. We're going to pass it the `(this.props.userInfo.login)`. Then, that will return us a promise with the response of the data, `.then((res) => `. Then, what we're going to do is we're going to just check to make sure `res` is a thing. We're going to `say res = res` or if that's not true, then we're just going to make an empty object, `res = res || {}`. 
 
 ```javascript
 goToNotes(){

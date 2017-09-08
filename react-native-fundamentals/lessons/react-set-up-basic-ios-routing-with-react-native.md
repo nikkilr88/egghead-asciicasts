@@ -21,7 +21,7 @@ Render: function() {
 };
 ```
 
-it allows us to add an initial route property to our component. Notice we specify a `component`, a `title`, and any properties we want to pass to it.
+it allows us to add an `initialRoute` property to our component. Notice we specify a `component`, a `title`, and any properties we want to pass to it.
 
 Whenever our main component is rendered, it will render this `NavigatorIOS` component which will then go and render `MyView`. Then inside of `MyView` what we're allowed to do is we're allowed to treat our navigation or our routing almost like it's an array, like we're pushing and popping from it.
 
@@ -67,9 +67,9 @@ var {
 } = React;
 ```
 
-Now, what I'm going to return is that `NvaigatorIOS` component with a few properties.
+Now, what I'm going to return is that `NavigatorIOS` component with a few properties.
 
-Our `initialRoute` is going to have a `title` of `'GitHub Note Taker'`. Then the component we're going to render for the initial route is going to be our main component. 
+Our `initialRoute` is going to have a `title` of `'GitHub Notetaker'`. Then the component we're going to render for the initial route is going to be our main component. 
 
 ```javascript
 class githubNotetaker extends Readct.Component{
@@ -97,7 +97,7 @@ The very first thing is we're going to `require('react-native');`.
 var React = require('react-native');
 ```
 
-Then what we're going to do is create a `class` called `Main` which `extends React.Component`. Then our `render` method, what we're going to `return` is a `<View>` with some `<Text>` inside of it that just says, `Testing the router`.
+Then what we're going to do is create a `class` called `Main` which `extends React.Component`. Then our `render` method, what we're going to `return` is a `<View>` with some `<Text>` inside of it that just says, `Testing the Router`.
 
 ```javascript
 class Main extends React.Component{
@@ -111,7 +111,7 @@ class Main extends React.Component{
 }
 ```
 
-What's going to happen if we try to run this right now is it's going to say, "Hey, view is undefined" because we've never said what view is. Using some ES6 destructuring, we're going to say, `View` and `text` to require those in. 
+What's going to happen if we try to run this right now is it's going to say, "Hey, view is undefined" because we've never said what view is. Using some ES6 destructuring, we're going to say, `View` and `Text` to require those in. 
 
 ```javascript
 var {
@@ -120,15 +120,15 @@ var {
 } = React
 ```
 
-Then the second to last thing we need to do is make sure that we `export` this so that we can require it in our index.ios.js file. 
+Then the second to last thing we need to do is make sure that we `module.exports` this so that we can require it in our `index.ios.js` file. 
 
 ```javascript
 module.exports = Main;
 ```
 
-The last thing we want to do is set up some styles.
+The last thing we want to do is set up some `styles`.
 
-I'm going to make sure we have a `StyleSheet`. All a `StyleSheet` is it basically just makes low level optimizations with your style sheet. Also what I'm going to do for styles, I don't really want to bore you. I don't want to take this into a Flexbox lecture and a CSS lecture. All the styles I'll use I'll just paste in from what I had earlier.
+I'm going to make sure we have a `StyleSheet`. All a `StyleSheet` is it basically just makes low level optimizations with your style sheet. Also what I'm going to do for `styles`, I don't really want to bore you. I don't want to take this into a Flexbox lecture and a CSS lecture. All the styles I'll use I'll just paste in from what I had earlier.
 
 ```javascript
 var styles = StyleSheet.create({

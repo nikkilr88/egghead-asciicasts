@@ -1,4 +1,4 @@
-If you head over to `native.reactjs.com`, that will bring you to this page, and then you can click on this button, `Get started with React Native`. 
+If you head over to [http://facebook.github.io/react-native/](http://facebook.github.io/react-native/), that will bring you to this page, and then you can click on this button, `Get started with React Native`. 
 
 ![React Native Button on Website](../images/react-start-building-a-react-native-application-button-on-website.png)
 
@@ -106,15 +106,15 @@ var githubNotetaker = React.createClass
 
 I'm going to refactor this, right now, in order to use ES6 classes, just because I think that's the future and we'll all be doing that here, soon.
 
-What I'm going to do is `create` a class called `githubNotetaker`. This class is going to `extend React.Component`. Take off the first parenthesis. 
+What I'm going to do is `create` a class called `githubNotetaker`. This class is going to `extends React.Component`. Take off the first parenthesis. 
 
 ```javascript
-class githubNotetaker extend React.Component {
+class githubNotetaker extends React.Component {
     ...
 }
 ```
 
-What we're doing is we're just creating a new githubNotetaker class. That extends React.Component so we can do things like set state and a few other things as well, which we'll talk about when we get there.
+What we're doing is we're just creating a new `githubNotetaker` class. That `extends React.Component` so we can do things like `.setState()` and a few other things as well, which we'll talk about when we get there.
 
 As of right now, what we have is we're requiring React Native. This is an ES6 thing called "destructuring". 
 
@@ -168,7 +168,7 @@ but we've added some more ES6 stuff.
 
 Let's talk a little bit more about React and the fundamental building blocks of React. You'll notice the very first thing we're doing is creating a `React.Component`. Everything in React is a component.
 
-If we go and we look at some examples of this on the web.If this was just a UI...All this is is it's an iTunes app that's built with React. You'll notice if we go ahead and look at what things are components, you'll notice that we have lots of components. Everything is a component. The darker the red is, the more nested the components are. 
+We can go and look at some examples of this on the web. All this is is an iTunes app that's built with React. You'll notice if we go ahead and look at what things are components, you'll notice that we have lots of components. Everything is a component. The darker the red is, the more nested the components are. 
 
 ![Components on a webpage](../images/react-start-building-a-react-native-application-components-on-webpage.png)
 
@@ -176,7 +176,7 @@ Everything in React is a component that we first start out with. Then what we ca
 
 You can think of `render` as essentially the UI or the thing that's going to be rendered to the screen when React does all its rendering stuff.
 
-Notice in this `rener` method, we're returning a bunch of these native iOS components, where typically, if we're doing web development, `<View>` would be like `<div>`, `<Text>` would be `<span>` and things like that, but since we're doing React Native, everything's in these native components.
+Notice in this `render` method, we're returning a bunch of these native iOS components, where typically, if we're doing web development, `<View>` would be like `<div>`, `<Text>` would be `<span>` and things like that, but since we're doing React Native, everything's in these native components.
 
 That's what's actually really cool about React Native. The current state of building Android and iOS apps with JavaScript is one where frameworks produce hybrid apps. That's the norm.
 

@@ -11,7 +11,7 @@ var {
 } = React;
 ```
 
-We've used `TouchableHighlight` before. This is a reminder. It's basically just a wrapper for making `<Views>` respond properly to touches. `Image` is an `Image` component that's going to allow us to throw in images.
+We've used `TouchableHighlight` before. This is a reminder. It's basically just a wrapper for making `<View>` respond properly to touches. `Image` is an `Image` component that's going to allow us to throw in images.
 
 If we go down here, to our `render` function, let's throw in an `<Image>`. An `<Image>` takes in a `source`. If that source if coming from a URL, you're going to have a `uri:` property, and then the value is going to be the URL that the Image is located at. Ours is on our `userInfo` object we're passing in. They key is `avatar_url`. Before we finish, let's go ahead and add a `style` that's already been made for us, `{styles.image}`.
 
@@ -35,7 +35,7 @@ Let's verify we're good there. If we run this, search for "tylermcginnis", there
 
 Now what we need to do is, if you remember, in the actual app, we had three buttons we could click. One of them took us to the profile page. One of them took us to the repos page. The other one took us to the notes page.
 
-Let's go ahead and build those right now. Start by deleting our `<Text>` components and replace them with `<TouchableHighlight>`. Let's keep `style` blank for now. We're going to have `onPress =`, we'll make a `goToProfile` function. We'll `.bind(this)` so we get the appropriate context, and then our `underlayColor` is going to be `'#88D45F'`.Then we'll have some text in here, and then the style on this as well is going to be `styles.buttonText`. Then close `<TouchableHighlight>`.
+Let's go ahead and build those right now. Start by deleting our `<Text>` components and replace them with `<TouchableHighlight>`. Let's keep `style` blank for now. We're going to have `onPress=`, we'll make a `goToProfile` function. We'll `.bind(this)` so we get the appropriate context, and then our `underlayColor` is going to be `'#88D45F'`.Then we'll have some text in here, and then the style on this as well is going to be `styles.buttonText`. Then close `<TouchableHighlight>`.
 
 ```html
 class Dashboard extends React.Component{
@@ -46,7 +46,7 @@ class Dashboard extends React.Component{
                 <TouchableHighlight
                     onPress={this.goToProfile.bind(this)}
                     underlayColor='#88D45F'>
-                <Text style={styles.buttonText}> View Profile </Text>
+                    <Text style={styles.buttonText}> View Profile </Text>
                 </TouchableHighlight>
             </View>
         )
@@ -65,17 +65,17 @@ class Dashboard extends React.Component{
                 <TouchableHighlight
                     onPress={this.goToProfile.bind(this)}
                     underlayColor='#88D45F'>
-                <Text style={styles.buttonText}> View Profile </Text>
+                    <Text style={styles.buttonText}> View Profile </Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     onPress={this.goToRepos.bind(this)}
                     underlayColor='#88D45F'>
-                <Text style={styles.buttonText}> View Profile </Text>
+                    <Text style={styles.buttonText}> View Profile </Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     onPress={this.goToNotes.bind(this)}
                     underlayColor='#88D45F'>
-                <Text style={styles.buttonText}> View Profile </Text>
+                    <Text style={styles.buttonText}> View Profile </Text>
                 </TouchableHighlight>
             </View>
         )
@@ -92,7 +92,7 @@ Let's go up here, to the top of our class, let's make a `makeBackground()` funct
 We're going to do `flexDirection: 'row'`, `alignSelf: 'stretch'`, `justifyContent: 'center'`, and `flex: 'one'`. 
 
 ```javascript
-class Dashboard fextends React.Component{
+class Dashboard extends React.Component{
     makeBackground(btn){
         var obj = {
             flexDirection: 'row'
@@ -105,12 +105,12 @@ class Dashboard fextends React.Component{
 ...
 ```
 
-Then what we'll do is we'll say, `if(btn === 0)`, `else if(btn === 1`, `Else`. If button equals zero, then that means it's going to be the `Profile` button. We're going to set the background color on this object to be `'#48BBEC'`.
+Then what we'll do is we'll say, `if(btn === 0)`, `else if(btn === 1`, `else` button equals zero, then that means it's going to be the `Profile` button. We're going to set the background color on this object to be `'#48BBEC'`.
 
 If it's the view `Repos` button, the background color's going to be `'#E77AAE'`. If it's neither one of those, that means it's the `Notes` button. Let's set the background to be `'#758BF4'`. Then we're obviously going to need to return our object.
 
 ```javascript
-class Dashboard fextends React.Component{
+class Dashboard extends React.Component{
     makeBackground(btn){
         var obj = {
             flexDirection: 'row'
@@ -145,25 +145,25 @@ Also we need to change "Profile" in each of the `<Text>` components. The second 
         style={this.makeBackground(0)}
         onPress={this.goToProfile.bind(this)}
         underlayColor='#88D45F'>
-    <Text style={styles.buttonText}> View Profile </Text>
+        <Text style={styles.buttonText}> View Profile </Text>
     </TouchableHighlight>
     <TouchableHighlight
         style={this.makeBackground(1)}
         onPress={this.goToRepos.bind(this)}
         underlayColor='#88D45F'>
-    <Text style={styles.buttonText}> View Repos </Text>
+        <Text style={styles.buttonText}> View Repos </Text>
     </TouchableHighlight>
     <TouchableHighlight
         style={this.makeBackground(2)}
         onPress={this.goToNotes.bind(this)}
         underlayColor='#88D45F'>
-    <Text style={styles.buttonText}> View Notes </Text>
+        <Text style={styles.buttonText}> View Notes </Text>
     </TouchableHighlight>
 </View>
 ...
 ```
 
-Now let's go ahead and add just some functions so this doesn't error out just above the `render()`. We're going to first create `goToProfile`, which is just going to `console.log('Going to Profile Page')`. Then we'll make the `goToRepos` function, which will `console.log('Going to Repos')`. Then let's do `goToNotes`, which is going to `console.log('Going to Notes')`.
+Now let's go ahead and add just some functions so this doesn't error out just above the `render()`. We're going to first create `goToProfile`, which is just going to `console.log('Going to Profile Page')`. Then we'll make the `goToRepos` function, which will `console.log('Going to Repos Page')`. Then let's do `goToNotes`, which is going to `console.log('Going to Notes Page')`.
 
 ```javascript
 ...

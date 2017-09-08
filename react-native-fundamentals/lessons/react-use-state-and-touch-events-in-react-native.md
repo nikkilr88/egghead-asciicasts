@@ -22,7 +22,7 @@ The difficult part about building UIs is managing state.
 
 That's something React does a really good job with. The principle that react takes is that every component will manage its own state, and it can pass that state and any piece of data down to its children components, which can then use that.
 
-What we'll do inside of our React component class is we're going to create a `constructor()`. All this is, is an E6 thing. It will get passed some `props`, then what we'll do is we're going to call our react component, or the thing we're extending, which is our react component constructor and we're going to pass it props, `super(props)`. Then all we'll need to do is set the initial state of this component.
+What we'll do inside of our React component class is we're going to create a `constructor()`. All this is, is an ES6 thing. It will get passed some `props`, then what we'll do is we're going to call our react component, or the thing we're extending, which is our react component constructor and we're going to pass it props, `super(props)`. Then all we'll need to do is set the initial state of this component.
 
 ```javascript
 class Main extends React.Comonent{
@@ -36,7 +36,7 @@ class Main extends React.Comonent{
 };
 ```
 
-You may have noticed, as we're doing the example, is this component is going to manage a `username` which is the thing that we'll type into the input box. It's going to manage an `isloading` Boolean which will allow us to toggle that spinner, and will also manage a `false` Boolean, which will allow us to show an error message if something bad happens.
+You may have noticed, as we're doing the example, is this component is going to manage a `username` which is the thing that we'll type into the input box. It's going to manage an `isLoading` Boolean which will allow us to toggle that spinner, and will also manage a `false` Boolean, which will allow us to show an error message if something bad happens.
 
 ```javascript
 class Main extends React.Comonent{
@@ -52,7 +52,7 @@ class Main extends React.Comonent{
 };
 ```
 
-Now I'll modify our UI a little bit. Instead of this saying `Testing the Router`, let's change this to the title which is `Search for a Github User`. The style it's going to take is `{style.title}` which we made in the `styles` above. 
+Now I'll modify our UI a little bit. Instead of this saying `Testing the Router`, let's change this to the title which is `Search for a Github User`. The style it's going to take is `{styles.title}` which we made in the `styles` above. 
 
 ```javascript
 render() {
@@ -97,11 +97,11 @@ Regular React without ES6, React will go ahead and autobind all of the `this` ke
 
 Now let's go ahead and make our search button. What we'll use is `TouchableHighlight` component, and we'll have a `style` of `style.button` which we made above. We'll have an `onPress` attribute, what this will do is whenever someone presses on this button, it will go ahead and run this `handleSubmit` function that we'll create later, and then we'll have an `underlayColor="white"` so that whenever someone is pressing on the button the background will go white.
 
-```javascript
+```html
 render() {
     ...
     <TouchableHighlight
-        style{styles.button}
+        style={styles.button}
         onPress={this.handleChange.bind(this)}
         underlayColor="white">
     ...
@@ -110,7 +110,7 @@ render() {
 
 Let's go ahead and nest a `<Text>` value under the `TouchableHighlight` of search, and add a `style` property on here as well of `{styles.buttonText}`. We'll close our `<TouchableHighlight>` component.
 
-```javascript
+```html
 render() {
     ...
     <TouchableHighlight
@@ -125,7 +125,7 @@ render() {
 
 Now let's go and let's create our `handleSubmit` function. We're going to add `handleSubmit` right below the `handleChange` function. If you think about the purpose of this `handleSubmit` function, it's going to do a few things. It's going to update our indicatorIOS spinner, it's then going to go and fetch data from Github, get the user's Github information, and then it's going to reroute us to the next route passing in that Github information.
 
-In the next video, we'll talk all about fetching data using React natives. In this video is what we'll do is we'll go ahead and update the state of our loading, our `isloading` property on the `.setState` to `true`. Then what we'll do is let's just `console.log('SUBMIT')`, and then we'll pass along `this.state.username`, 
+In the next video, we'll talk all about fetching data using React natives. In this video is what we'll do is we'll go ahead and update the state of our loading, our `isLoading` property on the `.setState` to `true`. Then what we'll do is let's just `console.log('SUBMIT')`, and then we'll pass along `this.state.username`, 
 
 ```javascript
 handleSubmit(){

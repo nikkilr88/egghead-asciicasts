@@ -18,7 +18,7 @@ class Repositories extends react.Component{
 }
 ```
 
-Now, what we need to do is go and define what this `Web_View` is. If I don't do it now, I'm going to forget. I'm going to go up here and `require` `Web View`. We're going to put it in helpers, and then it's going to be called web view.
+Now, what we need to do is go and define what this `Web_View` is. If I don't do it now, I'm going to forget. I'm going to go up here and `require` `Web View`. We're going to put it in `Helpers`, and then it's going to be called `WebView.
 
 ```javascript
 var Web_View = require('./Helpers/WebView');
@@ -28,7 +28,7 @@ Let's go into our `Helpers` folder, create a new file called `WebView.js` Then, 
 
 ####WebView.js
 ```javascript
-var React = require('rect-native');
+var React = require('react-native');
 
 var {
     View,
@@ -49,13 +49,13 @@ var styles = StyleSheet.create({
 })
 ```
 
-Now, we have our style set up. Let's go ahead and create our `class` for our component. We'll call it WebView. It's going to `extends React.Component` as normal, we'll `return` something from this `render` and then so I don't forget, `modular.exports = WebView`.
+Now, we have our style set up. Let's go ahead and create our `class` for our component. We'll call it `WebView`. It's going to `extends React.Component` as normal, we'll `return` something from this `render` and then so I don't forget, `module.exports = WebView`.
 
 ```javascript
 class WebView extends React.Component{
     render(){
         return(
-
+            {/* No Code Yet!!! */}
         )
     }
 };
@@ -65,7 +65,7 @@ module.exports = WebView;
 
 Then, what we're going to return is a `<View>` with our `style={styles.container}` and inside of that `<View>`, we're going to use `WebView`.
 
-What web view will allow us to do is it'll load a url, which we're getting from `{this.props.url}`, the url that we're passing in inside of the apps view.
+What `WebView` will allow us to do is it'll load a url, which we're getting from `{this.props.url}`, the url that we're passing in inside of the apps view.
 
 ```html
 class WebView extends React.Component{
@@ -83,13 +83,13 @@ Now that we have that, the last thing we need to do is add a `propType` on here 
 
 ```javascript
 WebView.propTypes = {
-    url: react.PropTypes.string.isRequired
+    url: React.PropTypes.string.isRequired
 }
 ```
 
-In the app, we type in a name, we go to repos, and then we should be able to come to any of these, but we have an error: maximum call size stack exceed.
+In the app, we type in a name, we go to repos, and then we should be able to come to any of these, but we have an error: `maximum call size stack exceed`.
 
-I did some digging and I did something stupid. Notice, I have a `WebView` variable, I also named my class `WebView`. Let's change our class to just be `Web` and everywhere we reference it, our class, propTypes, and exports
+I did some digging and I did something stupid. Notice, I have a `WebView` variable, I also named my class `WebView`. Let's change our class to just be `Web` and everywhere we reference it, our `class`, `.propTypes`, and `.exports`.
 
 Now, the only `WebView` we should have is the `WebView` component we're using. Let's go and try this now, I'm going to recompile it, search for a username, view repos, and then angular. There we go, there's our web view.
 

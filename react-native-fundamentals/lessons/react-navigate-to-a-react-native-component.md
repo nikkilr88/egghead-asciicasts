@@ -1,4 +1,4 @@
-You'll remember earlier when we created our `Dashboard`, we had a `goToProfile` function, a `goToRepos` function, and a `goToNotes` function. Each of these were invoked when a user pressed on a certain `<TouchableHightlight>` button. But because we didn't have the repositories component finished, we just console.log, `'Go to repos'`.
+You'll remember earlier when we created our `Dashboard`, we had a `goToProfile` function, a `goToRepos` function, and a `goToNotes` function. Each of these were invoked when a user pressed on a certain `<TouchableHightlight>` button. But because we didn't have the `Repositories` component finished, we just `console.log('Go to repos')`.
 
 We start by copying what we did in `goToProfile` and pasting it into `goToRepos`. What we're going to do now is, instead of just logging that, let's actually take the user to the `Repositories` component. The title, let's call it `'Repos'`. 
 

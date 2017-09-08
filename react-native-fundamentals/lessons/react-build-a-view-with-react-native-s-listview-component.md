@@ -1,4 +1,4 @@
-With this Notes component, we're going to use this ListView from https://facebook.github.io/react-native/docs/listview.html. 
+With this `Notes` component, we're going to use this ListView from [https://facebook.github.io/react-native/docs/listview.html](https://facebook.github.io/react-native/docs/listview.html). 
 
 #### https://facebook.github.io/react-native/docs/listview.html
 ```javascript
@@ -24,11 +24,11 @@ class MyComponent extends Component {
 
 "It's a core component designed for efficient display of vertically scrolling lists of changing data." That's exactly what we're going to have. When we're doing those notes, those notes could be changing.
 
-The biggest thing here, looking at this example, is we create this new instance of DataSource, `const ds = new ListView.DataSource`. We pass it this object, `{rowHasChanged: (r1, r2) => r1 !== r2}`. Then what we do is we invoked a `cloneWithRows` method on our `dataSource` instance that we made. We pass it the rows that we want to loop over, `(['row 1', 'row 2'])`. We save that as part of our state.
+The biggest thing here, looking at this example, is we create this new instance of `DataSource`, `const ds = new ListView.DataSource`. We pass it this object, `{rowHasChanged: (r1, r2) => r1 !== r2}`. Then what we do is we invoked a `cloneWithRows` method on our `dataSource` instance that we made. We pass it the rows that we want to loop over, `(['row 1', 'row 2'])`. We save that as part of our state.
 
 Then you'll notice down below `getInitialState`, we have the `ListView` component. `dataSource` is the result of calling `cloneWithRows`, and then, we have this `renderRow` attribute. We give it a callback function that will invoke for every row in our array we pass to `cloneWithRows`. Here, `<Text>{rowData}</Text>`, `rowData` will be row 1 and row 2. That's getting passed in as a parameter to our function.
 
-Let's jump over to our code now and go to our `Components` folder and create a new file called `Notes.js`. `Require` `React`. We're also going to `require` our `api` so that we can communicate with our Firebase API. We're going to `require` our `Separator` component we built earlier. The last one is we're going to `require` our `Badge` that we built earlier as well.
+Let's jump over to our code now and go to our `Components` folder and create a new file called `Notes.js`. `require` `React`. We're also going to `require` our `api` so that we can communicate with our Firebase API. We're going to `require` our `Separator` component we built earlier. The last one is we're going to `require` our `Badge` that we built earlier as well.
 
 #### Notes.js
 ```javascript
@@ -87,7 +87,7 @@ var styles = StyleSheet.create({
 });
 ```
 
-Now, what we'll do is let's go ahead and create our new `class Notes` component, which `extends React.Component`. Then, because this component is going to manage its own state, we need to have this `constructor` function. We're going to set `this.state` to be a few things. Before we do that, we're always going to call `super`, passing in `props`.
+Now, what we'll do is let's go ahead and create our new `Notes` component, which `extends React.Component`. Then, because this component is going to manage its own state, we need to have this `constructor` function. We're going to set `this.state` to be a few things. Before we do that, we're always going to call `super`, passing in `props`.
 
 ```javascript
 class Notes extends React.Component{
@@ -100,7 +100,7 @@ class Notes extends React.Component{
 }
 ```
 
-Then we're going to have this DataSource, `this.ds = new ListView.DataSource`. What we're going to pass it is `rowHasChanged`. We have `row1, row2`, and then arrow function, `=> row1 !== row2`. 
+Then we're going to have this `DataSource`, `this.ds = new ListView.DataSource`. What we're going to pass it is `rowHasChanged`. We have `row1, row2`, and then arrow function, `=> row1 !== row2`. 
 
 ```javascript
 class Notes extends React.Component{
@@ -114,7 +114,7 @@ class Notes extends React.Component{
 }
 ```
 
-Now, in our state, we're going to have a `dataSource` which is set to what we get back from invoking `this.ds.cloneWithRows`, .
+Now, in our `state`, we're going to have a `dataSource` which is set to what we get back from invoking `this.ds.cloneWithRows`, .
 
 We're going to pass it `this.props.notes`, which is all the notes that we'll get from Firebase before we come to this route. We'll have an empty `note`, and then we'll also have an `error`.
 
@@ -124,7 +124,7 @@ class Notes extends React.Component{
         super(props)
         this.ds = new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2});
         this.state = {
-            dataSource: thisds.cloneWithRose(this.props.notes),
+            dataSource: thiss.cloneWithRose(this.props.notes),
             note: '',
             error: ''
         }
@@ -139,12 +139,12 @@ As of right now, we don't really have any notes. It wouldn't make sense to make 
 ```html
 render(){
     <View style={styles.container}>
-    {this.footer()}
+        {this.footer()}
     </View>
 }
 ```
 
-Let's now go and, above render, we'll make `footer`, which is going to return us a `<View>` with a `style` of `{styles.footContainer}` which we pasted in above. What's nice about React is that you can do things like this, where you can have a function which returns some UI and then just invoke that function. You can have it be returned, which will show your UI.
+Let's now go and, above `render()`, we'll make `footer`, which is going to return us a `<View>` with a `style` of `{styles.footContainer}` which we pasted in above. What's nice about React is that you can do things like this, where you can have a function which returns some UI and then just invoke that function. You can have it be returned, which will show your UI.
 
 ```html
 footer(){
@@ -177,14 +177,14 @@ Now, up just above `footer`, we'll make `handleChange`. All it's going to do is 
 ```javascript
 handleChange(e){
     this.setState({
-        note: e.snativeEvent.text
+        note: e.nativeEvent.text
     });
 }
 ```
 
 Now that that's good, let's go back down to our `footer`. Let's add in a button. We're going to use `TouchableHighlight` to be able to capture that touch event. `styles` is `styles.button`.
 
-`onPress` is going to equal `this.handleSubmit`, which will make...The `underlayColor` is going to equal `#88D4F5`. Inside of here, let's have a `<Text>` component with a `style` of `buttonText`. Have it say, `Submit`, and then we'll close out our `TouchableHighlight` component.
+`onPress` is going to equal `this.handleSubmit`, The `underlayColor` is going to equal `#88D4F5`. Inside of here, let's have a `<Text>` component with a `style` of `buttonText`. Have it say, `Submit`, and then we'll close out our `TouchableHighlight` component.
 
 ```html
 footer(){
@@ -209,10 +209,10 @@ footer(){
 
 Now, let's go ahead and make this `handleSubmit` function. I'm going to do it right below `handleChange`. Remember, what `handleSubmit` is responsible for is it's going to take the value or it's going to take this note property on our state in `handleChange` and throw it up to Firebase.
 
-Start by making `handleSubmit()`. We're going to get the note, `var note = this.state.note;`. Then what we can do is reset the state so that'll clear out our input field, `this.setState({})`. Then, if you remember, in our `api`, we made an `addNote` method, `api.addNote()` that expects to receive the user's `userInfo.note` and a `note`. 
+Start by making `handleSubmit()`. We're going to get the note, `var note = this.state.note;`. Then what we can do is reset the state so that'll clear out our input field, `this.setState({})`. Then, if you remember, in our `api`, we made an `addNote` method, `api.addNote()` that expects to receive the user's `userInfo.login` and a `note`. 
 
 ```javascript
-handleSubmite(){
+handleSubmit(){
     var note = this.state.note;
     this.setState({
         note''
@@ -234,7 +234,7 @@ handleSubmite(){
     api.addNote(this.props.userInfo.login, note)
         .then((data) => {
             api.getNotes(this.props.userInfo.login)
-                .then((date) => {
+                .then((data) => {
                     this.setState({
                         dataSource: this.ds.cloneWithRows(data)
                     })
@@ -243,7 +243,7 @@ handleSubmite(){
 }
 ```
 
-If any of that errors, let's go ahead and throw a `catch((err) => `. We're going to `console.log('Request failed')` and the error message, `error`, and then we're going to `setState({error})`. 
+If any of that errors, let's go ahead and throw a `catch((err) => `. We're going to `console.log('Request failed')` and the error message, `err`, and then we're going to `setState({error})`. 
 
 ```javascript
 .catch((err) => {
@@ -252,9 +252,9 @@ If any of that errors, let's go ahead and throw a `catch((err) => `. We're going
     })
 ```
 
-One last ES6 feature here is that before, you would have to do something like error error, `this.setState({error: errr}), but if these repeat, you can just throw in one, `this.setState({error})`, which is really convenient.
+One last ES6 feature here is that before, you would have to do something like error error, `this.setState({error: errr})`, but if these repeat, you can just throw in one, `this.setState({error})`, which is really convenient.
 
-Now that that's up, now that our footer is working and it should be making requests to Firebase, let's go ahead and now worry about our `<ListView>`. In `render`, we're going to have our `<ListView>` component.
+Now that that's up, now that our `footer` is working and it should be making requests to Firebase, let's go ahead and now worry about our `<ListView>`. In `render`, we're going to have our `<ListView>` component.
 
 The `dataSource` we're going to give it is `this.state.dataSource`, which we made up when we did `getInitialState`. Remember, `renderRow` is basically the UI for every item in our `dataSource`. I'm going to set `render` to `this.renderRow`. We'll make `renderRow` function here, in a bit.
 
@@ -269,7 +269,7 @@ render(){
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRow}
-                renderHeader={() => <Badge userInfo={this.props.userINfo}/> } />
+                renderHeader={() => <Badge userInfo={this.props.userInfo}/> } />
             {this.footer()}
         </View>
     )
@@ -291,6 +291,7 @@ renderRow(rowData){
             <View style={styles.rowContainer}>
                 <Text> {rowData} </Text>
             </View>
+            <Separator />
         </View>
     )
 }
@@ -298,7 +299,7 @@ renderRow(rowData){
 
 Dont forget to add `module.exports = Notes;` at the end.
 
-Then let's set up some prop types on our component. We're expecting to receive some `userInfo`. As always, that's going to be `React.PropTypes.object.isRequired`. There are some `notes`, which is going to be `React.PropTypes.object.isRequired` as well.
+Then let's set up some `propTypes` on our component. We're expecting to receive some `userInfo`. As always, that's going to be `React.PropTypes.object.isRequired`. There are some `notes`, which is going to be `React.PropTypes.object.isRequired` as well.
 
 ```javascript
 Notes.propTypes = {

@@ -100,4 +100,4 @@ Badge.propTypes = {
 };
 ```
 
-In order for this component to run and not throw an error, we need to have this userInfo object passed in when we use our Badge component.
+In order for this component to run and not throw an error, we need to have this `userInfo` object passed in when we use our `<Badge>` component.

@@ -1,4 +1,4 @@
-In order to persist data, we are going to use `Firebase`. If you're following along, go over to `firebase.com` and sign up for an account. Once you do that, you will be taking to this dashboard page. You can go ahead here and create a new app, so we can just call it `github-saver`.
+In order to persist data, we are going to use `Firebase`. If you're following along, go over to [firebase.com](https://firebase.google.com/) and sign up for an account. Once you do that, you will be taking to this dashboard page. You can go ahead here and create a new app, so we can just call it `github-saver`.
 
 ![Create an app on firebase](../images/react-persist-data-in-react-native-with-firebase-rest-api-app-on-firebase.png)
 
@@ -42,7 +42,7 @@ addNote(username, note){
 
 After that, what we'll do is let's make another `url`. What we're going to do is make a post request with `fetch`.
 
-What's nice about fetch it's API, it's almost the exact same thing. We're going to pass on a url now, `'https://github-saver.firebaseio.com/${username}.json'`, we are also going to pass in an object as the second argument. The `method: 'post'`. The `body` of that post request is going to be `JSON.stringify(note)`. Then as always, fetch will return us a promise, which we can add `.then` on to. Then we're going to return the `response.json()`. 
+What's nice about fetch its API, it's almost the exact same thing. We're going to pass on a url now, `'https://github-saver.firebaseio.com/${username}.json'`, we are also going to pass in an object as the second argument. The `method: 'post'`. The `body` of that post request is going to be `JSON.stringify(note)`. Then as always, fetch will return us a promise, which we can add `.then` on to. Then we're going to return the `response.json()`. 
 
 ```javascript
 addNote(username, note){

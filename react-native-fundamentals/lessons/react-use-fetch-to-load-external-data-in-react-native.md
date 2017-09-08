@@ -15,7 +15,7 @@ var api = {
 module.exports = api;
 ```
 
-This method is going to accept the `username` and we're going to format this username just a little bit, so let's do `.toLowerCase()` on it as well as `.trim()`. 
+This method is going to accept the `username` and we're going to format this `username` just a little bit, so let's do `.toLowerCase()` on it as well as `.trim()`. 
 
 ```javascript
 var api = {
@@ -36,7 +36,7 @@ var api = {
 };
 ```
 
-What this allows us to do is, if we throw in username in the `{}`, this is the same thing as doing something like this, 
+What this allows us to do is, if we throw in `username` in the `{}`, this is the same thing as doing something like this, 
 
 ```javascript
 var url = "https://api.github.come/users/" + username "+ "/repos"
@@ -46,7 +46,7 @@ where you're concatenating this string. It's just an easier way and it looks a l
 
 I'm a huge fan of using back ticks in this templating language, or templating ability in ES6, so we're going to use it all over the place in this app.
 
-We are going to `return fetch(url)`, so we'll get a promise returned, and then this fetch invocation is going to return us another promise, which will chain, and we'll get a response, and then we're going to return `res.json()` as we did before.
+We are going to `return fetch(url)`, so we'll get a promise returned, and then this `fetch()` invocation is going to return us another promise, which will chain, and we'll get a response, and then we're going to return `res.json()` as we did before.
 
 ```javascript
 var api = {
@@ -137,7 +137,7 @@ If we find that, what we'll do is we'll set our `state`, and have our `error: 'U
 
 The reason we're able to do `this.props.navagator.push` is because if you remember back in `index.ios.js`, we created this `<NavgatorIOS>` component. What we're going to do is we're going to push this new object, or we're basically just going to change routes.
 
-The `title` of this is going to be `res.name`, or if that person doesn't have a name on GitHub, let's just do `"Select an Option"`. The `component` we're going to use is a `Dashboard` component which we haven't made yet, but we'll make that in a second. Then the `passProps` we are going to pass to it is `userInfo: res`.
+The `title` of this is going to be `res.name`, or if that person doesn't have a name on GitHub, let's just do `"Select an Option"`. The component we're going to use is a `Dashboard` component which we haven't made yet, but we'll make that in a second. Then the `passProps` we are going to pass to it is `userInfo: res`.
 
 ```javascript
 ...
@@ -160,7 +160,7 @@ After we do that, we're going to set the state. So if we go back, the state will
         component: Dashboard,
         passProps: {userInfo: res}
     });
-    this.setSTate({
+    this.setState({
         isLoading: false,
         error: false,
         username: ''

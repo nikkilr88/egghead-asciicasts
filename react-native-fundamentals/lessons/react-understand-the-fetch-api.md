@@ -22,7 +22,7 @@ Now, instead of having to worry about these callbacks, `fetch(url)`, we're going
 >   })
 ```
 
-We can also do something like this, where if there's an error, it will invoke this `.catch` method and give us back this error. We'll `console.log('error')`. Here, we'll console.log the response.
+We can also do something like this, where if there's an error, it will invoke this `.catch` method and give us back this error. We'll `console.log('error')`. Here, we'll `console.log()` the response.
 
 ```javascript
 > fetch(url)
@@ -38,7 +38,7 @@ Notice we have this response object.
 
 ![Resonse Object](../images/react-understand-the-fetch-api-the-response.png)
 
-It has some stuff on it. This isn't actually the exact data we want though. What we're going to do is we're going to modify this a little bit to say, once we get this response, `res`, back, let's go ahead and `return res.json`.
+It has some stuff on it. This isn't actually the exact data we want though. What we're going to do is we're going to modify this a little bit to say, once we get this response, `res`, back, let's go ahead and `return res.json()`.
 
 ```javascript
 > fetch(url)
@@ -50,7 +50,7 @@ It has some stuff on it. This isn't actually the exact data we want though. What
 >   })
 ```
 
-This is going to parse our JSON and return us another promise that we can chain on here and pass in another function. Now, this response should be our...Let's call it our `(jsonRes)`. From here, let's `console.log('The response', jsonRes)`.
+This is going to parse our JSON and return us another promise that we can chain on here and pass in another function. Let's call it our `(jsonRes)`. From here, let's `console.log('The response', jsonRes)`.
 
 ```javascript
 > fetch(url)
@@ -65,7 +65,7 @@ This is going to parse our JSON and return us another promise that we can chain 
 >   })
 ```
 
-Now, notice what happened was we call `fetch`. We had a `.then` under that. The function, `function(res)`, will run. Once our initial data gets back from the GitHub servers, `.then` we're going to return another promise, `return res.json();`, so we can then chain it again with the second function, `function(jsonRes)`. `.then` we `console.log(The response)`, which is the data that we wanted from GitHub.
+Now, notice what happened was we call `fetch`. We had a `.then` under that. The function, `function(res)`, will run. Once our initial data gets back from the GitHub servers, then we're going to return another promise, `return res.json();`, so we can then chain it again with the second function, `function(jsonRes)`. then we `console.log('The response, jsonRes')`, which is the data that we wanted from GitHub.
 
 If we do this again and we change the `url` to be something that's broken...Let's just do `github.com/sefsef`, you'll notice we get an error because it caught the error. 
 

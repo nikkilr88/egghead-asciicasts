@@ -2,7 +2,7 @@
 
 ![course image](https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/014/full/course_image.png?1496436371)
 
-Asciicasts for [Tyler McGinnis](https://egghead.io/instructors/tyler-mcginnis) course on [egghead.io](https://egghead.io/courses/react-native-fundamentals).
+Asciicasts for [Tyler McGinnis'](https://egghead.io/instructors/tyler-mcginnis) course on [egghead.io](https://egghead.io/courses/react-native-fundamentals).
 
 There are 17 transcripts, one transcript for each video.
 
