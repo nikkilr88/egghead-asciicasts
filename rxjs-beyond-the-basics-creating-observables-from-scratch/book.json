@@ -1,0 +1,5 @@
+{
+    "title": "RxJS Beyond the Basics: Creating Observables from scratch",
+    "description": "This book covers the [RxJS Beyond the Basics: Creating Observables from scratch](https://egghead.io/courses/rxjs-beyond-the-basics-creating-observables-from-scratch) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
