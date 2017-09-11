@@ -1,0 +1,5 @@
+{
+    "title": "React Native Fundamentals",
+    "description": "This book covers the [React Native Fundamentals](https://egghead.io/courses/react-native-fundamentals) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
