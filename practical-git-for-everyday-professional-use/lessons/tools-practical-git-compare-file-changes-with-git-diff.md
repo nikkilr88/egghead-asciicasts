@@ -1,4 +1,4 @@
-I'm in my command line inside of a directory called `utility-functions`, which is a Git repository. I'd like to update my project to use the ECMAScript 2015 module syntax. So let's create a new branch called `es2015-modules`, `git checkout -b es2015-modules`. I've opened the `getInitials.js` file in `utility-function` in my code editor, and let's change this function declaration to use the `default` `export`. 
+I'm in my command line inside of a directory called `utility-functions`, which is a Git repository. I'd like to update my project to use the ECMAScript 2015 module syntax. So let's create a new branch called `es2015-modules`, `git checkout -b es2015-modules`. I've opened the `getInitials.js` file in `utility-function` in my code editor, and let's change this function declaration to use the `export default`. 
 
 #### getInitials.js
 ```javascript
@@ -52,13 +52,23 @@ to
 _A collection of JavaScript utility functions!_ 
 ```
 
-Let's save and close that file. Now if we run `git status` we can see that we have some staged files, and we also have unstaged changes, so now if we run our `git diff HEAD` command, we see the changes between both the working directory and the staged changes compared with our last commit. So again, that means all uncommitted changes.
+Let's save and close that file. Now if we run `git status` we can see that we have some staged files, and we also have unstaged changes. 
+
+![Some staged and unstaged files](../images/tools-practical-git-compare-file-changes-with-git-diff-staged-and-unstaged-files.png)
+
+So now if we run our `git diff HEAD` command, we see the changes between both the working directory and the staged changes compared with our last commit. So again, that means all uncommitted changes.
+
+![git diff head](../images/tools-practical-git-compare-file-changes-with-git-diff-git-diff-HEAD.png)
 
 We can also pass in other references like a `{branch}` name, so for example, one option that is really helpful is to grab your latest remote branches using `git fetch`, and then run `git diff` with your remote `master` branch, `git diff origin/master`, and this will show us all the changes that we have locally that haven't been merged into our remote `master` branch. So this would be the same diff that you would see if you were using a `pull` request on something like GitHub.
 
 So if we run that right now, we get the same output as our last `HEAD` command, but the difference is that now if we were to commit these changes, let do that now, and if we run the `git diff HEAD` command, we don't see any changes because our last commit is the same as what's in our working directory and staging area. But we if we run our `git diff origin/master` command again, we'll see all of the changes that have been committed locally that are not in our remote `master` branch.
 
+![git diff origin/master](../images/tools-practical-git-compare-file-changes-with-git-diff-git-diff-origin-master.png)
+
 By default, the `git diff` command will use all files and directories in our repo that are not in a git ignore file. We can narrow that down by passing in specific files and directories as arguments. So for example, let's do the same comparison that we did before with our remote branch, but let's only look at the `getRandomNumber.js` file, `git diff origin/master getRandomNumber.js`, so if we run that command we only see the `diff` of the single file that we passed in as an argument.
+
+![git diff origin/master getRandomNumber.js](../images/tools-practical-git-compare-file-changes-with-git-diff-origin-master-getRandomNumber)
 
 So to review, the `git diff` command lets us compare changes between two references, by default this is the working directory and the last commit. We can compare the last commit with the staging area by using the `--cached` option, we can compare the last commit with both our staged and unstaged changes by using the `HEAD` reference.
 

@@ -2,6 +2,8 @@ We're inside of a directory called `utility-functions`, which is a git repo. Let
 
 This shows that we have two branches in our project. We have the `master` branch and we have the `new-feature` branch that we just created. The asterisk next to `master` shows us that the `master` branch is what we have currently checked out.
 
+![Master branch is checked out](../images/tools-practical-git-isolate-feature-development-with-git-branch-master-checked-out.png)
+
 What that means is if we make commits right now, they're going to get added to the `master` branch and not any of the other branches in our repo. Because of this, git branches are useful for developing features on their own. When we ran the git branch command with a name, it created a new branch by copying the currently checked out branch.
 
 We can switch to a different branch by running `git checkout` and then the branch name. Let's switch to the `new-feature` branch. If we run `git branch` again, we can see that `new-feature` is the checked out branch. Since we haven't added any commits to the new feature branch, it's currently identical to the `master` branch.

@@ -8,7 +8,7 @@ A collection of utility functions
 
 # Examples
 
-getRancomElement([1, 2, 3]);
+getRandomElement([1, 2, 3]);
 //=> 2
 
 getRandomNumber(1, 10);
@@ -19,4 +19,4 @@ Now we have a simple document at the root of our project that has a description 
 
 There are lots of other things that you can put in your `README.md` as well as lots of other markdown syntax that you can learn, like these examples here. The important thing is that no matter what, at least, have a simple `README.md` that explains what your repo is for. Now let's do a `git status`, and we'll see that our `README.md` is untracked.
 
-Let's stage it, and then we'll create a `commit`. We'll say, "Adding README". Then let's `push` it to our remote repo. Now if we look at our repo on our GitHub page, we can see if we scroll down that our `README.md` is being rendered. It says, "A collection of utility functions," and then it has a few code examples from the document that we created...
+Let's stage it, and then we'll create a `commit`. We'll say, `git commit -m "Adding README"`. Then let's `push` it to our remote repo, `git push`. Now if we look at our repo on our GitHub page, we can see if we scroll down that our `README.md` is being rendered. It says, "A collection of utility functions," and then it has a few code examples from the document that we created...

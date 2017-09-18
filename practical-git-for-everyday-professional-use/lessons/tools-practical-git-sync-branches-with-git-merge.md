@@ -1,6 +1,6 @@
-We're inside of a directory called `utility-functions`, which is a Git repo. Our project needs a new feature where we can take a string like '"My Favorite Songs"', and convert it into a string that's lower case with dashes in between, to be used in a URL, `"my-favotire-songs"`.
+We're inside of a directory called `utility-functions`, which is a Git repo. Our project needs a new feature where we can take a string like `"My Favorite Songs"`, and convert it into a string that's lower case with dashes in between, to be used in a URL, `"my-favorite-songs"`.
 
-To work on this new feature let's create and check out a new branch called `url-slugs`, `git checkout -b url-slug`. Now I'll run `git branch` to make sure we are on our new branch as expected. Next, I'm going to create a new file in our directory called `getURLSlug.js`, `touch getURLSlug.js`, and we'll open that file in our code editor.
+To work on this new feature let's create and check out a new branch called `url-slug`, `git checkout -b url-slug`. Now I'll run `git branch` to make sure we are on our new branch as expected. Next, I'm going to create a new file in our directory called `getURLSlug.js`, `touch getURLSlug.js`, and we'll open that file in our code editor.
 
 Now, I'll work on this new feature, so I'm going to create a `function` called `getURLSlug`. 
 

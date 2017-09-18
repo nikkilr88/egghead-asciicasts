@@ -4,7 +4,7 @@ If we take a look at the contents of our files again, we were told that this `ge
 
 #### getRandomElement.js
 ```
-funciton getRandomElemnt(arr){
+function getRandomElemnt(arr){
     return arr[Math.floor(Math.random() * arr.length);
 }
 ```
@@ -12,16 +12,20 @@ funciton getRandomElemnt(arr){
 and it should be a closing bracket. So let's fix that. 
 
 ```javascript
-funciton getRandomElemnt(arr){
+function getRandomElemnt(arr){
     return arr[Math.floor(Math.random() * arr.length)];
 }
 ```
 
-Back on our command line if we run `git status` we can see that it's changed. It says that our changes are not staged for commit, and that we've modified this file, `getRandomElement.js`, which is what we expect.
+Back on our command line if we run `git status` we can see that it's changed. It says that our "changes are not staged for commit", and that we've modified this file, `getRandomElement.js`, which is what we expect.
 
 Now let's type `git add -A` and what this will do is it's saying that we want to add or stage all of the changes that we see here in our status. So if we run this command and the run `git status` again, it says that our changes are ready to be committed. This means that the changes have been added to the staging area, which is a place where we can add and remove from until we are ready to commit.
 
-Now to commit what we have in our staging area, we'll type `git commit -m`, and `m` stands for message, and we'll give it a commit message. This message will be helpful for us and our team members in the future to know why something was changed. We're going to say that we had to `"Add a missing bracket"`, and now if we run that and the run `git status` again, it says that our local repo is ahead of our remote repo by one commit.
+![Changes ready to be commited](../images/misc-practical-git-capture-code-history-snapshots-with-git-add-commit-push-ready-to-be-commited.png)
+
+Now to commit what we have in our staging area, we'll type `git commit -m`, and `m` stands for message, and we'll give it a commit message. This message will be helpful for us and our team members in the future to know why something was changed. We're going to say that we had to `"Add a missing bracket"`, `git commit -m "Add a missing bracket"`, and now if we run that and the run `git status` again, it says that our local repo is ahead of our remote repo by one commit.
+
+![Running git status after making a commit](../images/misc-practical-git-capture-code-history-snapshots-with-git-add-commit-push-git-status-after-commit.png)
 
 So now to sync up all of these changes with our remote repo we need to `push` the commits we've made, so I will say `git push` and if we run that, and then run `git status` again, we're back to where we started, where it says that the working directory is clean again. If we take a look at our remote repository now, we can see that our commit here, add a missing bracket, was added.
 

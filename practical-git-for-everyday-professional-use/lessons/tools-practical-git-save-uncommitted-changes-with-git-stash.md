@@ -1,4 +1,4 @@
-We're inside of a directory called `utility functions`, which is a Git repo. Let's start working on a new feature. We'll run `git checkout -b` for branch, and then the name of our new branch which will be `months`. Now let's create a new file in our directory called `getMonthName.js`, and let's open that file in our code editor. Now, let's start writing our feature. 
+We're inside of a directory called `utility-functions`, which is a Git repo. Let's start working on a new feature. We'll run `git checkout -b` for branch, and then the name of our new branch which will be `months`. Now let's create a new file in our directory called `getMonthName.js`, and let's open that file in our code editor. Now, let's start writing our feature. 
 
 #### getMonthName.js
 ```javascript

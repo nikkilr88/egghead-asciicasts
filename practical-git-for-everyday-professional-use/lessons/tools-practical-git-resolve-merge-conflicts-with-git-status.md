@@ -29,11 +29,13 @@ A merge conflict is when your local code changes and the remote code changes can
 
 What we need to do is fix the conflicts, and then we'll be able to commit and push like normal. The first thing we need to do go run `git status` to see which files have a conflict.
 
+![git status to view conflicting files](../images/tools-practical-git-resolve-merge-conflicts-with-git-status-conflicting-files.png)
+
 Running `git status` becomes more helpful as there are more files that have conflicts in them, because it says that these are the `Unmerged paths`. If we had other paths that had been merged properly, they'd show up above that, and then the ones that could not be automatically merged show up here in the `Unmerged path` section. The file that we need to fix is `getInitials.js`.
 
 After we've run `git status` and we have the list of the files that have conflicts, we need to open those in our editor, so let's open this `getInitials.js`. The file has been modified by Git to show where the conflicts are.
 
-We can see here a marker that says `head`, and then there's equals signs, and then there's another market with arrows and a commit ID here. 
+We can see here a `marker` that says `head`, and then there's equals signs, and then there's another market with arrows and a commit ID here. 
 
 ![File modified by git](../images/tools-practical-git-resolve-merge-conflicts-with-git-status-git-modfies-file.png)
 
