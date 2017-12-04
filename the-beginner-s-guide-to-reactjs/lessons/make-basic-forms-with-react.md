@@ -13,7 +13,7 @@ class NameForm extends React.Component {
         )
     }
 }
-ReactDOM.redner(
+ReactDOM.render(
     <div />
     document.getElementById('root')
 )
@@ -35,8 +35,8 @@ class NameForm extends React.Component {
         )
     }
 }
-ReactDOM.redner(
-    <NameForm />
+ReactDOM.render(
+    <NameForm />,
     document.getElementById('root')
 )
 ```

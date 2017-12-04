@@ -48,7 +48,7 @@ class NameForm extends React.Component {
 Our getErrorMessage prop here is a function that accepts a value and validates it. 
 
 ```javascript
-ReactDOM.redner(
+ReactDOM.render(
     <NameForm
         getErrorMessage={value => {
             if (value.length < 3) {
@@ -59,7 +59,7 @@ ReactDOM.redner(
             }
             return null
         }}
-    />
+    />,
     document.getElementById('root'),
 )
 ```
