@@ -14,7 +14,7 @@ class NameForm extends React.Component {
     }
 }
 ReactDOM.render(
-    <div />
+    <div />,
     document.getElementById('root')
 )
 ```

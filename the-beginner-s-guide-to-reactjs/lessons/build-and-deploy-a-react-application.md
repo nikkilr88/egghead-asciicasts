@@ -26,7 +26,7 @@ When we're ready to get serious about deploying this, we can actually download t
 
 I can look in the `package.json` and see all the dependencies that I have. I have a couple of `<scripts>` here that I have available to me to `start` the dev server, `build` it and `run` my tests, and then I can look at my source directory with all the components that I had before in the CodeSandbox.
 
-Then I can run `npm-install` in the terminal, and when that's finished, I'll have this node modules directory. 
+Then I can run `npm install` in the terminal, and when that's finished, I'll have this node modules directory. 
 
 ![Node modules directory](../images/build-and-deploy-a-react-application-node-modules-directory.png)
 
