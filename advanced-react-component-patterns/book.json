@@ -1,0 +1,5 @@
+{
+    "title": "Advanced React Component Patterns",
+    "description": "Asciicasts for [Advanced React Component Patterns](https://egghead.io/courses/advanced-react-component-patterns) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}

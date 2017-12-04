@@ -1,0 +1,5 @@
+{
+    "title": "The beginner's guide to ReactJS",
+    "description": "This book converts the [The beginner's guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
