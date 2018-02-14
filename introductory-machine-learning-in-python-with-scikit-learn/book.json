@@ -1,0 +1,5 @@
+{
+    "title": "Introductory Machine Learning in Python with scikit-learn",
+    "description": "This book covers the [Introductory Machine Learning in Python with scikit-learn](https://egghead.io/courses/introductory-machine-learning-in-python-with-scikit-learn) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

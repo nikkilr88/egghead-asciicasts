@@ -1,0 +1,5 @@
+{
+    "title": "State Monad in JavaScript",
+    "description": "This book covers the [State Monad in JavaScript](https://egghead.io/courses/state-monad-in-javascript) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

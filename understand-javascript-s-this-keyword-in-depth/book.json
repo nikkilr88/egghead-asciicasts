@@ -1,0 +1,5 @@
+{
+    "title": "Understand JavaScript's this Keyword in Depth",
+    "description": "This book converts the [Understand JavaScript's this Keyword in Depth](https://egghead.io/courses/understand-javascript-s-this-keyword-in-depth) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

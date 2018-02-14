@@ -1,0 +1,5 @@
+{
+    "title": "Build a Blog with React and Markdown using Gatsby",
+    "description": "This book converts the [Build a Blog with React and Markdown using Gatsby](https://egghead.io/courses/build-a-blog-with-react-and-markdown-using-gatsby) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

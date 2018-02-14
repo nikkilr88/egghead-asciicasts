@@ -1,0 +1,5 @@
+You'll notice in the DevTools, when Poi is running, there's a div with an id of app in here. Then it handles all the manifest, vendor, and client webpack stuff for you, but if you want to customize any of this stuff, you can just create a file called index.ejs.
+
+Then I'll create a div with an id of app. I'll put some text above it, so I'll say above, and some text below it -- I'll say below. Because I changed the template, I need to stop and start Poi again, so I'll run Poi. You can see now we have above, My awesome app, and below, which is reflected in the DevTools.
+
+If you need to configure anything in the head or anything outside of the body, then just delete the entire thing. I'll generate a page using Emmet, then I'll change the title to My awesome app, make sure I add back a div element with an id of app, hit save. You can see the title is now My awesome app, and the head changed to My awesome app, and webpack is still injecting all the scripts we need.

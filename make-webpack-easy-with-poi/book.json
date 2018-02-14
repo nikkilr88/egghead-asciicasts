@@ -1,0 +1,5 @@
+{
+    "title": "Make Webpack Easy with Poi",
+    "description": "This book converts the [Make Webpack Easy with Poi](https://egghead.io/courses/make-webpack-easy-with-poi) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

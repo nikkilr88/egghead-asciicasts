@@ -1,0 +1,11 @@
+const log = require('./logger')
+
+const State = require('crocks/State')
+const Pair = require('crocks/Pair')
+
+const m = 
+	State(state => Pair('value', state))
+
+log(
+	m
+)

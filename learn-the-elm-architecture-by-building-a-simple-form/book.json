@@ -1,0 +1,5 @@
+{
+    "title": "Learn the Elm Architecture by Building a Simple Form",
+    "description": "This book covers the [Learn the Elm Architecture by Building a Simple Form](https://egghead.io/courses/learn-the-elm-architecture-by-building-a-simple-form) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

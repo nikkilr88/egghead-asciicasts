@@ -1,0 +1,5 @@
+Create a markdown file. We'll call this page.md, add some content to it. I'm using markdown page and a content goes here. Then, we can try and load it, we'll say import page from page.md and let it fail, because we don't have a right loader.
+
+To add the loader, we'll create our poiconfig.js to our module exports, and there is a property called webpack which passes in the config. Then, we modify the config here and return the config. We want to add a rule on the module, so config module rules, push, and the rule is going to look like this. Test our testing markdown files.
+
+The loaders you're going to use are the react-markdown-loader is going to pass into the pebble loader. Make sure and install the react-markdown-loader. We can stop this, start it up again. Now, there are no errors. Instead of just importing it, we can go ahead and use it as a react component. Say, page get save and you can see that my markdown file is being used as a react component.
