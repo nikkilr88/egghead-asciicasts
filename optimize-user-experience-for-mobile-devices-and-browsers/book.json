@@ -1,0 +1,5 @@
+{
+    "title": "Optimize User Experience for mobile devices and browsers",
+    "description": "This book covers the [Optimize User Experience for mobile devices and browsers](https://egghead.io/courses/optimize-user-experience-for-mobile-devices-and-browsers) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

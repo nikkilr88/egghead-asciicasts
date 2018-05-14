@@ -1,0 +1,5 @@
+{
+    "title": "Angular 2 Fundamentals",
+    "description": "This book covers the [Build Async Vue.js Apps with RxJS](https://egghead.io/courses/build-async-vue-js-apps-with-rxjs) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

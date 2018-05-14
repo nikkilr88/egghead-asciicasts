@@ -1,0 +1,5 @@
+{
+    "title": "End to End testing with Cypress",
+    "description": "This book covers the [End to End testing with Cypress](https://egghead.io/courses/end-to-end-testing-with-cypress) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

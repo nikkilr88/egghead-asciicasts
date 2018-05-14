@@ -1,0 +1,5 @@
+{
+    "title": "Safer JavaScript with the Maybe Type",
+    "description": "This book converts the [Safer JavaScript with the Maybe Type](https://egghead.io/courses/safer-javascript-with-the-maybe-type) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

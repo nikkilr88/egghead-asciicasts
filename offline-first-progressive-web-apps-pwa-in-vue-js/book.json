@@ -1,0 +1,5 @@
+{
+    "title": "Offline-First Progressive Web Apps (PWA) in Vue.js",
+    "description": "Asciicasts for [Offline-First Progressive Web Apps (PWA) in Vue.js](https://egghead.io/courses/offline-first-progressive-web-apps-pwa-in-vue-js) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}

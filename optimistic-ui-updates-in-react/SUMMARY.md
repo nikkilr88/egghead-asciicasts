@@ -1,0 +1,15 @@
+# Summary
+
+* [Introduction](README.md)
+* [Course Overview: Optimistic UI Updates in React](./lessons/react-course-overview-optimistic-ui-updates-in-react.md)
+* [Examine Real World Optimistic UI Updates](./lessons/react-examine-real-world-optimistic-ui-updates.md)
+* [Optimistically Update UI for a Snappier User Experience](./lessons/react-optimistically-update-ui-for-a-snappier-user-experience.md)
+* [Optimistically Update Multiple Values in State Using React's setState](./lessons/react-optimistically-update-multiple-values-in-state-using-react-s-setstate.md)
+* [Refactor Inlined React setState Function to a setState Updater Factory](./lessons/react-refactor-inlined-react-setstate-function-to-a-setstate-updater-factory.md)
+* [Revert State On Request Failure using React setState and Closures](./lessons/react-revert-state-on-request-failure-using-react-setstate-and-closures.md)
+* [Prevent Doubly Updating and Reverting State in React](./lessons/react-prevent-doubly-updating-and-reverting-state-in-react.md)
+* [Update state asynchronously in React using Promise and setState()](./lessons/react-update-state-asynchronously-in-react-using-promise-and-setstate.md)
+* [Add a loading indicator to UI for request in progress using setState()](./lessons/react-add-a-loading-indicator-to-ui-for-request-in-progress-using-setstate.md)
+* [Handle a rejected promise and display error to user using setState()](./lessons/react-handle-a-rejected-promise-and-display-error-to-user-using-setstate.md)
+* [Optimistic UI update in React using setState()](./lessons/react-optimistic-ui-update-in-react-using-setstate.md)
+* [Restore Target Items in React State for Improved Optimistic UI Updates](./lessons/react-restore-target-items-in-react-state-for-improved-optimistic-ui-updates.md)

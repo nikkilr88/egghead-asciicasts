@@ -1,0 +1,5 @@
+{
+    "title": "React Native Navigation for Mobile Applications",
+    "description": "This book covers the [React Native Navigation for Mobile Applications](https://egghead.io/courses/react-native-navigation-for-mobile-applications) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

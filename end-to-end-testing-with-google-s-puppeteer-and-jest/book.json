@@ -1,0 +1,5 @@
+{
+    "title": "End to End Testing with Google's Puppeteer and Jest",
+    "description": "Asciicasts for [End to End Testing with Google's Puppeteer and Jest](https://egghead.io/courses/end-to-end-testing-with-google-s-puppeteer-and-jest) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}

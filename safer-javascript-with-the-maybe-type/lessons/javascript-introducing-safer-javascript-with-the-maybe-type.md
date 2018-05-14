@@ -1,0 +1,7 @@
+Instructor: [00:01] JavaScript's dynamic typing makes the language incredibly flexible. That flexibility comes at a cost. Because any variable can potentially be of any type, it's easy to inadvertently introduce runtime-type errors into an application. We can, and often do, alleviate this by adding conditional checks throughout our code to handle such cases, but this leads to bloated code that can be hard to follow. 
+
+[00:24] The `Maybe` data type allows us to encapsulate the defensive coding needed to avoid such errors, keeping our application code focused on the task at hand. In this course, we'll look at the maybe type in action. We'll be relying on the maybe exposed by the crocks library, but the core concepts and much of the API translates to other implementations. 
+
+[00:43] This course starts with an overview of the maybe type and its underlying types, the `Just` and the `Nothing`. We'll cover various approaches for constructing this data type, and learn how to apply transformations to data within the safe confines of a `Maybe`. We'll also cover the point-free utility functions provided by crocks that let us build up function compositions for working with our maybes. 
+
+[01:03] After completing this course, you'll have the tools and knowledge needed to add some safety to your JavaScript with declarative code that can be easily composed while avoiding the unnecessary noise of sprinkling imperative conditional statements throughout your code.

@@ -1,0 +1,5 @@
+{
+    "title": "Optimistic UI Updates in React",
+    "description": "This book covers the [Optimistic UI Updates in React](https://egghead.io/courses/optimistic-ui-updates-in-react) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

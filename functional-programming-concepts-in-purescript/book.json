@@ -1,0 +1,5 @@
+{
+    "title": "Functional Programming Concepts in Purescript",
+    "description": "This book covers the [Functional Programming Concepts in Purescript](https://egghead.io/courses/functional-programming-concepts-in-purescript) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "test-react-components-with-enzyme-and-jest",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Test React Components with Enzyme and Jest](https://egghead.io/courses/test-react-components-with-enzyme-and-jest)"
+}

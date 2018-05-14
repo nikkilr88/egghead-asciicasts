@@ -1,0 +1,5 @@
+{
+    "title": "Test React Components with Enzyme and Jest",
+    "description": "This book covers the [Test React Components with Enzyme and Jest](https://egghead.io/courses/test-react-components-with-enzyme-and-jest) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
