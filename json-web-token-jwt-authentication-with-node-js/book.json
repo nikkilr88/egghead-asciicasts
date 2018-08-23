@@ -1,0 +1,5 @@
+{
+    "title": "JSON Web Token (JWT) Authentication with Node.js",
+    "description": "This book covers the [JSON Web Token (JWT) Authentication with Node.js](https://egghead.io/courses/json-web-token-jwt-authentication-with-node-js) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

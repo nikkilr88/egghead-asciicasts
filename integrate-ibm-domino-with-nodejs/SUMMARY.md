@@ -1,0 +1,15 @@
+# Summary
+
+* [Course Overview: Integrate IBM Domino with NodeJS](./lessons/express-course-overview-integrate-ibm-domino-with-nodejs.md)
+* [Identify Authentication Errors from Domino when using a NodeJS Express Application.](./lessons/node-js-identify-authentication-errors-from-domino-when-using-a-nodejs-express-application.md)
+* [Log into IBM Domino via a NodeJS Application](./lessons/node-js-log-into-ibm-domino-via-a-nodejs-application.md)
+* [Access Restricted Domino Data via a NodeJS Express Application](./lessons/node-js-access-restricted-domino-data-via-a-nodejs-express-application.md)
+* [Expose Domino User information as JSON](./lessons/node-js-expose-domino-user-information-as-json.md)
+* [Getting Domino User information via a NodeJS application.](./lessons/node-js-getting-domino-user-information-via-a-nodejs-application.md)
+* [Encrypt Domino User Roles into a JWT in Express](./lessons/node-js-encrypt-domino-user-roles-into-a-jwt-in-express.md)
+* [Send JWT Containing Encrypted User Role Information from Client to Express Server](./lessons/express-send-jwt-containing-encrypted-user-role-information-from-client-to-express-server.md)
+* [Decode and Verify JWT in Express](./lessons/express-decode-and-verify-jwt-in-express.md)
+* [Post data to IBM Domino via NodeJS](./lessons/node-js-post-data-to-ibm-domino-via-nodejs.md)
+* [Update and delete data in Domino via NodeJS](./lessons/node-js-update-and-delete-data-in-domino-via-nodejs.md)
+* [Render Domino Data using Handlebars templates in Express](./lessons/express-render-domino-data-using-handlebars-templates-in-express.md)
+* [Merge and manipulate Domino HTML in an Express application using cheerio](./lessons/express-merge-and-manipulate-domino-html-in-an-express-application-using-cheerio.md)

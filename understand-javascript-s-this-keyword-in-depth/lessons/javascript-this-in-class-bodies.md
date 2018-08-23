@@ -18,7 +18,7 @@ person.sayHi();
 
 Everything is working fine.
 
-[00:21] Within the constructor, `this` refers to the newly created instance of that `class`. When we call `person.sayHi()`, we invoke `sayHi()` as as method with `person` as a receiver. Therefore, the `this` binding is correct. If we store a reference to the `sayHi()` method, though, and later invoke it as a function, we once again lose the receiver of the method.
+[00:21] Within the constructor, `this` refers to the newly created instance of that `class`. When we call `person.sayHi()`, we invoke `sayHi` as as method with `person` as a receiver. Therefore, the `this` binding is correct. If we store a reference to the `sayHi()` method, though, and later invoke it as a function, we once again lose the receiver of the method.
 
 ```javascript
 const greet = person.sayHi;

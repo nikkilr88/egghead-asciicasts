@@ -1,0 +1,5 @@
+{
+    "title": "Fundamentals of Testing in JavaScript",
+    "description": "This book covers the [Fundamentals of Testing in JavaScript](https://egghead.io/courses/fundamentals-of-testing-in-javascript) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

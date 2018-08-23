@@ -1,0 +1,5 @@
+{
+    "title": "Build GraphQL APIs with Node.js on MongoDB",
+    "description": "This book covers the [Build GraphQL APIs with Node.js on MongoDB](https://egghead.io/courses/build-graphql-apis-with-node-js-on-mongodb) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

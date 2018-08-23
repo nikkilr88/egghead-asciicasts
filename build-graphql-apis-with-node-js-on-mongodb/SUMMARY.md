@@ -1,0 +1,18 @@
+# Summary
+
+* [Introduction](README.md)
+* [Course Overview: Build GraphQL APIs with Node.js on MongoDB](https://egghead.io/lessons/graphql-course-overview-build-graphql-apis-with-node-js-on-mongodb)
+* [Set Up Basic Node.js Server with ES6](https://egghead.io/lessons/graphql-set-up-basic-node-js-server-with-es6)
+* [Create Express Server in Node.js](https://egghead.io/lessons/graphql-create-express-server-in-node-js)
+* [Create a Schema in GraphQL](https://egghead.io/lessons/graphql-create-a-schema-in-graphql)
+* [Create a GraphQL HTTP Server with Express](https://egghead.io/lessons/graphql-create-a-graphql-http-server-with-express)
+* [Understand GraphQL Resolver and its Arguments](https://egghead.io/lessons/graphql-understand-graphql-resolver-and-its-arguments)
+* [Create GraphQL Query to Fetch All Records from Array](https://egghead.io/lessons/graphql-create-graphql-query-to-fetch-all-records-from-array)
+* [Add Obect in Array with GraphQL Mutations](https://egghead.io/lessons/graphql-add-obect-in-array-with-graphql-mutations)
+* [Connect to MongoDB in Node.js using Mongoose](https://egghead.io/lessons/mongodb-connect-to-mongodb-in-node-js-using-mongoose)
+* [Create a MongoDB Model Schema in Mongoose](https://egghead.io/lessons/mongodb-create-a-mongodb-model-schema-in-mongoose)
+*[Create a GraphQL Mutation to Save a Record in MongoDB](https://egghead.io/lessons/graphql-create-a-graphql-mutation-to-save-a-record-in-mongodb)
+* [Creating Query to fetch all the records from MongoDB](https://egghead.io/lessons/graphql-creating-query-to-fetch-all-the-records-from-mongodb)
+* [Create GraphQL Query to Fetch the Single Record from MongoDB](https://egghead.io/lessons/graphql-create-graphql-query-to-fetch-the-single-record-from-mongodb)
+* [Create a GraphQL Mutation to Update Record in MongoDB](https://egghead.io/lessons/graphql-create-a-graphql-mutation-to-update-record-in-mongodb)
+* [Delete Records in MongoDB with GraphQL Mutations](https://egghead.io/lessons/graphql-delete-records-in-mongodb-with-graphql-mutations)

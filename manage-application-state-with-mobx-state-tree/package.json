@@ -1,0 +1,5 @@
+{
+  "name": "manage-application-state-with-mobx-state-tree",
+  "version": "1.0.1",
+  "description": "This repo contains asciicasts for [Manage Application State with Mobx-state-tree](https://egghead.io/courses/manage-application-state-with-mobx-state-tree)"
+}

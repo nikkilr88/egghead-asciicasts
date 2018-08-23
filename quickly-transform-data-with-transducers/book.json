@@ -1,0 +1,5 @@
+{
+    "title": "Quickly Transform Data with Transducers",
+    "description": "Asciicasts for [Quickly Transform Data with Transducers](https://egghead.io/courses/quickly-transform-data-with-transducers) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}

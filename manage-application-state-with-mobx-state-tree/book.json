@@ -1,0 +1,5 @@
+{
+    "title": "Manage Application State with Mobx-state-tree",
+    "description": "This book covers the [Manage Application State with Mobx-state-tree](https://egghead.io/courses/manage-application-state-with-mobx-state-tree) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "integrate-ibm-domino-with-nodejs",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Integrate IBM Domino with NodeJS](https://egghead.io/courses/integrate-ibm-domino-with-nodejs)"
+}

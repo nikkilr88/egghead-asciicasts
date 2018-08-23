@@ -1,0 +1,5 @@
+{
+    "title": "Build GraphQL APIs with AWS AppSync",
+    "description": "This book covers the [Build GraphQL APIs with AWS AppSync](https://egghead.io/courses/build-graphql-apis-with-aws-appsync) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

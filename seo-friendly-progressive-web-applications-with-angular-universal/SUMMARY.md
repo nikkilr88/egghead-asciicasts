@@ -1,0 +1,15 @@
+# Summary
+
+* [Scaffold a New Angular App using Angular CLI](./lessons/angular-scaffold-a-new-angular-app-using-angular-cli.md)
+* [Add Bootstrap to an Angular CLI Project](./lessons/angular-add-bootstrap-to-an-angular-cli-project.md)
+* [Configure Defaults for Generating Code with Angular CLI](./lessons/angular-configure-defaults-for-generating-code-with-angular-cli.md)
+* [Create Application Layout with Components in an Angular CLI Project](./lessons/angular-create-application-layout-with-components-in-an-angular-cli-project.md)
+* [Create Container Components for Retrieving Data in an Angular CLI Project](./lessons/angular-create-container-components-for-retrieving-data-in-an-angular-cli-project.md)
+* [Use the Angular CLI Environment to Define Constants](./lessons/angular-use-the-angular-cli-environment-to-define-constants.md)
+* [Create an Angular Service to Retrieve Data from an API](./lessons/angular-create-an-angular-service-to-retrieve-data-from-an-api.md)
+* [Create Presentational Components for Displaying Data in an Angular CLI Project](./lessons/angular-create-presentational-components-for-displaying-data-in-an-angular-cli-project.md)
+* [Create Angular Resolvers to retrieve the product data from the Service](./lessons/angular-create-angular-resolvers-to-retrieve-the-product-data-from-the-service.md)
+* [Server Side Render an Angular CLI Project with Angular Universal](./lessons/angular-server-side-render-an-angular-cli-project-with-angular-universal.md)
+* [Deploy an Angular CLI Project to now.sh](./lessons/angular-deploy-an-angular-cli-project-to-now-sh.md)
+* [Add dynamic metadata to an Angular CLI Project](./lessons/angular-add-dynamic-metadata-to-an-angular-cli-project.md)
+* [Make a Progressive Web Application from an Angular CLI project](./lessons/angular-make-a-progressive-web-application-from-an-angular-cli-project.md)

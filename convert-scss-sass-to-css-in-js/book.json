@@ -1,0 +1,5 @@
+{
+    "title": "Convert SCSS (Sass) to CSS-in-JS",
+    "description": "This book covers the [Convert SCSS (Sass) to CSS-in-JS](https://egghead.io/courses/convert-scss-sass-to-css-in-js) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

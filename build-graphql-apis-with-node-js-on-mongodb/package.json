@@ -1,0 +1,5 @@
+{
+  "name": "build-graphql-apis-with-node-js-on-mongodb",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Build GraphQL APIs with Node.js on MongoDB](https://egghead.io/courses/build-graphql-apis-with-node-js-on-mongodb)"
+}

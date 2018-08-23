@@ -1,0 +1,5 @@
+{
+    "title": "Manage React Form State with redux-form",
+    "description": "This book covers the [Manage React Form State with redux-form](https://egghead.io/courses/manage-react-form-state-with-redux-form) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

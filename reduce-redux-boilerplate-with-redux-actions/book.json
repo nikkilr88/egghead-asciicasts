@@ -1,0 +1,5 @@
+{
+    "title": "Reduce Redux Boilerplate with Redux-Actions",
+    "description": "This book covers the [Reduce Redux Boilerplate with Redux-Actions](https://egghead.io/courses/reduce-redux-boilerplate-with-redux-actions) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

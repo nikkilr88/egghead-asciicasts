@@ -1,0 +1,16 @@
+# Summary
+
+* [Introduction to Automate Daily Development Tasks with Bash](./lessons/egghead-introduction-to-automate-daily-development-tasks-with-bash.md)
+* [Navigate the filesystem in bash](./lessons/bash-navigate-the-filesystem-in-bash.md)
+* [View files and folders in bash](./lessons/bash-view-files-and-folders-in-bash.md)
+* [Create and Delete Files and Folders in bash](./lessons/bash-create-and-delete-files-and-folders-in-bash.md)
+* [Move and Copy Files and Folders with bash](./lessons/bash-move-and-copy-files-and-folders-with-bash.md)
+* [Find Files and Folders with `find` in bash](./lessons/bash-find-files-and-folders-with-find-in-bash.md)
+* [Search for text with `grep`](./lessons/grep-search-for-text-with-grep.md)
+* [Make HTTP requests in bash with `curl`](./lessons/http-make-http-requests-in-bash-with-curl.md)
+* [Create and run bash scripts](./lessons/bash-create-and-run-bash-scripts.md)
+* [Store and Use Values with bash Variables](./lessons/bash-store-and-use-values-with-bash-variables.md)
+* [Understand and use functions in bash](./lessons/bash-understand-and-use-functions-in-bash.md)
+* [Understand exit statuses in bash](./lessons/bash-understand-exit-statuses-in-bash.md)
+* [Use Conditional Statements in bash](./lessons/bash-use-conditional-statements-in-bash.md)
+* [Chain commands with pipes and redirect output in bash](./lessons/bash-chain-commands-with-pipes-and-redirect-output-in-bash.md)

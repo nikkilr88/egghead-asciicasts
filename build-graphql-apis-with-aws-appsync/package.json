@@ -1,0 +1,5 @@
+{
+  "name": "build-graphql-apis-with-aws-appsync",
+  "version": "1.0.0",
+  "description": "This repo contains asciicasts for [Build GraphQL APIs with AWS AppSync](https://egghead.io/courses/build-graphql-apis-with-aws-appsync)"
+}

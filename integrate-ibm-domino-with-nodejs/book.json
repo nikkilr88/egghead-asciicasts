@@ -1,0 +1,5 @@
+{
+    "title": "Integrate IBM Domino with NodeJS",
+    "description": "This book covers the [Integrate IBM Domino with NodeJS](https://egghead.io/courses/integrate-ibm-domino-with-nodejs) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

@@ -1,0 +1,5 @@
+{
+    "title": "Leverage New Features of React 16",
+    "description": "This book covers the [Leverage New Features of React 16](https://egghead.io/courses/leverage-new-features-of-react-16) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

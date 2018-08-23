@@ -1,0 +1,5 @@
+{
+    "title": "SEO Friendly Progressive Web Applications with Angular Universal",
+    "description": "This book covers the [SEO Friendly Progressive Web Applications with Angular Universal](https://egghead.io/courses/seo-friendly-progressive-web-applications-with-angular-universal) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

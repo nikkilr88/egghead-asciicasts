@@ -1,0 +1,5 @@
+{
+    "title": "Build Interactive JavaScript Charts with D3 v4",
+    "description": "This book covers the [Build Interactive JavaScript Charts with D3 v4](https://egghead.io/courses/build-interactive-javascript-charts-with-d3-v4) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

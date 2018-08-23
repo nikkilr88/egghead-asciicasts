@@ -1,0 +1,16 @@
+# Summary
+
+* [Course Introduction: Beautiful and Accessible Drag and Drop with react-beautiful-dnd](./lessons/react-course-introduction-beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd.md)
+* [Set up a React Environment with create-react-app](./lessons/react-set-up-a-react-environment-with-create-react-app.md)
+* [Create and Style a List of Data with React](./lessons/react-create-and-style-a-list-of-data-with-react.md)
+* [Reorder a List with react-beautiful-dnd](./lessons/react-reorder-a-list-with-react-beautiful-dnd.md)
+* [Persist List Reordering with react-beautiful-dnd using the onDragEnd Callback](./lessons/react-persist-list-reordering-with-react-beautiful-dnd-using-the-ondragend-callback.md)
+* [Customise the Appearance of an App using react-beautiful-dnd onDragStart and onDragEnd](./lessons/react-customise-the-appearance-of-an-app-using-react-beautiful-dnd-ondragstart-and-ondragend.md)
+* [Customise the Appearance of an App during a Drag using react-beautiful-dnd snapshot Values](./lessons/react-customise-the-appearance-of-an-app-during-a-drag-using-react-beautiful-dnd-snapshot-values.md)
+* [Designate Control of Dragging for a react-beautiful-dnd Draggable with dragHandleProps](./lessons/react-designate-control-of-dragging-for-a-react-beautiful-dnd-draggable-with-draghandleprops.md)
+* [Move Items between Columns with react-beautiful-dnd using onDragEnd](./lessons/react-move-items-between-columns-with-react-beautiful-dnd-using-ondragend.md)
+* [Conditionally Allow Movement using react-beautiful-dnd Draggable and Droppable Props](./lessons/react-conditionally-allow-movement-using-react-beautiful-dnd-draggable-and-droppable-props.md)
+* [Create Reorderable Horizontal Lists with react-beautiful-dnd direction prop](./lessons/react-create-reorderable-horizontal-lists-with-react-beautiful-dnd-direction-prop.md)
+* [Reorder Columns with react-beautiful-dnd](./lessons/react-reorder-columns-with-react-beautiful-dnd.md)
+* [Optimize Performance in react-beautiful-dnd with shouldComponentUpdate and PureComponent](./lessons/react-optimize-performance-in-react-beautiful-dnd-with-shouldcomponentupdate-and-purecomponent.md)
+* [Customize Screen Reader Messages for Drag and Drop with react-beautiful-dnd](./lessons/react-customize-screen-reader-messages-for-drag-and-drop-with-react-beautiful-dnd.md)

@@ -1,7 +1,7 @@
 # egghead.io asciicasts
 
 ## Setting up .env
-Create a .env file in the root of the project (see .env.template). The easiest way to get an `EGGHEAD_AUTH_TOKEN` is to
+Create a .env file in the   root of the project (see .env.template). The easiest way to get an `EGGHEAD_AUTH_TOKEN` is to
 get your user jwt returned to you from [this link](https://egghead.io/users/jwt?return_to=https://instructor.egghead.io). In the url, copy the contents following `https://instructor.egghead.io/?jwt=`
 
 ## Steps to Deploy Asciicasts:
