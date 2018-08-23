@@ -1,0 +1,5 @@
+{
+    "title": "Angular Service Injection with the Dependency Injector (DI)",
+    "description": "This book covers the [Angular Service Injection with the Dependency Injector (DI)](https://egghead.io/courses/angular-service-injection-with-the-dependency-injector-di) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}
