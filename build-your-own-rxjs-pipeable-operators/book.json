@@ -1,0 +1,5 @@
+{
+    "title": "Build Your Own RxJS Pipeable Operators",
+    "description": "This book covers the [Build Your Own RxJS Pipeable Operators](https://egghead.io/courses/build-your-own-rxjs-pipeable-operators) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

@@ -1,0 +1,5 @@
+{
+    "title": "Build Virtual Reality Experiences Using React VR",
+    "description": "This book covers the [Build Virtual Reality Experiences Using React VR](https://egghead.io/courses/build-virtual-reality-experiences-using-react-vr) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

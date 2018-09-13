@@ -1,0 +1,5 @@
+{
+    "title": "Design Systems with React and Typescript in Storybook",
+    "description": "This book covers the [Design Systems with React and Typescript in Storybook](https://egghead.io/courses/design-systems-with-react-and-typescript-in-storybook) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

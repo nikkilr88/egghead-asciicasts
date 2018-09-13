@@ -41,7 +41,7 @@ In this video, what we're going to be focusing on is the `Query` type, and we'll
 **index.js**
 ```javascript
 const schema = new GraphQLSchema({
-  querry: queryType,
+  query: queryType,
   mutation,
   subscription
 });
