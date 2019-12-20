@@ -1,6 +1,6 @@
 Here, we have an application that will read a `config.json` file, then replace some contents, and write out a new one. It's really not that complicated, but it's full of all these error handling cases, and asynchronous callbacks, and whatnot.
 
-####2.js
+#### 2.js
 ```javascript
 const Task = require('data.task')
 const fs = require('fs')
@@ -101,7 +101,7 @@ app.fork(e => console.log(e),
 
 Let's go ahead and call this. This is our `task/2.js`. Then, it's a `success` here. That's great if we can `$ cat config1.json`. It has replaced the `8`s with `6`s. It's nice and clean, composable, easy to read, and all of that.
 
-####Terminal Output
+#### Terminal Output
 ```bash
 {"port": 6666}
 ```

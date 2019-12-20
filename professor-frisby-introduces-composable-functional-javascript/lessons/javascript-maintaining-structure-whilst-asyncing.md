@@ -41,7 +41,7 @@ Map({home: '/', about: '/about-us', blog: '/blog'})
 
 Let's go and run this. There we are. We have a `home` and it has a `result` and `'/about-us'` which has `result`, and so on and so forth. It's very nice. It gives us the ability to hold a structure in place. Then, we can go ahead and `traverse` within that.
 
-####Terminal Output
+#### Terminal Output
 ```Bash
 Map { "home": "/ result", "about": "/about-us result",
 "blog": "/blog result" }

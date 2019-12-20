@@ -1,0 +1,18 @@
+# Summary
+
+* [Set CSS Properties and Values (syntax)](./lessons/css-set-css-properties-and-values-syntax.md)
+* [Use Selectors to Style HTML Elements](./lessons/css-use-selectors-to-style-html-elements.md)
+* [Utilize Selector Specificity to Control Applied Styles  ](./lessons/css-utilize-selector-specificity-to-control-applied-styles.md)
+* [Style Elements Using the Cascade ](./lessons/css-style-elements-using-the-cascade.md)
+* [Apply CSS Styles with Inheritance](./lessons/css-apply-css-styles-with-inheritance.md)
+* [Debug CSS with the Chrome Devtools](./lessons/css-debug-css-with-the-chrome-devtools.md)
+* [Understand CSS Layout with the Box Model](./lessons/css-understand-css-layout-with-the-box-model.md)
+* [Control HTML Elements with Different CSS Units](./lessons/css-control-html-elements-with-different-css-units.md)
+* [Manipulate Colors with CSS](./lessons/css-manipulate-colors-with-css.md)
+* [Add Backgrounds to HTML Elements](./lessons/css-add-backgrounds-to-html-elements.md)
+* [Hide and Show HTML Elements with CSS](./lessons/css-hide-and-show-html-elements-with-css.md)
+* [Modify Font Style in CSS](./lessons/css-modify-font-style-in-css.md)
+* [Positioning HTML Elements using CSS](./lessons/css-positioning-html-elements-using-css.md)
+* [Customize CSS Selectors with Pseudo Classes](./lessons/css-customize-css-selectors-with-pseudo-classes.md)
+* [Use CSS Media Queries to Dynamically Apply Styles](./lessons/css-use-css-media-queries-to-dynamically-apply-styles.md)
+* [Style a Logo and Navigation on a Website with CSS](./lessons/css-style-a-logo-and-navigation-on-a-website-with-css.md)

@@ -87,21 +87,21 @@ export const addTodo = (text) => (dispatch) =>
 ```
 If I run the app now and look at the response in the action, I will see an array of todo objects, 
 
-![Original Response FETCH_TODOS_SUCCESS](../images/javascript-redux-normalizing-api-responses-with-normalizr-original-fetch-response.png)
+![Original Response FETCH_TODOS_SUCCESS](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-normalizing-api-responses-with-normalizr-original-fetch-response.jpg)
 
 however, a normalized response for fetch todo success action looks differently. It contains two fields called entities and result. Entities contains a normalized dictionary called `todos` that contains every `todo` in the response by its `id`. Normalizr found these `todo` objects in the response by following the array of todos schema. Conveniently, they are indexed by `ids`, so they will be easy to merge into the lookup table.
 
-![Normalized Response FETCH_TODOS_SUCCESS](../images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-response.png)
+![Normalized Response FETCH_TODOS_SUCCESS](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542114/transcript-images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-response.jpg)
 
 The second field is the `result`. It's an array of `todo ids`. They are in the same order as the `todos` in the original response array. However, Normalizr replaced each `todo` with its `id`, and moved every `todo` into the `todos` dictionary.
 
 Normalizr can do this for any API response shape. For example, let's add a todo. The original action response object will be the todo itself, as returned by the server. 
 
-![Original Response ADD_TODO_SUCCESS](../images/javascript-redux-normalizing-api-responses-with-normalizr-original-add-response.png)
+![Original Response ADD_TODO_SUCCESS](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-normalizing-api-responses-with-normalizr-original-add-response.jpg)
 
 The normalized response will contain two fields, just like before, `entities` and `result`.
 
-![Normalized Response ADD_TODO_SUCCESS](../images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-add-response.png)
+![Normalized Response ADD_TODO_SUCCESS](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-add-response.jpg)
 
 Like before, the `entities` object will contain the `todos` dictionary, this time with a single item. In the `result` field, we will see just the `id` of the todo, because the original response is just the single `todo`, and Normalizr replaced it with its `id` in the `result` field.
 
@@ -182,7 +182,7 @@ switch (action.type) {
 ```
 I can run the app now, and inspect the action response. I can see that, for `FETCH_TODOS_SUCCESS`, the response contains the `entities` which contains the `todos` by their `ids`, and the `result` is an array of `ids` in the same order as they were in the original response.
 
-![Normalized Fetch Object](../images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-object.png)
+![Normalized Fetch Object](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-normalizing-api-responses-with-normalizr-normalized-fetch-object.jpg)
 
 I can also add a todo, and the action response will also contain the `entities` and the `result`, where the `entities` contains the `todos` by their IDs, in this case, a single todo. The result is the id of the added todo.
 

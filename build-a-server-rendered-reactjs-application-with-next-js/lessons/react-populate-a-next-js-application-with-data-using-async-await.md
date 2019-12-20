@@ -1,6 +1,6 @@
 Instructor: [00:01] Inside of this `next.config.js` file, we're setting up some environment variables using `webpack` and `dotenv`. 
 
-####next.config.js
+#### next.config.js
 ```javascript
 const webpack = require('webpack');
 require('dotenv').config();
@@ -19,7 +19,7 @@ At top of the page, we're using `('dotenv').config();` method which is going to 
 
 [00:19] Following this, we're just defining this `webpack` instance so that we can create our environment variables for our `BLOGGER_URL` as well as our `API_KEY`. These values are going to be pulled from our `.env` file. This file is just going to hold any information that we want to secure as basic key value pairs.
 
-####.env
+#### .env
 ```
 BLOGGER_URL=https://www.googleapis.com/blogger/v3/blogs/4789269094064278868/posts
 API_KEY=xxxYOUR_API_KEY
@@ -29,7 +29,7 @@ API_KEY=xxxYOUR_API_KEY
 
 [01:02] Following this, I'm going to import Material-UI's `Card` component, specifically the `Card`, `CardHeader`, and `CardText` imports, which we used to create a card for each post that we receive form our API. 
 
-####index.js
+#### index.js
 ```javascript
 import 'isomorphic-fetch';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
@@ -111,7 +111,7 @@ Now, if we visit our page, we should see a nice little UI being rendered on the 
 
 [04:10] Now that's fixed we can visit our page and see our desired result being rendered for us. 
 
-![ui rendered](../images/react-populate-a-next-js-application-with-data-using-async-await-ui-rendered.png)
+![ui rendered](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/react-populate-a-next-js-application-with-data-using-async-await-ui-rendered.jpg)
 
 As you could see, each card is displaying the title of each post just like we set up. Inside our card, we see Material-UI's `raisedButton` component displaying our label text.
 

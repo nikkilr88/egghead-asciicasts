@@ -12,7 +12,7 @@ Here's a `Box` holding a function, and we want to apply it to the `Box` holding 
 
 Let's go ahead and define `ap` on our `Box`. Load up the `Box` JS here. What we're going to do is define `ap`, which will take a second `Box`, and then `x` here is our function, `x + 1`. `b2` holds the value. It's actually the `Box` with `2`.
 
-####Box.js
+#### Box.js
 ```javascript
 const Box = x =>
 ({

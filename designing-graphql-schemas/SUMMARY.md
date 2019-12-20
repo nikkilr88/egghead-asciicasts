@@ -1,0 +1,18 @@
+# Summary
+
+* [Course Intro for Designing GraphQL Schemas ](./lessons/graphql-course-intro-for-designing-graphql-schemas.md)
+* [Setup an Apollo GraphQL Server with automatic Mocking ](./lessons/graphql-setup-an-apollo-graphql-server-with-automatic-mocking.md)
+* [Kicking off a GraphQL Schema Design Process](./lessons/graphql-kicking-off-a-graphql-schema-design-process.md)
+* [Naming Conventions for Query Fields in GraphQL](./lessons/graphql-naming-conventions-for-query-fields-in-graphql.md)
+* [When and Why to use Nullable vs Non-nullable Fields in GraphQL](./lessons/graphql-when-and-why-to-use-nullable-vs-non-nullable-fields-in-graphql.md)
+* [Evolving a GraphQL Schema incl. Breaking Changes without affecting a Single User](./lessons/graphql-evolving-a-graphql-schema-incl-breaking-changes-without-affecting-a-single-user.md)
+* [Naming Conventions for Fields with GraphQL Aliases in Mind](./lessons/graphql-naming-conventions-for-fields-with-graphql-aliases-in-mind.md)
+* [Paginate Entries using the Connection Specification](./lessons/graphql-paginate-entries-using-the-connection-specification.md)
+* [Extending GraphQL Connections with additional Fields and Arguments](./lessons/graphql-extending-graphql-connections-with-additional-fields-and-arguments.md)
+* [Naming GraphQL Queries](./lessons/graphql-naming-graphql-queries.md)
+* [Mutation Input and Payload Structure in GraphQL](./lessons/graphql-mutation-input-and-payload-structure-in-graphql.md)
+* [Design GraphQL Mutations by focusing on the Domain rather than the Data Model ](./lessons/graphql-design-graphql-mutations-by-focusing-on-the-domain-rather-than-the-data-model.md)
+* [Optimising GraphQL Mutations for Static Usage](./lessons/graphql-optimising-graphql-mutations-for-static-usage.md)
+* [GraphQL Mutations to update Connections](./lessons/graphql-graphql-mutations-to-update-connections.md)
+* [Tradeoffs when designing GraphQL Mutations to update multiple Properties on one Entity](./lessons/graphql-tradeoffs-when-designing-graphql-mutations-to-update-multiple-properties-on-one-entity.md)
+* [Course Outro for Designing GraphQL Schemas](./lessons/graphql-course-outro-for-designing-graphql-schemas.md)

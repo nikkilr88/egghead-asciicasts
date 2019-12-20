@@ -1,6 +1,6 @@
 Instructor: [00:00] The first thing we're going to need to do to deploy our application is install the `now` CLI command tool. To do this, we can install it globally via `npm`, and then, we'll have access to the `now` command.
 
-####Terminal
+#### Terminal
 ```bash
 npm install -g now
 ```
@@ -17,7 +17,7 @@ Next will take care of this for us. As a result of the build process, Next is go
 
 [01:00] Now that we have our optimized build, we need to modify our `scripts` object inside of our `package.json` file. Specifically, we need to modify the `"start"` command so that it runs our application in production.
 
-####package.json
+#### package.json
 ```javascript
 "start": "NODE_ENV=production node server.js"
 ```

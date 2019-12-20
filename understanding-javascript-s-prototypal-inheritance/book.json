@@ -1,0 +1,5 @@
+{
+    "title": "Understanding JavaScript's Prototypal Inheritance",
+    "description": "This book covers the [Understanding JavaScript's Prototypal Inheritance](https://egghead.io/courses/understanding-javascript-s-prototypal-inheritance) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

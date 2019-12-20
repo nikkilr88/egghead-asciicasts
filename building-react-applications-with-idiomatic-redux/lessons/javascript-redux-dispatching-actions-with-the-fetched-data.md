@@ -83,7 +83,7 @@ fetchData() {
 ```
 If around the app now, I will see Redux actions being dispatched, ready to be handled by the reducers. They include all the necessary information, such as the `filter` and the server response.
 
-![Dispatched Action](../images/javascript-redux-dispatching-actions-with-the-fetched-data-dispatched-action.png)
+![Dispatched Action](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-dispatching-actions-with-the-fetched-data-dispatched-action.jpg)
 
 As I navigate through the app, the component fetches data in lifecycle hooks and dispatches Redux actions when the data is ready. As a final touch, I like to write less boilerplate code when importing action creators.
 

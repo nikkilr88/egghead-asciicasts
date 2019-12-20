@@ -46,7 +46,7 @@ const result = Box(' 64 ')
                //.fold(x => x.toLowerCase())
 ```
 
-####Terminal Output
+#### Terminal Output
 ```bash
 { fold: [Function], map: [Function] }
 ```
@@ -62,7 +62,7 @@ const result = Box(' 64 ')
                .fold(x => x.toLowerCase())
 ```
 
-####Terminal Output
+#### Terminal Output
 ```bash
 a
 ```

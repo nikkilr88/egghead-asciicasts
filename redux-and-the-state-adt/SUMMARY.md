@@ -1,0 +1,22 @@
+# Summary
+
+* [Define Discrete State Transitions Using the State ADT](./lessons/redux-define-discrete-state-transitions-using-the-state-adt.md)
+* [Combine State Dependent Transactions with the State ADT](./lessons/redux-combine-state-dependent-transactions-with-the-state-adt.md)
+* [Transition a Stateful ADT with Outside Input](./lessons/redux-transition-a-stateful-adt-with-outside-input.md)
+* [Compose Simple State ADT Transitions Into One Complex Transaction](./lessons/redux-compose-simple-state-adt-transitions-into-one-complex-transaction.md)
+* [Read And Transform Values From A State ADT’s State](./lessons/redux-read-and-transform-values-from-a-state-adt-s-state.md)
+* [Transition State Based On Existing State Using the State ADT](./lessons/javascript-transition-state-based-on-existing-state-using-the-state-adt.md)
+* [Combine Multiple State ADT Instances With The Same Input](./lessons/javascript-combine-multiple-state-adt-instances-with-the-same-input-bb95cdef.md)
+* [Generate Randomness Using the State ADT](./lessons/redux-generate-randomness-using-the-state-adt.md)
+* [Use A Pure RNG With The State ADT To Select An Element From State](./lessons/javascript-use-a-pure-rng-with-the-state-adt-to-select-an-element-from-state.md)
+* [Multiply Two Arrays over a Function in JavaScript](./lessons/redux-multiply-two-arrays-over-a-function-in-javascript.md)
+* [Draw Items From One JavaScript Array To Another Using A Pair ADT](./lessons/redux-draw-items-from-one-javascript-array-to-another-using-a-pair-adt.md)
+* [Randomly Pull An Item From An Array With The State ADT](./lessons/javascript-randomly-pull-an-item-from-an-array-with-the-state-adt.md)
+* [Pull Many Random Numbers In A Single State ADT Transaction](./lessons/javascript-pull-many-random-numbers-in-a-single-state-adt-transaction.md)
+* [Adapt Redux Actions/Reducers For Use With The State ADT](./lessons/javascript-adapt-redux-actions-reducers-for-use-with-the-state-adt.md)
+* [Create State ADT Based Reducers](./lessons/javascript-create-state-adt-based-reducers.md)
+* [Combine Multiple State ADT Based Redux Reducers](./lessons/javascript-combine-multiple-state-adt-based-redux-reducers.md)
+* [Initialize Application State Using The State ADT](./lessons/javascript-initialize-application-state-using-the-state-adt.md)
+* [Debug A composeK Flow](./lessons/javascript-debug-a-composek-flow.md)
+* [Create A Redux Store For Use With A State ADT Based Reducer
+](./lessons/javascript-create-a-redux-store-for-use-with-a-state-adt-based-reducer.md)

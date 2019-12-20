@@ -1,6 +1,6 @@
 You may have seen this function `of` popup here now. It's really a generic interface to be able to place a value into our type, or we call it lifting a value to our type. Here, we have `Task.of`. If we say `('hello')`, we end up with a `//Task('hello')`. If we have an `Either.of('hello')`, we end up with a `//Right('hello')`.
 
-####of.js
+#### of.js
 ```javascript
 Task.of('hello') // Task('hello')
 Either.of('hello') // Right('hello')

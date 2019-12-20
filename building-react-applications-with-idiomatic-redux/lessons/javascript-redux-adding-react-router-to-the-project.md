@@ -17,7 +17,7 @@ const Root = ({ store }) => (
 Inside, I put a single `Route` element that tells **React Router** that I want to render my `App` component at the root path. If I run the app, I can see that the `Router` matched the path correctly and rendered the `App` component.
 
 
-![output](../images/javascript-redux-adding-react-router-to-the-project-output.png)
+![output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-adding-react-router-to-the-project-output.jpg)
 
 
 If you see weird symbols after a hash sign in the address bar, it means that you're using the version of **React Router** that doesn't yet default to the `browserHistory`, and defaults to hash history instead.

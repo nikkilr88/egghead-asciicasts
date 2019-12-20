@@ -2,7 +2,7 @@ All right, class. It's movie time. Hit the lights, please. We're going to see va
 
 *cue retro game music*
 
-####Example 1
+#### Example 1
 ```javascript
 const openSite = () => {
     if(current_user) {
@@ -17,7 +17,7 @@ cosnt openSite = () =>
     .fold(showLogin, renderPage)
 ```
 
-####Example 2
+#### Example 2
 ```javascript
 const getPrefs = user => {
     if(user.premium) {
@@ -33,7 +33,7 @@ const getPrefs = user =>
     .fold(() => defaultPrefs, prefs => loadPrefs(prefs))
 ```
 
-####Example 3
+#### Example 3
 ```javascript
 const streetName = user => {
     const address = user.address
@@ -55,7 +55,7 @@ const streetName = user =>
     .fold(e => 'no street', n => n)
 ```
 
-####Example 4
+#### Example 4
 ```javascript
 const concatUniq = (x, ys) => {
     const found = ys.filter(y => y === x)[0]
@@ -67,7 +67,7 @@ const concatUniq = (x, ys) =>
     .fold(() => ys.concat(x), y => ys)
 ```
 
-####Example 5
+#### Example 5
 ```javascript
 const wrapExamples = example => {
     if(example.previewPath) {
@@ -87,7 +87,7 @@ const wrapExample = example =>
           ex => Object.assign({preview: p}, ex))
 ```
 
-####Example 6
+#### Example 6
 ```javascript
 const parseDbUrl = cfg => {
     try {

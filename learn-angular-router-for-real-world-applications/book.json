@@ -1,0 +1,5 @@
+{
+    "title": "Learn Angular Router for Real World Applications",
+    "description": "This book covers the [Learn Angular Router for Real World Applications](https://egghead.io/courses/learn-angular-router-for-real-world-applications) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

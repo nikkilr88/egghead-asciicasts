@@ -1,0 +1,15 @@
+# Summary
+
+* [Anatomy of an Algolia Search API Response](./lessons/algolia-anatomy-of-an-algolia-search-api-response.md)
+* [Leverage the Algolia JS API Client to Display Raw Hits from the API Response](./lessons/algolia-leverage-the-algolia-js-api-client-to-display-raw-hits-from-the-api-response.md)
+* [Set up the Instantsearch JS Library](./lessons/algolia-set-up-the-instantsearch-js-library.md)
+* [How to Add Instantsearch JS widgets and their common attributes ](./lessons/algolia-how-to-add-instantsearch-js-widgets-and-their-common-attributes.md)
+* [Search an Algolia Index with Instantsearch JS searchbox and hits widgets](./lessons/algolia-search-an-algolia-index-with-instantsearch-js-searchbox-and-hits-widgets.md)
+* [Display Rich results with templates in the Hits widget for Instantsearch JS](./lessons/algolia-display-rich-results-with-templates-in-the-hits-widget-for-instantsearch-js.md)
+* [Highlight Keywords in Query Results using the Instantsearch JS Hits Widget](./lessons/algolia-highlight-keywords-in-query-results-using-the-instantsearch-js-hits-widget.md)
+* [Filter Datasets with Facets using Instantsearch JS to add a Refinement List](./lessons/algolia-filter-datasets-with-facets-using-instantsearch-js-to-add-a-refinement-list.md)
+* [Browse results based on a hierarchy of Facets (HierarchicalMenu) in Instantsearch JS](./lessons/algolia-browse-results-based-on-a-hierarchy-of-facets-hierarchicalmenu-in-instantsearch-js.md)
+* [Refine a dataset using a numeric range in Instantsearch JS with the Range Input widget](./lessons/algolia-refine-a-dataset-using-a-numeric-range-in-instantsearch-js-with-the-range-input-widget.md)
+* [Reset all active refinements with the clearAll Instantsearch JS widget](./lessons/algolia-reset-all-active-refinements-with-the-clearall-instantsearch-js-widget.md)
+* [Paginate Large Sets of Algolia Data with Instantsearch JS Pagination widget](./lessons/algolia-paginate-large-sets-of-algolia-data-with-instantsearch-js-pagination-widget.md)
+* [Inform users about the current result set with Instantsearch JS Stats widget](./lessons/algolia-inform-users-about-the-current-result-set-with-instantsearch-js-stats-widget.md)

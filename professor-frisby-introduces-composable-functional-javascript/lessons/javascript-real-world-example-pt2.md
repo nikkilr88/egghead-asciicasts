@@ -7,7 +7,7 @@ const Spotify = require('./spotify')
 
 Let's save it, and go ahead and grab these from here, pull them out, and paste them here.
 
-####spotify.js
+#### spotify.js
 ```javascript
 "https://api.spotify.com/v1/search?1=${query}&type=artist" // artists: {items: []}
 "https://api.spotify.com/v1/artists/${id}/related-artists" // artists: []
@@ -16,7 +16,7 @@ Let's save it, and go ahead and grab these from here, pull them out, and paste t
 
 Looks like we're going to need `Task` after all, so we have `Task`. What other dependencies might we need? We need our little `request`, here, because we're going to be doing API calls.
 
-####spotify.js
+#### spotify.js
 ```javascript
 "https://api.spotify.com/v1/search?1=${query}&type=artist" // artists: {items: []}
 "https://api.spotify.com/v1/artists/${id}/related-artists" // artists: []
@@ -134,7 +134,7 @@ const relatedArtists = name =>
 
 Let's give it a shot. Let's see, with all that we've written here and what we're including over here as our basic workflow, we could go see if this is what we expect. Let's run it. 
 
-####Terminal Output
+#### Terminal Output
 ```
 Task { fork: [Function], cleanup: [Function: cleanupBoth] }
 ```

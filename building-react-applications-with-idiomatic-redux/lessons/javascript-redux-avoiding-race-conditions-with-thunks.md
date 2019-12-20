@@ -7,7 +7,7 @@ export const fetchTodos = (filter) =>
 ```
 We don't check if the tab is **already loading** before starting a request, and then a bunch of `RECEIVE_TODOS` action comes back, potentially resulting in a **race condition**.
 
-![Potential Race Condition](../images/javascript-redux-avoiding-race-conditions-with-thunks-potential-race-condition.png)
+![Potential Race Condition](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542113/transcript-images/javascript-redux-avoiding-race-conditions-with-thunks-potential-race-condition.jpg)
 
 To fix this, I can exit early from the `fetchTodos` action creator if I know that I'm already fetching the todos for the given `filter`. I will use the existing top level `getIsFetching` selector, that accepts the `store`, `state`, and the `filter` as arguments. If it returns `true`, I will exit early from my thunk without dispatching any actions.
 
@@ -52,7 +52,7 @@ export const fetchTodos = (filter) => (dispatch, getState) => {
   }
 ```
 
-![Only Three Actions](../images/javascript-redux-avoiding-race-conditions-with-thunks-only-three-actions.png)
+![Only Three Actions](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542113/transcript-images/javascript-redux-avoiding-race-conditions-with-thunks-only-three-actions.jpg)
 
 Only after the corresponding `receiveTodos` actions come back, the `isFetching` flag gets reset, and we can request the new todos. This is a good way to avoid unnecessary network operations and potential race conditions.
 

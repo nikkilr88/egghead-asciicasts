@@ -1,0 +1,11 @@
+Instructor: 0:00 To sign up for a WordPress.com account, we'll go to WordPress.com and [get started](https://wordpress.com/start/user?ref=logged-out-homepage-lp). Fill out your email address, choose a username, choose a password, then create your account. When it asks us what site we're building, we're going to choose a `Blog`, choose the topic of `Blogging`, and I'm going to name my blog `Corgi Co Blog`.
+
+0:27 When you get to the "give your blog an address" page, I'm naming mine `advancedthemescourse`, you can skip all the paid plans and go straight to the free one, which will give you your `username.home.blog`. We'll `Start with a free site` for picking our plan as well since we'll only be using the site for the course.
+
+0:44 Now our site has been created. We'll skip updating the home page, skip the tagline, and confirm our email address. After confirming our email address, we can launch our site. Again, we'll skip our purchase and continue with our free site. Here's our blog. We can see that our blog has two default posts on it, which we'll use later in the course. You don't need to add any additional content.
+
+1:13 If we go to the readme for gatsby-source-WordPress and scroll down, we can see that there's an option for `hostingWPCOM`, which will be `true` for us. Then in the `auth` option, we'll also have to set the `wpcom` option. To do this, we have to create an app at [developer.WordPress.com/apps](https://developer.WordPress.com/apps).
+
+1:35 Click on `Create a new application`. Give your application a name, mine is `Corgi Co Themes Course` with the Description of `Some nice Corgis`. The website URL doesn't matter. I'm going to use my personal site. Note that all of the fields are required even if we're not going to use them. You will have to specify a valid redirect URL in the form of HTTPS and a valid JavaScript origin. You can see that our application has been created.
+
+2:02 If we scroll down inside of our application, we can see the 'Client Secret'. Note that we'll need the `WORDPRESS_CLIENT_SECRET` and the `clientId`. Make sure you save the client ID and the client secret so that we can use them later in our `.env` file. This key has already been reset. You cannot use my exact values. That's all we need to do to set up the WordPress account.

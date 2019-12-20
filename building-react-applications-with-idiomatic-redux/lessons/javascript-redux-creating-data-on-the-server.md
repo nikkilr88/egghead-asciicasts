@@ -88,11 +88,11 @@ const byId = (state = {}, action) => {
 If I run the app now and add a todo, it will not appear in the list immediately. I can see the add `ADD_TODO_SUCCESS` in the log, and if I inspect the next state, I will see that the 
 byId lookup table now contains all four todos.
 
-![ADD_TODO_SUCCESS console output](../images/javascript-redux-creating-data-on-the-server-output.png)
+![ADD_TODO_SUCCESS console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-creating-data-on-the-server-output.jpg)
 
 However, we have not updated the `listByFilter`, so all still only has three IDs in the list. If I go to another tab, the new todo appears because its ID is now included in the list of fetched IDs, and similarly, if I go back to the previous tab, it appears now because the data has been re-fetched.
 
-![Output](../images/javascript-redux-creating-data-on-the-server-output2.png)
+![Output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-creating-data-on-the-server-output2.jpg)
 
 The list of IDs for each tab is managed by a reducer defined inside createList.js. I will change the `ids` reducer to handle the `ADD_TODOS_SUCCESS` action.
 
@@ -141,7 +141,7 @@ const createList = (filter) => {
 
 If I run the app now, I can see that if I add a new todo, it appears in the list as soon as add todo success action is dispatched, even though the last time todos were fetched, the new item wasn't there yet.
 
-![Output](../images/javascript-redux-creating-data-on-the-server-output3.png)
+![Output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-creating-data-on-the-server-output3.jpg)
 
 It will also appear immediately in the active list, before the active todos are even fetched. It will not, however, appear in the completed list because we know that newly added todos are not completed.
 

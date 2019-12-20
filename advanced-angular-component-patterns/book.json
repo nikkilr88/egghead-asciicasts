@@ -1,0 +1,5 @@
+{
+    "title": "Advanced Angular Component Patterns",
+    "description": "This book covers the [Advanced Angular Component Patterns](https://egghead.io/courses/advanced-angular-component-patterns) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

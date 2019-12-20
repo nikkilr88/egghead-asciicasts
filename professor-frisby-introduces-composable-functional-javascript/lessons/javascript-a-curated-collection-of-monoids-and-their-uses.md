@@ -1,6 +1,6 @@
 *cue retro music*
 
-####Example 1
+#### Example 1
 ```javascript
 const Sum = x =>
 ({
@@ -11,7 +11,7 @@ const Sum = x =>
 Sum.empty = () => Sum(0)
 ```
 
-####Example 2
+#### Example 2
 ```javascript
 const Product = x =>
 ({
@@ -22,7 +22,7 @@ const Product = x =>
 Product.empty = () => Product(1)
 ```
 
-####Example 3
+#### Example 3
 ```javascript
 const Any = x =>
 ({
@@ -33,7 +33,7 @@ const Any = x =>
 Any.empty = () => Any(false)
 ```
 
-####Example 4
+#### Example 4
 ```javascript
 const All = x =>
 ({
@@ -44,7 +44,7 @@ const All = x =>
 All.empty = () => All(true)
 ```
 
-####Example 5
+#### Example 5
 ```javascript
 const Max = x =>
 ({
@@ -55,7 +55,7 @@ const Max = x =>
 Max.empty = () => Max(-Infinity)
 ```
 
-####Example 6
+#### Example 6
 ```javascript
 const Min = x =>
 ({
@@ -66,7 +66,7 @@ const Min = x =>
 Min.empty = () => Min(Infinity)
 ```
 
-####Example 7
+#### Example 7
 ```javascript
 const Right = x =>
 ({
@@ -85,7 +85,7 @@ const Left = x =>
 })
 ```
 
-####Example 7 Continued (Right)
+#### Example 7 Continued (Right)
 ```javascript
 const stats = List.of({page: 'Home', views: 40},
                       {page: 'About', views: 10},
@@ -95,7 +95,7 @@ stats.foldMap(x =>
 // Right(Sum(54))
 ``` 
 
-####Example 7 Continued (Left)
+#### Example 7 Continued (Left)
 ```javascript
 const stats = List.of({page: 'Home', views: 40},
                       {page: 'About', views: 10},
@@ -105,7 +105,7 @@ stats.foldMap(x =>
 // Left(null)
 ``` 
 
-####Example 8
+#### Example 8
 ```javascript
 const First = either =>
 ({
@@ -117,7 +117,7 @@ const First = either =>
 First.empty = () => First(Left())
 ```
 
-####Example 8 Continued
+#### Example 8 Continued
 ```javascript
 const find = (xs, f) =>
     List(xs)
@@ -129,7 +129,7 @@ find([3,4,5,6,7], x => x > 4)
 // Right(5)
 ```
 
-####Example 9
+#### Example 9
 ```javascript
 const Fn = f =>
 ({
@@ -139,7 +139,7 @@ const Fn = f =>
 })
 ```
 
-####Example 9 Continued
+#### Example 9 Continued
 ```javascript
 const hasVowels = x => !!x.match(/[aeiou]/ig)
 const longWord = x => x.length >= 5
@@ -152,7 +152,7 @@ const both = Fn(compose(All, hasVowels))
 // [lilac]
 ```
 
-####Example 10
+#### Example 10
 ```javascript
 const Pair = (x, y) =>
 ({

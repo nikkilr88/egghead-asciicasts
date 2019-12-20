@@ -1,0 +1,17 @@
+# Summary
+
+* [Course Overview: Practical Advanced TypeScript Features](./lessons/typescript-course-overview-practical-advanced-typescript-features.md)
+* [Improve Readability with TypeScript Numeric Separators when working with Large Numbers](./lessons/typescript-improve-readability-with-typescript-numeric-separators-when-working-with-large-numbers.md)
+* [Make TypeScript Class Usage Safer with Strict Property Initialization](./lessons/typescript-make-typescript-class-usage-safer-with-strict-property-initialization.md)
+* [Use the JavaScript “in” operator for automatic type inference in TypeScript](./lessons/typescript-use-the-javascript-in-operator-for-automatic-type-inference-in-typescript.md)
+* [Automatically infer TypeScript types in switch statements](./lessons/ngrx-store-automatically-infer-typescript-types-in-switch-statements.md)
+* [Create Explicit and Readable Type Declarations with TypeScript mapped Type Modifiers](./lessons/typescript-create-explicit-and-readable-type-declarations-with-typescript-mapped-type-modifiers.md)
+* [Use Types vs. Interfaces](./lessons/typescript-use-types-vs-interfaces.md)
+* [Build self-referencing type aliases in TypeScript](./lessons/redux-build-self-referencing-type-aliases-in-typescript.md)
+* [Simplify iteration of custom data structures in TypeScript with iterators](./lessons/redux-simplify-iteration-of-custom-data-structures-in-typescript-with-iterators.md)
+* [Use the TypeScript "unknown" type to avoid runtime errors](./lessons/typescript-use-the-typescript-unknown-type-to-avoid-runtime-errors.md)
+* [Dynamically Allocate Function Types with Conditional Types in TypeScript](./lessons/typescript-dynamically-allocate-function-types-with-conditional-types-in-typescript.md)
+* [Use TypeScript conditional types to create a reusable Flatten type](./lessons/typescript-use-typescript-conditional-types-to-create-a-reusable-flatten-type.md)
+* [Infer the Return Type of a Generic Function Type Parameter](./lessons/typescript-infer-the-return-type-of-a-generic-function-type-parameter.md)
+* [Deeply mark all the properties of a type as read-only in TypeScript](./lessons/redux-deeply-mark-all-the-properties-of-a-type-as-read-only-in-typescript.md)
+* [Dynamically initialize class properties using TypeScript decorators](./lessons/typescript-dynamically-initialize-class-properties-using-typescript-decorators.md)

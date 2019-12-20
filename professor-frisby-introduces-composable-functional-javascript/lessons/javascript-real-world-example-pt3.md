@@ -125,7 +125,7 @@ const artistIntersection = rels =>
     .toList()
 ```
 
-####Terminal Output
+#### Terminal Output
 ```
 [ { xs: [ 'Pulp' ], concat: [Function: concat] }, Sum(60) ]
 ```

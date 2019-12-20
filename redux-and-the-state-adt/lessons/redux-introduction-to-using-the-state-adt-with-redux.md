@@ -1,0 +1,13 @@
+Ian Hoffman Hicks: [00:00] Hello, my name is Ian Hoffman Hicks, but you might know me better as an instructor from egghead.io. Using Redux in our applications with just a bit of complexity can result in some unique challenges when dealing with complex state, resulting in some boilerplate at best or at worst exposing opportunity for us to accidentally leak state concerns into parts of our application that wouldn't normally be privy to such information.
+
+[00:24] Algebraic data types are used to model many of the common patterns we as programmers use in our day to day. The state data type is no exception. In this course we'll explore how we can model the game state for a simple memory style game called Anger the Bunny and integrate these state transitions into Redux, removing the need for many of the best practices that we've adopted over the years.
+
+[00:45] This course is divided into three distinct parts. For the first segment, we'll define a majority of the possible ways our state can transition in isolation from the rest of the application. We'll be focusing on building these transitions using the state ADT to define simple discreet transactions and explore the various ways we can combine them to form more complex transitions to represent our game logic.
+
+[01:08] With our game logic mostly defined in discreet state transitions, we'll start to integrate with Redux primarily as a dispatching system. Doing this keeps the side effects out of our model and provides a well-defined edge between user interaction and our pure state transitions. We'll build out some utilities to combine our state transitions and integrate them with the reducer portion of Redux.
+
+[01:31] Then we wrap it all up by giving our game logic a prebaked front end built in React. As this is not a course on React, we'll start with an integration in place and connect up our dispatches and build out some handy middleware to handle some of our front end concerns.
+
+[01:46] Now I've got to warn you. We go through these lessons at a breakneck pace, allowing very little time for explanation of the concepts and patterns that are being presented. That's the beauty of the Egghead format. If at any time the pace seems overwhelming, the video can be paused, allowing time to reconcile your current intuition with what's happening on screen.
+
+[02:06] To see the benefit of using the state ADT for state management, as an exercise for the learner it's recommended that you try building the same sorts of transitions using vanilla Redux reducers. I think you'll be surprised at how much using the state ADT gets us. Without further ado, let's anger the bunny.

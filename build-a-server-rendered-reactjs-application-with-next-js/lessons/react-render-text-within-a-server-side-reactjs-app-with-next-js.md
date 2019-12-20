@@ -1,6 +1,6 @@
 Instructor: [00:00] To get started with Next.js, we are going to need to install inside of our project along side React in ReactDOM. Once installed, we can wire up these next commands inside of our `"scripts"` object. As you could see, where in the `"dev"` command is going to kick-off this `next` development server, and `start` is going to run `next start`, while `"build"` is going to create an optimize `next build` for a project.
 
-####package.json
+#### package.json
 ```javascript
 {
     "name": "nextjs-course",
@@ -21,7 +21,7 @@ Instructor: [00:00] To get started with Next.js, we are going to need to install
 
 [00:49] Since, Next now is that we're using React, we don't need to import library, rather, we can use create a status functional component like so. As you could see, I'm just passing with `title` prop to this component, and making it render the text `'Hello from next.js'`.
 
-####index.js
+#### index.js
 ```javascript
 const Index = ({ title = 'Hello from next.js' }) =>  
     <div>
@@ -44,13 +44,13 @@ If we execute that `npm run dev` command, we should see next starting a developm
 
 [01:29] If we visit our localhost, port 3000, we should see that text propping render to our page. 
 
-![hello rendered](../images/react-render-text-within-a-server-side-reactjs-app-with-next-js-hello-rendered.png)
+![hello rendered](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/react-render-text-within-a-server-side-reactjs-app-with-next-js-hello-rendered.jpg)
 
 Pretty neat, right?
 
-[01:37] To cap this off, I'm just going to create another file inside this `pages` directory called `above.js`. I'm just going to have this render out slightly different text than our index row, and we'll make it say, `'Hello from the above route'`.
+[01:37] To cap this off, I'm just going to create another file inside this `pages` directory called `about.js`. I'm just going to have this render out slightly different text than our index row, and we'll make it say, `'Hello from the above route'`.
 
-####about.js
+#### about.js
 ```javascript
 const About = ({ title = 'Hello from the about route!' }) =>  
     <div>
@@ -62,4 +62,4 @@ export default About;
 
 [01:59] All I have to do is save that, and if we go back in our browser and navigate to this, `localhoast:3000/about`, we should see this specific tags is being rendered for us, when we visit this `/about` URL.
 
-![about route](../images/react-render-text-within-a-server-side-reactjs-app-with-next-js-about-route.png)
+![about route](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/react-render-text-within-a-server-side-reactjs-app-with-next-js-about-route.jpg)

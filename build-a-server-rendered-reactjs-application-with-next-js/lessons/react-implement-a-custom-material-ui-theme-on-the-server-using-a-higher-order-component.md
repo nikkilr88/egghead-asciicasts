@@ -1,6 +1,6 @@
 Instructor: [00:00] Inside the `shared` folder, I've a `withMUI.js` file which is going to hold our Material-UI higher order component. 
 
-####withMUI.js
+#### withMUI.js
 ```javascript
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';

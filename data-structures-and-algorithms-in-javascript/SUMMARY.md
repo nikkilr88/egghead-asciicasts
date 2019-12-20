@@ -1,0 +1,15 @@
+# Summary
+
+* [Build a Queue Data Structure in JavaScript](./lessons/egghead-build-a-queue-data-structure-in-javascript.md)
+* [Build a Priority Queue Data Structure in JavaScript](./lessons/egghead-build-a-priority-queue-data-structure-in-javascript.md)
+* [Build a Stack Data Structure in JavaScript](./lessons/egghead-build-a-stack-data-structure-in-javascript.md)
+* [Writing the Bubble Sort Algorithm in JavaScript](./lessons/javascript-writing-the-bubble-sort-algorithm-in-javascript.md)
+* [Writing the Insertion Sort Algorithm in JavaScript](./lessons/egghead-writing-the-insertion-sort-algorithm-in-javascript.md)
+* [Writing the Merge Sort Algorithm in JavaScript](./lessons/javascript-writing-the-merge-sort-algorithm-in-javascript.md)
+* [Writing the Quick Sort Algorithm in JavaScript](./lessons/javascript-writing-the-quick-sort-algorithm-in-javascript.md)
+* [Build a Linked List Data Structure in JavaScript](./lessons/javascript-build-a-linked-list-data-structure-in-javascript.md)
+* [Building a Graph Data Structure in JavaScript](./lessons/egghead-building-a-graph-data-structure-in-javascript.md)
+* [Writing a Breadth First Search Algorithm for Graphs in JavaScript](./lessons/egghead-writing-a-breadth-first-search-algorithm-for-graphs-in-javascript.md)
+* [Writing a Depth First Search Algorithm for Graphs in JavaScript](./lessons/egghead-writing-a-depth-first-search-algorithm-for-graphs-in-javascript.md)
+* [Building a Tree Data Structure in JavaScript](./lessons/egghead-building-a-tree-data-structure-in-javascript.md)
+* [Building a Binary Tree and Several Traversal Algorithms in JavaScript](./lessons/javascript-building-a-binary-tree-and-several-traversal-algorithms-in-javascript.md)

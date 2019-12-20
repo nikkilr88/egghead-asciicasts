@@ -4,7 +4,7 @@ Now, the definition of a functor is any type with a `map` method. It must obey a
 
 Any type `fx`, some functor holding `x`, when we `map` `f` over it and then we `map` `g` over it, that should be the same as running `map` once over it by saying first run `f`, then run `g`.
 
-####functors.js
+#### functors.js
 ```javascript
 const `Box` = require('./`Box`')
 const Task = require('data.task')
@@ -37,7 +37,7 @@ const res2 = Box('squirrels')
 
 Let's go ahead and compare these two in the output here. We've got to comment out `//fx.map(f).map(g) == fx.map(x => g(f(x)))`. There we are. They are equal here.
 
-####Terminal Output
+#### Terminal Output
 ```bash
 Box(RELS) Box(RELS)
 ```
@@ -65,7 +65,7 @@ const res2 = id(Box('crayons'))
 console.log(res1, res2)
 ```
 
-####Terminal Output
+#### Terminal Output
 ```bash
 Box(crayons) Box(crayons)
 ```

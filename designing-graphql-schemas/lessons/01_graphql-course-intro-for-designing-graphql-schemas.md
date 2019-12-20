@@ -1,0 +1,3 @@
+Nik Graf: [0:00] Hey, I'm Nik. I've been using GraphQL for years now, but I have to say I'm still excited about it. It makes building mobile and web clients so much easier and the tooling, so good. While GraphQL comes with a type system, in many ways it's more flexible than Rest. Over the years, I learned that this flexibility comes at a cost.
+
+[0:24] I made plenty of mistakes, especially regarding API design. I learned my fair share of lessons. With this course, I want to share them with you. It's an attempt to compile a comprehensive list of tips and design patterns to help you avoiding these mistakes and design GraphQL schemas that stand the test of time.

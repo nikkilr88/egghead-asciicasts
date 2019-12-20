@@ -2,7 +2,7 @@ Instructor: [00:00] At the moment, we have these card components being rendered 
 
 [00:20] In here, we see that I've already imported `express` as well as `next`. 
 
-####server.js
+####  server.js
 ```javascript
 const express = require('express')
 const next = require('next')
@@ -70,7 +70,7 @@ Now, we can move forward and go into our `package.json` file, where we're going 
 
 [02:32] Now at the moment, we're using Next internal command when we run `npm run dev`. We need to modify this so it runs that server file that we just set up. 
 
-####package.json
+#### package.json
 ```javascript
 "dev": "node server.js"
 ```

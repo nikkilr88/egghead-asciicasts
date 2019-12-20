@@ -1,6 +1,6 @@
 Instructor: [00:00] To finish up our custom server, let's create the routes for our blog post. To do this, we're going to define a `get` request to the `/blog/:id` route. We're going to set this up to render the post template that's going to live inside of our pages directory.
 
-####server.js
+#### server.js
 ```javascript
 app.prepare().then(() => {
     const server = express();
@@ -51,7 +51,7 @@ server.get('/post', (req, res) => {
 
 Now that our routes are in place, we can modify our `index.js` file to include some links to each blog post. To do this, I'm just going to `import` next `Link` component from the `next/link` library.
 
-####index.js
+#### index.js
 ```javascript
 import Link from 'next/link';
 ```
@@ -130,8 +130,8 @@ Now, we can restart development server and check out the page.
 
 [03:27] Taking a look at our page, we should see that our `<a>` tags are being rendered its hyperlinks for us. 
 
-![a as hyperlink](../images/express-dynamically-instantiate-routes-on-id-with-next-js-expressjs-a-as-hyperlink.png)
+![a as hyperlink](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/express-dynamically-instantiate-routes-on-id-with-next-js-expressjs-a-as-hyperlink.jpg)
 
 If we click on these buttons, we'll see that are custom server config is in fact working, as next is taking us these new blogs/id routes as shown in the browser.
 
-![custom server config working](../images/express-dynamically-instantiate-routes-on-id-with-next-js-expressjs-custom-server-config-working.png)
+![custom server config working](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/express-dynamically-instantiate-routes-on-id-with-next-js-expressjs-custom-server-config-working.jpg)

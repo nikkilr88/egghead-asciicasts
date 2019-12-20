@@ -138,19 +138,19 @@ fetchData() {
 ```
 If I run the app now, I will see not one, but two actions, `REQUEST_TODOS`, and `RECEIVE_TODOS`. If I look at the state after the `REQUEST_TODOS` action, I will see that inside the all list state, is fetching flag is set to true.
 
-![isFetching set to true](../images/javascript-redux-displaying-loading-indicators-isFetching-true.png)
+![isFetching set to true](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-displaying-loading-indicators-isFetching-true.jpg)
 
 When the corresponding `RECEIVE_TODOS` action fires, the flag gets reset back to `false`, and the `ids` are not an empty array anymore. 
 
-![isFetching set to false](../images/javascript-redux-displaying-loading-indicators-isFetching-false.png)
+![isFetching set to false](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-displaying-loading-indicators-isFetching-false.jpg)
 
 As I navigate the tabs for the first time, I see the loading indicator show up. 
 
-![Loading indicator displayed](../images/javascript-redux-displaying-loading-indicators-loading.png)
+![Loading indicator displayed](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-displaying-loading-indicators-loading.jpg)
 
 However, if I visit them again, I already have cached data. I prefer to show that to a loading indicator.
 
-![Cached Data Displayed](../images/javascript-redux-displaying-loading-indicators-cached-data.png)
+![Cached Data Displayed](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-displaying-loading-indicators-cached-data.jpg)
 
 Let's recap. In the component, I dispatch an action called `requestTodos` before fetching them. The `REQUEST_TODOS` action creator returns an action object with a type of `REQUEST_TODOS`, and the filter that I passed.
 

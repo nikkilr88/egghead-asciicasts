@@ -12,14 +12,17 @@ prompt.get(['directory'], function (err, result) {
     //
     console.log('  directory: ' + result.directory);
     console.log("extracting...");
-    const extractedTranscripts = fs.readdirSync(`${result.directory}/lessons`)
+    const extractedTranscripts = {
+        directory: result.directory,
+        transcripts: fs.readdirSync(`${result.directory}/lessons`)
         .reduce((acc, curr) => {
             // Use underscores to match rails api
-            const lesson_slug = curr.slice(0, -3);
             const enhanced_transcript = fs.readFileSync(`${result.directory}/lessons/${curr}`).toString();
+            const lesson_slug = curr.slice(0, -3);
             acc.push({lesson_slug, enhanced_transcript});
             return acc
-        }, []);
+        }, [])
+    }
     fs.writeFileSync('enhancedTranscripts.json', JSON.stringify(extractedTranscripts))
     console.log('done')
 });

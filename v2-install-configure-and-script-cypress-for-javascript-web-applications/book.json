@@ -1,0 +1,5 @@
+{
+    "title": "V2 Install, Configure, and Script Cypress for JavaScript Web Applications",
+    "description": "Asciicasts for [V2 Install, Configure, and Script Cypress for JavaScript Web Applications](https://egghead.io/courses/v2-install-configure-and-script-cypress-for-javascript-web-applications) course on [egghead.io](https://egghead.io)",
+    "plugins": ["prism", "-highlight", "hints"]
+}

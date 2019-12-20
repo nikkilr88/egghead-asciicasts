@@ -1,0 +1,5 @@
+{
+    "title": "Immutable JavaScript Data Structures with Immer",
+    "description": "This book covers the [Immutable JavaScript Data Structures with Immer](https://egghead.io/courses/immutable-javascript-data-structures-with-immer) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

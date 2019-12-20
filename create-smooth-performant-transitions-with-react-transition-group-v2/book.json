@@ -1,0 +1,5 @@
+{
+    "title": "Create Smooth, Performant Transitions with React Transition Group v2",
+    "description": "This book covers the [Create Smooth, Performant Transitions with React Transition Group v2](https://egghead.io/courses/create-smooth-performant-transitions-with-react-transition-group-v2) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

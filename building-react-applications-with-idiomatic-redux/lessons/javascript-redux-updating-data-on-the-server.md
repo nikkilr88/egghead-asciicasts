@@ -14,17 +14,17 @@ When the response is available, I will dispatch an action with the type `TOGGLE_
 
 Now let's run the app. I will clear the console and toggle the todo. The UI updates when the `TOGGLE_TODO_SUCCESS` action is dispatched because the action contains a normalized response in which the corresponding `todo` has a completed field set to `true`, 
 
-![Toggle Todo Action](../images/javascript-redux-updating-data-on-the-server-toggle-todo-action.png)
+![Toggle Todo Action](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-updating-data-on-the-server-toggle-todo-action.jpg)
 
 so the `byId` reducer merges the new version of the `todo` into the current state of the lookup table.
 
-![Toggle Todo Next State](../images/javascript-redux-updating-data-on-the-server-next-state.png)
+![Toggle Todo Next State](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542113/transcript-images/javascript-redux-updating-data-on-the-server-next-state.jpg)
 
 This is the benefit of normalizing the API responses. Updates to the entities get **merged automatically**. I can switch to the `completed` tab to verify that the server state has indeed been updated.
 
 I will clear the console, and then toggle the `todo` while I'm on the `completed` tab. After the `TOGGLE_TODO_SUCCESS` action, the corresponding `todo` in the `byId` lookup table has been updated, and now has completed set to `false`. However, it is still visible in the completed list because we have not refetched it, and so its ID is still there.
 
-![Toggle Completed Todo](../images/javascript-redux-updating-data-on-the-server-toggle-completed-todo.png)
+![Toggle Completed Todo](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542113/transcript-images/javascript-redux-updating-data-on-the-server-toggle-completed-todo.jpg)
 
 I can force refetching by going to the `active` tab, and then going to the `completed` tab back again, and it will disappear. However, I would prefer if it disappeared immediately, so I'm opening the `ids` reducer in `createlist.js`.
 
@@ -86,7 +86,7 @@ If I run the app now and toggle the `todo` while I'm on the completed tab, it wi
 
 Similarly, I can open the `active` tab and toggle a `todo` there. It disappears after the `TOGGLE_TODO_SUCCESS` action even though the `active todos` have not been refetched.
 
-![Toggle Todo Correctly Works](../images/javascript-redux-updating-data-on-the-server-toggle-todo-correctly-works.png)
+![Toggle Todo Correctly Works](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-updating-data-on-the-server-toggle-todo-correctly-works.jpg)
 
 Finally, I can open the `all` tab and toggle the `todos` back and forth, and since it doesn't have any special logic, they all stay there.
 

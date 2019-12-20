@@ -1,6 +1,6 @@
 # Build a Server-rendered ReactJS Application with Next.js
 
-![course image](https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/026/full/react.png)
+![course image](https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/179/full/EGH_ReactNextServer_Final.png)
 
 Asciicasts for [Thomas Greco](https://egghead.io/instructors/tom-greco) course, Build a Server-rendered ReactJS Application with Next.js on [egghead.io](https://egghead.io/courses/build-a-server-rendered-reactjs-application-with-next-js)
 

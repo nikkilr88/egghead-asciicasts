@@ -1,6 +1,6 @@
 Suppose we have a game and one of our players, `Nico` here, wants to merge their accounts. They've accidentally made two accounts. What we can do is think about how are we going to combine these two things? Whenever we think of combining we should be thinking **Semigroup**, because that is a way to `concat` two things or combine two things together.
 
-####1.js
+#### 1.js
 ```javascript
 const acct1 = { name: 'Nico', isPaid: true, points: 10,
 friends: ['Franklin'] }
@@ -57,7 +57,7 @@ const res = acct.concat(acct2)
 console.log(res.toJS())
 ```
 
-###Terminal Output
+#### Terminal Output
 ```bash
 { name: First(Nico),
 isPaid: All(false),

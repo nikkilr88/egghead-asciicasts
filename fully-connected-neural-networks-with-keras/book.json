@@ -1,0 +1,5 @@
+{
+    "title": "Fully Connected Neural Networks with Keras",
+    "description": "This book covers the [Fully Connected Neural Networks with Keras](https://egghead.io/courses/ully-connected-neural-networks-with-keras) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

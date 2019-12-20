@@ -33,4 +33,4 @@ We will learn how to put these todos into the Redux store later. But for now, le
 
 The fake API waits for half a second to simulate the network connection, and then resolves the promise to an array of todos that we will treat as if they were retrieved from a remote server.
 
-![console output](../images/javascript-redux-adding-a-fake-backend-to-the-project-output.png)
+![console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-adding-a-fake-backend-to-the-project-output.jpg)

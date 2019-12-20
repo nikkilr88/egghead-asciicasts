@@ -1,6 +1,6 @@
 Now here we have a list of sums, and we want to `concat` all of these together. We just `reduce` it down, and `concat` each one together, starting with the `empty` value.
 
-####foldMap.js
+#### foldMap.js
 ```javascript
 const { Map, List } = require('immutable-ext')
 const { Sum } = require('../monoid')
@@ -25,7 +25,7 @@ That's not the case in a typed language, but here in JavaScript, yes, it is. We 
 
 Now if we go look at this, we shall get a nice sum of the list. Very good.
 
-####Terminal Output
+#### Terminal Output
 ```bash
 Sum(6)
 ```
@@ -36,7 +36,7 @@ Ah, yes. `fold` is a fairly overloaded term. However, it always holds with the s
 
 We did the same, where we have a `Right` and a `Left`. We have two handlers here, the error case and success case, but it still removes it from the type. 
 
-####foldMap.js
+#### foldMap.js
 ```javascript 
 Box(3).fold(x => x) // 3
 Right(3).fold(e => e, x => x) // 3
@@ -63,7 +63,7 @@ const res = Map({brian: Sum(3), sara: Sum(5)})
     //.reduce((acc, x) => acc.concat(x), Sum.empty())
 ```
 
-####Terminal Output
+#### Terminal Output
 ```bash
 Sum(8)
 ```

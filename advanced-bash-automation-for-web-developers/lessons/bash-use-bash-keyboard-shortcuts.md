@@ -1,0 +1,3 @@
+Instructor: [00:00] Let's say I have a long command here, I want to go to the beginning of the line, I want to go back here. I can use `Ctrl+a` to go to the beginning of the line, and then `Ctrl+e` to go back to the end.
+
+[00:12] I can also use `Ctrl+k` to clear the entire line up to my cursor. You can see I'm in the middle of the line, I'm going to do `Ctrl+k`, it's going to clear all the text up to it. I can use `Ctrl+w` to delete the last word. `Ctrl+w`, `Ctrl+w` deletes those words. Then finally, `Ctrl+l` clears the screen. This is equivalent to the `clear` command which does the same thing.

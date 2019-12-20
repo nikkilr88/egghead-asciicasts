@@ -93,7 +93,7 @@ store.dipatch = addLoggingToDispatch(store);
 ```
 If I run the app now, I will still see the `receiveTodos` action being dispatch when the response is ready. However, the component uses a more convenient API that encapsulates the asynchronous logic in the asynchronous action creator.
 
-![Async Action Creator](../images/javascript-redux-wrapping-dispatch-to-recognize-promises-async-action-creator.png)
+![Async Action Creator](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-wrapping-dispatch-to-recognize-promises-async-action-creator.jpg)
 
 One thing to remember is that the order in which we override the `dispatch` function is important. If we change it, the action will first be printed and then the promise will be processed so action type is undefined and we see the promise instead of the action, which is not very useful.
 
@@ -107,7 +107,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 ```
 
-![Async Action Creator](../images/javascript-redux-wrapping-dispatch-to-recognize-promises-action-type-undefined.png)
+![Async Action Creator](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-wrapping-dispatch-to-recognize-promises-action-type-undefined.jpg)
 
 This is why I'm changing the auto back so that the promises are resolved before the action is locked. Let's recap how we added the **promise support** to the `dispatch` function.
 

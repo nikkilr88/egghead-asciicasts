@@ -1,0 +1,5 @@
+{
+    "title": "Build Basic NativeScript App Templates",
+    "description": "This book covers the [Build Basic NativeScript App Templates](https://egghead.io/courses/build-basic-nativescript-app-templates) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

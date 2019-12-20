@@ -69,7 +69,7 @@ const nextCharForNumberString = str =>
 
 This is very, very nice letter rather. If we run this, we should have `A` in a box. Indeed, we do. We have `A` in the array. I'm calling it a box here.
 
-###Terminal Results
+#### Terminal Results
 ```bash
 [`A`]
 ```
@@ -127,7 +127,7 @@ const Box = x =>
 
 Let's give it a go and see if we have ourselves a `Box` of `A`. Indeed, we do, a `Box` of `A`. That's very good.
 
-###Terminal Results
+#### Terminal Results
 ```bash
 Box(A)
 ```

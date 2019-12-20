@@ -27,7 +27,7 @@ const todoApp = combineReducers({
 
 This is going to become the initial state of this store, so if we log the current state of the store right after it's graded, we're going to see this object in the console.
 
-![console output](../images/javascript-redux-supplying-the-initial-state-console_output.png)
+![console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-supplying-the-initial-state-console_output.jpg)
 
 **index.js**
 ```javascript
@@ -50,7 +50,7 @@ const persistedState = {
 
 Redux lets me pass the `persistentState` as the second argument to the `createStore` function, and it will override the value specified by the reducers. If I refresh, I can see that the `todos` array now has a single item that I specified.
 
-![console output](../images/javascript-redux-supplying-the-initial-state-console_output2.png)
+![console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-supplying-the-initial-state-console_output2.jpg)
 
 **index.js**
 ```javascript
@@ -123,7 +123,7 @@ Since the state it receives is `undefined`, it uses the default argument as spec
 
 But notice that in this case, the state was initialized to `'SHOW_ALL'` because it was initially `undefined`, and so the ES6 default argument syntax kicked in. This explains why the `combinedReducer` returned the initial state containing both the `todos` that we supplied and the `VisibilityFilter` supplied by the reducer by `default`.
 
-![console output](../images/javascript-redux-supplying-the-initial-state-console_output2.png)
+![console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-supplying-the-initial-state-console_output2.jpg)
 
 You might get tempted to specify all the initial state tree of your app in a single place and pass it to `createStore`, but we don't recommend this. Co-locating the initial state with the reducer definition makes it easy to test and change, so you should always strive to do that.
 

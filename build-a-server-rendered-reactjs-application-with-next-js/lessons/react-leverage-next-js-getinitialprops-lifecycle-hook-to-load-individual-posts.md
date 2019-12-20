@@ -1,6 +1,6 @@
 Instructor: [00:01] Inside of our `post.js` file, we're going to destructure the context parameter of this lifecycle hook so we can pull of the ID off of the query object that this page is going to receive. Once done, I'm going to create this response variable like we did in the `index.js` file.
 
-####post.js
+#### post.js
 ```javascript
 Post.getInitialProps = async ({ query: { id }}) => {
     const response = 
@@ -88,8 +88,8 @@ We're ready to check out the application.
 
 [02:50] Now, if you take a look at your application, you should see the content you're receiving from Blogger appearing on the page. 
 
-![info appearing on page](../images/react-leverage-next-js-getinitialprops-lifecycle-hook-to-load-individual-posts-info-appearing-on-page.png)
+![info appearing on page](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/react-leverage-next-js-getinitialprops-lifecycle-hook-to-load-individual-posts-info-appearing-on-page.jpg)
 
 In my case, I have different assets such as these code examples as well as regular images, all of which are being rendered neatly to the page. We'll also see that button at the bottom of each post which is allowing us to navigate right back to our main route located at /blog.
 
-![return button](../images/react-leverage-next-js-getinitialprops-lifecycle-hook-to-load-individual-posts-return-button.png)
+![return button](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/react-leverage-next-js-getinitialprops-lifecycle-hook-to-load-individual-posts-return-button.jpg)

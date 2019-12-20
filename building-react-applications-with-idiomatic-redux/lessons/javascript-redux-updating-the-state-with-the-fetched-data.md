@@ -129,19 +129,19 @@ As the last step, I can remove the existing `todo` reducer because the logic for
 
 Let's run the app and inspect how the state changes. Before the action, the original state object contains the todos object with an empty lookup table and empty arrays of `Ids` for every filter. 
 
-![Original State](../images/javascript-redux-updating-the-state-with-the-fetched-data-original-state.png)
+![Original State](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-updating-the-state-with-the-fetched-data-original-state.jpg)
 
 The action object contains the filter and the server response corresponding to this filter with todo objects inside of it.
 
-![Action Object](../images/javascript-redux-updating-the-state-with-the-fetched-data-action-object.png)
+![Action Object](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-updating-the-state-with-the-fetched-data-action-object.jpg)
 
 After handling the action, the todos object contains the updated lookup table that has every todo by its `Id`, as well as an updated list of Ids by filter where we only have fetched the old todos so far, so we have the IDs for `all` todos, but the other filters are amped in.
 
-![Next State Object](../images/javascript-redux-updating-the-state-with-the-fetched-data-next-state-object.png)
+![Next State Object](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-updating-the-state-with-the-fetched-data-next-state-object.jpg)
 
 If I change the tab now, it will make another API request and store these IDs separately from the `all` IDs. Inside the `action` object, the filter is `active` now. The response contains only one `active` todo.
 
-![Next State Object](../images/javascript-redux-updating-the-state-with-the-fetched-data-active-todo.png)
+![Next State Object](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-updating-the-state-with-the-fetched-data-active-todo.jpg)
 
 Inside the `next state` object, the todos `byId` lookup table is essentially the same because we have not received any new todos. However, the IDs by filter object now contains an array of IDs for `all` filter and a separate array of IDs for the `active` filter.
 

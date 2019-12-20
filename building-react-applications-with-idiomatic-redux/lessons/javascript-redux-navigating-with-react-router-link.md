@@ -1,7 +1,7 @@
 The links that control the `visibilityFilter` do not currently behave like real links. I'd like to change it so that the background works and the current URL updates when I click on these links and change the current `visibilityFilter`.
 
 
-![output](../images/javascript-redux-navigating-with-react-router-link-output.png)
+![output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-navigating-with-react-router-link-output.jpg)
 
 
 I will add a parameter to my `Route` called `filter`, and I need to wrap it in parenthesis to tell `react-router` that it's optional, because if it's not specified, I want to show all todos.
@@ -93,7 +93,7 @@ Now I'm exporting filter link, and I have some cleanup to do. I can remove the `
 If I run the app now, clicking on the link will update the URL bar. It also works in the other direction. Clicking on the back or forward buttons gets the corresponding link active.
 
 
-![output](../images/javascript-redux-navigating-with-react-router-link-output2.png)
+![output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-navigating-with-react-router-link-output2.jpg)
 
 
 In the next lesson, we will teach our component to read the current filter from the URL instead of **Redux** store.

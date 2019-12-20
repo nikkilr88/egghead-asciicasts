@@ -1,0 +1,15 @@
+# Summary
+
+* [Introduction to Refactoring a React Application to React Hooks and React Suspense](./lessons/react-introduction-to-refactoring-a-react-application-to-react-hooks-and-react-suspense.md)
+* [Refactor a Class Component with React hooks to a Function](./lessons/react-refactor-a-class-component-with-react-hooks-to-a-function.md)
+* [Ensure all React useEffect Effects Run Synchronously in Tests with react-testing-library](./lessons/react-ensure-all-react-useeffect-effects-run-synchronously-in-tests-with-react-testing-library.md)
+* [Handle Deep Object Comparison in React's useEffect hook with the useRef Hook](./lessons/react-handle-deep-object-comparison-in-react-s-useeffect-hook-with-the-useref-hook.md)
+* [Safely setState on a Mounted React Component through the useEffect Hook](./lessons/react-safely-setstate-on-a-mounted-react-component-through-the-useeffect-hook.md)
+* [Extract Generic React Hook Code into Custom React Hooks](./lessons/react-extract-generic-react-hook-code-into-custom-react-hooks.md)
+* [Track Values Over the Course of Renders with React useRef in a Custom usePrevious Hook](./lessons/react-track-values-over-the-course-of-renders-with-react-useref-in-a-custom-useprevious-hook.md)
+* [Deeply Compare Inputs in a Custom React Hook for useEffect](./lessons/react-deeply-compare-inputs-in-a-custom-react-hook-for-useeffect.md)
+* [Refactor a React Class Component with useContext and useState Hooks](./lessons/react-refactor-a-react-class-component-with-usecontext-and-usestate-hooks.md)
+* [Refactor a render Prop Component to a Custom React Hook](./lessons/react-refactor-a-render-prop-component-to-a-custom-react-hook.md)
+* [Handle componentDidMount and componentWillUnmount in React Component Refactor to Hooks](./lessons/react-handle-componentdidmount-and-componentwillunmount-in-react-component-refactor-to-hooks.md)
+* [Dynamically Import React Components with React.lazy and Suspense](./lessons/react-dynamically-import-react-components-with-react-lazy-and-suspense.md)
+* [Preload React Components with the useEffect Hook](./lessons/react-preload-react-components-with-the-useeffect-hook.md)

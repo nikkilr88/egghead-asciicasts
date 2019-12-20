@@ -1,0 +1,5 @@
+{
+    "title": "Practical Git for Everyday Professional Use",
+    "description": "This book covers the [Practical Git for Everyday Professional Use](https://egghead.io/courses/practical-git-for-everyday-professional-use) transcripts and enhances them to become Asciicasts",
+    "plugins": ["prism", "-highlight", "hints"]
+}

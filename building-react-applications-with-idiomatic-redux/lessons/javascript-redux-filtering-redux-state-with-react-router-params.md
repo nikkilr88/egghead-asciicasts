@@ -66,7 +66,7 @@ Since its empty on the root path, I'm passing `all` as a fallback to the `Visibl
 
 
 
-![output](../images/javascript-redux-filtering-redux-state-with-react-router-params-output.png)
+![output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-filtering-redux-state-with-react-router-params-output.jpg)
 
 
 **App.js**
@@ -86,7 +86,7 @@ One common problem after enabling routing is, if we go to another path and press
 
 
 
-![invalid](../images/javascript-redux-filtering-redux-state-with-react-router-params-invalid.png)
+![invalid](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-filtering-redux-state-with-react-router-params-invalid.jpg)
 
 
 

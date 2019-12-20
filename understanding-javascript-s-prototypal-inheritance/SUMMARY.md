@@ -1,0 +1,15 @@
+# Summary
+
+* [Introduction to Prototypal Inheritance in JavaScript](lessons/javascript-introduction-to-prototypal-inheritance-in-javascript.md)
+* [Link to Other Objects through the JavaScript Prototype Chain](lessons/javascript-link-to-other-objects-through-the-javascript-prototype-chain.md)
+* [Prototype Delegation with JavaScript's new Keyword](lessons/javascript-prototype-delegation-with-javascript-s-new-keyword.md)
+* [Understanding the .constructor property on JavaScript Objects](lessons/javascript-understanding-the-constructor-property-on-javascript-objects.md)
+* [Understand JavaScripts this keyword within Prototypes](lessons/javascript-understand-javascripts-this-keyword-within-prototypes.md)
+* [Use JavaScript's for-in Loop on Objects with Prototypes](lessons/javascript-use-javascript-s-for-in-loop-on-objects-with-prototypes.md)
+* [Compose Objects with Object.assign to Create a Direct Copy](lessons/javascript-compose-objects-with-object-assign-to-create-a-direct-copy.md)
+* [Understanding Prototype Delegation within JavaScript's Class Keyword](lessons/javascript-understanding-prototype-delegation-within-javascript-s-class-keyword.md)
+* [Assign and Access Methods of a JavaScript Class with Static Properties](lessons/javascript-assign-and-access-methods-of-a-javascript-class-with-static-properties.md)
+* [Determine an Object's Constructor with JavaScripts instanceof Operator](lessons/javascript-determine-an-object-s-constructor-with-javascripts-instanceof-operator.md)
+* [Create Factory Functions for Object Composition](lessons/javascript-create-factory-functions-for-object-composition.md)
+* [Use Polymorphism with Prototype Linked Objects](lessons/javascript-use-polymorphism-with-prototype-linked-objects.md)
+* [Replicate JavaScript Constructor Inheritance with Simple Objects (OLOO)](lessons/javascript-replicate-javascript-constructor-inheritance-with-simple-objects-oloo.md)

@@ -2,7 +2,7 @@ Let's have a look at `Task`. Now, we're going to use this `data.task` on NPM her
 
 We can throw anything in there. I could say, `"Hello"` or the number `2`, or `true`. Let's stick with just the number `1` to be simple here. It acts just like a box. We have a `Task(1)`.
 
-####1.js
+#### 1.js
 ```javascript
 const Task require('data.task')
 
@@ -76,7 +76,7 @@ launchMissiles()
 
 Then we can run this, and it will, indeed, launch the missiles. It gives us a success here with our result.
 
-####Terminal Output
+#### Terminal Output
 ```bash
 launch missile!
 success missile!

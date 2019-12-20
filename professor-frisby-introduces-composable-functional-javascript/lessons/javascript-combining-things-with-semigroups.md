@@ -1,6 +1,6 @@
 Let's have a look at **semigroups**. A semigroup is a type with a `concat` method. Let's see if we have a string `"a"`, we can `concat` that with the string `"b"`. String is the semigroup here because it has a `concat` method. If we log this out here, we shall see the results `ab` and there we are.
 
-###1.js
+#### 1.js
 ```javascript
 const res = "a".concat("b")
 
@@ -23,7 +23,7 @@ const res = [1,2].concat([3,4]).concat([5,6])
 console.log(res)
 ```
 
-###Terminal Output
+#### Terminal Output
 ```bash
 [ 1, 2, 3, 4, 5, 6 ]
 ```
@@ -79,7 +79,7 @@ const Sum = x =>
 
 This should be our results and let's go ahead and run that, and we have `x` is `3`.
 
-###Terminal Output
+#### Terminal Output
 ```bash
 { x: 3, concat: [Function] }
 ```

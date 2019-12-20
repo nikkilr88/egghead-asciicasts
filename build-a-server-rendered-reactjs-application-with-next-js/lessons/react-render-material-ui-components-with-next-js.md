@@ -2,7 +2,7 @@ Instructor: [00:01] Inside our `root` directory, I have this `components` folder
 
 [00:17] Inside here, I'm just going to `import` the `AppBar` component from the `'material-ui/AppBar'` library. 
 
-####header.js
+#### header.js
 ```javascript
 import AppBar from 'material-ui/AppBar';
 ```
@@ -29,7 +29,7 @@ export default Header;
 
 Inside `index.js`, we firstly `import` the `Header` that we just created.
 
-####index.js
+#### index.js
 ```javascript
 import Header from '../components/header';
 ```
@@ -58,7 +58,7 @@ export default withMui(Index);
 
 [01:34] If we go back to our web page and refresh, we should see everything, and looks like I seem beginning error here. 
 
-![error](../images/react-render-material-ui-components-with-next-js-error.png)
+![error](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266983/transcript-images/react-render-material-ui-components-with-next-js-error.jpg)
 
 Specifically, we see that the `ComposeComponent.getInitialProps` is not a function. By taking a look at this error message, we see that it's telling us exactly where this error is happening.
 
@@ -87,6 +87,6 @@ This is happening, because our index constant isn't utilizing Next `getInitialPr
 
 [02:22] Now that, we have our sub props come in to route them, we can return the page and we'll see our app bar being rendered for us. 
 
-![app bar rendered](../images/react-render-material-ui-components-with-next-js-app-bar-rendered.png)
+![app bar rendered](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1545266982/transcript-images/react-render-material-ui-components-with-next-js-app-bar-rendered.jpg)
 
 Now, we also know there are app bar has a height of `50` as specify within our `getMuiTheme` function. Our application is set up to use any and all of the components from Material-UI library.

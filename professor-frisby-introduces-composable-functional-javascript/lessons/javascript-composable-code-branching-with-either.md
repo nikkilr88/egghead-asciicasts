@@ -19,7 +19,7 @@ const result = Right(3).map(x => x + 1).map(x => x / 2)
 console.log(result)
 ```
 
-###Terminal Output
+#### Terminal Output
 ```bash
 Right(2)
 ```

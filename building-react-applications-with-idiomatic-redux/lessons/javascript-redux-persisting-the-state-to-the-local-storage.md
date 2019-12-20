@@ -63,13 +63,13 @@ store.subscribe(() => {
 Let's see if it worked. I'm adding a few todos. I'm toggling one of the todos, and then I'm refreshing. The state of the app is preserved across reloads, and in fact the `visibilityFilter` is also preserved, which is probably not what we want, because usually we want to persist just the data and not the UI state.
 
 
-![output](../images/javascript-redux-refactoring-the-entry-point-output.png)
+![output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-refactoring-the-entry-point-output.jpg)
 
 
 To fix this rather than pass the whole state object I'll just pass an object with the `todos` field from the state object. This way if I start with a clean localStorage and I add a couple of todos, and then I toggle one of them and change the `visibilityFilter`, after refresh the todos are still there, but the `visibilityFilter` gets reset to all.
 
 
-![output](../images/javascript-redux-refactoring-the-entry-point-output2.png)
+![output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-refactoring-the-entry-point-output2.jpg)
 
 **index.js**
 ```javascript
@@ -83,7 +83,7 @@ store.subscribe(() => {
 When the `store` is created the todos are preserved from the persisted state, but the `visibilityFilter` is initialized by the reducer. However, the current code has a bug. If I add a new todo to the existing todos it's not going to appear, and React is going to log a warning saying that I encountered two children with the same key, **zero**.
 
 
-![error message](../images/javascript-redux-refactoring-the-entry-point-error.png)
+![error message](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-refactoring-the-entry-point-error.jpg)
 
 
 What this means is that in the `TodoList` component when we render the todos, we use the `todo.id` as a key. The `todo.id` is assigned in the `addTodo` **action creator**, and it uses a local variable called `nextTodoId` as a counter.
@@ -117,7 +117,7 @@ export const addTodo = (text) => ({
 To avoid problems like this I'm going to install an **npm** module called `node-uuid`. It is a very tiny module, and it exports a couple of functions. The function we're going to use is called `v4`, which is just a name of the standard.
 
 
-![console output](../images/javascript-redux-refactoring-the-entry-point-console.png)
+![console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542113/transcript-images/javascript-redux-refactoring-the-entry-point-console.jpg)
 
 
 It generates a unique string ID every time, and we're going to use this ID instead of a counter. I'm replacing the counter declaration with an import of `v4` from the `node-uuid`, and I'm calling `v4` to generate a unique ID in my action creator.
@@ -138,7 +138,7 @@ Now let's run the app again with a clean localStorage. I'm adding a couple new t
 Finally I'm adding a new todo, and it gets added successfully. It also gets persisted so I can refresh, do something with it, refresh, and it's there again in the correct state.
 
 
-![todos](../images/javascript-redux-refactoring-the-entry-point-output3.png)
+![todos](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542110/transcript-images/javascript-redux-refactoring-the-entry-point-output3.jpg)
 
 
 There is just one more thing left to do. We're currently call `saveState` inside the **subscribe listener** so it is called every time the storage state changes. However we would like to avoid calling it too often because it uses the expensive `stringify` operation.

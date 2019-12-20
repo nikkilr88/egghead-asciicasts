@@ -1,6 +1,6 @@
 Sometimes API requests fail, and I will simulate this by throwing inside the fake API client so that it returns a reject promise. If I run the app the loading indicator gets stuck because `isFetching` and flag get set to two, but there is no corresponding `RECEIVE_TODOS` action to set it to falls back again.
 
-![console output](../images/javascript-redux-displaying-error-messages-output.png)
+![console output](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-displaying-error-messages-output.jpg)
 
 To fix this, I will start with the action creators file. First of all, I'll do a little cleanup. The `REQUEST_TODOS` action is never used outside of `fetchTodos` so I want to embed the object literal right inside fetch todos for clarity.
 
@@ -107,7 +107,7 @@ const byId = (state = {}, action) => {
 
 If I run the app now the loading indicator does not get stuck, because a corresponding failure action fires and so isFetching gets reset back to false again.
 
-![console output two](../images/javascript-redux-displaying-error-messages-output2.png)
+![console output two](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-displaying-error-messages-output2.jpg)
 
 Let's display the error to the user. I have created a new file where I import react. I'm declaring a new functional stateless component called `FetchError` that takes the `message` as a prop, which is a string, and `onRetry` as a prop, which is a function.
 
@@ -256,11 +256,11 @@ export const fetchTodos = (filter) =>
     }
 ```
 
-![FETCH_TODOS_FAILURE](../images/javascript-redux-displaying-error-messages-output3.png)
+![FETCH_TODOS_FAILURE](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542111/transcript-images/javascript-redux-displaying-error-messages-output3.jpg)
 
 Thanks to the new reducer, this message will now make its way into the next state inside `listByFilter`, `all`, `errorMessage` and so the component can display it. If I press the retry button, the request action will clear the error message and then the success action will populate the list of todos.
 
-![FETCH_TODOS_SUCCESS](../images/javascript-redux-displaying-error-messages-output4.png)
+![FETCH_TODOS_SUCCESS](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1553542112/transcript-images/javascript-redux-displaying-error-messages-output4.jpg)
 
 Let's recap how we handle errors for every list independently. Inside the fake API client, I randomly throw an error so `fetchTodos` returns a rejected promise once in a while. Having separate action creators for request success and failure cases seemed like overkill. I in-lined the corresponding action objects right inside the async action creator.
 

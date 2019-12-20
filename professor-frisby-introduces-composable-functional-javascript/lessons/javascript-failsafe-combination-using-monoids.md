@@ -4,7 +4,7 @@ Remember, a semigroup is a type with a `concat` method. If this addition is our 
 
 Let's go ahead and define an interface with this and we'll say `Sum` is a monoid if it has a `concat` method that's semigroup, and it has this `empty` function on it that will return us a special type here, a special `Sum` with the `0` here, a neutral element.
 
-###1.js
+#### 1.js
 ```javascript
 Sum.empty = () => Sum(0)
 ```

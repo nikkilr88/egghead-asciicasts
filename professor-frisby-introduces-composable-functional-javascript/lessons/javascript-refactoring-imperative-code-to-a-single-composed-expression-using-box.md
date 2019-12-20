@@ -141,7 +141,7 @@ const applyDiscount = (price, discount) => {
 
 One problem with this approach is we're calling `map` on each. The result is going to be two boxes deep.
 
-###Terminal Output
+#### Terminal Output
 ```bash
 Box(object Object)
 ```
@@ -173,7 +173,7 @@ const applyDiscount = (price, discount) =>
 ```
 
 
-###Terminal Output
+#### Terminal Output
 ```bash
 4
 ```

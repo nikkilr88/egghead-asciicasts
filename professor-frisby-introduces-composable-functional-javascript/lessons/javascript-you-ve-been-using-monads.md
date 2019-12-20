@@ -15,7 +15,7 @@ It's all the same thing though. `of` might be called `pure` sometimes. By and la
 If we have some function `httpGet`, it gets the current `'/user'` here.
 We `map` over that to get the `user` out. Then we want to do another `httpGet` here to get the `comments`. Do another http call here. We'll get the `comments`of this `user`.
 
-####monad.js
+#### monad.js
 ```javascript
 httpGet('/user')
 .map(user => 
@@ -75,7 +75,7 @@ const res2 = join(join(m))
 
 We'll just go ahead and see this. They are indeed equal. We have two boxes of three.
 
-####Terminal Output
+#### Terminal Output
 ```javascript
 Box(3) Box(3)
 ```
@@ -98,7 +98,7 @@ const res2 = join(m.map(Box.of))
 ```
 
 Let's go ahead and check these out. Sure enough, we have two boxes of `wonder`. 
-####Terminal Output
+#### Terminal Output
 ```bash
 Box(wonder) Box(wonder)
 ```
