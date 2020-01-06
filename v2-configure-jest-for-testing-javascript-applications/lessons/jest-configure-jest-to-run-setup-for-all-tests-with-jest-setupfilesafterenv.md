@@ -16,7 +16,7 @@ This Jest DOM object is going to be a bunch of expect extensions. We'll say expe
 import * as jestDOM from '@testing-library/jest-dom'
 import React from 'react'
 import {render. fireEvent} from '@testing-library/react'
-import Calcualtor from '../calculator'
+import Calculator from '../calculator'
 
 expect.extend(jestDOM)
 ```
@@ -40,14 +40,14 @@ Now, we can run `npm t` and we're going to get that error still, but the error m
 
 [01:28] We expected an element to have the text content BC, but we received AC. Not only does the assertion code read a little bit nicer, the error message reads a little bit nicer as well. We can change BC back to AC and then we'll run `npm t` and we'll see our test passing.
 
-[01:44] This is great, but I don't want to have to add all of this boiler plate code to every single one of my files. Jest DOM actually exposes a module that we can import called Jest DOM/extendexpect, which will do this for us. With that, our tests are passing.
+[01:44] This is great, but I don't want to have to add all of this boiler plate code to every single one of my files. Jest DOM actually exposes a module that we can import called Jest DOM/extend-expect, which will do this for us. With that, our tests are passing.
 
 
 ```js
 import * as jestDOM from '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import {render. fireEvent} from '@testing-library/react'
-import Calcualtor from '../calculator'
+import Calculator from '../calculator'
 
 expect.extend(jestDOM)
 ```
@@ -77,9 +77,9 @@ module.exports = {
   '\\.module\\.css$': 'identity-obj-proxy',
   '\\.css$': require.resolve('./text/style-mock.js')
   }
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  snapshotSerialozers: ['jest-emotion'],
 }
-setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-snapshotSerialozers: ['jest-emotion'],
 ```
 
 [02:37] In review, what we did here was we installed testing-library/Jest DOM, and then we added setup files after ENV to include that extend expect from testing-library/Jest DOM. With that, we're able to use some really nice assertions from Jest DOM.
