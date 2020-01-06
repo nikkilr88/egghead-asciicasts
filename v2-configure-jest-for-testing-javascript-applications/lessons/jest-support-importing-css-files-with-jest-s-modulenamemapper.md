@@ -27,7 +27,7 @@ module.exports = {
 }
 ```
 
-With that, we can now run MPMT and our test passes with flying colors.
+With that, we can now run `npm t` and our test passes with flying colors.
 
 [02:10] If we take a look at our auto-scaling-text-module.js and we ```console.log(styles)``` and then we run our test again, we're going to see that console log is just that empty object. It actually is exactly that module.
 
