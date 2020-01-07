@@ -29,7 +29,7 @@ Then that means we can get rid of the provider in our first and second `test` an
 
 ```js
 test('can render with redux with custom `initialState`', () => {
-  const {getByLabelText, getByText} = render(<Counter/>, {initialSTate: {count: 3}})
+  const {getByLabelText, getByText} = render(<Counter/>, {initialState: {count: 3}})
   fireEvent.click(getByText('-'))
   expect(getByLabelText(/count/i)).toHaveTextContent('2')
 })

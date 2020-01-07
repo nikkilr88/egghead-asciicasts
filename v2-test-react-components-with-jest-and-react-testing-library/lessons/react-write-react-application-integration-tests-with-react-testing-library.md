@@ -49,7 +49,7 @@ test('Can fill out a form across multiple pages', async () => {
 ```js
 test('Can fill out a form across multiple pages', async () => {
   mockSubmitForm.mockResolveValueOnce({success: true})
-  const testDAta = {food: 'test food', drink: 'test drink'}
+  const testData = {food: 'test food', drink: 'test drink'}
   render(<App />)
 })
 ```
