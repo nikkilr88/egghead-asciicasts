@@ -156,7 +156,7 @@ function render (ui, {route, ...renderOptions} = {}) {
     return <Router history={history}>{children}</Router>
   }
 
-  return rtlRender({ui}, {wrapper: Wrapper, ...renderOptions})
+  return rtlRender(ui, {wrapper: Wrapper, ...renderOptions})
 }
 ```
 
@@ -190,7 +190,7 @@ function render (
     return <Router history={history}>{children}</Router>
   }
 
-  return rtlRender({ui}, {wrapper: Wrapper, ...renderOptions})
+  return rtlRender(ui, {wrapper: Wrapper, ...renderOptions})
 }
 ```
 
@@ -202,8 +202,8 @@ function render (
 
 ```js
 return {
-  ...rtlRender({ui}, {wrapper: Wrapper, ...renderOptions}),
-  history
+  ...rtlRender(ui, {wrapper: Wrapper, ...renderOptions}),
+  history,
 }
 ```
 

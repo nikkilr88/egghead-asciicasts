@@ -120,7 +120,7 @@ We'll pop that open. It looks like our test is passing. Let's make sure it can f
 
 [05:36] Let's clean up one thing here. That is, we've got our `TEST_GREETING` appearing here twice. I'm going to give this a variable name, `testGreeting`. That will make things a little bit more explicit.
 
-```JS
+```js
 test('loads greetings on click', async () => {
   const testGreeting = 'TEST_GREETING'
   mockLoadGreeting.mockResolvedValueOnce({data: {greeting: 'testGreeting'}})
