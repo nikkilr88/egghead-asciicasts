@@ -33,7 +33,7 @@ const Join = () => {
   return (
     <>
       <h1>Start or Join a Video Chat</h1>
-      <form className="state-form">
+      <form className="start-form">
         <label htmlFor="identity">
           Display name:
           <input
