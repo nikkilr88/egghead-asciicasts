@@ -31,7 +31,7 @@ Instructor: [00:01] Once again, we're looking at our Nuxt.js application, and th
 //    { "am": 1, "pm": 7, "id": "b" }
 // ]
   averageCount() {
-      const counts = 
+      const counts = []
       this.records.forEach(record => {
         counts.push(record.am, record.pm);
       });
