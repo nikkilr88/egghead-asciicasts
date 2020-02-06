@@ -4,8 +4,10 @@ Instructor: [0:00] We stopped our attacker from stealing the session cookie, but
 
 ### payload.html
 
-```js
-const payload = encodeURIComponent(document.body.innerText)
+```html
+<script>
+  const payload = encodeURIComponent(document.body.innerText)
+</script>
 ```
 
 [0:32] If we save our payload, paste it into the form and hit submit, we could see that the request has gone out to our payload endpoint which contains the user's social security number. These proves that it wasn't `document.cookie` that was our problem. Although fixing that was important, but truly, XSS is the thing we must mitigate.
