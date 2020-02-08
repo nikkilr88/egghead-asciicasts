@@ -1,14 +1,18 @@
-Instructor: 0:00 Let's start up our server by running sudo npm start. On your computer, you might only have to run npm start. In my computer, in order to get an application running on port 80, which is the default port for HTTP, I have to execute the commands via Sudo. This will start our application at the following URL, localhost.charlesproxy.com. The rest of the protocol is HTTP.
+Instructor: 0:00 Let's start up our server by running `sudo npm start`. On your computer, you might only have to run npm start. In my computer, in order to get an application running on `port 80`, which is the default port for HTTP, I have to execute the commands via Sudo. This will start our application at the following URL, `http://localhost.charlesproxy.com`. The rest of the protocol is HTTP.
 
 0:24 If I paste that URL into my browser, you see that it displays a login form. As an attacker of this website, I know the server must be using some form of communication to provide a logged in experience for the user. Our goal will be to take a message provided by the user and replay a malicious form of that request.
 
 0:43 If we submit this form, we can see that we'll post a message on behalf of the user. While you're maybe used to inspecting request in a Chrome DevTools, you may not know that you can also install a local proxy to log all the requests you make.
 
-0:58 In this case, we could download Charles Proxy from charlesproxy.com. In this way, we could use Charles as an HTTP monitor. Charles Proxy is acting like a man in the middle. A man in the middle is a piece of software using malicious that sits between the client making a request and the server receiving the request.
+![message posted](../images/egghead-simulate-session-hijacking-attacks-and-inspect-network-traffic-with-charles-proxy-submit-form-posting-message.png)
 
-1:19 I've taken the liberty of starting Charles while we are making those requests. I can go to this filter section and type in the URL that we're making a request to and get a complete list of the requests we made.
+0:58 In this case, we could download Charles Proxy from [charlesproxy.com](http://charlesproxy.com). In this way, we could use Charles as an HTTP monitor. Charles Proxy is acting like a man in the middle. A man in the middle is a piece of software using malicious that sits between the client making a request and the server receiving the request.
+
+1:19 I've taken the liberty of starting Charles while we are making those requests. I can go to this filter section in the bottom left of our Charles window and type in the URL that we're making a request to and get a complete list of the requests we made.
 
 1:31 As you could see here, Charles has logged all the information from each of our requests. Click on Contents, I could then inspect the headers that were passed to the server upon request and from the server on response.
+
+![content tab of charles](../images/egghead-simulate-session-hijacking-attacks-and-inspect-network-traffic-with-charles-proxy-content-tab.png)
 
 1:43 In this case, you could see that we've been using a cookie called connect.sid. This cookie is what's known as a session ID. A session ID is a uniquely generated string that is passed to the server and back in a cookie in order to identify the current user's session.
 
