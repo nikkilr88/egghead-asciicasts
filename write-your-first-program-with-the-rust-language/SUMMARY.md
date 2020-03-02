@@ -1,3 +1,17 @@
 # Summary
 
-* [Course Overview: Advanced Bash Automation for Web Developers](./lessons/bash-course-overview-advanced-bash-automation-for-web-developers.md)
+* [Install Rust](./lessons/01_egghead-install-rust.md)
+* [Compile and run a Rust program from scratch](./lessons/02_rust-compile-and-run-a-rust-program-from-scratch.md)
+* [Create a Rust package with the Cargo package manager](./lessons/03_rust-create-a-rust-package-with-the-cargo-package-manager.md)
+* [Compile and run a Rust program using Cargo](./lessons/04_egghead-compile-and-run-a-rust-program-using-cargo.md)
+* [Variables and Mutability in Rust](./lessons/05_rust-variables-and-mutability-in-rust.md)
+* [Output multiple variables using println!() in Rust](./lessons/06_rust-output-multiple-variables-using-println-in-rust.md)
+* [Write and call a function in Rust](./lessons/07_rust-write-and-call-a-function-in-rust.md)
+* [Understanding basic Ownership and Borrowing in Rust](./lessons/08_egghead-understanding-basic-ownership-and-borrowing-in-rust.md)
+* [Read user input from stdin in Rust](./lessons/09_rust-read-user-input-from-stdin-in-rust.md)
+* [Handle errors with unwrap() in Rust](./lessons/10_rust-handle-errors-with-unwrap-in-rust.md)
+* [Handle errors in Rust using expect()](./lessons/11_rust-handle-errors-in-rust-using-expect.md)
+* [Handle errors in Rust using Pattern Matching](./lessons/12_egghead-handle-errors-in-rust-using-pattern-matching.md)
+* [Exit a program using std::process in Rust](./lessons/13_egghead-exit-a-program-using-std-process-in-rust.md)
+* [Create a loop in Rust](./lessons/14_egghead-create-a-loop-in-rust.md)
+* [Make your Rust code more DRY](./lessons/15_egghead-make-your-rust-code-more-dry.md)

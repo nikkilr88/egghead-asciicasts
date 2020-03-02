@@ -1,10 +1,10 @@
-# Write your First Program with the Rust Language
+# Intro to Rust
 
-![Course Image](https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/218/thumb/bash_shell.png)
+![Course Image](https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/226/thumb/rust.png)
 
-Asciicasts for [Cameron Nokes](https://egghead.io/instructors/cameron-nokes)'s course, Advanced Bash Automation for Web Developers on [egghead.io](https://egghead.io//courses/advanced-bash-automation-for-web-developers)
+Asciicasts for [Pascal Precht](https://egghead.io/instructors/pascal-precht)'s course, Intro to Rust on [egghead.io](https://egghead.io/courses/intro-to-rust)
 
 ## Description
-
+null
 
 ## Library Version
