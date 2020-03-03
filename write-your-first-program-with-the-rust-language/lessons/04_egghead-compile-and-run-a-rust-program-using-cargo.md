@@ -6,24 +6,24 @@ Instructor: [00:00] We can compile a Rust project using Cargo and its built comm
 
 ### Terminal
 ```cargo
-cargo build
-l target/debug
-./target/debug/say-my-name
+$ cargo build
+$ l target/debug
+$ ./target/debug/say-my-name
 ```
 
 [00:20] A more convenient way to compile and run our Rust program is to use Cargo's run command, `cargo run`. This one will compile and execute the program in one go. 
 
 ```cargo
-cargo run
-  Compiling...
-    Finished ...
-      Running ...
+$ cargo run
+    Compiling...
+      Finished ...
+        Running ...
 Hello, world!
 ```
 
 Cargo also comes with a clean command to remove the generated target, `cargo clean`. Once executed, we can see that the `target` directory has been removed from the project.
 
 ```cargo
-cargo clean
-l
+$ cargo clean
+$ l
 ```

@@ -6,7 +6,7 @@ Instructor: [00:00] To install Rust we head over to the Rust [website](https://w
 
 ### Terminal
 ```bash
-curl https://sh.rustup.rs -sSf | sh
+$ curl https://sh.rustup.rs -sSf | sh
 ```
 
 This will ask us to customize the installation, but we'll just proceed with the default one and hit `1`.

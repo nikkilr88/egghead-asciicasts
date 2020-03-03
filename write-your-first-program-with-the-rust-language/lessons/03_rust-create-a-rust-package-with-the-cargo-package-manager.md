@@ -6,7 +6,7 @@ Instructor: [00:00] The most convenient way to create a new Rust project is by u
 
 ### Terminal
 ```cargo
-cargo new say-my-name
+$ cargo new say-my-name
 ```
 
 Once we execute it, we'll see that it has generated a bunch of files including a Git repository, a src directory and a Cargo.toml file.
